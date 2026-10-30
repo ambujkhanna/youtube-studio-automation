@@ -1,6 +1,6 @@
 # Overall Objective — YouTube Studio Automation
 
-**Last updated:** 2026-10-30T22:22:27+05:30 (2026-10-30T16:52:27Z)
+**Last updated:** 2026-10-30T22:26:10+05:30 (2026-10-30T16:56:10Z)
 **Status:** Initial baseline; strategy agreed, implementation not yet started.
 
 ## Vision
@@ -68,3 +68,32 @@ Human involvement should primarily be editorial review, approval, and exceptiona
 
 ## Current state
 Strategy and broad direction are agreed. Repository documentation is being initialized. Tool selection, skill adaptation, local production setup, and the first end-to-end Short remain to be implemented and tested.
+
+
+## Background and continuity requirement
+
+This project is a long-running effort to create a sustainable content operation, not a one-off video. The user wants to minimize repetitive manual work through skills, agents, and workflows. A previous long ChatGPT thread reached a conversation-size limit, so the repository must act as the durable source of truth. A new ChatGPT conversation or another AI agent must be able to understand the project without access to the original thread.
+
+## Scope boundaries
+
+**In scope:** channel strategy; topic and trend research; competitor/content-gap analysis; idea scoring; scripts/hooks/storyboards; source collection and fact checking; visual and narration preparation; subtitles; video assembly; technical/editorial QC; metadata; human approval; optional upload/scheduling; analytics; reusable skills, agents, scripts, workflows, and handover documentation.
+
+**Not in the initial scope:** simultaneous launch of all channels; 5–15 minute videos; unattended public publishing; paid subscriptions/API usage without consent; custom video-editor SaaS; copying creators' content; guaranteeing views, subscribers, revenue, virality, or monetization.
+
+## Operating constraints
+
+- User time: approximately 5–7 hours/week.
+- Additional recurring budget: ₹0/month initially.
+- English narration and on-screen text; global audience.
+- Shorts-first, initially around 30–60 seconds.
+- Launch Channel 1 and validate the workflow before Channels 2 and 3.
+- Human review remains mandatory before public publishing.
+- The user is technically comfortable with GitHub and software automation, but the current local development machine/OS must be confirmed before tool selection.
+
+## Target system principles
+
+Use a shared, channel-agnostic production engine with separate channel configuration for audience, tone, content pillars, voice, visual identity, and editorial rules. Make each stage observable and reproducible. Keep provider-specific integrations replaceable. Record costs, quotas, rights, and limitations. Store source, templates, and documentation in Git; keep secrets and large generated media outside Git.
+
+## Definition of success
+
+A new agent can resume from repository documentation; a complete Short can be produced repeatably; the workflow fits the user's time and budget constraints; factual and copyright checks are recorded; human approval is retained; each Short can be traced from idea to analytics; Channel 1 is reliable before expansion.
