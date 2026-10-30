@@ -1,6 +1,6 @@
 # Project Progress
 
-**Last updated:** 2026-10-30T22:26:10+05:30 (2026-10-30T16:56:10Z)
+**Last updated:** 2026-10-30T22:28:47.380+05:30 (2026-10-30T16:58:47.380Z)
 **Current phase:** Phase 0 — Foundation and decisions
 **Overall status:** Planning baseline established; implementation not yet started.
 
@@ -77,3 +77,28 @@ Do not mark these items complete based on plans or discussion alone.
 ## New agent operating requirement
 
 A new agent must read AGENT_HANDOVER.md, OVERALL_OBJECTIVE.md, PLAN.md, PROGRESS.md, and CONVERSATION.md before making changes. It must verify the live repository, avoid asking for already documented details, follow the exact next action in this file, and update timestamped project records after meaningful work.
+
+## New user request — daily end-to-end video automation
+
+**Recorded:** 2026-10-30T22:28:47.380+05:30 (2026-10-30T16:58:47.380Z)
+
+The user explicitly requested that the project now move from planning into implementation, configure an automated daily workflow, generate a video each day, and publish it to YouTube with an appropriate title, description, and hashtags.
+
+This is a new scope requirement. It supersedes the earlier default of requiring approval for every future upload, but does not remove the need to validate the first end-to-end run, authorize the target YouTube channel, and prevent publishing when factual, rights, or technical checks fail.
+
+### Current capability assessment
+- No YouTube publishing connector is currently connected/verified in this conversation.
+- Plugin discovery surfaced vidIQ (research/idea/analytics assistance), Metricool (social scheduling and supported publishing actions; YouTube write support must be verified before relying on it), Windsor.ai (analytics/data connectors), and Runway (media generation; may involve a separate paid account/credits).
+- No tool has yet been authorized to upload to the user's YouTube channel.
+- No daily video-rendering workflow, scheduler, OAuth integration, or media-generation pipeline has been implemented.
+- A daily schedule cannot be responsibly configured until its execution time is known and a real publishing path is established.
+
+### Immediate prerequisites
+1. User to specify daily publishing/run time in India Standard Time (IST).
+2. Verify target YouTube channel and obtain authorization through YouTube OAuth or a verified publishing connector.
+3. Confirm execution environment and persistent scheduler.
+4. Select a zero-cost media generation/narration/rendering path, with limitations recorded.
+5. Build and test the first Short end-to-end; only then enable unattended daily publication.
+
+### Next action
+Ask the user for the preferred daily run/publish time in IST. In parallel, continue designing the local-first pipeline and verify the safest available YouTube publishing route. Do not claim automatic publishing is configured until an authorized upload test succeeds.
