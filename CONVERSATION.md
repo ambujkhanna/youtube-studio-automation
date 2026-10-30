@@ -318,3 +318,19 @@ User said they installed Higgsfield and Hansora plugins and asked me to try buil
 - OpenAI Higgsfield app listing: https://openai.com/business/plugins/higgsfield/
 - Higgsfield ChatGPT generation and credit guidance: https://higgsfield.ai/blog/generate-ai-videos-from-chatgpt
 - Hansora ChatGPT setup: https://hansora.co/mcp-setup.html
+
+
+## 2026-10-31T01:40:00+05:30 (2026-10-30T20:10:00Z) — User asks to retry Higgsfield/Hansora video generation
+
+User said “try again” after the previous attempt could not see the apps. Rechecked the live tool registry; both integrations are now exposed in this conversation.
+
+### Connection verification and account preflight
+- Higgsfield authenticated profile lookup succeeded. Higgsfield workspace balance is 0 credits, plan is Free; a credits-based trial is eligible but not started. Do not start a trial or generate paid media without the user's explicit consent.
+- Hansora account lookup succeeded. Balance is 30 Hansora credits, no active subscription.
+- Hansora catalog is available. For a new first short generation, its model guide identifies Grok Video at 720p, 6 seconds (18 credits) as the lowest-cost default; Veo 3.1 Lite 8 seconds at 720p costs 20 credits. The complex multi-character dialogue pilot recommended models (Seedance 2.5, Kling 4.0, Wan 3.0) are above the current 30-credit balance at the standard suggested settings.
+- No video generation was submitted and no credits were spent. User had previously been told that exact credit cost would be shown and approval obtained before generation; “try again” is not treated as approval to spend a balance.
+
+### Current blocker / next decision
+- We can now invoke Hansora and Higgsfield directly from this chat; earlier statement that neither integration was exposed is superseded by this successful retry.
+- Need user approval for a small proof clip (e.g., Grok Video, 6 seconds, 720p, 18 Hansora credits) or permission to start Higgsfield's eligible credits trial. A 6-second proof can test motion/visual quality but cannot validate a full two-character educational dialogue show or dependable lip-sync. A stronger multi-shot test requires a larger credit balance/model choice.
+- Do not spend credits or start a trial until user confirms the specific route.
