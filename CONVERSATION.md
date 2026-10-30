@@ -334,3 +334,20 @@ User said “try again” after the previous attempt could not see the apps. Rec
 - We can now invoke Hansora and Higgsfield directly from this chat; earlier statement that neither integration was exposed is superseded by this successful retry.
 - Need user approval for a small proof clip (e.g., Grok Video, 6 seconds, 720p, 18 Hansora credits) or permission to start Higgsfield's eligible credits trial. A 6-second proof can test motion/visual quality but cannot validate a full two-character educational dialogue show or dependable lip-sync. A stronger multi-shot test requires a larger credit balance/model choice.
 - Do not spend credits or start a trial until user confirms the specific route.
+
+
+## 2026-10-31T01:45:00+05:30 — User approved and Hansora Grok Video proof submitted
+
+User explicitly approved spending 18 Hansora credits for a 6-second Grok Video proof. Rechecked model capabilities and exact quote before submission.
+
+### Generation
+- Model: Grok Video (`grok-video`)
+- Settings: 6 seconds, 720p, vertical 9:16, generated audio enabled
+- Exact quote: 18 Hansora credits; user approval obtained before generation
+- Prompt: original 3D animated educational-show scene with Alex and Mia, short English dialogue, expressive facial/body motion, requested synchronized mouth movements, subtle camera push-in and studio background; explicitly no slideshow/static panels/montage.
+- Submission status: accepted / submitted successfully. Hansora run ID: `44d7027f-8c82-4786-b185-0e0f384ca403-mcp-1793387441135-0feb9e51`.
+- Provider reports 18 displayed credits charged (internal debit 1.8); remaining Hansora balance reported as 1.2 internal billing credits in provider response. Do not confuse internal billing units with displayed user credits.
+- Video is processing; no completed MP4 or quality assessment yet. Hansora's response says its in-chat progress/result card will display the result. Do not poll unless user asks for status/result or says they cannot see it.
+
+### Evaluation criteria after completion
+Check actual continuous character motion, facial expressions, gesture/reaction, character consistency, natural distinct English voices, audible dialogue, mouth/phoneme synchronization, camera motion, audio quality, vertical framing and resolution. This 6-second clip is only a proof of concept, not validation of the full daily production pipeline.
