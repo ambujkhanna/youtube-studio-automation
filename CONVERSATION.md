@@ -219,3 +219,39 @@ No genuine text/image-to-video or rigged-character/lip-sync rendering tool was a
 
 ### Documentation maintenance commitment reaffirmed
 The user expects `CONVERSATION.md` and `PROGRESS.md` to be updated in the repository with each prompt/conversation or meaningful work session, with timestamps. This update records the current conversation and uploaded reference. Continue this cadence whenever actively working in the repository; do not imply background updates occur when no agent is working.
+
+
+## 2026-10-31T00:40:00+05:30 (2026-10-30T19:10:00Z) — User requires every conversation turn logged; skill installation/use and sample video requested
+
+The user explicitly changed the documentation rule: append a timestamped entry to `CONVERSATION.md` for every conversation turn, whether fruitful, meaningful, or casual. Do not silently omit turns. Record the user's message/request and any actions/status concisely. This update is the first implementation of that rule. Continue after every user turn while actively working in the repo. This is not a background process between sessions.
+
+The user again instructed the project to install and use the three previously shared YouTube skill repositories, then generate a new sample video matching the uploaded 3D CGI animation reference.
+
+### Skill installation work completed in this session
+- Fetched the GitHub contents directory listings for the three selected skill repos and read the primary orchestrator / Shorts / script / package / research skill instructions.
+- Confirmed the skill scopes: YouTube creator strategy, hooks, scripting, title/thumbnail packaging, Shorts structure, SEO, retention/editing, transcripts/search/channel research.
+- Added `scripts/install-youtube-skills.ps1` to clone/update all three source repos into `vendor/youtube-skills/`, install the Claude YouTube orchestrator into the user's Claude Code skills directory, and copy the ChatGPT YouTube Agent Skill and YouTube research skill directories into project-local `.codex/skills/`.
+- Added `docs/YOUTUBE_SKILLS.md` documenting installation, usage, runtime boundaries, licensing, and verification.
+- **Installation is prepared, not executed/verified on the user's Windows PC.** This chat cannot run PowerShell on that machine. The installer is committed for the user to run from the project root. Do not state that local installation is complete until the script has run and the expected files/skill discovery are verified.
+- These are external Agent Skills. Copying them into local agent folders does not install them into ChatGPT's hosted runtime. This distinction has been stated to the user.
+- The TranscriptAPI skill requires an API key; README lists 100 free signup credits and a $5/month starter plan. Do not create an account, enter credentials, or incur charges without authorization.
+
+### Skill-guided usage completed
+- Applied the Shorts/script guidance from the inspected skills: a fast curiosity-led opening, concise dialogue, clear value delivery, frequent visual changes, a loop-compatible ending, and title/description/hashtags.
+- Applied the package skill's principle that title and cover text should complement rather than duplicate each other.
+- Created `samples/aimation-studio-pilot-script.md`: a 40–44 second Alex/Mia educational Short about AI agents vs chatbots, with dialogue, shot directions, metadata draft, and animation QC criteria.
+- This is pre-production text only; no skill runtime Python scoring script was executed because it is not installed in this hosted environment and has not been installed on the user's Windows PC.
+
+### Requested sample video status
+- User asked for an actual sample video after skill installation/use.
+- A real video renderer / text-to-video or rigged-character/lip-sync engine is still not available in this chat. The user's local Windows installer has not been run, and no actual video generation tool has been connected.
+- Therefore **no new sample video has been generated**. The script above is not a substitute for the requested video and must not be described as a render.
+- Do not assemble still images, sprites, or storyboard panels and call them animation. The approved quality benchmark requires genuine character/environment motion, expressive animation, consistent character identities, intelligible natural voices, and convincing lip-sync.
+- Next action: user runs the installer on Windows (or provides an authorized execution environment); then verify installation, inspect GPU/VRAM, select a real animation engine and obtain user approval for any paid service. Only then render and review a true moving pilot.
+
+### Repository commits created in this session
+- `scripts/install-youtube-skills.ps1`: commit `fba4c6b272bee3306841b5ff6e8da740ce5058d7`
+- `docs/YOUTUBE_SKILLS.md`: commit `4dc68d6c66811caf492fb58b54538fd0476f5ac9`
+- `samples/aimation-studio-pilot-script.md`: commit `f2a95f0bddbcf53d5e357ee11eff3d02e2ed296d`
+
+All three source skill repositories' README/LICENSE files were previously inspected; their fetched LICENSE files declare MIT. Keep license notices and attribution when copying source files/code.
