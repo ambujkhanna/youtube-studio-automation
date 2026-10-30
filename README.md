@@ -1,6 +1,6 @@
 # YouTube Studio Automation
 
-**Last updated:** 2026-10-30T22:22:27+05:30 (2026-10-30T16:52:27Z)
+**Last updated:** 2026-10-30T22:26:10+05:30 (2026-10-30T16:56:10Z)
 
 A zero-additional-subscription-cost, AI-assisted system for researching, creating, reviewing, publishing, and improving YouTube Shorts across three planned English-language channels.
 
@@ -31,3 +31,32 @@ Read OVERALL_OBJECTIVE.md, PLAN.md, PROGRESS.md, and CONVERSATION.md. Verify rep
 
 ## Repository safety
 Do not commit credentials, private channel login details, personal data, copyrighted source media, or generated assets without a clear need and rights to store them. Use environment variables or local secret stores for credentials.
+
+
+## Portable project context and agent onboarding
+
+This repository must be sufficient to onboard a new human contributor, a fresh ChatGPT conversation, or a different AI agent without access to prior chats.
+
+**Read in this order:**
+1. [AGENT_HANDOVER.md](AGENT_HANDOVER.md) — complete handover brief and copy/paste resume prompt.
+2. [OVERALL_OBJECTIVE.md](OVERALL_OBJECTIVE.md) — background, objectives, scope, constraints, exclusions, and success criteria.
+3. [PLAN.md](PLAN.md) — target architecture, production workflow, phases, quality gates, and future scope.
+4. [PROGRESS.md](PROGRESS.md) — verified implementation status, blockers, and exact next actions.
+5. [CONVERSATION.md](CONVERSATION.md) — chronological decisions and rationale.
+
+**Source-of-truth rules:** latest explicit user instruction wins; otherwise use the latest dated decision in CONVERSATION.md. PROGRESS.md describes verified reality; PLAN.md describes intended work. Never treat a planned item as implemented without verification.
+
+## Detailed operating rules
+
+- Verify the live repository before changing files.
+- Preserve historical decisions; append a new decision when one changes.
+- Update CONVERSATION.md and PROGRESS.md after each meaningful work session.
+- Timestamp every Markdown file whenever created or updated, including timezone.
+- Keep generated media, credentials, OAuth tokens, and private account details out of Git by default.
+- Prefer free/local/open-source components; disclose quotas, cost, privacy, and licensing before adoption.
+- Public publishing requires human approval.
+- Do not claim success for commits, tests, renders, uploads, or integrations without checking the result.
+
+### New conversation / other agent
+
+Use the copy/paste prompt in AGENT_HANDOVER.md. Resume from the exact Next actions in PROGRESS.md; do not ask the user to repeat documented decisions.
