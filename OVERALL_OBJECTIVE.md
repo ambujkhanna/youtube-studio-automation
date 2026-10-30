@@ -1,6 +1,6 @@
 # Overall Objective — YouTube Studio Automation
 
-**Last updated:** 2026-10-30T22:36:37+05:30 (2026-10-30T17:06:37Z)
+**Last updated:** 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
 **Status:** Initial baseline; strategy agreed, implementation not yet started.
 
 ## Vision
@@ -44,7 +44,7 @@ Preferred lifecycle:
 6. Assemble vertical video, subtitles, and audio.
 7. Run technical and editorial quality checks.
 8. Prepare metadata and upload package.
-9. Obtain human approval before publishing.
+9. Obtain first-pilot approval before enabling unattended publishing.
 10. Review analytics and feed learning into future content.
 
 Human involvement should primarily be editorial review, approval, and exceptional decisions—not repetitive editing or copying between tools.
@@ -87,8 +87,8 @@ This project is a long-running effort to create a sustainable content operation,
 - English narration and on-screen text; global audience.
 - Shorts-first, initially around 30–60 seconds.
 - Launch Channel 1 and validate the workflow before Channels 2 and 3.
-- Human review remains mandatory before public publishing.
-- The user is technically comfortable with GitHub and software automation, but the current local development machine/OS must be confirmed before tool selection.
+- Human review is mandatory for the first pilot; routine daily publishing is intended to run unattended after validation, with automated fail-closed quality gates.
+- The user is technically comfortable with GitHub and software automation, but the Windows is the selected development platform; exact version and hardware must be confirmed before tool selection.
 
 ## Target system principles
 
@@ -100,3 +100,12 @@ A new agent can resume from repository documentation; a complete Short can be pr
 
 
 **Channel 1 working name update (2026-10-30T22:36:37+05:30 (2026-10-30T17:06:37Z)):** AImation Studio. Treat this as a working name until YouTube name/handle availability and trademark checks are completed. Existing content scope remains practical AI/technology unless the user changes it.
+
+
+## Latest user decisions — 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
+
+- Channel 1 working name is **AImation Studio**. Treat as provisional until YouTube name/handle and trademark checks are completed.
+- Development machine/platform is **Windows**. Exact OS version and hardware specifications are still unknown.
+- Initial daily publishing target is **7:00 PM IST**, with timing to be optimized later using audience reach and engagement data.
+- The user wants routine daily publishing automated after the first end-to-end pilot is validated. The pilot must pass factual, rights, editorial, and technical checks; failed runs must not publish.
+- Existing Channel 1 content direction remains practical AI/technology demonstrations and workflows unless the user confirms a narrower AI-animation focus.
