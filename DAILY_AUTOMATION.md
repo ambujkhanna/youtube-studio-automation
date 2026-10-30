@@ -1,6 +1,6 @@
 # Daily Shorts Automation — Requirements and Runbook
 
-**Last updated:** 2026-10-30T22:33:57+05:30 (2026-10-30T17:03:57Z)
+**Last updated:** 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
 **Status:** Requirements recorded; implementation and authorization pending.
 
 ## Goal
@@ -60,3 +60,8 @@ No renderer, scheduler, OAuth integration, or successful upload exists yet. The 
 - Metricool is connected and one YouTube destination is visible. Verify that destination is AI in Action Lab before first public publishing.
 - Metricool accepts an actual video file or accessible media URL; it does not generate the video. No renderer, media delivery path, daily scheduler, or successful upload exists yet.
 - Do not activate recurring unattended publishing until the first end-to-end pilot passes QC and the target channel is verified.
+
+
+## Development environment decision — 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
+
+Windows is the confirmed development platform. Exact Windows version and hardware remain to be confirmed. Build the initial implementation to be Windows-compatible; do not assume GPU acceleration or a particular device configuration.
