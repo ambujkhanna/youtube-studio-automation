@@ -20,7 +20,7 @@ This is a curated project log, not a verbatim transcript of every message. Prese
 - Maintain continuity across ChatGPT conversations. The user does not want to repeatedly lose context when a long thread reaches its conversation-size limit.
 
 ### Channel concepts agreed as starting direction
-1. **AI in Action Lab** — practical AI and technology demonstrations, experiments, workflows, and explanations.
+1. **AI in Action Lab** — original early working concept, superseded on 2026-10-30 by the user's selected working name **AImation Studio**; practical AI and technology demonstrations, experiments, workflows, and explanations.
 2. **The Hidden Archive** — mystery, history, and untold stories, distinguishing fact from theory/speculation.
 3. **StorySprout Studio** — original animated storytelling.
 
