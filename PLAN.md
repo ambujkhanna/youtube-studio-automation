@@ -1,6 +1,6 @@
 # Project Plan — YouTube Studio Automation
 
-**Last updated:** 2026-10-30T22:36:37+05:30 (2026-10-30T17:06:37Z)
+**Last updated:** 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
 **Plan status:** Baseline agreed; detailed implementation decisions remain open.
 
 ## Guiding approach
@@ -228,3 +228,12 @@ Metricool is connected and one YouTube destination is available. It can schedule
 ## Channel 1 naming — 2026-10-30T22:36:37+05:30 (2026-10-30T17:06:37Z)
 
 Use **AImation Studio** as the working name for Channel 1. Retain the current editorial scope (practical AI/technology demonstrations, experiments, workflows, and explanations) pending clarification. Before finalizing branding, check YouTube channel-name/handle availability and relevant trademark conflicts. Because the name can imply AI animation, confirm whether that is the intended niche or simply a brand name for broader AI content.
+
+
+## Confirmed channel and development environment decisions — 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
+
+- Channel 1 working name: **AImation Studio**. Check YouTube channel name/handle availability and relevant trademark conflicts before final brand lock.
+- Development target: **Windows**. Confirm Windows version, CPU, RAM, GPU, and disk space before choosing local TTS or local generative models.
+- Initial publishing target: daily at **7:00 PM IST** after the end-to-end pilot and destination verification.
+- The user wants daily publishing to become unattended after the first pilot succeeds. Keep strict automated QC and fail-closed behavior; do not publish failed or unverified content.
+- Channel 1 editorial positioning remains practical AI/technology for now. Confirm whether the name implies a specific AI-animation niche before finalizing the channel promise.
