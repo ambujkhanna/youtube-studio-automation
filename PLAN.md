@@ -12,11 +12,13 @@ Build one end-to-end Shorts pipeline for AImation Studio before scaling. Use mod
 - [x] Confirm English narration and global audience.
 - [x] Confirm 5–7 hours/week and ₹0 additional monthly subscription budget.
 - [x] Create repository and core project documentation.
-- [ ] Add channel configuration and brand guideline templates.
-- [ ] Confirm development machine and operating environment.
+- [x] Add initial AImation Studio channel configuration and setup notes.
+- [ ] Finalize brand guidelines after confirming the channel's exact positioning.
+- [x] Confirm Windows as the development platform.
+- [ ] Confirm Windows version and hardware specifications.
 - [ ] Review candidate YouTube skills and licenses before adapting material.
 
-**Exit criteria:** Decisions and repository conventions documented; implementation environment known.
+**Exit criteria:** Decisions and repository conventions documented; Windows target selected and hardware constraints recorded.
 
 ## Phase 1 — Channel 1 strategy and content system
 - [ ] Finalize positioning, audience promise, tone, and visual identity.
