@@ -279,3 +279,20 @@ User asked: find a genuine animation engine capable of moving 3D characters, fac
 ### Documentation
 - Added `docs/ANIMATION_ENGINE_EVALUATION.md` with tool comparison, current pricing/limits, explicit feature gaps, recommended pipeline, pilot acceptance test, sources, and current execution limitations.
 - The repository progress file and this conversation record are being updated for this turn, per the user's every-turn logging rule.
+
+
+## 2026-10-31T01:15:00+05:30 (2026-10-30T19:45:00Z) — User asks whether animation/creator tools need local installation or can be plugged into ChatGPT cloud
+
+User asked whether the YouTube skills and animation tools need to be installed on their Windows PC or can be connected directly to ChatGPT's cloud version.
+
+### Clarification provided
+- YouTube creator skill repositories are external agent instructions. I can consult and apply their documented workflows in conversation, but they are not automatically installed as native skills in ChatGPT's hosted runtime. Their prepared local installer is optional for local Claude Code/Codex workflows; it has not been run on the user's PC.
+- Autodesk Flow Studio is a separate browser-based cloud service. It does not require installing its animation application locally; access it in desktop Chrome/Safari. Autodesk states its cloud rendering is not limited by local hardware. It is not currently connected to this ChatGPT session, so I cannot operate the user's Flow Studio account or export a video from here.
+- Blender, iClone, and NVIDIA Audio2Face are separate software workflows; use them locally if selected. They are not plug-ins currently available inside this ChatGPT runtime.
+- Recommendation: avoid installing heavy software initially; test Flow Studio in the browser using its free tier. No paid plan or recurring cost is authorized.
+
+### Evidence checked
+Autodesk's current official product page confirms Flow Studio runs in a browser and provides cloud rendering; official browser support lists desktop Chrome and Safari. Product details: https://www.autodesk.com/products/flow-studio/product-details ; browser support: https://help.autodesk.com/view/FLOSTU/ENU/?contextId=FS_BROWSER_SUPPORT .
+
+### Current status
+No Flow Studio account has been connected to ChatGPT, no local software installation has been performed, and no sample video has been generated. The user can share a proof export for quality review.
