@@ -12,6 +12,9 @@ A zero-additional-subscription-cost, AI-assisted system for researching, creatin
 - First pilot requires review; routine publishing is intended to be unattended after validation
 
 ## Core documents
+- [Windows development setup](docs/WINDOWS_DEVELOPMENT.md) — selected Windows platform and planned local toolchain.
+- [AImation Studio channel setup](channels/aimation-studio/README.md) — Channel 1 positioning, editorial guardrails, and launch gates.
+- [AImation Studio configuration](channels/aimation-studio/channel.config.json) — machine-readable channel defaults.
 - [Overall objective](OVERALL_OBJECTIVE.md) — vision, goals, constraints, success criteria.
 - [Plan](PLAN.md) — phases, architecture, workflows, milestones.
 - [Progress](PROGRESS.md) — status, completed work, blockers, next actions.
