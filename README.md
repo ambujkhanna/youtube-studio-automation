@@ -1,6 +1,6 @@
 # YouTube Studio Automation
 
-**Last updated:** 2026-10-30T22:36:37+05:30 (2026-10-30T17:06:37Z)
+**Last updated:** 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
 
 A zero-additional-subscription-cost, AI-assisted system for researching, creating, reviewing, publishing, and improving YouTube Shorts across three planned English-language channels.
 
@@ -9,7 +9,7 @@ A zero-additional-subscription-cost, AI-assisted system for researching, creatin
 - Current phase: Phase 0 — foundation and workflow design
 - First channel: AImation Studio (working name; name availability not yet checked)
 - Initial format: YouTube Shorts
-- Public publishing requires human approval
+- First pilot requires review; routine publishing is intended to be unattended after validation
 
 ## Core documents
 - [Overall objective](OVERALL_OBJECTIVE.md) — vision, goals, constraints, success criteria.
@@ -54,7 +54,7 @@ This repository must be sufficient to onboard a new human contributor, a fresh C
 - Timestamp every Markdown file whenever created or updated, including timezone.
 - Keep generated media, credentials, OAuth tokens, and private account details out of Git by default.
 - Prefer free/local/open-source components; disclose quotas, cost, privacy, and licensing before adoption.
-- Public publishing requires human approval.
+- First pilot requires review; routine publishing is intended to be unattended after validation.
 - Do not claim success for commits, tests, renders, uploads, or integrations without checking the result.
 
 ### New conversation / other agent
@@ -63,3 +63,11 @@ Use the copy/paste prompt in AGENT_HANDOVER.md. Resume from the exact Next actio
 
 
 **Channel 1 working name:** AImation Studio. Name availability and trademark status are not yet verified.
+
+
+## Latest channel and development decisions
+
+- Channel 1 working name: **AImation Studio**. Name/handle/trademark availability is not yet verified.
+- Development target: **Windows**. Exact Windows version, CPU/GPU/RAM, and available disk space remain to be confirmed before selecting hardware-dependent tools.
+- Initial publishing target: daily at 7:00 PM IST, after the first end-to-end pilot passes and the connected YouTube destination is verified.
+- The current editorial direction remains practical AI and technology demonstrations, experiments, workflows, and explanations; confirm whether the brand should instead focus specifically on AI-generated animation.
