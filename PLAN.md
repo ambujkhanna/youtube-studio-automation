@@ -1,6 +1,6 @@
 # Project Plan — YouTube Studio Automation
 
-**Last updated:** 2026-10-30T22:26:10+05:30 (2026-10-30T16:56:10Z)
+**Last updated:** 2026-10-30T22:28:47.380+05:30 (2026-10-30T16:58:47.380Z)
 **Plan status:** Baseline agreed; detailed implementation decisions remain open.
 
 ## Guiding approach
@@ -186,3 +186,33 @@ User supplied these for evaluation, not automatic adoption:
 - https://github.com/ZeroPointRepo/youtube-skills
 
 Inspect LICENSE, runtime compatibility, scripts/dependencies, external APIs/MCP servers, credentials, free-tier limits, privacy, and maintenance. Do not assume skills for Claude Code/Codex/other runtimes run natively in ordinary ChatGPT chat.
+
+## Daily Shorts automation — user-requested scope extension
+
+**Requirement recorded:** 2026-10-30T22:28:47.380+05:30 (2026-10-30T16:58:47.380Z)
+
+The user has now explicitly requested a daily automated workflow that generates a Short, prepares its title/description/hashtags, and publishes it to YouTube. This supersedes the earlier default assumption that publishing would always require per-video manual approval. However, first-run validation and secure account authorization remain necessary.
+
+### Target daily run
+1. Select one eligible idea for Channel 1; avoid duplicate/recently used topics.
+2. Research and source-check material.
+3. Draft a concise original Short script and hook.
+4. Fact-check claims and flag unsupported statements.
+5. Create storyboard, visuals, English narration, and captions.
+6. Render a vertical Short and run QC.
+7. Generate title, description, relevant hashtags, and publishing metadata.
+8. Publish through an authorized YouTube integration/API only if all gates pass.
+9. Record the video URL, publication result, and run artifacts.
+10. If any gate fails, do not publish; save the failure and notify the user.
+
+### Automation gates and prerequisites
+- Confirm daily execution time and timezone.
+- Confirm which YouTube channel/account is the publishing destination and authorize it through a supported OAuth workflow.
+- Select an execution host that can run persistently each day. A GitHub repository alone does not render videos; GitHub Actions or another scheduler must be configured and tested, including storage and runner constraints.
+- Choose an image/video/narration path that works within the ₹0 additional recurring budget or obtain explicit approval for any cost.
+- Establish a first-pilot validation run before enabling unattended daily public publishing.
+- Store OAuth credentials securely, never in Git.
+- Treat YouTube upload API quotas, channel permissions, Shorts classification, and current platform rules as implementation requirements to verify.
+
+**Important capability boundary:** A scheduled ChatGPT task can trigger a recurring ChatGPT workflow, but it does not by itself guarantee that a local video renderer runs or that a YouTube upload succeeds. End-to-end daily publishing requires a working execution host, media-generation/assembly tools, and authorized YouTube upload capability.
+
