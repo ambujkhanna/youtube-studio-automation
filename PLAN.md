@@ -1,0 +1,130 @@
+# Project Plan — YouTube Studio Automation
+
+**Last updated:** 2026-10-30T22:20:45+05:30 (2026-10-30T16:50:45Z)
+**Plan status:** Baseline agreed; detailed implementation decisions remain open.
+
+## Guiding approach
+Build one end-to-end Shorts pipeline for AI in Action Lab before scaling. Use modular skills and scripts that can be reused with channel-specific configuration. Keep the first version local and low-cost; add external services only to solve a demonstrated capability gap.
+
+## Phase 0 — Foundation and decisions
+- [x] Confirm three-channel concept and sequential launch.
+- [x] Confirm Shorts-first approach.
+- [x] Confirm English narration and global audience.
+- [x] Confirm 5–7 hours/week and ₹0 additional monthly subscription budget.
+- [x] Create repository and core project documentation.
+- [ ] Add channel configuration and brand guideline templates.
+- [ ] Confirm development machine and operating environment.
+- [ ] Review candidate YouTube skills and licenses before adapting material.
+
+**Exit criteria:** Decisions and repository conventions documented; implementation environment known.
+
+## Phase 1 — Channel 1 strategy and content system
+- [ ] Finalize positioning, audience promise, tone, and visual identity.
+- [ ] Define content pillars and repeatable Short formats.
+- [ ] Define idea scoring: relevance, hook, originality, evidence, production effort, series potential.
+- [ ] Build a prioritized initial idea backlog.
+- [ ] Define 30–60 second script and storyboard templates.
+- [ ] Select and approve the first pilot topic.
+
+**Exit criteria:** Channel playbook and approved pilot brief.
+
+## Phase 2 — Skills and agent workflow
+Design composable capabilities: trend/topic researcher; competitor and content-gap researcher; idea evaluator; Short-form script and hook writer; fact checker/source collector; visual director/storyboard writer; narration and subtitle preparer; video assembly orchestrator; quality-control reviewer; metadata and analytics assistant.
+
+For each skill, define inputs, outputs, constraints, tools, and human approval points. Evaluate the user-provided candidate repositories:
+- https://github.com/agricidaniel/claude-youtube
+- https://github.com/Jakeschincariol/chatgpt-youtube-agent-skill
+- https://github.com/ZeroPointRepo/youtube-skills
+
+These are candidates, not approved dependencies. Inspect licenses, runtime compatibility, dependencies, external services, API keys, free-tier limits, and maintenance. Do not assume a skill for Claude Code, Codex, or another Agent Skills runtime executes natively inside an ordinary ChatGPT conversation.
+
+**Exit criteria:** Minimal tested skill set that takes a topic brief to a review-ready production package.
+
+## Phase 3 — Local production engine
+Evaluate a low-cost/local toolchain:
+- Python for orchestration and file management.
+- FFmpeg for vertical assembly, audio mixing, transitions, and subtitles.
+- Local text-to-speech where quality and licensing are acceptable.
+- Reusable visual templates, screen recordings, and approved assets.
+- Automated checks for dimensions, duration, audio, subtitle timing, blank frames, and output integrity.
+
+ChatGPT subscription access does not automatically provide API access or free API credits to local scripts. Automated image/video generation may require paid APIs or local models/hardware. Treat interactive ChatGPT asset creation as assisted, not unattended, until a supported route is tested.
+
+**Exit criteria:** A repeatable workflow produces a playable, technically validated Short from approved inputs.
+
+## Phase 4 — Pilot Short and quality review
+- [ ] Generate pilot brief, script, sources, storyboard, and asset plan.
+- [ ] Produce narration and visual assets.
+- [ ] Render the Short in vertical format.
+- [ ] Review accuracy, originality, pacing, audio, subtitles, accessibility, and rights.
+- [ ] Revise and approve final render.
+- [ ] Record production time and manual intervention points.
+
+**Exit criteria:** One publish-ready pilot and documented production run.
+
+## Phase 5 — Publishing and analytics
+- [ ] Decide whether YouTube Data API upload is needed.
+- [ ] If used, implement OAuth securely and keep credentials outside Git.
+- [ ] Prepare title, description, hashtags, cover strategy, and metadata.
+- [ ] Require human confirmation before public upload/scheduling.
+- [ ] Record publication URL and performance metrics.
+- [ ] Feed analytics and qualitative review into future ideas.
+
+**Exit criteria:** Safe publishing workflow and basic feedback loop.
+
+## Phase 6 — Consistent Channel 1 operation
+- [ ] Establish a sustainable cadence, initially aiming for about 2–3 Shorts/week once the pilot workflow is stable.
+- [ ] Batch research and production to fit 5–7 hours/week.
+- [ ] Review quality and analytics regularly.
+- [ ] Automate stable, repeatable steps and remove bottlenecks.
+
+**Exit criteria:** Manageable production rhythm with documented quality standards.
+
+## Phase 7 — Expand to Channels 2 and 3
+- [ ] Create channel-specific configurations and editorial guardrails.
+- [ ] Adapt research/fact-checking for history and mystery.
+- [ ] Design original character/story workflows for animation.
+- [ ] Reuse shared production engine while keeping brands and assets distinct.
+- [ ] Launch each channel after its workflow passes a pilot.
+
+**Exit criteria:** Three distinct channel workflows on a maintainable shared foundation.
+
+## Proposed repository structure
+```text
+youtube-studio-automation/
+├── README.md
+├── OVERALL_OBJECTIVE.md
+├── PLAN.md
+├── PROGRESS.md
+├── CONVERSATION.md
+├── channels/
+│   ├── ai-in-action-lab/
+│   ├── hidden-archive/
+│   └── storysprout-studio/
+├── skills/
+│   ├── research/ ├── ideation/ ├── scripting/
+│   ├── fact-check/ ├── visuals/ ├── voice/
+│   ├── production/ ├── publishing/ └── analytics/
+├── agents/
+├── workflows/
+├── scripts/
+├── templates/
+└── production/  # generated media should generally stay out of Git
+```
+
+## Definition of done for each Short
+A video file alone is not completion. Record the topic and intended audience; approved hook and script; source references for factual claims; storyboard and asset provenance/rights; narration and subtitles; rendered video and technical QC result; human editorial approval; metadata and publishing status; and performance review when analytics are available.
+
+## Risks and mitigations
+| Risk | Mitigation |
+|---|---|
+| API or tool introduces recurring cost | Maintain cost/limits register; default to local/free options |
+| ChatGPT thread reaches context limit | Use repository as source of truth; resume in a new chat from project docs |
+| Skills are runtime-specific | Verify compatibility and adapt rather than assuming portability |
+| AI output is repetitive or low-value | Require original insight, demonstrations, evidence, and review |
+| Factual or copyright issues | Fact-check claims and document asset provenance |
+| Automation publishes an error | Human approval gate before public publishing |
+| Scope expands too early | Prove Channel 1 before reusing pipeline for others |
+
+## Change control
+Update this plan when scope, architecture, phase order, or milestones materially change. Add a timestamp whenever this file changes. Record decisions and rationale in CONVERSATION.md and reflect resulting work in PROGRESS.md.
