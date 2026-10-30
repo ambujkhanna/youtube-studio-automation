@@ -1,6 +1,6 @@
 # Project Progress
 
-**Last updated:** 2026-10-30T22:28:47.380+05:30 (2026-10-30T16:58:47.380Z)
+**Last updated:** 2026-10-30T22:33:57+05:30 (2026-10-30T17:03:57Z)
 **Current phase:** Phase 0 — Foundation and decisions
 **Overall status:** Planning baseline established; implementation not yet started.
 
@@ -102,3 +102,16 @@ This is a new scope requirement. It supersedes the earlier default of requiring 
 
 ### Next action
 Ask the user for the preferred daily run/publish time in IST. In parallel, continue designing the local-first pipeline and verify the safest available YouTube publishing route. Do not claim automatic publishing is configured until an authorized upload test succeeds.
+
+
+## New user decision — initial daily publishing time
+
+**Recorded:** 2026-10-30T22:33:57+05:30 (2026-10-30T17:03:57Z)
+
+The user selected **7:00 PM IST daily** as the initial publishing target, with a later adjustment based on audience reach. Metricool is connected and reports one YouTube destination; its scheduling interface supports YouTube Shorts metadata. The destination identity still needs to be matched to AI in Action Lab.
+
+**Verified:** Metricool connection and YouTube destination availability.
+
+**Not implemented:** video generation, renderer, media delivery, persistent daily scheduler, successful upload, and analytics feedback loop. No video has been generated, uploaded, or scheduled. Do not create a recurring task that only wakes ChatGPT but cannot produce and deliver the media.
+
+**Next actions:** verify the destination identity; create Channel 1 configuration; confirm development environment; implement and validate a pilot Short; then activate the 7:00 PM IST daily schedule.
