@@ -1,10 +1,10 @@
 # Project Plan — YouTube Studio Automation
 
-**Last updated:** 2026-10-30T22:33:57+05:30 (2026-10-30T17:03:57Z)
+**Last updated:** 2026-10-30T22:36:37+05:30 (2026-10-30T17:06:37Z)
 **Plan status:** Baseline agreed; detailed implementation decisions remain open.
 
 ## Guiding approach
-Build one end-to-end Shorts pipeline for AI in Action Lab before scaling. Use modular skills and scripts that can be reused with channel-specific configuration. Keep the first version local and low-cost; add external services only to solve a demonstrated capability gap.
+Build one end-to-end Shorts pipeline for AImation Studio before scaling. Use modular skills and scripts that can be reused with channel-specific configuration. Keep the first version local and low-cost; add external services only to solve a demonstrated capability gap.
 
 ## Phase 0 — Foundation and decisions
 - [x] Confirm three-channel concept and sequential launch.
@@ -222,4 +222,9 @@ The user has now explicitly requested a daily automated workflow that generates 
 
 The initial target is **7:00 PM IST every day** (Asia/Kolkata / Asia/Calcutta). This is a starting point, not a claim that the time is optimal. Review actual audience reach, views, retention, and engagement before changing the schedule.
 
-Metricool is connected and one YouTube destination is available. It can schedule Shorts when supplied with an actual media file or accessible media URL and complete metadata; it does not generate the video. Verify that the connected destination is AI in Action Lab before first public publishing. Implement and validate the renderer, media delivery path, QC, and publishing workflow before enabling unattended daily scheduling.
+Metricool is connected and one YouTube destination is available. It can schedule Shorts when supplied with an actual media file or accessible media URL and complete metadata; it does not generate the video. Verify that the connected destination is AImation Studio before first public publishing. Implement and validate the renderer, media delivery path, QC, and publishing workflow before enabling unattended daily scheduling.
+
+
+## Channel 1 naming — 2026-10-30T22:36:37+05:30 (2026-10-30T17:06:37Z)
+
+Use **AImation Studio** as the working name for Channel 1. Retain the current editorial scope (practical AI/technology demonstrations, experiments, workflows, and explanations) pending clarification. Before finalizing branding, check YouTube channel-name/handle availability and relevant trademark conflicts. Because the name can imply AI animation, confirm whether that is the intended niche or simply a brand name for broader AI content.
