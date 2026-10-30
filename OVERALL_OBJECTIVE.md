@@ -4,7 +4,7 @@
 **Status:** Initial baseline; strategy agreed, implementation not yet started.
 
 ## Vision
-Build a repeatable, low-cost, AI-assisted YouTube content studio for three distinct English-language channels serving a global audience. Automate as much of the lifecycle as practical—from research and ideation through scripting, narration, video assembly, quality checks, metadata, publishing support, and analytics—while retaining human approval at editorial and publishing gates.
+Build a repeatable, low-cost, AI-assisted YouTube content studio for three distinct English-language channels serving a global audience. Automate as much of the lifecycle as practical—from research and ideation through scripting, narration, video assembly, quality checks, metadata, publishing support, and analytics—while retaining human editorial review for the pilot and automated fail-closed quality gates for routine publishing.
 
 The goal is not to mass-produce generic AI content. Each Short should provide original explanation, useful demonstration, meaningful storytelling, or a distinct editorial point of view.
 
@@ -59,7 +59,7 @@ Human involvement should primarily be editorial review, approval, and exceptiona
 - Channel 1 workflow is reliable before expansion.
 
 ## Guardrails
-- No automatic public publishing until explicitly approved.
+- Do not enable unattended public publishing until the first pilot passes review, the correct destination is verified, and all automated safety/quality gates are working.
 - No fabricated sources, quotes, statistics, demonstrations, or analytics.
 - Verify factual claims and distinguish facts from theories.
 - Respect copyright, music licensing, privacy, platform policies, and applicable AI disclosure requirements.
@@ -88,7 +88,7 @@ This project is a long-running effort to create a sustainable content operation,
 - Shorts-first, initially around 30–60 seconds.
 - Launch Channel 1 and validate the workflow before Channels 2 and 3.
 - Human review is mandatory for the first pilot; routine daily publishing is intended to run unattended after validation, with automated fail-closed quality gates.
-- The user is technically comfortable with GitHub and software automation, but the Windows is the selected development platform; exact version and hardware must be confirmed before tool selection.
+- The user is technically comfortable with GitHub and software automation. Windows is the selected development platform; exact version and hardware must be confirmed before tool selection.
 
 ## Target system principles
 
@@ -96,7 +96,7 @@ Use a shared, channel-agnostic production engine with separate channel configura
 
 ## Definition of success
 
-A new agent can resume from repository documentation; a complete Short can be produced repeatably; the workflow fits the user's time and budget constraints; factual and copyright checks are recorded; human approval is retained; each Short can be traced from idea to analytics; Channel 1 is reliable before expansion.
+A new agent can resume from repository documentation; a complete Short can be produced repeatably; the workflow fits the user's time and budget constraints; factual and copyright checks are recorded; first-pilot editorial approval and automated publishing gates are retained; each Short can be traced from idea to analytics; Channel 1 is reliable before expansion.
 
 
 **Channel 1 working name update (2026-10-30T22:36:37+05:30 (2026-10-30T17:06:37Z)):** AImation Studio. Treat this as a working name until YouTube name/handle availability and trademark checks are completed. Existing content scope remains practical AI/technology unless the user changes it.
