@@ -32,10 +32,12 @@ The user approved the broad strategy and created the private GitHub repository. 
 - YouTube API/OAuth integration is not selected or implemented.
 
 ## Next actions
-1. Add starter channel folders and channel configuration templates.
-2. Review the three candidate skill repositories, including LICENSE files and runtime requirements.
-3. Confirm target machine/OS, then select the first local toolchain.
-4. Build the Channel 1 playbook and select the first pilot Short.
+1. Verify the connected Metricool YouTube destination is the intended AImation Studio channel.
+2. Confirm Windows version, CPU, RAM, GPU, and available disk space.
+3. Review the three candidate skill repositories, including licenses, dependencies, external services, and runtime requirements.
+4. Finalize AImation Studio's audience promise, voice, visual identity, and repeatable content formats for the confirmed broad AI/technology positioning.
+5. Implement and test the first Windows-compatible renderer and QC checks.
+6. Select the first pilot Short and run it end-to-end before enabling unattended daily publishing at 7:00 PM IST.
 
 ## Update protocol
 At the end of every meaningful work session:
@@ -138,3 +140,8 @@ Verified on GitHub: `channels/aimation-studio/README.md`, `channels/aimation-stu
 ## Channel positioning confirmed — 2026-10-30T22:42:04+05:30 (2026-10-30T17:12:04Z)
 
 The user selected option 1: **Broad AI channel**. AImation Studio will cover AI tools, AI agents, automation, practical demonstrations, and technology. It is not an AI-animation-only channel; animation may be used as a visual style. The machine-readable channel configuration and channel brief have been updated to reflect this decision. Name/handle/trademark checks remain pending.
+
+
+## Current channel strategy
+
+AImation Studio's broad AI/technology positioning is confirmed: AI tools, AI agents, automation, practical demonstrations, real-world use cases, productivity workflows, experiments, and emerging technology explained clearly. It is not an AI-animation-only channel. Animation may be used as a visual technique.
