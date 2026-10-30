@@ -1,6 +1,6 @@
 # Project Progress
 
-**Last updated:** 2026-10-30T22:36:37+05:30 (2026-10-30T17:06:37Z)
+**Last updated:** 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
 **Current phase:** Phase 0 — Foundation and decisions
 **Overall status:** Planning baseline established; implementation not yet started.
 
@@ -122,3 +122,8 @@ The user selected **7:00 PM IST daily** as the initial publishing target, with a
 - [x] Working name selected: **AImation Studio**.
 - [ ] Check YouTube name/handle availability and relevant trademark conflicts before final brand lock.
 - [ ] Confirm whether editorial positioning remains broad practical AI/technology or shifts toward AI-generated animation.
+
+
+## Development environment decision — 2026-10-30T22:37:39+05:30
+
+The user confirmed Windows as the development platform. Exact Windows version and hardware specifications remain unknown and must be checked before selecting local models or GPU-dependent tools. Next: add the AImation Studio channel configuration and a Windows setup guide, then begin the first production-engine phase.
