@@ -198,3 +198,24 @@ No actual sample video has been rendered. No genuine video-generation / rigged-c
 3. Confirm GPU model/VRAM.
 4. Evaluate real character-animation/video-generation options with commercial rights, lip-sync, API/batch automation, output quality, and cost.
 5. Generate and review an actual moving pilot only after the renderer is available; no public publishing before user approval.
+
+
+## 2026-10-31T01:05:00+05:30 (2026-10-30T19:35:00Z) — Animation engine research complete; no MP4 render yet
+
+### Recommended first test
+Autodesk Flow Studio Free, with Blender as a finishing/lip-sync fallback. Research is documented in `docs/ANIMATION_ENGINE_EVALUATION.md`.
+
+- Flow Studio Free: $0, 300 credits/month, one performer at a time, 720p export with watermark.
+- Flow Studio Lite: $10/month or $7/month annual billing, two mocap performers and 1080p export without watermark. Do not subscribe without user approval.
+- Critical caveat: automatic lip-sync for arbitrary custom 3D characters in Flow Studio's 3D Editor is not explicitly guaranteed by the docs reviewed. Must be demonstrated in a proof before committing.
+- Blender Lip Sync extension provides phoneme-based shape-key animation; iClone/AccuLIPS is a higher-cost dedicated fallback; NVIDIA Audio2Face is unsuitable for the current known 8 GB RAM PC unless hardware is upgraded/confirmed.
+
+### Sample render status
+**Not generated.** This ChatGPT session has no Flow Studio connector, browser/computer-use control, or video generation tool; cannot sign into the user's Flow Studio account or export an MP4. No static montage will be passed off as animation.
+
+### Next actions
+1. User opens https://app.flowstudio.com and uses the free tier to test two characters and an 8–12 second dialogue exchange.
+2. Share the exported proof clip here; inspect movement, facial acting, voices, lip-sync, character consistency and export quality.
+3. If the free-tier proof passes, user can explicitly approve Lite for 1080p/two-person mocap.
+4. If lip-sync fails, test a Blender shape-key workflow or iClone/AccuLIPS before selecting the production stack.
+5. No publishing or scheduling until the user approves the actual pilot.
