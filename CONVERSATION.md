@@ -296,3 +296,25 @@ Autodesk's current official product page confirms Flow Studio runs in a browser 
 
 ### Current status
 No Flow Studio account has been connected to ChatGPT, no local software installation has been performed, and no sample video has been generated. The user can share a proof export for quality review.
+
+
+## 2026-10-31T01:25:00+05:30 (2026-10-30T19:55:00Z) — User asks to generate a pilot video using installed Higgsfield and Hansora apps
+
+User said they installed Higgsfield and Hansora plugins and asked me to try building the AImation Studio pilot video with them.
+
+### Integration discovery performed
+- Searched the available ChatGPT plugin directory for Higgsfield and Hansora.
+- Higgsfield is listed as an available ChatGPT app with text/reference-to-image and video generation, AI presenter/faceless explainer workflows, and narration/subtitle features. The user-aware plugin search result reported installed=false in this session, so I cannot assume the account is connected here.
+- Hansora's official setup page describes a ChatGPT app for image/video/audio generation, but the ChatGPT plugin directory search did not return a Hansora app in this session.
+- Inspected all currently exposed tool actions; no Higgsfield or Hansora generation action is exposed to this conversation runtime. Therefore I cannot submit a generation job or retrieve an MP4 through these apps from this turn.
+- Official Higgsfield guidance says ChatGPT plugin generations consume Higgsfield credits; official Hansora page says generation is paid from the Hansora balance. No generation has been started and no credits have been spent.
+
+### Current status and next action
+- No video has been generated. Do not claim the plugins are operational in this chat based solely on the user's installation elsewhere.
+- Ask the user to open a new chat, select the Higgsfield app using the app/tool picker (or use its Try in chat entry point), and confirm it is connected/authorized. If Hansora is the preferred tool, use its official Add Hansora to ChatGPT flow and then select it in the chat; it was not discoverable through the current plugin directory search.
+- Once the app tool is exposed in the conversation, prepare the two-character pilot prompt and check the credit cost before generation. Obtain user approval for any non-zero credit spend; no paid generation is authorized by this request alone.
+
+### Sources checked
+- OpenAI Higgsfield app listing: https://openai.com/business/plugins/higgsfield/
+- Higgsfield ChatGPT generation and credit guidance: https://higgsfield.ai/blog/generate-ai-videos-from-chatgpt
+- Hansora ChatGPT setup: https://hansora.co/mcp-setup.html
