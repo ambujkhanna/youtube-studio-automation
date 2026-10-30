@@ -1,6 +1,6 @@
 # Project Plan — YouTube Studio Automation
 
-**Last updated:** 2026-10-30T22:22:27+05:30 (2026-10-30T16:52:27Z)
+**Last updated:** 2026-10-30T22:26:10+05:30 (2026-10-30T16:56:10Z)
 **Plan status:** Baseline agreed; detailed implementation decisions remain open.
 
 ## Guiding approach
@@ -128,3 +128,61 @@ A video file alone is not completion. Record the topic and intended audience; ap
 
 ## Change control
 Update this plan when scope, architecture, phase order, or milestones materially change. Add a timestamp whenever this file changes. Record decisions and rationale in CONVERSATION.md and reflect resulting work in PROGRESS.md.
+
+
+## Target architecture and content lifecycle
+
+The intended shared pipeline is:
+
+`Research → Idea scoring → Script/hook → Fact check → Storyboard → Visuals/narration → Video assembly → QC → Metadata → Human approval → Publish → Analytics`
+
+Suggested content states:
+`IDEA → RESEARCHED → SELECTED → SCRIPT_DRAFT → FACT_CHECKED → STORYBOARDED → ASSETS_READY → RENDERED → QC_PASSED → HUMAN_APPROVED → PUBLISH_READY → PUBLISHED → ANALYZED`
+
+Include explicit rework/failure states such as `NEEDS_RESEARCH`, `FACT_CHECK_FAILED`, `QC_FAILED`, and `REJECTED`. Failed or unapproved content must never advance to publishing.
+
+### Component responsibilities
+
+- **Channel configuration:** audience, promise, tone, language, content pillars, visual identity, voice, editorial constraints.
+- **Orchestrator:** advances a content item through explicit states; records inputs, outputs, errors, and approvals.
+- **Research/ideation skills:** collect sources, identify trends and gaps, score ideas without copying competitors.
+- **Script/fact-check skills:** draft hooks and narration; map factual claims to sources; flag uncertainty.
+- **Visual/voice skills:** scene plan, asset instructions, narration, subtitles, rights/provenance.
+- **Production engine:** local assembly, captions, audio mixing, deterministic technical QC.
+- **Publishing/analytics:** metadata and upload preparation; human confirmation; verified publication status and observed metrics.
+
+### Per-Short artifact contract
+
+Create artifacts as the item advances:
+- `idea.json`: channel, topic, audience, rationale, score, status.
+- `research.md`: source URLs, dates, evidence, claim/source mapping, uncertainty.
+- `script.md`: hook, narration, on-screen text, target timing.
+- `storyboard.md`: scenes, durations, visuals, narration, overlays, asset needs.
+- `assets/`: assets and provenance/rights notes; large media local/ignored by default.
+- `voice/`: narration and voice/license settings.
+- `captions/`: timed subtitle files.
+- `render/`: final output and render settings, normally local/ignored.
+- `qc-report.md`: automated checks, editorial review, failures and fixes.
+- `metadata.md`: title, description, hashtags, cover guidance, publishing state.
+- `performance.md`: publication date, metric source, observation window, learnings.
+
+### Quality and safety gates
+
+Editorial: strong but honest hook; one clear takeaway; reliable source support; fact/theory/speculation distinguished; original work; no fabricated demonstrations, quotes, or statistics.
+
+Production: correct vertical format; mobile-readable text; intelligible narration; accurate captions; no clipping or accidental silence; licensed music/assets; visuals support the story.
+
+Publishing: accurate metadata; correct channel; human approval recorded; actual publication result verified.
+
+### Future scope (not initial commitments)
+
+Long-form videos, localization, scheduled trend monitoring, channel dashboards, deeper analytics/experiments, thumbnail testing, multi-platform repurposing, cloud rendering, and richer multi-agent orchestration. Add these only after the Channel 1 workflow works and an observed need justifies the complexity/cost.
+
+### Candidate skill repositories
+
+User supplied these for evaluation, not automatic adoption:
+- https://github.com/agricidaniel/claude-youtube
+- https://github.com/Jakeschincariol/chatgpt-youtube-agent-skill
+- https://github.com/ZeroPointRepo/youtube-skills
+
+Inspect LICENSE, runtime compatibility, scripts/dependencies, external APIs/MCP servers, credentials, free-tier limits, privacy, and maintenance. Do not assume skills for Claude Code/Codex/other runtimes run natively in ordinary ChatGPT chat.
