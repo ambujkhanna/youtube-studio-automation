@@ -5,7 +5,7 @@
 
 ## Goal
 
-Generate and publish one original YouTube Short per day for Channel 1 (AI in Action Lab, working title), with a suitable title, description, hashtags, and metadata. Later, the same shared engine may serve the other channels after their launch gates.
+Generate and publish one original YouTube Short per day for Channel 1 (AImation Studio, working name), with a suitable title, description, hashtags, and metadata. Later, the same shared engine may serve the other channels after their launch gates.
 
 ## Daily run outline
 
@@ -57,7 +57,7 @@ No renderer, scheduler, OAuth integration, or successful upload exists yet. The 
 - Initial target: **daily at 7:00 PM IST**.
 - Timezone: Asia/Kolkata / Asia/Calcutta.
 - Review actual audience reach, views, retention, and engagement before changing the time.
-- Metricool is connected and one YouTube destination is visible. Verify that destination is AI in Action Lab before first public publishing.
+- Metricool is connected and one YouTube destination is visible. Verify that destination is AImation Studio before first public publishing.
 - Metricool accepts an actual video file or accessible media URL; it does not generate the video. No renderer, media delivery path, daily scheduler, or successful upload exists yet.
 - Do not activate recurring unattended publishing until the first end-to-end pilot passes QC and the target channel is verified.
 
