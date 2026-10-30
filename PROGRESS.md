@@ -2,7 +2,7 @@
 
 **Last updated:** 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
 **Current phase:** Phase 0 — Foundation and decisions
-**Overall status:** Planning baseline established; implementation not yet started.
+**Overall status:** Foundation documentation and Channel 1 configuration created; production engine not yet implemented.
 
 ## Current snapshot
 The user approved the broad strategy and created the private GitHub repository. README.md and the four requested core documents have been committed to main and read back successfully. No production pipeline or Short has been implemented yet.
@@ -20,7 +20,7 @@ The user approved the broad strategy and created the private GitHub repository. 
 - [x] Initialized core project documentation.
 
 ## In progress
-- [ ] Add starter channel folders and configuration templates.
+- [x] Add the AImation Studio starter folder, channel configuration, and Windows development guide.
 - [ ] Review candidate skills, licenses, and runtime compatibility.
 - [ ] Confirm local development environment for the production engine.
 
