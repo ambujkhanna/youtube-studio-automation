@@ -1,6 +1,6 @@
 # Conversation Log — YouTube Studio Automation
 
-**Last updated:** 2026-10-30T22:22:27+05:30 (2026-10-30T16:52:27Z)
+**Last updated:** 2026-10-30T22:26:10+05:30 (2026-10-30T16:56:10Z)
 **Purpose:** Durable record of requirements, decisions, rationale, and meaningful conversation outcomes.
 
 This is a curated project log, not a verbatim transcript of every message. Preserve decisions and requirements so work can resume in a new ChatGPT conversation without asking the user to repeat established context.
@@ -97,3 +97,22 @@ Do not rewrite history to make earlier decisions appear different. If a decision
 
 ## Repository documentation created — 2026-10-30T22:22:27+05:30 (2026-10-30T16:52:27Z)
 The user asked to retry GitHub access and explicitly required a timestamp in every Markdown file whenever it is updated. Access to ambujkhanna/youtube-studio-automation is now working. Updated README.md and created OVERALL_OBJECTIVE.md, PLAN.md, PROGRESS.md, and this CONVERSATION.md on the main branch. Read-back verification succeeded for all five files. The timestamp convention is ISO 8601 with India timezone and UTC equivalent. Next work: add channel starter configurations and evaluate candidate skill repositories.
+
+
+## 2026-10-30 — Requirement for self-contained documentation
+
+The user clarified that the Markdown files must remain detailed and self-explanatory. They may start a new ChatGPT conversation at any time or continue with another AI agent, and that agent must be able to understand all important project context without depending on the previous conversation.
+
+The documentation must cover:
+- Background and reason for the project.
+- Overall objective, channel strategy, audience, and launch sequence.
+- Scope, exclusions, constraints, time/budget limits, and non-negotiable guardrails.
+- Intended architecture, content lifecycle, production stages, and artifact expectations.
+- What is actually implemented versus only planned or discussed.
+- Decisions, rationale, open questions, blockers, and exact next actions.
+- Future scope and conditions for considering it.
+- Instructions for safely continuing work and maintaining the repository records.
+
+Decision: keep README.md, OVERALL_OBJECTIVE.md, PLAN.md, PROGRESS.md, and CONVERSATION.md detailed; add AGENT_HANDOVER.md as a portable onboarding document with a copy/paste prompt for a new ChatGPT conversation or another agent. Repository documentation is the source of truth, not the old chat thread.
+
+Operational caution: do not claim implementation just because it is described in the plan. Verify repository files, tests, renders, uploads, and integrations before marking them complete. Timestamp every Markdown file whenever it is created or modified.
