@@ -1,6 +1,6 @@
 # Project Progress
 
-**Last updated:** 2026-10-30T22:22:27+05:30 (2026-10-30T16:52:27Z)
+**Last updated:** 2026-10-30T22:26:10+05:30 (2026-10-30T16:56:10Z)
 **Current phase:** Phase 0 — Foundation and decisions
 **Overall status:** Planning baseline established; implementation not yet started.
 
@@ -50,3 +50,30 @@ At the end of every meaningful work session:
 - [x] Created OVERALL_OBJECTIVE.md, PLAN.md, PROGRESS.md, and CONVERSATION.md.
 - [x] Read back all five Markdown files from GitHub to verify that the commits are present.
 - [ ] Starter channel folders and production implementation remain pending.
+
+
+## Documentation depth and portability requirement
+
+The user explicitly requires detailed, self-explanatory Markdown documentation so that a fresh ChatGPT conversation or a different AI agent can understand the project's background, scope, constraints, channel strategy, implementation approach, current status, decisions, future scope, and next actions without access to the original conversation. A dedicated AGENT_HANDOVER.md is being added as the entry point.
+
+## Verified vs unverified implementation
+
+**Verified:** private repository exists; GitHub integration has read/write/admin access; README and four core Markdown files were previously committed and read back successfully.
+
+**Not implemented or tested:** production code; agent runtime; installed/adapted skills; Python/FFmpeg pipeline; local TTS; image/video automation; QC scripts; YouTube OAuth/API; first Short; publishing; analytics integration.
+
+Do not mark these items complete based on plans or discussion alone.
+
+## Next actions (ordered)
+
+1. Complete and read back the detailed documentation and AGENT_HANDOVER.md.
+2. Add starter channel directories and configuration templates.
+3. Inspect candidate skill repositories, licenses, dependencies, runtimes, external services, and cost limits.
+4. Confirm the actual target development machine/OS (earlier context mentions Mac M2 but must not be assumed current).
+5. Select the smallest viable local toolchain.
+6. Create Channel 1 playbook, backlog, and pilot brief.
+7. Produce one Short end-to-end; record time, manual interventions, cost, and defects.
+
+## New agent operating requirement
+
+A new agent must read AGENT_HANDOVER.md, OVERALL_OBJECTIVE.md, PLAN.md, PROGRESS.md, and CONVERSATION.md before making changes. It must verify the live repository, avoid asking for already documented details, follow the exact next action in this file, and update timestamped project records after meaningful work.
