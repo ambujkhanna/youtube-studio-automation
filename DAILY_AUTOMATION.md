@@ -29,7 +29,7 @@ Do not publish if the script contains unverified factual claims, assets have unc
 
 ## Prerequisites
 
-- User-selected daily run/publish time and timezone.
+- Daily target time: 7:00 PM IST (Asia/Kolkata / Asia/Calcutta).
 - Target YouTube channel identity and OAuth authorization or verified publishing connector.
 - Persistent execution host/scheduler.
 - Working topic research, script, fact-check, narration, visual, render, and QC components.
