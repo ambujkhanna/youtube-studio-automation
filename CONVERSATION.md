@@ -255,3 +255,27 @@ The user again instructed the project to install and use the three previously sh
 - `samples/aimation-studio-pilot-script.md`: commit `f2a95f0bddbcf53d5e357ee11eff3d02e2ed296d`
 
 All three source skill repositories' README/LICENSE files were previously inspected; their fetched LICENSE files declare MIT. Keep license notices and attribution when copying source files/code.
+
+
+## 2026-10-31T01:05:00+05:30 (2026-10-30T19:35:00Z) — User requests genuine 3D animation engine research and actual sample generation
+
+User asked: find a genuine animation engine capable of moving 3D characters, facial expressions, natural voices and synchronized lip movements, then use it to generate a sample video.
+
+### Research and evaluation performed
+- Evaluated Autodesk Flow Studio, Reallusion iClone/AccuLIPS, Blender with a phoneme/shape-key lip-sync extension, NVIDIA Audio2Face, and integrated video-generation models available within Flow Studio Canvas.
+- **First recommended test: Autodesk Flow Studio Free tier**, with Blender as a finishing / lip-sync fallback. Flow Studio offers 3D character generation and AI rigging, 3D scene composition, animation and camera keyframing, markerless motion capture, scene export, Canvas with current video/audio models, and advertised expressive multi-speaker dialogue.
+- Pricing checked: Flow Studio Free is $0 with 300 credits/month, one motion-capture performer, 720p export and watermark. Lite is $10/month or $7/month on annual billing, 2,100 credits, up to two motion-capture performers and 1080p without watermark. User approval is required before subscribing.
+- **Unverified feature:** Autodesk docs reviewed do not explicitly guarantee automatic audio-to-mouth lip-sync for arbitrary custom 3D characters in its 3D Editor. This must be tested before choosing it as the complete production engine.
+- Blender Lip Sync extension supports phoneme-based 3D shape-key animation and English; it is a component, not a complete character-animation system.
+- iClone/AccuLIPS offers dedicated voice-driven lip-sync and facial animation but carries higher subscription cost.
+- NVIDIA Audio2Face is not a sensible first local choice for the known PC (8 GB RAM; GPU unknown); published requirements specify 16 GB RAM and an RTX GPU with 8 GB VRAM minimum.
+
+### Actual generation status
+- No sample MP4 was generated. This chat has no Flow Studio connector, browser/computer-use action, or video-generation tool and cannot sign in, operate the cloud editor, consume credits, or export a video from the user's account.
+- Do not misrepresent a script, still image, or storyboard as a rendered sample.
+- A concrete free-tier pilot test plan is documented: build two characters, stage an 8–12 second dialogue exchange, generate/import distinct natural voices, verify correct character-specific lip-sync and listener reactions, add body/hand movement and camera motion, export 720p watermarked proof, then review before paying for 1080p Lite.
+- User can operate Flow Studio at https://app.flowstudio.com and share the exported proof clip here for inspection. Never request passwords or API keys in chat.
+
+### Documentation
+- Added `docs/ANIMATION_ENGINE_EVALUATION.md` with tool comparison, current pricing/limits, explicit feature gaps, recommended pipeline, pilot acceptance test, sources, and current execution limitations.
+- The repository progress file and this conversation record are being updated for this turn, per the user's every-turn logging rule.
