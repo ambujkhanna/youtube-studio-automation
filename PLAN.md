@@ -33,7 +33,7 @@ Build one end-to-end Shorts pipeline for AImation Studio before scaling. Use mod
 ## Phase 2 — Skills and agent workflow
 Design composable capabilities: trend/topic researcher; competitor and content-gap researcher; idea evaluator; Short-form script and hook writer; fact checker/source collector; visual director/storyboard writer; narration and subtitle preparer; video assembly orchestrator; quality-control reviewer; metadata and analytics assistant.
 
-For each skill, define inputs, outputs, constraints, tools, and human approval points. Evaluate the user-provided candidate repositories:
+For each skill, define inputs, outputs, constraints, tools, and editorial review and automated publishing gates. Evaluate the user-provided candidate repositories:
 - https://github.com/agricidaniel/claude-youtube
 - https://github.com/Jakeschincariol/chatgpt-youtube-agent-skill
 - https://github.com/ZeroPointRepo/youtube-skills
@@ -174,7 +174,7 @@ Editorial: strong but honest hook; one clear takeaway; reliable source support; 
 
 Production: correct vertical format; mobile-readable text; intelligible narration; accurate captions; no clipping or accidental silence; licensed music/assets; visuals support the story.
 
-Publishing: accurate metadata; correct channel; human approval recorded; actual publication result verified.
+Publishing: accurate metadata; correct channel; first-pilot approval recorded; automated QC gates pass; actual publication result verified.
 
 ### Future scope (not initial commitments)
 
