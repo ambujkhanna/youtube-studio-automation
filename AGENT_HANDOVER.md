@@ -1,6 +1,6 @@
 # Agent Handover — YouTube Studio Automation
 
-**Last updated:** 2026-10-30T22:36:37+05:30 (2026-10-30T17:06:37Z)
+**Last updated:** 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
 **Repository:** https://github.com/ambujkhanna/youtube-studio-automation
 **Default branch:** main
 **Visibility:** Private
@@ -38,7 +38,7 @@ These are working names only. Do not treat names, logos, handles, or trademarks 
 - ₹0 additional monthly subscription/API budget initially.
 - Prefer free/open-source/local tools; disclose quotas, trials, usage caps, costs, privacy, and limitations.
 - Do not incur paid usage or subscribe without explicit approval.
-- Keep human approval before public publishing.
+- Review and approve the first pilot before enabling unattended daily publishing; preserve automated quality and rights gates for every run.
 - No fabricated facts, sources, statistics, demonstrations, analytics, or completion claims.
 - Respect copyright, asset/music licenses, privacy, and platform rules.
 - Never commit secrets or credentials.
@@ -75,7 +75,7 @@ Inspect each LICENSE, supported runtime, scripts/dependencies, external APIs/MCP
 
 Potential low-cost components include Python for orchestration, FFmpeg for video assembly/QC, local TTS if voice quality and rights are acceptable, and original or properly licensed visuals. YouTube Data API/OAuth is optional future integration, not a prerequisite for the first pilot.
 
-Do not assume ChatGPT subscription includes API access. Do not assume interactive image generation can be invoked by local scripts. Check current prices, quotas, privacy, rights, and terms before adopting hosted services. Confirm the actual development machine and OS before selecting a toolchain; earlier context mentions Mac M2 but must not be assumed to be the current target.
+Do not assume ChatGPT subscription includes API access. Do not assume interactive image generation can be invoked by local scripts. Check current prices, quotas, privacy, rights, and terms before adopting hosted services. Windows is the selected development platform; confirm exact version and hardware before selecting a toolchain.
 
 ## Exact next actions
 
@@ -83,7 +83,7 @@ Follow the latest PROGRESS.md. Current intended order:
 1. Finish and verify the detailed documentation/handover pack.
 2. Add starter channel directories and configuration templates.
 3. Inspect the three candidate skill repositories and their licenses/requirements.
-4. Confirm target development machine/OS.
+4. Confirm Windows version and hardware.
 5. Choose the smallest viable local toolchain.
 6. Build Channel 1 playbook, idea backlog, and pilot brief.
 7. Produce one Short end-to-end and record time, manual steps, cost, and defects.
@@ -142,3 +142,12 @@ The user's daily execution time is still unknown; ask for it in IST. Continue fr
 ## Latest channel naming decision — 2026-10-30T22:36:37+05:30 (2026-10-30T17:06:37Z)
 
 Channel 1 working name is **AImation Studio**. The existing editorial concept remains practical AI and technology demonstrations, experiments, workflows, and explanations unless the user confirms a narrower AI-animation focus. Verify channel-name/handle availability and trademark considerations before final brand lock.
+
+
+## Latest confirmed decisions — 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
+
+- Channel 1 working name: **AImation Studio** (availability/handle/trademark not checked).
+- Development platform: **Windows**. Do not assume exact Windows version or hardware; confirm before selecting GPU-dependent/local-model tooling.
+- Initial publishing target: **daily at 7:00 PM IST**, after first-pilot validation and verification of the connected YouTube destination.
+- The user wants routine daily publishing to become unattended after the first successful pilot. Preserve automated factual, rights, duplicate, metadata, and technical QC gates; do not publish on failed checks.
+- Channel 1 positioning is still provisionally practical AI and technology demonstrations/workflows. Clarify whether “AImation” means broad AI content or a specific focus on AI-generated animation.
