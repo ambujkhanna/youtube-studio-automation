@@ -1,6 +1,6 @@
 # Agent Handover — YouTube Studio Automation
 
-**Last updated:** 2026-10-30T22:26:10+05:30 (2026-10-30T16:56:10Z)
+**Last updated:** 2026-10-30T22:28:47.380+05:30 (2026-10-30T16:58:47.380Z)
 **Repository:** https://github.com/ambujkhanna/youtube-studio-automation
 **Default branch:** main
 **Visibility:** Private
@@ -121,3 +121,19 @@ Do not promise background updates between conversations; updates happen while an
 ## Future scope — not initial commitments
 
 Long-form videos, localization, scheduled trend monitoring, dashboards, deeper analytics/experiments, thumbnail testing, multi-platform repurposing, cloud rendering, and richer multi-agent orchestration may be considered only after the Channel 1 workflow is proven and an observed need justifies the added complexity or cost.
+
+## New requirement: daily automated Shorts publishing
+
+**Added:** 2026-10-30T22:28:47.380+05:30 (2026-10-30T16:58:47.380Z)
+
+The user now wants the project to move into implementation and ultimately generate and publish one Short to YouTube every day, including title, description, hashtags, and metadata. This is explicit authorization in principle for recurring publication, but the destination channel must be connected/authorized and the pipeline must pass an end-to-end pilot first.
+
+Do not claim this is already configured. At the time of this note:
+- No production renderer has been implemented.
+- No daily scheduler has been configured.
+- No YouTube publishing OAuth/connector has been authorized or tested.
+- No successful upload has been performed.
+
+A scheduled ChatGPT automation by itself is not a persistent video rendering/upload service. The final design needs a persistent execution host, media pipeline, and authorized YouTube upload path. Keep within ₹0 additional monthly budget unless the user approves otherwise. If any QC, fact-check, rights, or upload gate fails, skip public publishing and report the failure.
+
+The user's daily execution time is still unknown; ask for it in IST. Continue from PROGRESS.md and verify every implementation step.
