@@ -1,6 +1,6 @@
 # Project Plan — YouTube Studio Automation
 
-**Last updated:** 2026-10-30T22:28:47.380+05:30 (2026-10-30T16:58:47.380Z)
+**Last updated:** 2026-10-30T22:33:57+05:30 (2026-10-30T17:03:57Z)
 **Plan status:** Baseline agreed; detailed implementation decisions remain open.
 
 ## Guiding approach
@@ -216,3 +216,10 @@ The user has now explicitly requested a daily automated workflow that generates 
 
 **Important capability boundary:** A scheduled ChatGPT task can trigger a recurring ChatGPT workflow, but it does not by itself guarantee that a local video renderer runs or that a YouTube upload succeeds. End-to-end daily publishing requires a working execution host, media-generation/assembly tools, and authorized YouTube upload capability.
 
+
+
+## Daily publishing time decision — 2026-10-30T22:33:57+05:30 (2026-10-30T17:03:57Z)
+
+The initial target is **7:00 PM IST every day** (Asia/Kolkata / Asia/Calcutta). This is a starting point, not a claim that the time is optimal. Review actual audience reach, views, retention, and engagement before changing the schedule.
+
+Metricool is connected and one YouTube destination is available. It can schedule Shorts when supplied with an actual media file or accessible media URL and complete metadata; it does not generate the video. Verify that the connected destination is AI in Action Lab before first public publishing. Implement and validate the renderer, media delivery path, QC, and publishing workflow before enabling unattended daily scheduling.
