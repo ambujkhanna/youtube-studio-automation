@@ -219,3 +219,10 @@ Autodesk Flow Studio Free, with Blender as a finishing/lip-sync fallback. Resear
 3. If the free-tier proof passes, user can explicitly approve Lite for 1080p/two-person mocap.
 4. If lip-sync fails, test a Blender shape-key workflow or iClone/AccuLIPS before selecting the production stack.
 5. No publishing or scheduling until the user approves the actual pilot.
+
+
+## 2026-10-30T19:18:39.753Z — First no-credit ChatGPT-rendered animation prototype
+
+Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execution environment using procedural Python/Pillow animation and FFmpeg. It contains two original stylized 2D characters (Alex and Mia), continuous body movement, blinking, simple arm gestures, alternating mouth motion, animated background accents, and timed captions. No Hansora/Higgsfield/external video-generation credits or user-side installation were used.
+
+**Status: technical prototype only.** It is not 3D animation, has no generated voice audio, and mouth motion is not phoneme-synchronized lip-sync. User review is pending. Do not treat it as approval of production quality. Next: collect user feedback and improve the free procedural approach only if acceptable; paid generation remains disabled without explicit approval.
