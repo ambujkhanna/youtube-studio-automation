@@ -157,3 +157,19 @@ Channel 1 working name is **AImation Studio**. The existing editorial concept re
 - Initial publishing target: **daily at 7:00 PM IST**, after first-pilot validation and verification of the connected YouTube destination.
 - The user wants routine daily publishing to become unattended after the first successful pilot. Preserve automated factual, rights, duplicate, metadata, and technical QC gates; do not publish on failed checks.
 - Channel 1 positioning is confirmed as broad AI and technology: AI tools, agents, automation, practical demonstrations, and technology. It is not restricted to AI-generated animation; animation may be used as a visual technique.
+
+
+## Approved animation quality benchmark and skills status
+
+**Recorded:** 2026-10-31T00:20:51+05:30 (2026-10-30T18:50:51Z)
+
+The user approved the visual quality of the uploaded 10-second 3D CGI classroom reference as the AImation Studio production benchmark. Require genuine moving characters, expressive gestures/facial animation, consistent character designs, natural dialogue, lip-sync, detailed animated environments, purposeful camera/shot changes, and vertical 1080×1920 delivery. Static image sequences, storyboard panels, sprite sheets, and motion-graphics-only videos are not acceptable.
+
+The user previously shared three external skill repositories:
+- https://github.com/agricidaniel/claude-youtube
+- https://github.com/Jakeschincariol/chatgpt-youtube-agent-skill
+- https://github.com/ZeroPointRepo/youtube-skills
+
+Their README/LICENSE files have been inspected; they are GitHub projects, not installed skills in this ChatGPT runtime. Do not claim they are in use. Review compatibility, dependencies, privacy, external API/key needs, and licensing before adapting them into the Windows project. Their detailed status is in CONVERSATION.md.
+
+No genuine video-generation/character-rigging/lip-sync renderer was available in the current ChatGPT session, so the user's requested new reference-matching sample video has not been generated. Do not fake it with still images. Evaluate real render/generation options, preserve ₹0 recurring spend unless approved, and require review of a genuine pilot before public publishing.
