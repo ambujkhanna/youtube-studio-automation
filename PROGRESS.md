@@ -22,10 +22,11 @@ The user approved the broad strategy and created the private GitHub repository. 
 ## In progress
 - [x] Add the AImation Studio starter folder, channel configuration, and Windows development guide.
 - [ ] Review candidate skills, licenses, and runtime compatibility.
-- [ ] Confirm local development environment for the production engine.
+- [x] Select Windows as the development platform.
+- [ ] Confirm Windows version and hardware specifications.
 
 ## Blockers and open decisions
-- Local development machine and operating system for implementation are not confirmed.
+- Windows is selected; exact Windows version, CPU, RAM, GPU, and available disk space remain to be confirmed.
 - Local TTS and visual-generation approach remain to be evaluated for quality, license, and zero recurring cost.
 - Candidate skill repositories have not yet been installed, adapted, or tested here.
 - YouTube API/OAuth integration is not selected or implemented.
@@ -108,7 +109,7 @@ Ask the user for the preferred daily run/publish time in IST. In parallel, conti
 
 **Recorded:** 2026-10-30T22:33:57+05:30 (2026-10-30T17:03:57Z)
 
-The user selected **7:00 PM IST daily** as the initial publishing target, with a later adjustment based on audience reach. Metricool is connected and reports one YouTube destination; its scheduling interface supports YouTube Shorts metadata. The destination identity still needs to be matched to AI in Action Lab.
+The user selected **7:00 PM IST daily** as the initial publishing target, with a later adjustment based on audience reach. Metricool is connected and reports one YouTube destination; its scheduling interface supports YouTube Shorts metadata. The destination identity still needs to be matched to AImation Studio.
 
 **Verified:** Metricool connection and YouTube destination availability.
 
@@ -127,3 +128,8 @@ The user selected **7:00 PM IST daily** as the initial publishing target, with a
 ## Development environment decision — 2026-10-30T22:37:39+05:30
 
 The user confirmed Windows as the development platform. Exact Windows version and hardware specifications remain unknown and must be checked before selecting local models or GPU-dependent tools. Next: add the AImation Studio channel configuration and a Windows setup guide, then begin the first production-engine phase.
+
+
+## Starter configuration created — 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
+
+Verified on GitHub: `channels/aimation-studio/README.md`, `channels/aimation-studio/channel.config.json`, and `docs/WINDOWS_DEVELOPMENT.md` have been created. These are setup/configuration artifacts only; no renderer or production code exists yet. The channel config intentionally keeps publishing disabled and initial privacy private until the destination and pilot are validated.
