@@ -1,6 +1,6 @@
 # Daily Shorts Automation — Requirements and Runbook
 
-**Last updated:** 2026-10-30T22:28:47.380+05:30 (2026-10-30T16:58:47.380Z)
+**Last updated:** 2026-10-30T22:33:57+05:30 (2026-10-30T17:03:57Z)
 **Status:** Requirements recorded; implementation and authorization pending.
 
 ## Goal
@@ -48,3 +48,15 @@ The user has explicitly requested daily automatic publishing. Implement toward t
 ## Current state
 
 No renderer, scheduler, OAuth integration, or successful upload exists yet. The preferred daily run time is not yet specified.
+
+
+## Latest decision — initial publishing time
+
+**Recorded:** 2026-10-30T22:33:57+05:30 (2026-10-30T17:03:57Z)
+
+- Initial target: **daily at 7:00 PM IST**.
+- Timezone: Asia/Kolkata / Asia/Calcutta.
+- Review actual audience reach, views, retention, and engagement before changing the time.
+- Metricool is connected and one YouTube destination is visible. Verify that destination is AI in Action Lab before first public publishing.
+- Metricool accepts an actual video file or accessible media URL; it does not generate the video. No renderer, media delivery path, daily scheduler, or successful upload exists yet.
+- Do not activate recurring unattended publishing until the first end-to-end pilot passes QC and the target channel is verified.
