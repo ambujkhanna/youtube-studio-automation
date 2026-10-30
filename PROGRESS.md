@@ -171,3 +171,30 @@ AImation Studio's broad AI/technology positioning is confirmed: AI tools, AI age
 5. Continue timestamped CONVERSATION.md and PROGRESS.md updates after each meaningful prompt/work session.
 
 **Verified not done:** no new sample video, no renderer, no automated daily generation, no upload/scheduling, and no change to publishing enablement.
+
+
+## 2026-10-31T00:40:00+05:30 (2026-10-30T19:10:00Z) — Skills installer prepared; skill-guided pilot script drafted; video render blocked
+
+**User instruction:** Every user conversation turn, including casual or non-productive messages, must be recorded in CONVERSATION.md with a timestamp. Continue this rule without exception while actively maintaining the repository.
+
+### Added to repository
+- `scripts/install-youtube-skills.ps1` — Windows installer for the three user-selected GitHub skill repositories.
+- `docs/YOUTUBE_SKILLS.md` — installation and usage guide, API/cost notes, verification checklist, and animation quality gate.
+- `samples/aimation-studio-pilot-script.md` — skill-guided 40–44 second Alex/Mia Short script about AI agents vs chatbots, with shot plan, metadata, and quality checklist.
+
+### Skill status
+- Source directory listings and core skill instructions have been fetched and reviewed.
+- Skill workflows were applied to the sample script/metadata package.
+- Installer clones the three repositories under `vendor/youtube-skills/`, copies Claude YouTube into `%USERPROFILE%\.claude\skills\youtube`, and copies the other skill folders into project-local `.codex\skills\`.
+- **Not yet installed on user's Windows machine:** PowerShell has not been executed from this chat. The installer and instructions are committed, but installation verification requires the user to run it and confirm the expected files / skill discovery.
+- ChatGPT hosted runtime cannot load these external skills as native runtime extensions. It can consult their skill instructions when available. Do not misrepresent this.
+
+### Actual video status
+No actual sample video has been rendered. No genuine video-generation / rigged-character / lip-sync engine is available in this chat. The pilot script is not a video. Do not generate a static montage and label it animation. Need a real animation renderer and confirmed local GPU/VRAM or a reviewed cloud option. Preserve ₹0 recurring spend unless user approves a paid service.
+
+### Next actions
+1. User runs `scripts/install-youtube-skills.ps1` from Windows project root and shares output or errors.
+2. Verify the installed folders and agent discovery; then use the installed creator skills for research, script, hooks, packaging, and QC.
+3. Confirm GPU model/VRAM.
+4. Evaluate real character-animation/video-generation options with commercial rights, lip-sync, API/batch automation, output quality, and cost.
+5. Generate and review an actual moving pilot only after the renderer is available; no public publishing before user approval.
