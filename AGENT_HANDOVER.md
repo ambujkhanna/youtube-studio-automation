@@ -77,6 +77,12 @@ Potential low-cost components include Python for orchestration, FFmpeg for video
 
 Do not assume ChatGPT subscription includes API access. Do not assume interactive image generation can be invoked by local scripts. Check current prices, quotas, privacy, rights, and terms before adopting hosted services. Windows is the selected development platform; confirm exact version and hardware before selecting a toolchain.
 
+## Development setup references
+
+- [Windows development guide](docs/WINDOWS_DEVELOPMENT.md)
+- [AImation Studio channel brief](channels/aimation-studio/README.md)
+- [AImation Studio configuration](channels/aimation-studio/channel.config.json)
+
 ## Exact next actions
 
 Follow the latest PROGRESS.md. Current intended order:
