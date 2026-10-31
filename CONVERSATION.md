@@ -386,3 +386,16 @@ The user asked to try video generation again without installing or using third-p
 
 ### Next evaluation
 Ask the user to review the MP4 and say whether to improve the no-credit procedural approach. If proceeding, improve character design, scene staging, gestures, expression changes, dialogue timing, and then investigate free speech/TTS options without claiming natural voice quality until tested. Keep all paid video-generation providers disabled unless the user explicitly approves further spend.
+
+
+## 2026-10-31T09:51:00+05:30 (2026-10-31T04:21:00Z) — User challenges late disclosure of video-generation limitations
+
+The user expressed frustration that they had asked about ChatGPT's capabilities at the beginning, but only after substantial time spent on scripts, skills, and animation-engine research did the assistant clearly disclose that it could not independently operate a full 3D animation editor and export a polished animated YouTube Short. The user contrasted this with their experience that Claude can generate videos quickly and well.
+
+### Response and correction
+- Apologized and accepted responsibility: capability boundaries should have been stated at the start, before directing the user through setup and research.
+- Clarified the distinctions between (a) script/storyboard/visual planning, (b) simple procedural 2D animation that can be rendered in this session, and (c) polished 3D character animation with natural dialogue, facial acting and reliable lip-sync.
+- Do not imply that this chat can independently operate Autodesk Flow Studio or render the user's approved 3D-quality show without a connected and supported video-generation/animation tool.
+- Do not imply that skills installation creates video-generation capability.
+- Future work must start with a clear capability and execution check: identify the exact output required, state whether the current session can generate it directly, whether a connected app/tool is required, expected quality/limits, credit/cost implications, and any manual user step. Only then proceed.
+- No new video was generated in response to this complaint; no credits were spent.
