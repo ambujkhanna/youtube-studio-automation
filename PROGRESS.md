@@ -1,7 +1,7 @@
 # Project Progress
 
-**Last updated:** 2026-10-30T22:42:04+05:30 (2026-10-30T17:12:04Z)
-**Current phase:** Phase 0 — Foundation and decisions
+**Last updated:** 2026-11-01T14:13:11+05:30 (2026-11-01T08:43:11Z)
+**Current phase:** Phase 3/4 — local production engine and pilot Short (see latest dated section)
 **Overall status:** Foundation documentation and Channel 1 configuration created; production engine not yet implemented.
 
 ## Current snapshot
@@ -226,3 +226,32 @@ Autodesk Flow Studio Free, with Blender as a finishing/lip-sync fallback. Resear
 Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execution environment using procedural Python/Pillow animation and FFmpeg. It contains two original stylized 2D characters (Alex and Mia), continuous body movement, blinking, simple arm gestures, alternating mouth motion, animated background accents, and timed captions. No Hansora/Higgsfield/external video-generation credits or user-side installation were used.
 
 **Status: technical prototype only.** It is not 3D animation, has no generated voice audio, and mouth motion is not phoneme-synchronized lip-sync. User review is pending. Do not treat it as approval of production quality. Next: collect user feedback and improve the free procedural approach only if acceptable; paid generation remains disabled without explicit approval.
+
+## 2026-11-01T14:13:11+05:30 (2026-11-01T08:43:11Z) — Claude Code session: zero-cost 3D animation pipeline (in progress)
+
+### Verified in this session
+- [x] Free toolchain runs headless on CPU: Blender 5.2.3 (`bpy`), Kokoro-82M text-to-speech, FFmpeg with libass.
+- [x] Exact phoneme timings extracted from the Kokoro model for lip-sync.
+- [x] 30-second "AI Agents vs Chatbots" dialogue generated with two distinct natural voices.
+- [x] Procedural Blender scene built:
+  - rigged stylised characters Alex and Mia with lip-sync, blinks, gaze, brows and gestures;
+  - an animated lab set and a hologram panel synced to the spoken words;
+  - a drone and multi-camera cuts.
+- [x] Test frames reviewed. Cycles with denoising chosen over EEVEE.
+- [x] Finishing script written: captions, original music and sound effects, 1080×1920 export.
+- [x] Low-resolution full-length preview rendered.
+
+### In progress
+- [ ] Final full render (more than 2 hours of CPU time, no GPU).
+- [ ] Deliver the MP4 for user review.
+
+### Blockers
+- The pipeline code exists only in the Claude Code session. It is not committed yet because the session has no push access.
+- The reference Short could not be viewed because youtube.com is blocked in the session.
+- CPU render time is about 20 s per frame at 720×1280. Daily automation needs a GPU host, a lower resolution or simpler shading.
+
+### Next actions
+1. Finish the final render and send the MP4 for review.
+2. User decides whether the stylised look is acceptable, or whether better character assets are needed. Licensed rigged models would drop into the same pipeline.
+3. Grant write access so the pipeline code (`tts.py`, `scene.py`, `render.py`, `finish.py`) can be committed.
+4. Turn the pipeline into a script-in, MP4-out tool for the daily workflow.
