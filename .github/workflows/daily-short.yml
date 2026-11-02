@@ -40,7 +40,7 @@ jobs:
       - name: System packages (ffmpeg with libass, Inter font)
         run: |
           sudo apt-get update -q
-          sudo apt-get install -y -q ffmpeg fonts-inter
+          sudo apt-get install -y -q ffmpeg fonts-inter libegl1 libgl1 libfontconfig1
 
       - name: Python packages
         run: pip install -r pipeline/requirements.txt
