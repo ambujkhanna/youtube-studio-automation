@@ -448,3 +448,21 @@ The user moved the project from ChatGPT to a Claude Code cloud session. Logged p
 
 ### Honest quality expectation
 The look is stylised, procedurally built 3D animation, closer to a simple kids'-show style, with real lip-sync and natural voices. It is **not** as polished as the uploaded 3D CGI reference, which used professionally modelled characters.
+
+
+## 2026-11-02T19:13:00+05:30 (2026-11-02T13:43:00Z) — User requests a doodle-character sample video
+
+The user asked: "Can you try to generate sample video using drodle characters?" Interpreted "drodle" as "doodle" characters.
+
+### Output generated in this session
+- Created an actual 10-second vertical MP4 using a procedural Python/Pillow frame animation and FFmpeg.
+- File: `aimation_doodle_characters_sample.mp4`
+- Resolution: 720×1280; frame rate: 24 fps; duration: 10 seconds.
+- Two original doodle-style characters, Alex and Mia, appear in a short educational conversation about chatbots versus AI agents.
+- Includes continuous bobbing/body movement, arm gestures, blinking, simple animated mouth opening while each character speaks in turn, speech bubbles, changing captions and subtle animated background elements.
+- This is a basic procedural 2D animation prototype, not 3D animation, not natural speech audio, and not phoneme-accurate audio lip-sync. Mouth movement is timed to dialogue segments only.
+- No external video-generation service was used and no paid credits were spent.
+- The file was generated in the conversation workspace and offered to the user for review. No GitHub media upload was performed.
+
+### Next step
+Ask the user to review whether the doodle visual direction is acceptable. If they want improvement, refine the character design and animation style before adding voice/audio. Be explicit about the prototype's limitations; do not present it as production-ready.
