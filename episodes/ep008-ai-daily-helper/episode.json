@@ -1,0 +1,228 @@
+{
+  "id": "ep008",
+  "slug": "ai-daily-helper",
+  "status": "ready",
+  "title": "3 Smart Ways to Use AI Every Day",
+  "cover_text": "3 DAILY WINS",
+  "description": "Three simple, smart ways to use AI every day: summarize long text, draft messages, and learn something new — with one safety rule.\n\nA dad asks, his teen shows practical everyday AI.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AI",
+    "#Productivity",
+    "#ChatGPT",
+    "#AITips",
+    "#Shorts"
+  ],
+  "tags": [
+    "how to use ai",
+    "ai tips",
+    "chatgpt for beginners",
+    "everyday ai",
+    "ai productivity"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "What will you try first?",
+    "cue": "next",
+    "left": "bulb",
+    "right": "robot"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "What can AI actually do for me every day?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "user",
+          "label": "YOU"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "AI HELPER"
+        },
+        "subtitle": "3 smart everyday uses",
+        "mid": "+"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Lots! Let's start with three easy wins.",
+      "board": {
+        "type": "big",
+        "icon": "bulb",
+        "text": "3 easy wins",
+        "cue": "three"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay, number one?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Summarize. Paste a long article or email and ask for three key points.",
+      "board": {
+        "type": "chat",
+        "title": "1. SUMMARIZE",
+        "items": [
+          {
+            "who": "user",
+            "text": "Summarize in 3 points",
+            "cue": "paste"
+          },
+          {
+            "who": "bot",
+            "text": "1... 2... 3...",
+            "cue": "points"
+          }
+        ]
+      },
+      "punch": "summarize"
+    },
+    {
+      "who": "DAD",
+      "text": "Nice. Number two?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Draft messages. Ask for a polite reply, then edit it so it sounds like you.",
+      "board": {
+        "type": "chat",
+        "title": "2. DRAFT",
+        "color": "#2ECC71",
+        "items": [
+          {
+            "who": "user",
+            "text": "Polite reply, please",
+            "cue": "polite"
+          },
+          {
+            "who": "bot",
+            "text": "Here's a draft...",
+            "cue": "edit"
+          }
+        ]
+      },
+      "punch": "draft"
+    },
+    {
+      "who": "DAD",
+      "text": "And number three?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Learn anything. Ask it to explain a topic like you're new, then ask follow-up questions.",
+      "board": {
+        "type": "chat",
+        "title": "3. LEARN",
+        "color": "#8E44AD",
+        "items": [
+          {
+            "who": "user",
+            "text": "Explain like I'm new",
+            "cue": "explain"
+          },
+          {
+            "who": "bot",
+            "text": "Sure! Think of it like...",
+            "cue": "follow"
+          }
+        ]
+      },
+      "punch": "learn"
+    },
+    {
+      "who": "DAD",
+      "text": "Which AI app should I use?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Any good chatbot works. Start with a free one, ask the same question in two apps, and keep the one you like.",
+      "board": {
+        "type": "steps",
+        "title": "PICK AN APP",
+        "color": "#0A84FF",
+        "items": [
+          {
+            "label": "Start with a free one",
+            "icon": "coin",
+            "cue": "free"
+          },
+          {
+            "label": "Ask the same question",
+            "icon": "chat",
+            "cue": "same"
+          },
+          {
+            "label": "Keep the one you like",
+            "icon": "check",
+            "cue": "keep"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Is there a catch?"
+    },
+    {
+      "who": "TEEN",
+      "text": "One rule. Check important facts, and don't paste private information.",
+      "board": {
+        "type": "checklist",
+        "title": "One rule",
+        "icon": "shield",
+        "items": [
+          {
+            "text": "Check important facts",
+            "cue": "check"
+          },
+          {
+            "text": "Keep private info out",
+            "cue": "private"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: summarize, draft, and learn.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "1. SUMMARIZE",
+            "icon": "doc",
+            "cue": "summarize",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "2. DRAFT",
+            "icon": "mail",
+            "cue": "draft",
+            "color": "#2ECC71"
+          },
+          {
+            "text": "3. LEARN",
+            "icon": "book",
+            "cue": "learn",
+            "color": "#8E44AD"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you're stuck... ask, what can AI help with?"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "id": "ep004",
+  "slug": "how-chatgpt-works",
+  "status": "ready",
+  "title": "How Does ChatGPT Actually Work?",
+  "cover_text": "NEXT-WORD MACHINE",
+  "description": "How does ChatGPT actually work? It's a large language model that predicts the next word — trained on huge amounts of text, then tuned to be helpful.\n\nA dad asks, his teen explains LLMs in plain English.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#ChatGPT",
+    "#LLM",
+    "#AI",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "how does chatgpt work",
+    "what is an llm",
+    "large language model explained",
+    "how ai works",
+    "chatgpt explained"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Just predicting words?",
+    "cue": "next",
+    "left": "chat",
+    "right": "brain"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "How does ChatGPT actually work?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "YOU ASK"
+        },
+        "right": {
+          "icon": "brain",
+          "label": "IT ANSWERS"
+        },
+        "subtitle": "What happens in between?",
+        "mid": "?"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "At its core, it's a next-word predictor. It's a large language model, or L L M.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "LLM = large language model",
+        "cue": "language",
+        "sub": "a super-powered next-word predictor",
+        "sub_cue": "predictor"
+      },
+      "punch": "predictor"
+    },
+    {
+      "who": "DAD",
+      "text": "Like autocomplete on my phone?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Kind of! But trained on a huge amount of text, so it learns grammar, facts and patterns.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "PHONE",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Guesses one word",
+              "icon": "phone",
+              "cue": "kind"
+            }
+          ]
+        },
+        "right": {
+          "label": "LLM",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Huge amount of text",
+              "icon": "book",
+              "cue": "huge"
+            },
+            {
+              "text": "Learns patterns",
+              "icon": "brain",
+              "cue": "patterns"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So it just reads everything and talks?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not quite. First, it learns from text. Then people rate its answers, so it learns to be more helpful and safer.",
+      "board": {
+        "type": "steps",
+        "title": "HOW IT'S MADE",
+        "items": [
+          {
+            "label": "Learns from lots of text",
+            "icon": "book",
+            "cue": "learns"
+          },
+          {
+            "label": "People rate answers",
+            "icon": "user",
+            "cue": "rate"
+          },
+          {
+            "label": "Gets more helpful",
+            "icon": "check",
+            "cue": "helpful"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Then what happens when I type a question?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It breaks your words into small pieces called tokens, then writes the answer one piece at a time.",
+      "board": {
+        "type": "steps",
+        "title": "WHEN YOU ASK",
+        "color": "#0A84FF",
+        "items": [
+          {
+            "label": "Your words → tokens",
+            "icon": "doc",
+            "cue": "tokens"
+          },
+          {
+            "label": "Predict the next piece",
+            "icon": "brain",
+            "cue": "writes"
+          },
+          {
+            "label": "Repeat until done",
+            "icon": "check",
+            "cue": "time"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Does it understand me like a person?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not like a person. It's very good with language, but it can still be wrong, so check what matters.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Great with words, can still be wrong",
+        "cue": "language"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: a giant next-word predictor.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "TRAINED ON TEXT",
+            "icon": "book",
+            "cue": "giant",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "PREDICTS NEXT WORD",
+            "icon": "brain",
+            "cue": "predictor",
+            "color": "#E91E63"
+          }
+        ]
+      },
+      "punch": "predictor"
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time it answers you... remember, it's predicting words!"
+    }
+  ]
+}

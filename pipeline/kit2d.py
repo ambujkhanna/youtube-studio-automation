@@ -176,8 +176,9 @@ class Char:
 
 
 def draw_char(c, ch, t):
-    import char2d
-    mod = CHARMOD or char2d
+    mod = CHARMOD
+    if mod is None:  # legacy flat-vector characters (not shipped in the repo)
+        import char2d as mod
     op, wd = ch.mo(t), ch.mw(t)
     env = max(ch.mo(t - 0.04), op, ch.mo(t + 0.04))  # syllable envelope
     yaw = ch.yaw(t) + wob(t, 1.9, ch.ph + 4) * 3

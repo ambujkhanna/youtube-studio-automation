@@ -1,0 +1,5 @@
+{
+  "episodes": {
+    "ep001": {"status": "manual", "title": "AI Agent vs Chatbot Explained", "note": "Pilot rendered by hand (pipeline/ep_agents.py); upload manually in YouTube Studio."}
+  }
+}

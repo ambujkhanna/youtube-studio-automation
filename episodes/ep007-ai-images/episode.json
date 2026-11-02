@@ -1,0 +1,217 @@
+{
+  "id": "ep007",
+  "slug": "ai-images",
+  "status": "ready",
+  "title": "How AI Makes Pictures From Words",
+  "cover_text": "NOISE → PICTURE",
+  "description": "How does AI turn words into pictures? Image generators start from random noise and clean it up step by step, guided by your text.\n\nA dad asks, his teen explains AI image generators simply.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AIArt",
+    "#AI",
+    "#ImageGenerator",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "how do ai image generators work",
+    "ai art explained",
+    "text to image ai",
+    "diffusion model explained",
+    "ai pictures"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Noise... into a picture?",
+    "cue": "next",
+    "left": "chat",
+    "right": "sun"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "How does AI turn words into pictures?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "WORDS"
+        },
+        "right": {
+          "icon": "sun",
+          "label": "PICTURE"
+        },
+        "subtitle": "How AI image generators work",
+        "mid": "→"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Most of them start with pure noise, like TV static, and clean it up step by step.",
+      "board": {
+        "type": "big",
+        "icon": "eye",
+        "text": "Start with noise, clean it up",
+        "cue": "noise"
+      },
+      "punch": "noise"
+    },
+    {
+      "who": "DAD",
+      "text": "Static? How does that become a picture?"
+    },
+    {
+      "who": "TEEN",
+      "text": "The AI learned from millions of pictures with captions. So it knows what a cat or a sunset should look like.",
+      "board": {
+        "type": "steps",
+        "title": "HOW IT LEARNED",
+        "items": [
+          {
+            "label": "Millions of pictures",
+            "icon": "sun",
+            "cue": "millions"
+          },
+          {
+            "label": "Each with a caption",
+            "icon": "doc",
+            "cue": "captions"
+          },
+          {
+            "label": "Learns what things look like",
+            "icon": "brain",
+            "cue": "knows"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And then my words guide it?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly. Each step removes a bit of noise, nudged toward your words, until a new picture appears.",
+      "board": {
+        "type": "steps",
+        "title": "EACH STEP",
+        "color": "#0A84FF",
+        "items": [
+          {
+            "label": "Remove a bit of noise",
+            "icon": "search",
+            "cue": "removes"
+          },
+          {
+            "label": "Nudge toward your words",
+            "icon": "target",
+            "cue": "nudged"
+          },
+          {
+            "label": "Repeat → new picture",
+            "icon": "check",
+            "cue": "picture"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So it's not copying one photo?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Usually it creates something new. But there are real questions about artists' work and credit.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "WHAT IT DOES",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Makes a new image",
+              "icon": "sun",
+              "cue": "creates",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "BIG QUESTIONS",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Artists' work & credit",
+              "icon": "user",
+              "cue": "artists"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Any tip for better results?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Describe the subject, the style and the lighting. Like: a cozy cartoon cat, watercolor, warm sunset light.",
+      "board": {
+        "type": "steps",
+        "title": "BETTER PROMPTS",
+        "color": "#2ECC71",
+        "items": [
+          {
+            "label": "Subject: a cozy cat",
+            "icon": "target",
+            "cue": "subject"
+          },
+          {
+            "label": "Style: watercolor",
+            "icon": "bulb",
+            "cue": "style"
+          },
+          {
+            "label": "Light: warm sunset",
+            "icon": "sun",
+            "cue": "lighting"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: noise in, picture out.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "NOISE IN",
+            "icon": "eye",
+            "cue": "noise",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "PICTURE OUT",
+            "icon": "sun",
+            "cue": "picture",
+            "color": "#E91E63"
+          }
+        ]
+      },
+      "punch": "picture"
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you see AI art... remember, it started as noise!"
+    }
+  ]
+}

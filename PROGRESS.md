@@ -255,3 +255,19 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 2. User decides whether the stylised look is acceptable, or whether better character assets are needed. Licensed rigged models would drop into the same pipeline.
 3. Grant write access so the pipeline code (`tts.py`, `scene.py`, `render.py`, `finish.py`) can be committed.
 4. Turn the pipeline into a script-in, MP4-out tool for the daily workflow.
+
+
+## 2026-11-02T23:16:25+05:30 (2026-11-02T17:46:25Z) — Daily automation built (Claude Code session)
+
+- [x] Episode-as-data format (`episodes/<id>/episode.json`) + generic renderer (`pipeline/episode_engine.py`): automatic acting, 8 board-scene templates, automatic camera.
+- [x] First backlog written with the public YouTube skills applied: EP002–EP008 (61–68 s each, 1–2 min target): prompts, hallucinations, how ChatGPT works, AI privacy, deepfakes, AI images, everyday AI.
+- [x] `pipeline/daily.py`: validate → render → QC (1080×1920, 45–180 s, audio level, captions, metadata) → upload scheduled 19:00 IST → `episodes/state.json`. Fail-closed.
+- [x] GitHub Actions workflow `.github/workflows/daily-short.yml` (daily 14:45 IST + manual run; dry-run option; MP4 kept as artifact 14 days).
+- [x] Tested end-to-end here in dry-run (EP003 rendered + QC passed). YouTube upload code not testable from the build session (no API access) — first real run will confirm.
+- Fixed: `kit2d.py` no longer requires the legacy `char2d` module; `tts.py` writes timing next to itself (`pipeline/build`).
+
+### Next actions
+1. Push this update; run the workflow once with **dry_run** and watch the artifact.
+2. Do the one-time YouTube OAuth + GitHub secrets (`docs/AUTOMATION_SETUP.md`).
+3. First real run; then apply for the YouTube API audit so uploads can go public automatically.
+4. Keep ≥7 ready episodes in the backlog (top up weekly).

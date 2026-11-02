@@ -1,0 +1,223 @@
+{
+  "id": "ep005",
+  "slug": "ai-privacy",
+  "status": "ready",
+  "title": "What Not to Tell AI",
+  "cover_text": "STOP. DON'T PASTE.",
+  "description": "What should you never tell an AI chatbot? Passwords, bank and ID details, and private work data. Plus how to check your chat settings.\n\nA dad asks, his teen explains AI privacy basics.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AI",
+    "#Privacy",
+    "#ChatGPT",
+    "#OnlineSafety",
+    "#Shorts"
+  ],
+  "tags": [
+    "ai privacy",
+    "is chatgpt safe",
+    "what not to share with ai",
+    "chatbot privacy",
+    "data privacy ai"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Would you post it publicly?",
+    "cue": "next",
+    "left": "chat",
+    "right": "lock"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Is it safe to tell AI everything?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "HELPFUL"
+        },
+        "right": {
+          "icon": "lock",
+          "label": "PRIVATE?"
+        },
+        "subtitle": "What not to share with AI"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Not everything! Treat a chatbot like a stranger online. Be careful with private details.",
+      "board": {
+        "type": "big",
+        "icon": "shield",
+        "text": "Treat it like a stranger online",
+        "cue": "stranger"
+      },
+      "punch": "stranger"
+    },
+    {
+      "who": "DAD",
+      "text": "What exactly should I never share?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Passwords. Bank or card numbers. ID numbers. And other people's private information.",
+      "board": {
+        "type": "checklist",
+        "title": "Never share",
+        "icon": "lock",
+        "items": [
+          {
+            "text": "Passwords",
+            "cue": "passwords",
+            "ok": false
+          },
+          {
+            "text": "Bank or card numbers",
+            "cue": "bank",
+            "ok": false
+          },
+          {
+            "text": "ID numbers",
+            "cue": "id",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Why? It's just a computer."
+    },
+    {
+      "who": "TEEN",
+      "text": "Some services keep chats, and some may use them to improve their AI, unless you turn that off.",
+      "board": {
+        "type": "steps",
+        "title": "YOUR CHAT MAY BE",
+        "items": [
+          {
+            "label": "Stored for a while",
+            "icon": "doc",
+            "cue": "keep"
+          },
+          {
+            "label": "Used to improve AI",
+            "icon": "brain",
+            "cue": "improve"
+          },
+          {
+            "label": "Check your settings",
+            "icon": "eye",
+            "cue": "off"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What about work stuff?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Follow your company's rules. Don't paste secret documents or customer data into a public chatbot.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "OK",
+          "color": "#2ECC71",
+          "items": [
+            {
+              "text": "General questions",
+              "icon": "chat",
+              "cue": "rules",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "NOT OK",
+          "color": "#FF4D6D",
+          "items": [
+            {
+              "text": "Secret documents",
+              "icon": "doc",
+              "cue": "secret",
+              "tick": false
+            },
+            {
+              "text": "Customer data",
+              "icon": "user",
+              "cue": "customer",
+              "tick": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So how do I stay safe?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Remove names and numbers, check the privacy settings, and if you wouldn't post it publicly, don't paste it.",
+      "board": {
+        "type": "steps",
+        "title": "STAY SAFE",
+        "color": "#2ECC71",
+        "items": [
+          {
+            "label": "Remove names & numbers",
+            "icon": "x",
+            "cue": "remove"
+          },
+          {
+            "label": "Check privacy settings",
+            "icon": "shield",
+            "cue": "privacy"
+          },
+          {
+            "label": "Wouldn't post it? Don't paste",
+            "icon": "lock",
+            "cue": "post"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Got it. Helpful, but not my diary.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "USE IT FOR HELP",
+            "icon": "bulb",
+            "cue": "helpful",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "KEEP SECRETS OUT",
+            "icon": "lock",
+            "cue": "diary",
+            "color": "#FF4D6D"
+          }
+        ]
+      },
+      "punch": "diary"
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly! Follow AI Nation Studio for more. And next time you're about to paste something... ask, would I post this publicly?"
+    }
+  ]
+}

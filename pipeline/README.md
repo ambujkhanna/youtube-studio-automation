@@ -57,3 +57,10 @@ cd .. && python pipeline/finish.py frames 24 episode.mp4
   python pipeline/finish.py frames 24 AInation_EP001_short.mp4
   ```
 - `DOODLE=1` doodles the whole scene incl. handwritten fonts (`fonts/`, OFL-1.1) — available but not used.
+
+## Daily automation (2026-11-02T23:16:25+05:30)
+- `daily.py`: picks the next ready episode in `episodes/`, validates it, renders (voices → frames → MP4), runs QC, uploads to YouTube scheduled 19:00 IST (only if `YT_*` secrets exist), records the result in `episodes/state.json`.
+- `episode_engine.py`: renders any `episode.json` (automatic acting, board-scene templates, camera). `icons_extra.py`: icons/widgets.
+- `upload_youtube.py`: YouTube Data API upload. `setup_models.py`: builds the free voice model files. `validate_episode.py`: checks episode files.
+- Workflow: `.github/workflows/daily-short.yml`. Setup steps: `docs/AUTOMATION_SETUP.md`. Episode format: `episodes/README.md`.
+- `ep_agents.py` is the hand-built EP001 pilot (kept for reference).

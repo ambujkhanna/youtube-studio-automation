@@ -4,7 +4,7 @@ import numpy as np, onnxruntime as ort, soundfile as sf
 from kokoro_onnx import Kokoro
 
 S = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(S, "prod", "build"); os.makedirs(OUT, exist_ok=True)
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "build"); os.makedirs(OUT, exist_ok=True)
 SR, HOP = 24000, 600
 
 VOICES = {"DAD": ("am_michael", 0.95), "TEEN": ("af_heart", 1.08)}
@@ -47,7 +47,15 @@ SCRIPTS = {
     ],
 }
 LINES = SCRIPTS[VARIANT]
+EP_FILE = os.environ.get("EPISODE")
+if EP_FILE:  # data-driven episode (episodes/<id>/episode.json)
+    _ep = json.load(open(EP_FILE))
+    LINES = [(l["who"], l["text"]) for l in _ep["lines"]]
+    _v = _ep.get("voices", {})
+    VOICES = {"DAD": tuple(_v.get("DAD", ("am_michael", 0.95))), "TEEN": tuple(_v.get("TEEN", ("af_heart", 1.05)))}
 GAP = 0.28  # seconds between lines
+if EP_FILE:
+    GAP = float(_ep.get("gap", 0.45))
 LEAD = 0.25  # silence before first line
 
 k = Kokoro(os.path.join(S, "kokoro-q8.onnx"), os.path.join(S, "voices.bin"))
@@ -82,9 +90,13 @@ for spk, text in LINES:
     # drop groups that are only punctuation
     groups = [g for g in groups if any(re.match(r"\w", c) or c not in ".,!?;:…—\"'" for c, _, _ in g)]
     if len(groups) != len(words_txt):
-        print("WARN word mismatch", spk, len(groups), len(words_txt), ph)
-        n = len(words_txt); a0, b0 = phon[0][1], phon[-1][2]
-        words = [(w, a0 + (b0 - a0) * i / n, a0 + (b0 - a0) * (i + 1) / n) for i, w in enumerate(words_txt)]
+        print("note: word timing via weighted fallback for:", text[:50])
+        # fallback: spread the spoken span over the words, weighted by each word's own phoneme count
+        a0, b0 = phon[0][1], phon[-1][2]
+        wts = [max(1, len([c for c in k.tokenizer.phonemize(w, "en-us") if c in vocab and c not in " .,!?"])) for w in words_txt]
+        tot = sum(wts); acc = 0; words = []
+        for w, n_ in zip(words_txt, wts):
+            words.append((w, a0 + (b0 - a0) * acc / tot, a0 + (b0 - a0) * (acc + n_) / tot)); acc += n_
     else:
         words = [(w, g[0][1], g[-1][2]) for w, g in zip(words_txt, groups)]
     peak = np.abs(wav).max(); wav = wav / peak * 0.85

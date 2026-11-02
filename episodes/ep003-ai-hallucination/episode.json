@@ -1,0 +1,223 @@
+{
+  "id": "ep003",
+  "slug": "ai-hallucination",
+  "status": "ready",
+  "title": "Why AI Makes Things Up",
+  "cover_text": "CONFIDENT ≠ CORRECT",
+  "description": "Why does AI sometimes make things up? It predicts likely words, so it can sound sure and still be wrong. Here's how to protect yourself.\n\nA dad asks, his teen explains AI 'hallucinations' and three simple habits to catch them.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AI",
+    "#AIHallucination",
+    "#ChatGPT",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "ai hallucination",
+    "why does ai make things up",
+    "chatgpt wrong answers",
+    "ai accuracy",
+    "fact check ai"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Sounds sure... but is it true?",
+    "cue": "next",
+    "left": "robot",
+    "right": "search"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Can AI just... make things up?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "robot",
+          "label": "SOUNDS SURE"
+        },
+        "right": {
+          "icon": "warn",
+          "label": "BUT WRONG?"
+        },
+        "subtitle": "AI hallucinations, explained"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! It's called a hallucination. The AI says something false, but sounds totally confident.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Hallucination = confident, but false",
+        "cue": "hallucination"
+      },
+      "punch": "hallucination"
+    },
+    {
+      "who": "DAD",
+      "text": "Why would it do that?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Because it predicts the most likely next words. It's great at sounding right, not at knowing what's true.",
+      "board": {
+        "type": "steps",
+        "title": "HOW IT ANSWERS",
+        "items": [
+          {
+            "label": "Reads your question",
+            "icon": "chat",
+            "cue": "predicts"
+          },
+          {
+            "label": "Predicts likely words",
+            "icon": "brain",
+            "cue": "likely"
+          },
+          {
+            "label": "Sounds right ≠ is right",
+            "icon": "warn",
+            "cue": "sounding"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So what kind of things does it get wrong?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Things like fake quotes, wrong dates, or books and links that don't even exist.",
+      "board": {
+        "type": "checklist",
+        "title": "Watch out for",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Made-up quotes",
+            "cue": "quotes",
+            "ok": false
+          },
+          {
+            "text": "Wrong dates or numbers",
+            "cue": "dates",
+            "ok": false
+          },
+          {
+            "text": "Fake books or links",
+            "cue": "books",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Then how do I protect myself?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Three habits. Ask for sources. Check important facts yourself. And for news, use a tool that searches the web.",
+      "board": {
+        "type": "steps",
+        "title": "3 HABITS",
+        "color": "#2ECC71",
+        "items": [
+          {
+            "label": "Ask for sources",
+            "icon": "book",
+            "cue": "sources"
+          },
+          {
+            "label": "Verify key facts",
+            "icon": "search",
+            "cue": "check"
+          },
+          {
+            "label": "Use web search for news",
+            "icon": "globe",
+            "cue": "news"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What about health or money questions?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Use AI to understand the topic, but confirm with a real expert before you decide anything.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "AI IS GOOD FOR",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Explaining basics",
+              "icon": "bulb",
+              "cue": "understand",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "ASK AN EXPERT",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Health decisions",
+              "icon": "shield",
+              "cue": "expert",
+              "tick": true
+            },
+            {
+              "text": "Money decisions",
+              "icon": "coin",
+              "cue": "decide",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: confident doesn't mean correct.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "CONFIDENT ≠ CORRECT",
+            "icon": "warn",
+            "cue": "confident",
+            "color": "#FF4D6D"
+          },
+          {
+            "text": "VERIFY WHAT MATTERS",
+            "icon": "search",
+            "cue": "correct",
+            "color": "#2ECC71"
+          }
+        ]
+      },
+      "punch": "correct"
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time AI sounds super sure... ask, is it true?"
+    }
+  ]
+}

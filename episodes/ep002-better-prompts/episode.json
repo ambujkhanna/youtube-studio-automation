@@ -1,0 +1,240 @@
+{
+  "id": "ep002",
+  "slug": "better-prompts",
+  "status": "ready",
+  "title": "Why AI Gives Useless Answers",
+  "cover_text": "FIX YOUR PROMPT",
+  "description": "Why AI gives useless answers: your prompt is too vague. Use task + context + format, then refine.\n\nA dad asks, his teen explains — with a real example of turning a vague prompt into a clear one.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AI",
+    "#PromptEngineering",
+    "#ChatGPT",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "prompt",
+    "prompting",
+    "how to write a prompt",
+    "ai prompts",
+    "prompt engineering",
+    "ai explained"
+  ],
+  "loop_card": {
+    "text": "Useless answer? Check your prompt!",
+    "cue": "next",
+    "left": "user",
+    "right": "bulb"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Why does AI keep giving me useless answers?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "user",
+          "label": "VAGUE"
+        },
+        "right": {
+          "icon": "bulb",
+          "label": "CLEAR"
+        },
+        "subtitle": "Better prompts, better answers"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Because your prompt is too vague! A prompt is just the instructions you give the AI.",
+      "punch": "vague",
+      "board": {
+        "type": "big",
+        "icon": "chat",
+        "text": "Prompt = your instructions",
+        "cue": "instructions"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So what's a bad prompt?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Like, write a poem. About what? How long? For who? The AI has to guess.",
+      "board": {
+        "type": "chat",
+        "title": "VAGUE PROMPT",
+        "color": "#FF4D6D",
+        "items": [
+          {
+            "who": "user",
+            "text": "Write a poem.",
+            "cue": "write"
+          },
+          {
+            "who": "bot",
+            "text": "About what? How long?",
+            "cue": "guess"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay, so how do I write a good one?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Use three parts. First, the task. Then, the context. Then, the format you want.",
+      "board": {
+        "type": "steps",
+        "title": "GOOD PROMPT",
+        "color": "#2ECC71",
+        "items": [
+          {
+            "label": "Task: what to do",
+            "icon": "target",
+            "cue": "task"
+          },
+          {
+            "label": "Context: who, why",
+            "icon": "book",
+            "cue": "context"
+          },
+          {
+            "label": "Format: length, style",
+            "icon": "doc",
+            "cue": "format"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Give me an example."
+    },
+    {
+      "who": "TEEN",
+      "text": "Write a short, funny poem for my dad's birthday. He loves cricket. Keep it under eight lines.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "VAGUE",
+          "color": "#FF4D6D",
+          "items": [
+            {
+              "text": "Write a poem",
+              "icon": "doc",
+              "tick": false
+            }
+          ]
+        },
+        "right": {
+          "label": "CLEAR",
+          "color": "#2ECC71",
+          "items": [
+            {
+              "text": "Funny birthday poem",
+              "icon": "target",
+              "cue": "funny",
+              "tick": true
+            },
+            {
+              "text": "He loves cricket",
+              "icon": "book",
+              "cue": "cricket",
+              "tick": true
+            },
+            {
+              "text": "Under 8 lines",
+              "icon": "doc",
+              "cue": "eight",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Wow, that's way more specific!",
+      "punch": "specific"
+    },
+    {
+      "who": "DAD",
+      "text": "Can I tell it who to be, too?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Start with a role, like: you are a friendly teacher. It changes the style of the answer.",
+      "board": {
+        "type": "big",
+        "icon": "user",
+        "text": "Give it a role",
+        "cue": "role",
+        "sub": "\"You are a friendly teacher...\"",
+        "sub_cue": "teacher"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly. And if the answer isn't right, just reply and ask it to change something.",
+      "board": {
+        "type": "checklist",
+        "title": "Then refine it",
+        "icon": "chat",
+        "items": [
+          {
+            "text": "Too long? Ask for shorter",
+            "cue": "reply"
+          },
+          {
+            "text": "Wrong tone? Say so",
+            "cue": "change"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: clear task, context, and format.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "1. TASK",
+            "icon": "target",
+            "cue": "task",
+            "color": "#FF4D6D"
+          },
+          {
+            "text": "2. CONTEXT",
+            "icon": "book",
+            "cue": "context",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "3. FORMAT",
+            "icon": "doc",
+            "cue": "format",
+            "color": "#2ECC71"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time AI gives you a useless answer... check your prompt!"
+    }
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  }
+}
