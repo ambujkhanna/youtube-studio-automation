@@ -6,6 +6,7 @@ import json, math, os, sys
 from multiprocessing import Pool
 import skia
 import kit2d as K
+import doodle
 from kit2d import (P, rr, ell, text, smooth, back_out, wob, Track, Char, LN, DUR, FPS, NF, B, W,
                    FONT_XB, FONT_B, FONT_SB, appear, fade, scaled, shadow_rrect, bubble, card,
                    icon_chat, icon_robot, icon_check, icon_sun, icon_train, icon_doc, icon_lock,
@@ -419,7 +420,42 @@ def loop_card(c, t, e):
 el(wt(13, "next"), DUR + 1, loop_card, (BCX + 300, BCY - 100), (BCX, BCY))
 
 
+def marker_pen(c, x, y, col="#1F2D44"):
+    c.save(); c.translate(x, y); c.rotate(-38)
+    body = rr(-12, -150, 24, 120, 10); c.drawRRect(body, P("#3A3F4B")); c.drawRRect(body, P("#1D1D1F", 4))
+    c.drawRRect(rr(-13, -160, 26, 30, 8), P(col)); c.drawRRect(rr(-13, -160, 26, 30, 8), P("#1D1D1F", 4))
+    tip = skia.Path(); tip.moveTo(-10, -30); tip.lineTo(10, -30); tip.lineTo(3, 0); tip.lineTo(-3, 0); tip.close()
+    c.drawPath(tip, P("#C9CDD2")); c.drawPath(tip, P("#1D1D1F", 3.5))
+    c.restore()
+
+
+def draw_board_doodle(c, t):
+    K.draw_board_frame(c)
+    pen = None
+    for (t_in, t_out, fn, anchor, pivot) in ELEMS:
+        if t < t_in or (t_out is not None and t > t_out):
+            continue
+        prog = smooth((t - t_in) / 0.6)
+        alpha = 1.0 if t_out is None else max(0.0, min(1.0, (t_out - t) / 0.22))
+        px, py = pivot or anchor or (BCX, BCY)
+        x_edge = BX + 10 + (BW - 20) * prog
+        c.save(); c.clipRect(skia.Rect.MakeLTRB(BX - 60, BY - 60, x_edge, BY + BH + 60))
+        if alpha < 1.0:
+            c.saveLayerAlpha(None, int(255 * alpha))
+        fn(c, t, 1.0)
+        if alpha < 1.0:
+            c.restore()
+        c.restore()
+        if prog < 1.0:
+            pen = (x_edge, py)
+    if pen:
+        marker_pen(c, *pen)
+    c.restore()
+
+
 def draw_board(c, t):
+    if doodle.ON:
+        return draw_board_doodle(c, t)
     K.draw_board_frame(c)
     for (t_in, t_out, fn, anchor, pivot) in ELEMS:
         e = appear(t, t_in, t_out)
