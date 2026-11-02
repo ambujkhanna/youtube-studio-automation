@@ -466,3 +466,15 @@ The user asked: "Can you try to generate sample video using drodle characters?" 
 
 ### Next step
 Ask the user to review whether the doodle visual direction is acceptable. If they want improvement, refine the character design and animation style before adding voice/audio. Be explicit about the prototype's limitations; do not present it as production-ready.
+
+
+## 2026-11-02T19:13:00+05:30 — User rejects doodle video character quality and mismatch with reference image
+
+The user said the characters in the generated doodle video are poor and differ from the sample image shown in the preceding response.
+
+### Acknowledgement and correction
+- Accepted that the video character artwork was low quality and did not match the illustrative image shown above it.
+- Clarified that the displayed image was an illustrative search image, not the actual character artwork used to create the MP4. The MP4 characters were drawn separately with simple procedural shapes, causing the mismatch.
+- The sample is not acceptable as a character-quality benchmark for AImation Studio.
+- Correct next workflow: establish and approve a proper character design/reference sheet first; use that exact approved artwork as the source for animation rather than drawing unrelated primitive characters. Validate character proportions, line quality, colors, facial features and consistency before producing another video.
+- No replacement video was generated in this turn. No paid credits were used.
