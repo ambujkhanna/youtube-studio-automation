@@ -7,14 +7,14 @@ A zero-additional-subscription-cost, AI-assisted system for researching, creatin
 ## Project status
 - Repository: private
 - Current phase: Phase 0 — foundation and workflow design
-- First channel: AImation Studio (working name; name availability not yet checked)
+- First channel: AInation Studio (working name; name availability not yet checked)
 - Initial format: YouTube Shorts
 - First pilot requires review; routine publishing is intended to be unattended after validation
 
 ## Core documents
 - [Windows development setup](docs/WINDOWS_DEVELOPMENT.md) — selected Windows platform and planned local toolchain.
-- [AImation Studio channel setup](channels/aimation-studio/README.md) — Channel 1 positioning, editorial guardrails, and launch gates.
-- [AImation Studio configuration](channels/aimation-studio/channel.config.json) — machine-readable channel defaults.
+- [AInation Studio channel setup](channels/aination-studio/README.md) — Channel 1 positioning, editorial guardrails, and launch gates.
+- [AInation Studio configuration](channels/aination-studio/channel.config.json) — machine-readable channel defaults.
 - [Overall objective](OVERALL_OBJECTIVE.md) — vision, goals, constraints, success criteria.
 - [Plan](PLAN.md) — phases, architecture, workflows, milestones.
 - [Progress](PROGRESS.md) — status, completed work, blockers, next actions.
@@ -65,12 +65,12 @@ This repository must be sufficient to onboard a new human contributor, a fresh C
 Use the copy/paste prompt in AGENT_HANDOVER.md. Resume from the exact Next actions in PROGRESS.md; do not ask the user to repeat documented decisions.
 
 
-**Channel 1 working name:** AImation Studio. Name availability and trademark status are not yet verified.
+**Channel 1 working name:** AInation Studio. Name availability and trademark status are not yet verified.
 
 
 ## Latest channel and development decisions
 
-- Channel 1 working name: **AImation Studio**. Name/handle/trademark availability is not yet verified.
+- Channel 1 working name: **AInation Studio**. Name/handle/trademark availability is not yet verified.
 - Development target: **Windows**. Exact Windows version, CPU/GPU/RAM, and available disk space remain to be confirmed before selecting hardware-dependent tools.
 - Initial publishing target: daily at 7:00 PM IST, after the first end-to-end pilot passes and the connected YouTube destination is verified.
 - The current editorial direction remains practical AI and technology demonstrations, experiments, workflows, and explanations; confirm whether the brand should instead focus specifically on AI-generated animation.
