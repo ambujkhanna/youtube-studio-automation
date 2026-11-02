@@ -1,5 +1,16 @@
 {
   "episodes": {
-    "ep001": {"status": "manual", "title": "AI Agent vs Chatbot Explained", "note": "Pilot rendered by hand (pipeline/ep_agents.py); upload manually in YouTube Studio."}
+    "ep001": {
+      "status": "manual",
+      "title": "AI Agent vs Chatbot Explained",
+      "note": "Pilot rendered by hand (pipeline/ep_agents.py); upload manually in YouTube Studio."
+    },
+    "ep002": {
+      "title": "Why AI Gives Useless Answers",
+      "rendered_at": "2026-11-02T23:31:53+05:30",
+      "duration_s": 67.85,
+      "status": "rendered",
+      "note": "dry run"
+    }
   }
 }
