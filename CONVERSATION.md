@@ -494,3 +494,14 @@ The user approved colourful rounded cartoon figures similar to the illustrative 
 
 ### Next
 - Ask user to review the actual MP4. Use feedback to improve exact character proportions, face design, movement, background, and scene pacing. Do not claim the output matches the earlier illustrative search image exactly.
+
+
+## 2026-11-02T19:13:00+05:30 — User stops video-generation attempts
+
+The user said: “Leave it. You are not capable to Make videos”.
+
+### Response / status
+- Accepted the user's decision and stopped further video-generation attempts.
+- Acknowledged that the procedural 2D samples did not meet the professional animation quality the user wanted, and that presenting them as meaningful progress toward the target was misleading.
+- Do not initiate further video experiments, recommend more setup, ask the user to install tools, or suggest spending credits unless the user explicitly reopens the video work.
+- No further video was generated in this turn. No credits were spent.
