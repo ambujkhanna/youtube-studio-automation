@@ -1,0 +1,235 @@
+{
+  "id": "ep035",
+  "slug": "how-face-unlock-works",
+  "status": "ready",
+  "title": "How Face Unlock Works",
+  "cover_text": "MAP OF YOUR FACE",
+  "description": "How does face unlock work? Your phone turns your face into a unique pattern of numbers and compares it each time — often with depth sensing.\n\nA dad asks, his teen explains.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#FaceUnlock",
+    "#AI",
+    "#Smartphone",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "how does face unlock work",
+    "face recognition explained",
+    "face id explained",
+    "is face unlock safe"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Is it really you?",
+    "cue": "next",
+    "left": "user",
+    "right": "lock"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "How does my phone know it's my face?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "user",
+          "label": "YOUR FACE"
+        },
+        "right": {
+          "icon": "lock",
+          "label": "UNLOCKED"
+        },
+        "mid": "→",
+        "subtitle": "Face unlock, explained"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "When you set it up, it turns your face into a unique pattern of numbers, like a math map.",
+      "board": {
+        "type": "big",
+        "icon": "user",
+        "text": "Your face → a number map",
+        "cue": "pattern"
+      },
+      "punch": "pattern"
+    },
+    {
+      "who": "DAD",
+      "text": "And when I unlock?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It scans again, makes a new map, and compares. If they match closely enough, it unlocks.",
+      "board": {
+        "type": "steps",
+        "title": "EACH UNLOCK",
+        "items": [
+          {
+            "label": "Scan again",
+            "icon": "eye",
+            "cue": "scans"
+          },
+          {
+            "label": "New number map",
+            "icon": "brain",
+            "cue": "map"
+          },
+          {
+            "label": "Compare and match",
+            "icon": "check",
+            "cue": "compares"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can a photo fool it?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Some phones only use the camera and can be easier to fool. Others measure depth with special sensors.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "CAMERA ONLY",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Easier to fool",
+              "icon": "warn",
+              "cue": "camera",
+              "tick": false
+            }
+          ]
+        },
+        "right": {
+          "label": "DEPTH SENSING",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Harder to fool",
+              "icon": "shield",
+              "cue": "depth",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Is my face stored online?"
+    },
+    {
+      "who": "TEEN",
+      "text": "On many phones, the face data stays on the device. Check your phone's privacy settings to be sure.",
+      "board": {
+        "type": "checklist",
+        "title": "Privacy",
+        "icon": "lock",
+        "items": [
+          {
+            "text": "Often stays on device",
+            "cue": "device",
+            "ok": true
+          },
+          {
+            "text": "Check your settings",
+            "cue": "settings",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Should I use it for my bank app?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Use the strongest option your phone offers, and keep a good passcode as backup.",
+      "board": {
+        "type": "steps",
+        "title": "STAY SECURE",
+        "items": [
+          {
+            "label": "Strongest unlock option",
+            "icon": "shield",
+            "cue": "strongest"
+          },
+          {
+            "label": "Good passcode backup",
+            "icon": "lock",
+            "cue": "passcode"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Does it work with glasses or a beard?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Usually yes. It focuses on the shape of your face, and many phones keep learning small changes over time.",
+      "board": {
+        "type": "steps",
+        "title": "IT ADAPTS",
+        "items": [
+          {
+            "label": "Glasses or a beard",
+            "icon": "user",
+            "cue": "shape"
+          },
+          {
+            "label": "Learns small changes",
+            "icon": "brain",
+            "cue": "learning"
+          },
+          {
+            "label": "Over time",
+            "icon": "calendar",
+            "cue": "time"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: my face becomes a number map.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "FACE → NUMBER MAP",
+            "icon": "user",
+            "cue": "face",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "MATCH TO UNLOCK",
+            "icon": "check",
+            "cue": "map",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time your phone unlocks... remember, it's matching a map!"
+    }
+  ]
+}

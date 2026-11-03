@@ -1,0 +1,211 @@
+{
+  "id": "ep026",
+  "slug": "ai-in-healthcare",
+  "status": "ready",
+  "title": "AI in Healthcare: What It Can (and Can't) Do",
+  "cover_text": "HELPER, NOT DOCTOR",
+  "description": "How is AI used in healthcare? It helps spot patterns in scans and paperwork, but doctors make the decisions. And chatbots aren't your doctor.\n\nA dad asks, his teen explains — carefully.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AIinHealthcare",
+    "#AI",
+    "#Health",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "ai in healthcare",
+    "can ai diagnose",
+    "ai doctors",
+    "medical ai explained"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Helper... or doctor?",
+    "cue": "next",
+    "left": "shield",
+    "right": "user"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Can AI be a doctor now?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "robot",
+          "label": "AI"
+        },
+        "right": {
+          "icon": "user",
+          "label": "DOCTOR"
+        },
+        "mid": "VS",
+        "subtitle": "AI in healthcare"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Not a doctor, but a helper. It can spot patterns in scans and help with paperwork.",
+      "board": {
+        "type": "big",
+        "icon": "shield",
+        "text": "A helper, not a doctor",
+        "cue": "helper"
+      },
+      "punch": "helper"
+    },
+    {
+      "who": "DAD",
+      "text": "What kind of patterns?"
+    },
+    {
+      "who": "TEEN",
+      "text": "In some tests, AI helps flag things in X-rays or skin photos for a doctor to double check.",
+      "board": {
+        "type": "steps",
+        "title": "PATTERN SPOTTING",
+        "items": [
+          {
+            "label": "Looks at X-rays",
+            "icon": "eye",
+            "cue": "x-rays"
+          },
+          {
+            "label": "Flags something odd",
+            "icon": "warn",
+            "cue": "flag"
+          },
+          {
+            "label": "Doctor double checks",
+            "icon": "user",
+            "cue": "doctor"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And the paperwork?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Writing notes, summarizing records, and booking appointments, so doctors get more time with patients.",
+      "board": {
+        "type": "checklist",
+        "title": "Saves time",
+        "icon": "calendar",
+        "items": [
+          {
+            "text": "Writing notes",
+            "cue": "notes",
+            "ok": true
+          },
+          {
+            "text": "Summarizing records",
+            "cue": "summarizing",
+            "ok": true
+          },
+          {
+            "text": "More time with patients",
+            "cue": "time",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can I ask a chatbot about my symptoms?"
+    },
+    {
+      "who": "TEEN",
+      "text": "You can use it to understand words or prepare questions. But it can be wrong, so see a real doctor.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "OK",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Understand medical words",
+              "icon": "book",
+              "cue": "understand",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "NOT OK",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Replace your doctor",
+              "icon": "x",
+              "cue": "doctor",
+              "tick": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What if it's urgent?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Call emergency services or go to a hospital. Never wait on a chatbot answer.",
+      "board": {
+        "type": "checklist",
+        "title": "Urgent?",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Call emergency services",
+            "cue": "emergency",
+            "ok": true
+          },
+          {
+            "text": "Don't wait on a chatbot",
+            "cue": "wait",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: AI helps, doctors decide.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "AI HELPS",
+            "icon": "shield",
+            "cue": "helps",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "DOCTORS DECIDE",
+            "icon": "user",
+            "cue": "decide",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you read health advice from AI... ask your doctor!"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "id": "ep018",
+  "slug": "what-is-generative-ai",
+  "status": "ready",
+  "title": "What Is Generative AI?",
+  "cover_text": "IT CREATES",
+  "description": "What is generative AI? AI that creates new text, images, music or code by learning patterns from huge amounts of examples.\n\nA dad asks, his teen explains generative AI and its limits.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#GenerativeAI",
+    "#AI",
+    "#AIExplained",
+    "#TechExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "what is generative ai",
+    "generative ai explained",
+    "genai",
+    "ai that creates"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Sort... or create?",
+    "cue": "next",
+    "left": "search",
+    "right": "bulb"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Everyone says generative AI. What does generative mean?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "search",
+          "label": "SORTS"
+        },
+        "right": {
+          "icon": "bulb",
+          "label": "CREATES"
+        },
+        "mid": "VS",
+        "subtitle": "Generative AI, explained"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "It means it generates, or creates, something new. Text, images, music, even code.",
+      "board": {
+        "type": "steps",
+        "title": "IT CAN CREATE",
+        "items": [
+          {
+            "label": "Text",
+            "icon": "doc",
+            "cue": "text"
+          },
+          {
+            "label": "Images",
+            "icon": "sun",
+            "cue": "images"
+          },
+          {
+            "label": "Code",
+            "icon": "chat",
+            "cue": "code"
+          }
+        ]
+      },
+      "punch": "creates"
+    },
+    {
+      "who": "DAD",
+      "text": "How is that different from normal AI?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Older AI mostly sorts or predicts. Like, is this email spam? Generative AI makes brand new content.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "OLDER AI",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Sorts: spam or not",
+              "icon": "mail",
+              "cue": "sorts"
+            }
+          ]
+        },
+        "right": {
+          "label": "GENERATIVE",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Makes new content",
+              "icon": "bulb",
+              "cue": "makes"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "How does it create something new?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It learns patterns from huge amounts of examples, then builds new combinations that fit those patterns.",
+      "board": {
+        "type": "steps",
+        "title": "HOW IT CREATES",
+        "items": [
+          {
+            "label": "Learns patterns",
+            "icon": "brain",
+            "cue": "patterns"
+          },
+          {
+            "label": "From huge examples",
+            "icon": "book",
+            "cue": "examples"
+          },
+          {
+            "label": "Builds new combos",
+            "icon": "bulb",
+            "cue": "combinations"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Is it really creative?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It's great at remixing and ideas. But it doesn't have experiences or opinions like a person.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "Great at remixing, not a person",
+        "cue": "remixing"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What should I watch out for?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It can be wrong, and it can make fake images. So check facts and label AI content honestly.",
+      "board": {
+        "type": "checklist",
+        "title": "Watch out",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Can be wrong",
+            "cue": "wrong",
+            "ok": false
+          },
+          {
+            "text": "Can make fakes",
+            "cue": "fake",
+            "ok": false
+          },
+          {
+            "text": "Label AI content",
+            "cue": "label",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: generative means it creates.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "IT CREATES NEW CONTENT",
+            "icon": "bulb",
+            "cue": "creates",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "CHECK AND LABEL IT",
+            "icon": "check",
+            "cue": "generative",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you see something amazing online... ask, did AI create this?"
+    }
+  ]
+}

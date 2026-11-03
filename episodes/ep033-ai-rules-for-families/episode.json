@@ -1,0 +1,241 @@
+{
+  "id": "ep033",
+  "slug": "ai-rules-for-families",
+  "status": "ready",
+  "title": "Simple AI Rules for Families",
+  "cover_text": "FAMILY AI RULES",
+  "description": "Simple AI rules for families: keep private info out, check facts, use it to learn not cheat, and talk about what you see.\n\nA dad asks, his teen suggests easy house rules for AI.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#Parenting",
+    "#AI",
+    "#OnlineSafety",
+    "#AITips",
+    "#Shorts"
+  ],
+  "tags": [
+    "ai rules for kids",
+    "ai safety for families",
+    "kids and chatgpt",
+    "parenting and ai"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Got your family rules?",
+    "cue": "next",
+    "left": "user",
+    "right": "shield"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Should our family have rules for using AI?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "user",
+          "label": "FAMILY"
+        },
+        "right": {
+          "icon": "shield",
+          "label": "AI RULES"
+        },
+        "mid": "VS",
+        "subtitle": "Simple house rules"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Simple rules make AI safer and more useful for everyone.",
+      "board": {
+        "type": "big",
+        "icon": "shield",
+        "text": "Simple rules, safer AI",
+        "cue": "rules"
+      },
+      "punch": "rules"
+    },
+    {
+      "who": "DAD",
+      "text": "What's rule number one?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Keep private things out. No addresses, passwords, school details, or family photos.",
+      "board": {
+        "type": "checklist",
+        "title": "Rule 1: keep it private",
+        "icon": "lock",
+        "items": [
+          {
+            "text": "No addresses",
+            "cue": "addresses",
+            "ok": false
+          },
+          {
+            "text": "No passwords",
+            "cue": "passwords",
+            "ok": false
+          },
+          {
+            "text": "No family photos",
+            "cue": "photos",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And rule two?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Check before you trust. AI can be wrong, so look it up somewhere reliable.",
+      "board": {
+        "type": "steps",
+        "title": "RULE 2: CHECK IT",
+        "items": [
+          {
+            "label": "AI can be wrong",
+            "icon": "warn",
+            "cue": "wrong"
+          },
+          {
+            "label": "Look it up",
+            "icon": "search",
+            "cue": "look"
+          },
+          {
+            "label": "Reliable sources",
+            "icon": "book",
+            "cue": "reliable"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What about schoolwork?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Rule three: use it to learn, not to cheat. Hints and explanations, not copied answers.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "YES",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Hints, explanations",
+              "icon": "bulb",
+              "cue": "learn",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "NO",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Copied answers",
+              "icon": "x",
+              "cue": "cheat",
+              "tick": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Anything for younger kids?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Rule four: talk about it. If something feels weird or scary, tell a grown up.",
+      "board": {
+        "type": "checklist",
+        "title": "Rule 4: talk about it",
+        "icon": "chat",
+        "items": [
+          {
+            "text": "Feels weird or scary?",
+            "cue": "weird",
+            "ok": true
+          },
+          {
+            "text": "Tell a grown up",
+            "cue": "grown",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Should parents use AI too?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Try it together. Ask it fun questions and show kids how to check the answers.",
+      "board": {
+        "type": "steps",
+        "title": "TRY IT TOGETHER",
+        "items": [
+          {
+            "label": "Use it together",
+            "icon": "user",
+            "cue": "together"
+          },
+          {
+            "label": "Ask fun questions",
+            "icon": "bulb",
+            "cue": "fun"
+          },
+          {
+            "label": "Check the answers",
+            "icon": "check",
+            "cue": "check"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: private, check, learn, talk.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "PRIVATE • CHECK",
+            "icon": "shield",
+            "cue": "private",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "LEARN • TALK",
+            "icon": "chat",
+            "cue": "talk",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time someone in your family uses AI... remember the four rules!"
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "id": "ep023",
+  "slug": "ai-energy-use",
+  "status": "ready",
+  "title": "Does AI Use a Lot of Energy?",
+  "cover_text": "BIG COMPUTERS",
+  "description": "Does AI use a lot of energy? Training and running big AI models needs large data centers full of computers, which use electricity and water for cooling.\n\nA dad asks, his teen explains — and what helps.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AI",
+    "#Energy",
+    "#Sustainability",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "does ai use a lot of energy",
+    "ai environmental impact",
+    "ai data centers",
+    "ai electricity"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Who powers AI?",
+    "cue": "next",
+    "left": "bulb",
+    "right": "globe"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Does AI actually use a lot of electricity?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "ONE QUESTION"
+        },
+        "right": {
+          "icon": "bulb",
+          "label": "HOW MUCH POWER?"
+        },
+        "mid": "VS",
+        "subtitle": "AI and energy"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Big AI models run in data centers, buildings full of powerful computers. They use a lot of electricity.",
+      "board": {
+        "type": "big",
+        "icon": "bulb",
+        "text": "Data centers need lots of power",
+        "cue": "data"
+      },
+      "punch": "electricity"
+    },
+    {
+      "who": "DAD",
+      "text": "Why do they need so much?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Training a big model means doing huge amounts of math, for weeks, on thousands of chips.",
+      "board": {
+        "type": "steps",
+        "title": "TRAINING",
+        "items": [
+          {
+            "label": "Huge amounts of math",
+            "icon": "brain",
+            "cue": "math"
+          },
+          {
+            "label": "For weeks",
+            "icon": "calendar",
+            "cue": "weeks"
+          },
+          {
+            "label": "Thousands of chips",
+            "icon": "target",
+            "cue": "chips"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And when I just ask a question?"
+    },
+    {
+      "who": "TEEN",
+      "text": "That uses much less, but millions of people asking every day adds up. Cooling the computers uses water too.",
+      "board": {
+        "type": "checklist",
+        "title": "It adds up",
+        "icon": "globe",
+        "items": [
+          {
+            "text": "Millions of questions",
+            "cue": "millions",
+            "ok": true
+          },
+          {
+            "text": "Cooling uses water",
+            "cue": "cooling",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Is anyone fixing that?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Companies are building more efficient chips, smaller models, and using more clean energy.",
+      "board": {
+        "type": "steps",
+        "title": "WHAT HELPS",
+        "items": [
+          {
+            "label": "Efficient chips",
+            "icon": "target",
+            "cue": "efficient"
+          },
+          {
+            "label": "Smaller models",
+            "icon": "brain",
+            "cue": "smaller"
+          },
+          {
+            "label": "Clean energy",
+            "icon": "sun",
+            "cue": "clean"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can I do anything?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Use AI when it's actually useful, not for every tiny thing. Like any tool, use it wisely.",
+      "board": {
+        "type": "checklist",
+        "title": "Use it wisely",
+        "icon": "bulb",
+        "items": [
+          {
+            "text": "Use it when useful",
+            "cue": "useful",
+            "ok": true
+          },
+          {
+            "text": "Skip tiny things",
+            "cue": "tiny",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: powerful, but power hungry.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "AI NEEDS BIG COMPUTERS",
+            "icon": "bulb",
+            "cue": "powerful",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "USE IT WISELY",
+            "icon": "check",
+            "cue": "hungry",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you ask AI something... remember, there's a data center working for you!"
+    }
+  ]
+}

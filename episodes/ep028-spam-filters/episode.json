@@ -1,0 +1,216 @@
+{
+  "id": "ep028",
+  "slug": "spam-filters",
+  "status": "ready",
+  "title": "The AI You Use Every Day: Spam Filters",
+  "cover_text": "SILENT GUARD",
+  "description": "Spam filters are AI you use every day. They score each email on signals like links, sender and wording, and learn from what people mark as spam.\n\nA dad asks, his teen explains.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#Spam",
+    "#AI",
+    "#Email",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "how do spam filters work",
+    "spam filter ai",
+    "email spam explained",
+    "why emails go to spam"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Spam... or not?",
+    "cue": "next",
+    "left": "mail",
+    "right": "shield"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Am I already using AI without knowing?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "mail",
+          "label": "INBOX"
+        },
+        "right": {
+          "icon": "shield",
+          "label": "SPAM"
+        },
+        "mid": "VS",
+        "subtitle": "AI you use every day"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Your email's spam filter. It quietly checks every message before you see it.",
+      "board": {
+        "type": "big",
+        "icon": "shield",
+        "text": "Your spam filter is AI",
+        "cue": "filter"
+      },
+      "punch": "filter"
+    },
+    {
+      "who": "DAD",
+      "text": "How does it decide?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It gives each email a score, based on signals like strange links, the sender, and pushy wording.",
+      "board": {
+        "type": "checklist",
+        "title": "Signals",
+        "icon": "search",
+        "items": [
+          {
+            "text": "Strange links",
+            "cue": "links",
+            "ok": false
+          },
+          {
+            "text": "Unknown sender",
+            "cue": "sender",
+            "ok": false
+          },
+          {
+            "text": "Pushy wording",
+            "cue": "pushy",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Does it learn?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes. When millions of people mark something as spam, the filter learns to catch similar emails.",
+      "board": {
+        "type": "steps",
+        "title": "IT LEARNS",
+        "items": [
+          {
+            "label": "People mark spam",
+            "icon": "user",
+            "cue": "mark"
+          },
+          {
+            "label": "Filter learns",
+            "icon": "brain",
+            "cue": "learns"
+          },
+          {
+            "label": "Catches similar emails",
+            "icon": "check",
+            "cue": "catch"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Why do real emails go to spam?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Sometimes they look suspicious, like lots of links or a new sender. Mark them as not spam to teach it.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "LOOKS SUSPICIOUS",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Lots of links",
+              "icon": "warn",
+              "cue": "links"
+            },
+            {
+              "text": "New sender",
+              "icon": "user",
+              "cue": "new"
+            }
+          ]
+        },
+        "right": {
+          "label": "FIX IT",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Mark as not spam",
+              "icon": "check",
+              "cue": "teach",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Is my inbox totally safe then?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not totally. Some scams still slip through, so stay careful with links and requests for codes.",
+      "board": {
+        "type": "checklist",
+        "title": "Still be careful",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Some scams slip through",
+            "cue": "slip",
+            "ok": false
+          },
+          {
+            "text": "Careful with links",
+            "cue": "careful",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: a silent guard for my inbox.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "SCORES EVERY EMAIL",
+            "icon": "mail",
+            "cue": "guard",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "LEARNS FROM YOU",
+            "icon": "brain",
+            "cue": "inbox",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you open your inbox... thank the silent guard!"
+    }
+  ]
+}

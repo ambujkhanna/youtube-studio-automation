@@ -1,0 +1,235 @@
+{
+  "id": "ep031",
+  "slug": "learn-a-language-with-ai",
+  "status": "ready",
+  "title": "How to Learn a Language With AI",
+  "cover_text": "PRACTICE PARTNER",
+  "description": "How to learn a language with AI: use it as a patient practice partner for conversation, corrections and vocabulary — and still practice with real people.\n\nA dad asks, his teen explains.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#LanguageLearning",
+    "#AI",
+    "#Study",
+    "#AITips",
+    "#Shorts"
+  ],
+  "tags": [
+    "learn a language with ai",
+    "ai language tutor",
+    "practice speaking with ai",
+    "language learning tips"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Ready to practice?",
+    "cue": "next",
+    "left": "globe",
+    "right": "chat"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Can AI help me learn a new language?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "globe",
+          "label": "NEW LANGUAGE"
+        },
+        "right": {
+          "icon": "chat",
+          "label": "AI PARTNER"
+        },
+        "mid": "VS",
+        "subtitle": "Learn with AI"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! It's like a patient practice partner that never gets tired.",
+      "board": {
+        "type": "big",
+        "icon": "chat",
+        "text": "A patient practice partner",
+        "cue": "partner"
+      },
+      "punch": "patient"
+    },
+    {
+      "who": "DAD",
+      "text": "How do I start?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Ask it to chat with you in simple Spanish, or any language, at a beginner level.",
+      "board": {
+        "type": "chat",
+        "title": "START SIMPLE",
+        "items": [
+          {
+            "who": "user",
+            "text": "Chat with me, beginner level",
+            "cue": "chat"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What if I make mistakes?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Ask it to correct you gently and explain each mistake in English.",
+      "board": {
+        "type": "steps",
+        "title": "CORRECTIONS",
+        "items": [
+          {
+            "label": "Write a sentence",
+            "icon": "doc",
+            "cue": "ask"
+          },
+          {
+            "label": "It corrects you",
+            "icon": "check",
+            "cue": "correct"
+          },
+          {
+            "label": "Explains in English",
+            "icon": "book",
+            "cue": "explain"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What about new words?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Ask for ten useful words for a situation, like ordering food, with example sentences.",
+      "board": {
+        "type": "checklist",
+        "title": "Useful words",
+        "icon": "book",
+        "items": [
+          {
+            "text": "Ten words at a time",
+            "cue": "ten",
+            "ok": true
+          },
+          {
+            "text": "For real situations",
+            "cue": "situation",
+            "ok": true
+          },
+          {
+            "text": "With examples",
+            "cue": "example",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Is AI enough on its own?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not quite. It can make mistakes, so also listen to real speakers and practice with people.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "AI IS GREAT FOR",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Daily practice",
+              "icon": "check",
+              "cue": "mistakes",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "ALSO DO",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Talk to real people",
+              "icon": "user",
+              "cue": "people",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can I practice speaking out loud?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Many apps have voice mode. You talk, it replies out loud, and you can practice real conversations.",
+      "board": {
+        "type": "steps",
+        "title": "VOICE MODE",
+        "items": [
+          {
+            "label": "You talk",
+            "icon": "user",
+            "cue": "talk"
+          },
+          {
+            "label": "It replies out loud",
+            "icon": "chat",
+            "cue": "replies"
+          },
+          {
+            "label": "Real conversations",
+            "icon": "globe",
+            "cue": "conversations"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: practice daily, with AI and people.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "PRACTICE WITH AI",
+            "icon": "chat",
+            "cue": "practice",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "TALK TO PEOPLE",
+            "icon": "user",
+            "cue": "people",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you want to learn a word... ask your AI partner!"
+    }
+  ]
+}

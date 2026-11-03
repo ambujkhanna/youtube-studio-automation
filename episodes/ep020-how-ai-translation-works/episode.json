@@ -1,0 +1,251 @@
+{
+  "id": "ep020",
+  "slug": "how-ai-translation-works",
+  "status": "ready",
+  "title": "How AI Translation Works",
+  "cover_text": "MEANING, NOT WORDS",
+  "description": "How does AI translation work? It learns from millions of translated sentences and translates meaning, not word by word. Plus its limits.\n\nA dad asks, his teen explains AI translation.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#Translation",
+    "#AI",
+    "#Languages",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "how does ai translation work",
+    "machine translation explained",
+    "google translate how it works",
+    "ai languages"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Words... or meaning?",
+    "cue": "next",
+    "left": "globe",
+    "right": "chat"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "How does AI translate languages so fast?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "globe",
+          "label": "LANGUAGE A"
+        },
+        "right": {
+          "icon": "chat",
+          "label": "LANGUAGE B"
+        },
+        "mid": "→",
+        "subtitle": "AI translation explained"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "It learned from millions of sentences that people already translated.",
+      "board": {
+        "type": "big",
+        "icon": "book",
+        "text": "Learned from translated sentences",
+        "cue": "translated"
+      },
+      "punch": "millions"
+    },
+    {
+      "who": "DAD",
+      "text": "Does it go word by word?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not anymore. It looks at the whole sentence, so it translates meaning, not just words.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "OLD WAY",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Word by word",
+              "icon": "doc",
+              "cue": "word",
+              "tick": false
+            }
+          ]
+        },
+        "right": {
+          "label": "AI TODAY",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Whole sentence meaning",
+              "icon": "chat",
+              "cue": "meaning",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So it's always right?"
+    },
+    {
+      "who": "TEEN",
+      "text": "No! Jokes, slang, idioms, and rare languages can still trip it up.",
+      "board": {
+        "type": "checklist",
+        "title": "Tricky for AI",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Jokes and slang",
+            "cue": "jokes",
+            "ok": false
+          },
+          {
+            "text": "Idioms",
+            "cue": "idioms",
+            "ok": false
+          },
+          {
+            "text": "Rare languages",
+            "cue": "rare",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "When should I be careful?"
+    },
+    {
+      "who": "TEEN",
+      "text": "For medical, legal, or official papers, use a professional translator.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "AI IS FINE",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Menus, signs, chats",
+              "icon": "chat",
+              "cue": "papers",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "USE A PRO",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Medical or legal papers",
+              "icon": "doc",
+              "cue": "medical",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Any tip for better translations?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Use short, clear sentences. Then translate it back to check it still means the same thing.",
+      "board": {
+        "type": "steps",
+        "title": "BETTER RESULTS",
+        "items": [
+          {
+            "label": "Short, clear sentences",
+            "icon": "doc",
+            "cue": "short"
+          },
+          {
+            "label": "Translate it back",
+            "icon": "globe",
+            "cue": "back"
+          },
+          {
+            "label": "Check the meaning",
+            "icon": "check",
+            "cue": "means"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can it translate speech live?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes, some apps translate conversations as people talk. Speak slowly and in short sentences for the best results.",
+      "board": {
+        "type": "steps",
+        "title": "LIVE TRANSLATION",
+        "items": [
+          {
+            "label": "Translates as you talk",
+            "icon": "chat",
+            "cue": "conversations"
+          },
+          {
+            "label": "Speak slowly",
+            "icon": "user",
+            "cue": "slowly"
+          },
+          {
+            "label": "Short sentences",
+            "icon": "doc",
+            "cue": "short"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: meaning, not just words.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "TRANSLATES MEANING",
+            "icon": "chat",
+            "cue": "meaning",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "CHECK IMPORTANT TEXT",
+            "icon": "search",
+            "cue": "words",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you translate something important... translate it back and check!"
+    }
+  ]
+}

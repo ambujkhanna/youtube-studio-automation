@@ -1,0 +1,222 @@
+{
+  "id": "ep022",
+  "slug": "what-is-agi",
+  "status": "ready",
+  "title": "What Is AGI? (And Is It Here?)",
+  "cover_text": "NARROW vs GENERAL",
+  "description": "What is AGI? Artificial general intelligence means AI that can learn and do almost any task a person can. Today's AI is still narrower.\n\nA dad asks, his teen explains AGI without the hype.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AGI",
+    "#AI",
+    "#FutureOfAI",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "what is agi",
+    "artificial general intelligence explained",
+    "is agi here",
+    "agi vs ai"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Narrow... or general?",
+    "cue": "next",
+    "left": "target",
+    "right": "brain"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "People keep saying A G I. What is that?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "target",
+          "label": "NARROW AI"
+        },
+        "right": {
+          "icon": "brain",
+          "label": "AGI"
+        },
+        "mid": "VS",
+        "subtitle": "No hype, just basics"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "A G I means artificial general intelligence. AI that could learn and do almost any task a person can.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "AGI = almost any task",
+        "cue": "general"
+      },
+      "punch": "general"
+    },
+    {
+      "who": "DAD",
+      "text": "Isn't that what we have now?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not yet. Today's AI is impressive, but it still makes basic mistakes and needs people to guide it.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "TODAY'S AI",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Impressive",
+              "icon": "check",
+              "cue": "impressive",
+              "tick": true
+            },
+            {
+              "text": "Basic mistakes",
+              "icon": "warn",
+              "cue": "mistakes",
+              "tick": false
+            }
+          ]
+        },
+        "right": {
+          "label": "AGI",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Any task, reliably",
+              "icon": "brain",
+              "cue": "guide"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So what's the difference?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Today's AI is great at specific tasks, like writing or images. A G I would handle new problems on its own.",
+      "board": {
+        "type": "steps",
+        "title": "THE DIFFERENCE",
+        "items": [
+          {
+            "label": "Great at specific tasks",
+            "icon": "target",
+            "cue": "specific"
+          },
+          {
+            "label": "AGI: new problems",
+            "icon": "bulb",
+            "cue": "new"
+          },
+          {
+            "label": "On its own",
+            "icon": "robot",
+            "cue": "own"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "When will it arrive?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Experts disagree. Some say years, some say decades, some aren't sure it's possible.",
+      "board": {
+        "type": "checklist",
+        "title": "Experts disagree",
+        "icon": "user",
+        "items": [
+          {
+            "text": "Some say years",
+            "cue": "years",
+            "ok": true
+          },
+          {
+            "text": "Some say decades",
+            "cue": "decades",
+            "ok": true
+          },
+          {
+            "text": "Some unsure",
+            "cue": "sure",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Should I be worried?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Stay curious and informed. And be careful of anyone who sounds too certain either way.",
+      "board": {
+        "type": "checklist",
+        "title": "Stay smart",
+        "icon": "shield",
+        "items": [
+          {
+            "text": "Stay curious",
+            "cue": "curious",
+            "ok": true
+          },
+          {
+            "text": "Stay informed",
+            "cue": "informed",
+            "ok": true
+          },
+          {
+            "text": "Beware total certainty",
+            "cue": "certain",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: today's AI is narrow, not general.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "TODAY: NARROW AI",
+            "icon": "target",
+            "cue": "narrow",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "AGI: NOT YET",
+            "icon": "brain",
+            "cue": "general",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time someone says AGI is here... ask, can it really do any task?"
+    }
+  ]
+}

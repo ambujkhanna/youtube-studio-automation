@@ -1,0 +1,198 @@
+{
+  "id": "ep037",
+  "slug": "ai-glossary-5-words",
+  "status": "ready",
+  "title": "5 AI Words Everyone Should Know",
+  "cover_text": "5 WORDS",
+  "description": "Five AI words everyone should know: prompt, model, token, hallucination and agent — explained in one minute.\n\nA dad asks, his teen explains the basics.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AIBasics",
+    "#AI",
+    "#Glossary",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "ai terms explained",
+    "ai glossary",
+    "ai words to know",
+    "ai basics for beginners"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Know all five?",
+    "cue": "next",
+    "left": "book",
+    "right": "brain"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "AI people use so many words. Which ones matter?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "book",
+          "label": "AI WORDS"
+        },
+        "right": {
+          "icon": "check",
+          "label": "SIMPLE MEANING"
+        },
+        "mid": "→",
+        "subtitle": "5 words in 1 minute"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Just five to start! Prompt, model, token, hallucination, and agent.",
+      "board": {
+        "type": "steps",
+        "title": "5 WORDS",
+        "items": [
+          {
+            "label": "Prompt",
+            "icon": "chat",
+            "cue": "prompt"
+          },
+          {
+            "label": "Model",
+            "icon": "brain",
+            "cue": "model"
+          },
+          {
+            "label": "Token",
+            "icon": "doc",
+            "cue": "token"
+          }
+        ]
+      },
+      "punch": "five"
+    },
+    {
+      "who": "DAD",
+      "text": "Okay. What's a prompt?"
+    },
+    {
+      "who": "TEEN",
+      "text": "A prompt is what you type to the AI. Your question or instructions.",
+      "board": {
+        "type": "big",
+        "icon": "chat",
+        "text": "Prompt = what you type",
+        "cue": "type"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And a model?"
+    },
+    {
+      "who": "TEEN",
+      "text": "The model is the trained AI itself, the brain that writes the answer.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "Model = the trained AI",
+        "cue": "brain"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Token sounds like money."
+    },
+    {
+      "who": "TEEN",
+      "text": "Ha! A token is a small piece of text, like part of a word. AI reads and writes in tokens.",
+      "board": {
+        "type": "big",
+        "icon": "doc",
+        "text": "Token = piece of text",
+        "cue": "piece"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And hallucination and agent?"
+    },
+    {
+      "who": "TEEN",
+      "text": "A hallucination is a confident but false answer. An agent is AI that takes steps to finish a goal.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "HALLUCINATION",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Confident but false",
+              "icon": "warn",
+              "cue": "confident",
+              "tick": false
+            }
+          ]
+        },
+        "right": {
+          "label": "AGENT",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Takes steps to a goal",
+              "icon": "robot",
+              "cue": "steps",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Is there one more word I should know?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Training. That's how a model learns, by studying huge amounts of examples before you ever use it.",
+      "board": {
+        "type": "big",
+        "icon": "book",
+        "text": "Training = how it learns",
+        "cue": "training"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: prompt, model, token, hallucination, agent.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "PROMPT • MODEL • TOKEN",
+            "icon": "book",
+            "cue": "prompt",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "HALLUCINATION • AGENT",
+            "icon": "brain",
+            "cue": "agent",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time someone uses an AI word... you'll know what it means!"
+    }
+  ]
+}

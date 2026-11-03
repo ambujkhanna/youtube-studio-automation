@@ -1,0 +1,216 @@
+{
+  "id": "ep027",
+  "slug": "ai-in-phone-cameras",
+  "status": "ready",
+  "title": "How AI Makes Your Phone Photos Better",
+  "cover_text": "MANY SHOTS, ONE PHOTO",
+  "description": "How does AI improve phone photos? Your phone often takes several shots and blends them, then AI adjusts light, color and detail.\n\nA dad asks, his teen explains computational photography.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#Smartphone",
+    "#AI",
+    "#Photography",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "ai phone camera",
+    "computational photography explained",
+    "how night mode works",
+    "portrait mode explained"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "One photo... or many?",
+    "cue": "next",
+    "left": "phone",
+    "right": "sun"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "How does my phone take such good photos?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "phone",
+          "label": "TINY CAMERA"
+        },
+        "right": {
+          "icon": "sun",
+          "label": "GREAT PHOTO"
+        },
+        "mid": "→",
+        "subtitle": "AI in phone cameras"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "AI helps a lot! Often your phone takes several pictures at once and blends the best parts.",
+      "board": {
+        "type": "big",
+        "icon": "phone",
+        "text": "Many shots → one photo",
+        "cue": "several"
+      },
+      "punch": "blends"
+    },
+    {
+      "who": "DAD",
+      "text": "Is that how night mode works?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! It combines many dark shots to reduce noise and make the scene brighter.",
+      "board": {
+        "type": "steps",
+        "title": "NIGHT MODE",
+        "items": [
+          {
+            "label": "Many dark shots",
+            "icon": "phone",
+            "cue": "dark"
+          },
+          {
+            "label": "Combine them",
+            "icon": "target",
+            "cue": "combines"
+          },
+          {
+            "label": "Less noise, brighter",
+            "icon": "sun",
+            "cue": "brighter"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And portrait mode blur?"
+    },
+    {
+      "who": "TEEN",
+      "text": "AI finds the person, separates them from the background, then blurs the background like a big camera.",
+      "board": {
+        "type": "steps",
+        "title": "PORTRAIT MODE",
+        "items": [
+          {
+            "label": "Find the person",
+            "icon": "user",
+            "cue": "finds"
+          },
+          {
+            "label": "Separate background",
+            "icon": "target",
+            "cue": "separates"
+          },
+          {
+            "label": "Blur the background",
+            "icon": "eye",
+            "cue": "blurs"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Does it change my photos?"
+    },
+    {
+      "who": "TEEN",
+      "text": "A bit. It adjusts light, color, and sharpness. Some phones can also remove objects or edit faces.",
+      "board": {
+        "type": "checklist",
+        "title": "It adjusts",
+        "icon": "sun",
+        "items": [
+          {
+            "text": "Light and color",
+            "cue": "light",
+            "ok": true
+          },
+          {
+            "text": "Sharpness",
+            "cue": "sharpness",
+            "ok": true
+          },
+          {
+            "text": "Can remove objects",
+            "cue": "remove",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So photos aren't always real?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Most are close to real. But heavy edits can change what happened, so be honest when you share them.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "NORMAL",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Light, color fixes",
+              "icon": "check",
+              "cue": "close",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "HEAVY EDITS",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Can change the story",
+              "icon": "warn",
+              "cue": "heavy",
+              "tick": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: many shots, smart blending.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "MANY SHOTS",
+            "icon": "phone",
+            "cue": "shots",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "SMART BLENDING",
+            "icon": "brain",
+            "cue": "blending",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you snap a night photo... thank the AI blending!"
+    }
+  ]
+}

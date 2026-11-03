@@ -1,0 +1,221 @@
+{
+  "id": "ep030",
+  "slug": "ask-ai-to-ask-you",
+  "status": "ready",
+  "title": "The Prompt Trick: Let AI Ask You Questions",
+  "cover_text": "LET IT ASK FIRST",
+  "description": "A simple prompt trick: ask the AI to ask you questions first. It fills in missing details and gives a far better answer.\n\nA dad asks, his teen shows the trick.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#PromptTips",
+    "#AI",
+    "#ChatGPT",
+    "#AITips",
+    "#Shorts"
+  ],
+  "tags": [
+    "prompt tips",
+    "best chatgpt trick",
+    "how to get better ai answers",
+    "prompting tips"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Did you let it ask?",
+    "cue": "next",
+    "left": "chat",
+    "right": "bulb"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Is there one trick to get better AI answers?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "YOUR PROMPT"
+        },
+        "right": {
+          "icon": "bulb",
+          "label": "BETTER ANSWER"
+        },
+        "mid": "→",
+        "subtitle": "One simple trick"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Tell it: before you answer, ask me questions first.",
+      "board": {
+        "type": "chat",
+        "title": "THE TRICK",
+        "items": [
+          {
+            "who": "user",
+            "text": "Ask me questions first",
+            "cue": "questions"
+          }
+        ],
+        "color": "#2ECC71"
+      },
+      "punch": "questions"
+    },
+    {
+      "who": "DAD",
+      "text": "Why would that help?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Because it doesn't know your situation. Its questions fill in the missing details.",
+      "board": {
+        "type": "big",
+        "icon": "search",
+        "text": "Questions fill the gaps",
+        "cue": "missing"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Show me how it works."
+    },
+    {
+      "who": "TEEN",
+      "text": "You say, help me plan a birthday party. It asks: how many guests, what budget, what age, indoors or outdoors?",
+      "board": {
+        "type": "checklist",
+        "title": "It asks you",
+        "icon": "chat",
+        "items": [
+          {
+            "text": "How many guests?",
+            "cue": "guests",
+            "ok": true
+          },
+          {
+            "text": "What budget?",
+            "cue": "budget",
+            "ok": true
+          },
+          {
+            "text": "Indoors or outdoors?",
+            "cue": "indoors",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Then I answer, and it plans?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly. Now the plan fits your party, instead of a generic list.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "WITHOUT",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Generic list",
+              "icon": "doc",
+              "cue": "generic",
+              "tick": false
+            }
+          ]
+        },
+        "right": {
+          "label": "WITH THE TRICK",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Fits your party",
+              "icon": "check",
+              "cue": "fits",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Does it work for other things?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Cover letters, travel plans, study schedules, even fixing a recipe.",
+      "board": {
+        "type": "steps",
+        "title": "USE IT FOR",
+        "items": [
+          {
+            "label": "Cover letters",
+            "icon": "mail",
+            "cue": "cover"
+          },
+          {
+            "label": "Travel plans",
+            "icon": "suitcase",
+            "cue": "travel"
+          },
+          {
+            "label": "Study schedules",
+            "icon": "calendar",
+            "cue": "study"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Does this work with any chatbot?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! It's just plain English, so it works with almost any AI assistant you use.",
+      "board": {
+        "type": "big",
+        "icon": "chat",
+        "text": "Works with almost any chatbot",
+        "cue": "english"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: let it ask before it answers.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "LET IT ASK FIRST",
+            "icon": "chat",
+            "cue": "ask",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "THEN IT ANSWERS",
+            "icon": "check",
+            "cue": "answers",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you need help from AI... let it ask you first!"
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "id": "ep038",
+  "slug": "ai-accessibility",
+  "status": "ready",
+  "title": "How AI Helps People With Disabilities",
+  "cover_text": "AI FOR EVERYONE",
+  "description": "How AI helps accessibility: live captions, describing images for blind users, voice control and reading text aloud.\n\nA dad asks, his teen explains AI features that help everyone.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#Accessibility",
+    "#AI",
+    "#Inclusion",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "ai accessibility",
+    "live captions ai",
+    "ai for blind users",
+    "voice control accessibility"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "AI for everyone?",
+    "cue": "next",
+    "left": "user",
+    "right": "check"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Is AI actually helping people with disabilities?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "user",
+          "label": "EVERYONE"
+        },
+        "right": {
+          "icon": "bulb",
+          "label": "AI HELP"
+        },
+        "mid": "VS",
+        "subtitle": "AI and accessibility"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "A lot! Some of the most useful AI features started as accessibility tools.",
+      "board": {
+        "type": "big",
+        "icon": "check",
+        "text": "Built for access, useful for all",
+        "cue": "accessibility"
+      },
+      "punch": "useful"
+    },
+    {
+      "who": "DAD",
+      "text": "Like what?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Live captions turn speech into text on screen, for people who are deaf or hard of hearing.",
+      "board": {
+        "type": "big",
+        "icon": "chat",
+        "text": "Live captions",
+        "cue": "captions",
+        "sub": "speech → text on screen",
+        "sub_cue": "text"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And for people who can't see well?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Phones can describe photos, read text aloud, and tell you what the camera sees.",
+      "board": {
+        "type": "steps",
+        "title": "FOR LOW VISION",
+        "items": [
+          {
+            "label": "Describe photos",
+            "icon": "eye",
+            "cue": "describe"
+          },
+          {
+            "label": "Read text aloud",
+            "icon": "chat",
+            "cue": "aloud"
+          },
+          {
+            "label": "Say what the camera sees",
+            "icon": "phone",
+            "cue": "camera"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What about using the phone without hands?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Voice control lets you open apps, type, and navigate just by speaking.",
+      "board": {
+        "type": "steps",
+        "title": "VOICE CONTROL",
+        "items": [
+          {
+            "label": "Open apps",
+            "icon": "phone",
+            "cue": "open"
+          },
+          {
+            "label": "Type by speaking",
+            "icon": "chat",
+            "cue": "type"
+          },
+          {
+            "label": "Navigate hands-free",
+            "icon": "check",
+            "cue": "navigate"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Do these help everyone else too?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Captions help in noisy places, and reading aloud helps when you're busy. Try them in your settings.",
+      "board": {
+        "type": "checklist",
+        "title": "Try in settings",
+        "icon": "check",
+        "items": [
+          {
+            "text": "Captions in noisy places",
+            "cue": "noisy",
+            "ok": true
+          },
+          {
+            "text": "Read aloud when busy",
+            "cue": "busy",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: AI that opens doors for everyone.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "CAPTIONS • DESCRIPTIONS",
+            "icon": "chat",
+            "cue": "doors",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "VOICE CONTROL",
+            "icon": "phone",
+            "cue": "everyone",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you turn on captions... remember, AI made it possible!"
+    }
+  ]
+}

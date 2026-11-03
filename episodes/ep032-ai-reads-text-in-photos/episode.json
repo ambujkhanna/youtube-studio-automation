@@ -1,0 +1,246 @@
+{
+  "id": "ep032",
+  "slug": "ai-reads-text-in-photos",
+  "status": "ready",
+  "title": "How AI Reads Text in Photos",
+  "cover_text": "PHOTO → TEXT",
+  "description": "How does AI read text in photos? It finds the text, recognizes each letter, then can copy, translate or read it aloud.\n\nA dad asks, his teen explains text recognition.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#OCR",
+    "#AI",
+    "#TechTips",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "how does ocr work",
+    "copy text from photo",
+    "ai text recognition",
+    "scan text with phone"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Photo... into text?",
+    "cue": "next",
+    "left": "phone",
+    "right": "doc"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "How does my phone copy text from a photo?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "phone",
+          "label": "PHOTO"
+        },
+        "right": {
+          "icon": "doc",
+          "label": "TEXT"
+        },
+        "mid": "→",
+        "subtitle": "Text recognition, explained"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "It's called text recognition. AI finds the text in the picture, then reads each letter.",
+      "board": {
+        "type": "big",
+        "icon": "eye",
+        "text": "Find the text, read the letters",
+        "cue": "recognition"
+      },
+      "punch": "recognition"
+    },
+    {
+      "who": "DAD",
+      "text": "How does it read the letters?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It learned from millions of examples of printed and handwritten letters in different fonts.",
+      "board": {
+        "type": "steps",
+        "title": "IT LEARNED FROM",
+        "items": [
+          {
+            "label": "Printed letters",
+            "icon": "doc",
+            "cue": "printed"
+          },
+          {
+            "label": "Handwriting",
+            "icon": "user",
+            "cue": "handwritten"
+          },
+          {
+            "label": "Different fonts",
+            "icon": "book",
+            "cue": "fonts"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What can I do with it?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Copy a phone number from a poster, translate a menu, or have a sign read out loud.",
+      "board": {
+        "type": "steps",
+        "title": "USEFUL FOR",
+        "items": [
+          {
+            "label": "Copy a number",
+            "icon": "phone",
+            "cue": "copy"
+          },
+          {
+            "label": "Translate a menu",
+            "icon": "globe",
+            "cue": "translate"
+          },
+          {
+            "label": "Read signs aloud",
+            "icon": "chat",
+            "cue": "read"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Does it work every time?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Blurry photos, messy handwriting, or bad lighting can cause mistakes. So check important numbers.",
+      "board": {
+        "type": "checklist",
+        "title": "Can go wrong",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Blurry photos",
+            "cue": "blurry",
+            "ok": false
+          },
+          {
+            "text": "Messy handwriting",
+            "cue": "messy",
+            "ok": false
+          },
+          {
+            "text": "Check important numbers",
+            "cue": "check",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Any tip for better scans?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Hold the phone straight, use good light, and get close enough to fill the screen.",
+      "board": {
+        "type": "steps",
+        "title": "BETTER SCANS",
+        "items": [
+          {
+            "label": "Hold it straight",
+            "icon": "phone",
+            "cue": "straight"
+          },
+          {
+            "label": "Good light",
+            "icon": "sun",
+            "cue": "light"
+          },
+          {
+            "label": "Get close",
+            "icon": "target",
+            "cue": "close"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can it read old family letters?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It can try! Clear printed text works best. Old handwriting might need you to fix a few words.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "WORKS BEST",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Clear printed text",
+              "icon": "doc",
+              "cue": "printed",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "HARDER",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Old handwriting",
+              "icon": "user",
+              "cue": "handwriting",
+              "tick": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: photo in, text out.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "PHOTO IN",
+            "icon": "phone",
+            "cue": "photo",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "TEXT OUT",
+            "icon": "doc",
+            "cue": "text",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you see text in a photo... let AI read it!"
+    }
+  ]
+}

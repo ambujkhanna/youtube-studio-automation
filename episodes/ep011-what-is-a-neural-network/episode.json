@@ -1,0 +1,202 @@
+{
+  "id": "ep011",
+  "slug": "what-is-a-neural-network",
+  "status": "ready",
+  "title": "What Is a Neural Network?",
+  "cover_text": "TINY DIALS",
+  "description": "What is a neural network? Layers of tiny math units that adjust millions of dials until they get good at a task.\n\nA dad asks, his teen explains neural networks without the jargon.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#NeuralNetwork",
+    "#AI",
+    "#DeepLearning",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "what is a neural network",
+    "neural network explained simply",
+    "deep learning explained",
+    "how ai works"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "A brain... made of dials?",
+    "cue": "next",
+    "left": "brain",
+    "right": "target"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "What's a neural network? Is it a robot brain?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "brain",
+          "label": "BRAIN?"
+        },
+        "right": {
+          "icon": "target",
+          "label": "MATH!"
+        },
+        "mid": "VS",
+        "subtitle": "Neural networks, simply"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "It's inspired by the brain, but it's really math. Lots of tiny units, connected in layers.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "Tiny units in layers",
+        "cue": "layers"
+      },
+      "punch": "layers"
+    },
+    {
+      "who": "DAD",
+      "text": "What do the layers do?"
+    },
+    {
+      "who": "TEEN",
+      "text": "The first layer sees simple things, like edges in a photo. Deeper layers combine them into shapes, then whole objects.",
+      "board": {
+        "type": "steps",
+        "title": "LAYER BY LAYER",
+        "items": [
+          {
+            "label": "Edges",
+            "icon": "eye",
+            "cue": "edges"
+          },
+          {
+            "label": "Shapes",
+            "icon": "target",
+            "cue": "shapes"
+          },
+          {
+            "label": "Objects: a cat!",
+            "icon": "check",
+            "cue": "objects"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "How does it learn that?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Each connection has a dial. It guesses, checks the answer, and nudges the dials to be a bit less wrong. Millions of times.",
+      "board": {
+        "type": "steps",
+        "title": "HOW IT LEARNS",
+        "items": [
+          {
+            "label": "Make a guess",
+            "icon": "bulb",
+            "cue": "guesses"
+          },
+          {
+            "label": "Check the answer",
+            "icon": "search",
+            "cue": "checks"
+          },
+          {
+            "label": "Nudge the dials",
+            "icon": "target",
+            "cue": "nudges"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Millions of times? That sounds slow."
+    },
+    {
+      "who": "TEEN",
+      "text": "That's why training uses powerful computers. But once trained, using it is quick.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "TRAINING",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Slow, huge computers",
+              "icon": "warn",
+              "cue": "training"
+            }
+          ]
+        },
+        "right": {
+          "label": "USING IT",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Quick answers",
+              "icon": "check",
+              "cue": "quick",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Is ChatGPT a neural network?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes, a very large one. Same idea, just with billions of dials, trained on text.",
+      "board": {
+        "type": "big",
+        "icon": "chat",
+        "text": "A huge neural network",
+        "cue": "large",
+        "sub": "trained on text",
+        "sub_cue": "text"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: layers of tiny dials that learn.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "LAYERS OF UNITS",
+            "icon": "brain",
+            "cue": "layers",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "DIALS THAT LEARN",
+            "icon": "target",
+            "cue": "learn",
+            "color": "#E91E63"
+          }
+        ]
+      },
+      "punch": "dials"
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time your phone recognizes your face... thank the tiny dials!"
+    }
+  ]
+}

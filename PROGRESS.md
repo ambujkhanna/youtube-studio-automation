@@ -271,3 +271,10 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 2. Do the one-time YouTube OAuth + GitHub secrets (`docs/AUTOMATION_SETUP.md`).
 3. First real run; then apply for the YouTube API audit so uploads can go public automatically.
 4. Keep ≥7 ready episodes in the backlog (top up weekly).
+
+
+## 2026-11-03T00:36:22+05:30 (2026-11-02T19:06:22Z) — Backlog: 30 more episodes (EP009–EP038)
+
+- [x] 30 episode files added under `episodes/` (60–70 s each), validated; list in `episodes/BATCH_EP009-EP038.md`.
+- Backlog now covers EP002–EP038 = 37 daily Shorts (~5 weeks).
+- Next top-up due when ~7 ready episodes remain.

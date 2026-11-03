@@ -1,0 +1,210 @@
+{
+  "id": "ep029",
+  "slug": "why-ai-answers-differ",
+  "status": "ready",
+  "title": "Why AI Gives Different Answers Each Time",
+  "cover_text": "A LITTLE RANDOM",
+  "description": "Why does AI give a different answer every time you ask? It picks words with a bit of randomness, which makes it creative but less consistent.\n\nA dad asks, his teen explains.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AI",
+    "#ChatGPT",
+    "#AIExplained",
+    "#TechExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "why does chatgpt give different answers",
+    "ai randomness",
+    "ai temperature explained",
+    "ai answers change"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Same question, new answer?",
+    "cue": "next",
+    "left": "chat",
+    "right": "bulb"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Why does AI give a different answer every time I ask?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "SAME QUESTION"
+        },
+        "right": {
+          "icon": "bulb",
+          "label": "NEW ANSWER"
+        },
+        "mid": "VS",
+        "subtitle": "A little bit of randomness"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Because it adds a little randomness when it picks the next word. That keeps answers fresh.",
+      "board": {
+        "type": "big",
+        "icon": "bulb",
+        "text": "A little randomness",
+        "cue": "randomness"
+      },
+      "punch": "randomness"
+    },
+    {
+      "who": "DAD",
+      "text": "Why would anyone want randomness?"
+    },
+    {
+      "who": "TEEN",
+      "text": "For creative things, like stories, names, or ideas. You don't want the same poem every time.",
+      "board": {
+        "type": "steps",
+        "title": "GOOD FOR",
+        "items": [
+          {
+            "label": "Stories",
+            "icon": "book",
+            "cue": "stories"
+          },
+          {
+            "label": "Names",
+            "icon": "doc",
+            "cue": "names"
+          },
+          {
+            "label": "Ideas",
+            "icon": "bulb",
+            "cue": "ideas"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "But for facts, isn't that bad?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It can be. If two answers disagree on a fact, that's a sign to double check.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "CREATIVE",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Variety is great",
+              "icon": "check",
+              "cue": "can",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "FACTS",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Disagreement = check",
+              "icon": "warn",
+              "cue": "disagree"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can I make it more consistent?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes. Give clear instructions, examples of what you want, and ask for one short, specific answer.",
+      "board": {
+        "type": "steps",
+        "title": "MORE CONSISTENT",
+        "items": [
+          {
+            "label": "Clear instructions",
+            "icon": "doc",
+            "cue": "clear"
+          },
+          {
+            "label": "Give examples",
+            "icon": "book",
+            "cue": "examples"
+          },
+          {
+            "label": "Ask for one answer",
+            "icon": "target",
+            "cue": "one"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And if I want more ideas?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Just ask it to regenerate, or ask for ten different options at once.",
+      "board": {
+        "type": "chat",
+        "title": "MORE IDEAS",
+        "items": [
+          {
+            "who": "user",
+            "text": "Give me 10 options",
+            "cue": "ten"
+          },
+          {
+            "who": "bot",
+            "text": "Here are 10 ideas...",
+            "cue": "options"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: randomness is a feature, not a bug.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "GREAT FOR IDEAS",
+            "icon": "bulb",
+            "cue": "feature",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "CHECK THE FACTS",
+            "icon": "search",
+            "cue": "bug",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you get a different answer... ask, is this a fact, or an idea?"
+    }
+  ]
+}

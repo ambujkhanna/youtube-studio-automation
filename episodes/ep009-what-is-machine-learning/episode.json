@@ -1,0 +1,218 @@
+{
+  "id": "ep009",
+  "slug": "what-is-machine-learning",
+  "status": "ready",
+  "title": "What Is Machine Learning?",
+  "cover_text": "LEARN FROM EXAMPLES",
+  "description": "What is machine learning? Instead of writing every rule, we show a computer lots of examples and it learns the pattern.\n\nA dad asks, his teen explains machine learning with a simple spam-email example.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#MachineLearning",
+    "#AI",
+    "#AIExplained",
+    "#TechExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "what is machine learning",
+    "machine learning explained",
+    "ai vs machine learning",
+    "how ai learns"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Rules... or examples?",
+    "cue": "next",
+    "left": "doc",
+    "right": "brain"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "What is machine learning, really?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "doc",
+          "label": "RULES"
+        },
+        "right": {
+          "icon": "brain",
+          "label": "EXAMPLES"
+        },
+        "mid": "VS",
+        "subtitle": "How computers learn"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "It's when a computer learns from examples, instead of us writing every single rule.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "Learn from examples",
+        "cue": "examples"
+      },
+      "punch": "examples"
+    },
+    {
+      "who": "DAD",
+      "text": "Give me an example."
+    },
+    {
+      "who": "TEEN",
+      "text": "Spam email. Writing rules for every scam is impossible. So we show it thousands of emails marked spam or not spam.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "RULES",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Endless if-this rules",
+              "icon": "doc",
+              "cue": "rules",
+              "tick": false
+            }
+          ]
+        },
+        "right": {
+          "label": "EXAMPLES",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Thousands of emails",
+              "icon": "mail",
+              "cue": "thousands",
+              "tick": true
+            },
+            {
+              "text": "Marked spam or not",
+              "icon": "check",
+              "cue": "marked",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And then it just knows?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It finds patterns. Like weird links, urgent words, or strange senders. Then it guesses on new emails.",
+      "board": {
+        "type": "steps",
+        "title": "IT LEARNS PATTERNS",
+        "items": [
+          {
+            "label": "Weird links",
+            "icon": "warn",
+            "cue": "weird"
+          },
+          {
+            "label": "Urgent words",
+            "icon": "chat",
+            "cue": "urgent"
+          },
+          {
+            "label": "Strange senders",
+            "icon": "user",
+            "cue": "strange"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Does it ever get it wrong?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! That's why good emails sometimes land in spam. More and better examples help it improve.",
+      "board": {
+        "type": "checklist",
+        "title": "Getting better",
+        "icon": "check",
+        "items": [
+          {
+            "text": "Mistakes happen",
+            "cue": "land",
+            "ok": false
+          },
+          {
+            "text": "More good examples",
+            "cue": "examples",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Where else is it used?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Face unlock, movie suggestions, maps traffic, and photo search. It's everywhere you look.",
+      "board": {
+        "type": "steps",
+        "title": "ALL AROUND YOU",
+        "items": [
+          {
+            "label": "Face unlock",
+            "icon": "phone",
+            "cue": "face"
+          },
+          {
+            "label": "Movie suggestions",
+            "icon": "eye",
+            "cue": "movie"
+          },
+          {
+            "label": "Traffic on maps",
+            "icon": "globe",
+            "cue": "traffic"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: show examples, it learns patterns.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "SHOW EXAMPLES",
+            "icon": "doc",
+            "cue": "examples",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "LEARNS PATTERNS",
+            "icon": "brain",
+            "cue": "patterns",
+            "color": "#E91E63"
+          }
+        ]
+      },
+      "punch": "patterns"
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time your spam folder catches a scam... that's machine learning!"
+    }
+  ]
+}

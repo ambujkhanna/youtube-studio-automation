@@ -1,0 +1,232 @@
+{
+  "id": "ep025",
+  "slug": "how-self-driving-cars-see",
+  "status": "ready",
+  "title": "How Self-Driving Cars See the Road",
+  "cover_text": "SENSE → DECIDE",
+  "description": "How do self-driving cars see? Cameras, radar and often lidar feed AI that spots cars, people and signs, then plans a safe path.\n\nA dad asks, his teen explains how autonomous cars sense the world.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#SelfDriving",
+    "#AI",
+    "#Cars",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "how do self driving cars work",
+    "how self driving cars see",
+    "lidar explained",
+    "autonomous cars"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "How does it see?",
+    "cue": "next",
+    "left": "eye",
+    "right": "target"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "How does a self-driving car see the road?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "eye",
+          "label": "SENSORS"
+        },
+        "right": {
+          "icon": "target",
+          "label": "DECISIONS"
+        },
+        "mid": "→",
+        "subtitle": "Self-driving cars, explained"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "With sensors! Cameras, radar, and often lidar, which uses laser light to measure distance.",
+      "board": {
+        "type": "steps",
+        "title": "SENSORS",
+        "items": [
+          {
+            "label": "Cameras",
+            "icon": "eye",
+            "cue": "cameras"
+          },
+          {
+            "label": "Radar",
+            "icon": "target",
+            "cue": "radar"
+          },
+          {
+            "label": "Lidar: laser distance",
+            "icon": "bulb",
+            "cue": "lidar"
+          }
+        ]
+      },
+      "punch": "sensors"
+    },
+    {
+      "who": "DAD",
+      "text": "Then what does the AI do?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It spots cars, people, bikes, signs, and lanes, and predicts where they'll move next.",
+      "board": {
+        "type": "checklist",
+        "title": "It spots",
+        "icon": "eye",
+        "items": [
+          {
+            "text": "Cars and bikes",
+            "cue": "cars",
+            "ok": true
+          },
+          {
+            "text": "People",
+            "cue": "people",
+            "ok": true
+          },
+          {
+            "text": "Signs and lanes",
+            "cue": "signs",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And then it drives?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It plans a safe path, then controls steering, speed, and brakes, many times every second.",
+      "board": {
+        "type": "steps",
+        "title": "EVERY SECOND",
+        "items": [
+          {
+            "label": "Plan a safe path",
+            "icon": "target",
+            "cue": "plans"
+          },
+          {
+            "label": "Steer and set speed",
+            "icon": "check",
+            "cue": "steering"
+          },
+          {
+            "label": "Brake if needed",
+            "icon": "warn",
+            "cue": "brakes"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Are they safe yet?"
+    },
+    {
+      "who": "TEEN",
+      "text": "They're improving, but tricky cases like heavy rain, strange roadworks, or unusual situations are still hard.",
+      "board": {
+        "type": "checklist",
+        "title": "Still hard",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Heavy rain",
+            "cue": "rain",
+            "ok": false
+          },
+          {
+            "text": "Strange roadworks",
+            "cue": "roadworks",
+            "ok": false
+          },
+          {
+            "text": "Unusual situations",
+            "cue": "unusual",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So should drivers relax?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not in most cars today. Driver assist still needs your eyes on the road and hands ready.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "DRIVER ASSIST",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "You stay in charge",
+              "icon": "user",
+              "cue": "assist",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "NEVER",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Nap or phone",
+              "icon": "x",
+              "cue": "eyes",
+              "tick": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: sense, predict, decide.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "SENSE THE ROAD",
+            "icon": "eye",
+            "cue": "sense",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "PREDICT AND DECIDE",
+            "icon": "target",
+            "cue": "decide",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you see a self-driving car... remember, sense, predict, decide!"
+    }
+  ]
+}

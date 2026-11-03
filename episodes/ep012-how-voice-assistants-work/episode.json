@@ -1,0 +1,233 @@
+{
+  "id": "ep012",
+  "slug": "how-voice-assistants-work",
+  "status": "ready",
+  "title": "How Voice Assistants Understand You",
+  "cover_text": "HEAR → THINK → TALK",
+  "description": "How do voice assistants understand you? They turn sound into text, figure out what you want, then answer out loud.\n\nA dad asks, his teen explains the three steps behind every voice assistant.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#VoiceAssistant",
+    "#AI",
+    "#SpeechRecognition",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "how do voice assistants work",
+    "speech recognition explained",
+    "how alexa works",
+    "how siri works"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Hear, think, talk?",
+    "cue": "next",
+    "left": "phone",
+    "right": "chat"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "How does my phone understand my voice?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "phone",
+          "label": "YOU SPEAK"
+        },
+        "right": {
+          "icon": "chat",
+          "label": "IT ANSWERS"
+        },
+        "mid": "→",
+        "subtitle": "How voice assistants work"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Three steps! It hears, it understands, and it talks back.",
+      "board": {
+        "type": "steps",
+        "title": "3 STEPS",
+        "items": [
+          {
+            "label": "Hear",
+            "icon": "phone",
+            "cue": "hears"
+          },
+          {
+            "label": "Understand",
+            "icon": "brain",
+            "cue": "understands"
+          },
+          {
+            "label": "Talk back",
+            "icon": "chat",
+            "cue": "talks"
+          }
+        ]
+      },
+      "punch": "three"
+    },
+    {
+      "who": "DAD",
+      "text": "How does it hear me?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Speech recognition turns your voice into text. It learned from many hours of recorded speech.",
+      "board": {
+        "type": "big",
+        "icon": "phone",
+        "text": "Voice → text",
+        "cue": "text",
+        "sub": "learned from recorded speech",
+        "sub_cue": "recorded"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And then?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Then it figures out what you want. Set an alarm? Check the weather? Play a song?",
+      "board": {
+        "type": "checklist",
+        "title": "What do you want?",
+        "icon": "target",
+        "items": [
+          {
+            "text": "Set an alarm",
+            "cue": "alarm",
+            "ok": true
+          },
+          {
+            "text": "Check the weather",
+            "cue": "weather",
+            "ok": true
+          },
+          {
+            "text": "Play a song",
+            "cue": "song",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Why does it mishear me sometimes?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Noise, accents, or words that sound alike. Speaking clearly and closer to the mic helps.",
+      "board": {
+        "type": "checklist",
+        "title": "Why it mishears",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Background noise",
+            "cue": "noise",
+            "ok": false
+          },
+          {
+            "text": "Similar sounding words",
+            "cue": "sound",
+            "ok": false
+          },
+          {
+            "text": "Speak clearly, closer",
+            "cue": "clearly",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Is it always listening to me?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Most wait for a wake word, then start sending what you say. You can review settings and delete recordings.",
+      "board": {
+        "type": "steps",
+        "title": "PRIVACY",
+        "items": [
+          {
+            "label": "Waits for a wake word",
+            "icon": "eye",
+            "cue": "wake"
+          },
+          {
+            "label": "Check your settings",
+            "icon": "shield",
+            "cue": "settings"
+          },
+          {
+            "label": "Delete recordings",
+            "icon": "x",
+            "cue": "delete"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can it understand different languages?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Many assistants support several languages and accents. You can change the language in its settings.",
+      "board": {
+        "type": "big",
+        "icon": "globe",
+        "text": "Many languages and accents",
+        "cue": "languages"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: hear, understand, talk.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "VOICE → TEXT",
+            "icon": "phone",
+            "cue": "hear",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "TEXT → MEANING",
+            "icon": "brain",
+            "cue": "understand",
+            "color": "#E91E63"
+          },
+          {
+            "text": "ANSWER OUT LOUD",
+            "icon": "chat",
+            "cue": "talk",
+            "color": "#2ECC71"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you ask your phone something... remember, hear, think, talk!"
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "id": "ep036",
+  "slug": "ai-travel-planning",
+  "status": "ready",
+  "title": "Plan a Trip With AI (and Avoid Mistakes)",
+  "cover_text": "PLAN, THEN VERIFY",
+  "description": "How to plan a trip with AI: get an itinerary, packing lists and ideas fast — then verify prices, times and opening hours on official sites.\n\nA dad asks, his teen explains.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#TravelTips",
+    "#AI",
+    "#TravelPlanning",
+    "#AITips",
+    "#Shorts"
+  ],
+  "tags": [
+    "plan a trip with ai",
+    "ai travel planner",
+    "chatgpt itinerary",
+    "travel tips ai"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Planned... and verified?",
+    "cue": "next",
+    "left": "suitcase",
+    "right": "check"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Can AI plan our family vacation?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "suitcase",
+          "label": "TRIP IDEA"
+        },
+        "right": {
+          "icon": "calendar",
+          "label": "FULL PLAN"
+        },
+        "mid": "→",
+        "subtitle": "Travel planning with AI"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "It's a great starting point! It can draft a day-by-day plan in seconds.",
+      "board": {
+        "type": "big",
+        "icon": "calendar",
+        "text": "Day-by-day plan in seconds",
+        "cue": "plan"
+      },
+      "punch": "starting"
+    },
+    {
+      "who": "DAD",
+      "text": "What should I tell it?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Where, how many days, your budget, who's coming, and what you all enjoy.",
+      "board": {
+        "type": "checklist",
+        "title": "Tell it",
+        "icon": "chat",
+        "items": [
+          {
+            "text": "Where and how long",
+            "cue": "where",
+            "ok": true
+          },
+          {
+            "text": "Budget",
+            "cue": "budget",
+            "ok": true
+          },
+          {
+            "text": "What you enjoy",
+            "cue": "enjoy",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What else can it do?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Make packing lists, suggest local food, and teach a few phrases in the local language.",
+      "board": {
+        "type": "steps",
+        "title": "EXTRAS",
+        "items": [
+          {
+            "label": "Packing lists",
+            "icon": "suitcase",
+            "cue": "packing"
+          },
+          {
+            "label": "Local food ideas",
+            "icon": "bulb",
+            "cue": "food"
+          },
+          {
+            "label": "Useful phrases",
+            "icon": "globe",
+            "cue": "phrases"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can I trust the details?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not blindly. Prices, train times, and opening hours change, and AI can be out of date.",
+      "board": {
+        "type": "checklist",
+        "title": "Check these",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Prices",
+            "cue": "prices",
+            "ok": false
+          },
+          {
+            "text": "Train times",
+            "cue": "train",
+            "ok": false
+          },
+          {
+            "text": "Opening hours",
+            "cue": "opening",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So how do I check?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Confirm on official websites before you book anything, and read recent reviews.",
+      "board": {
+        "type": "steps",
+        "title": "VERIFY",
+        "items": [
+          {
+            "label": "Official websites",
+            "icon": "globe",
+            "cue": "official"
+          },
+          {
+            "label": "Before you book",
+            "icon": "calendar",
+            "cue": "book"
+          },
+          {
+            "label": "Recent reviews",
+            "icon": "eye",
+            "cue": "reviews"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can it help on the trip itself?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Translate menus, find a nearby pharmacy, or ask what a sign means. Just check anything important.",
+      "board": {
+        "type": "steps",
+        "title": "ON THE TRIP",
+        "items": [
+          {
+            "label": "Translate menus",
+            "icon": "globe",
+            "cue": "menus"
+          },
+          {
+            "label": "Find a pharmacy",
+            "icon": "search",
+            "cue": "pharmacy"
+          },
+          {
+            "label": "Explain a sign",
+            "icon": "bulb",
+            "cue": "sign"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: AI plans, I verify.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "AI DRAFTS THE PLAN",
+            "icon": "calendar",
+            "cue": "plans",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "YOU VERIFY DETAILS",
+            "icon": "check",
+            "cue": "verify",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you plan a trip... let AI draft, then check the details!"
+    }
+  ]
+}

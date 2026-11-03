@@ -1,0 +1,209 @@
+{
+  "id": "ep019",
+  "slug": "why-ai-forgets-long-chats",
+  "status": "ready",
+  "title": "Why AI Forgets Long Chats",
+  "cover_text": "CONTEXT WINDOW",
+  "description": "Why does AI forget what you said earlier in a long chat? It can only look at a limited amount of text at once — its context window.\n\nA dad asks, his teen explains context windows and simple fixes.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AI",
+    "#ChatGPT",
+    "#ContextWindow",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "why does chatgpt forget",
+    "context window explained",
+    "ai memory",
+    "chatgpt long conversation"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Did it forget?",
+    "cue": "next",
+    "left": "chat",
+    "right": "brain"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Why does AI forget what I said earlier?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "EARLY CHAT"
+        },
+        "right": {
+          "icon": "brain",
+          "label": "FORGOTTEN?"
+        },
+        "mid": "VS",
+        "subtitle": "Context windows, explained"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Because it can only look at a limited amount of text at once. That's called the context window.",
+      "board": {
+        "type": "big",
+        "icon": "eye",
+        "text": "Context window = what it can see",
+        "cue": "window"
+      },
+      "punch": "window"
+    },
+    {
+      "who": "DAD",
+      "text": "Like a short memory?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Kind of. Imagine reading a long book through a small window. Old pages slide out of view.",
+      "board": {
+        "type": "steps",
+        "title": "THE WINDOW",
+        "items": [
+          {
+            "label": "Reads through a window",
+            "icon": "eye",
+            "cue": "reading"
+          },
+          {
+            "label": "New text comes in",
+            "icon": "doc",
+            "cue": "long"
+          },
+          {
+            "label": "Old pages slide out",
+            "icon": "x",
+            "cue": "slide"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Doesn't it remember me between chats?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Some apps have a memory feature you can turn on or off. Otherwise, each new chat starts fresh.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "NEW CHAT",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Usually starts fresh",
+              "icon": "doc",
+              "cue": "fresh"
+            }
+          ]
+        },
+        "right": {
+          "label": "MEMORY ON",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Remembers some facts",
+              "icon": "brain",
+              "cue": "memory"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So how do I stop it forgetting?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Put the important details in one message. Or start a new chat with a short summary.",
+      "board": {
+        "type": "steps",
+        "title": "FIXES",
+        "items": [
+          {
+            "label": "Key details in one message",
+            "icon": "doc",
+            "cue": "important"
+          },
+          {
+            "label": "Start a new chat",
+            "icon": "chat",
+            "cue": "start"
+          },
+          {
+            "label": "Paste a short summary",
+            "icon": "check",
+            "cue": "summary"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can I ask it to summarize first?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Ask it to summarize the chat so far, then paste that summary into a fresh chat.",
+      "board": {
+        "type": "chat",
+        "title": "SMART TRICK",
+        "items": [
+          {
+            "who": "user",
+            "text": "Summarize our chat so far",
+            "cue": "summarize"
+          },
+          {
+            "who": "user",
+            "text": "Paste into a new chat",
+            "cue": "paste"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: it sees a window, not everything.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "LIMITED WINDOW",
+            "icon": "eye",
+            "cue": "window",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "SUMMARIZE & RESTART",
+            "icon": "check",
+            "cue": "everything",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time AI forgets something... remember the window!"
+    }
+  ]
+}

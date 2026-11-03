@@ -1,0 +1,244 @@
+{
+  "id": "ep016",
+  "slug": "how-recommendations-work",
+  "status": "ready",
+  "title": "Why YouTube Knows What You Like",
+  "cover_text": "WATCH → SIGNAL",
+  "description": "How do recommendation algorithms work? They learn from what you watch, skip and like, then suggest similar things.\n\nA dad asks, his teen explains recommendations — and how to take back control.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#Algorithm",
+    "#AI",
+    "#Recommendations",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "how does the youtube algorithm work",
+    "recommendation algorithm explained",
+    "why do i see these videos"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Why this video?",
+    "cue": "next",
+    "left": "eye",
+    "right": "target"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "How does my phone know exactly what I'll watch next?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "eye",
+          "label": "YOU WATCH"
+        },
+        "right": {
+          "icon": "target",
+          "label": "IT SUGGESTS"
+        },
+        "mid": "→",
+        "subtitle": "Recommendations explained"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "It's a recommendation system. It learns from what you do, then suggests similar things.",
+      "board": {
+        "type": "big",
+        "icon": "target",
+        "text": "It learns from what you do",
+        "cue": "learns"
+      },
+      "punch": "learns"
+    },
+    {
+      "who": "DAD",
+      "text": "What exactly does it learn from?"
+    },
+    {
+      "who": "TEEN",
+      "text": "What you watch, how long you watch, what you skip, like, or search for.",
+      "board": {
+        "type": "checklist",
+        "title": "Signals it uses",
+        "icon": "eye",
+        "items": [
+          {
+            "text": "What you watch",
+            "cue": "watch",
+            "ok": true
+          },
+          {
+            "text": "What you skip",
+            "cue": "skip",
+            "ok": true
+          },
+          {
+            "text": "What you like or search",
+            "cue": "like",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And then?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It also finds people with similar taste. If they loved a video, it might show it to you too.",
+      "board": {
+        "type": "steps",
+        "title": "SIMILAR PEOPLE",
+        "items": [
+          {
+            "label": "People like you",
+            "icon": "user",
+            "cue": "similar"
+          },
+          {
+            "label": "They loved a video",
+            "icon": "check",
+            "cue": "loved"
+          },
+          {
+            "label": "It shows it to you",
+            "icon": "eye",
+            "cue": "show"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Is that a bad thing?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It's handy, but it can trap you in a bubble, showing more and more of the same thing.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "HANDY",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Finds things you like",
+              "icon": "check",
+              "cue": "handy",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "BUBBLE",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "More of the same",
+              "icon": "warn",
+              "cue": "bubble",
+              "tick": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "How do I get out of the bubble?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Search for new topics, tap not interested, and pause or clear your watch history.",
+      "board": {
+        "type": "steps",
+        "title": "TAKE CONTROL",
+        "items": [
+          {
+            "label": "Search new topics",
+            "icon": "search",
+            "cue": "search"
+          },
+          {
+            "label": "Tap not interested",
+            "icon": "x",
+            "cue": "interested"
+          },
+          {
+            "label": "Clear watch history",
+            "icon": "doc",
+            "cue": "clear"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Does it know everything about me?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It knows what you do on that app, and sometimes more. You can check your data and ad settings anytime.",
+      "board": {
+        "type": "steps",
+        "title": "YOUR DATA",
+        "items": [
+          {
+            "label": "What you do in the app",
+            "icon": "eye",
+            "cue": "app"
+          },
+          {
+            "label": "Check data settings",
+            "icon": "shield",
+            "cue": "data"
+          },
+          {
+            "label": "Check ad settings",
+            "icon": "target",
+            "cue": "ad"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: what I do teaches it.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "YOUR ACTIONS = SIGNALS",
+            "icon": "eye",
+            "cue": "teaches",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "YOU CAN STEER IT",
+            "icon": "target",
+            "cue": "do",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time a video pops up for you... ask, what did I do to get this?"
+    }
+  ]
+}

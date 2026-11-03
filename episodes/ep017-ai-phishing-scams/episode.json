@@ -1,0 +1,242 @@
+{
+  "id": "ep017",
+  "slug": "ai-phishing-scams",
+  "status": "ready",
+  "title": "AI Scam Messages: How to Spot Them",
+  "cover_text": "PAUSE BEFORE CLICK",
+  "description": "How to spot AI-written scam messages: they look polished now, so check urgency, links and requests for money or codes.\n\nA dad asks, his teen explains how to stay safe from smarter scams.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#ScamAlert",
+    "#AI",
+    "#CyberSafety",
+    "#Phishing",
+    "#Shorts"
+  ],
+  "tags": [
+    "ai scams",
+    "how to spot phishing",
+    "scam message tips",
+    "online safety"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Pause before you click?",
+    "cue": "next",
+    "left": "mail",
+    "right": "warn"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Can scammers use AI to fool me?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "mail",
+          "label": "MESSAGE"
+        },
+        "right": {
+          "icon": "warn",
+          "label": "SCAM?"
+        },
+        "mid": "VS",
+        "subtitle": "Smarter scams, simple checks"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes. AI helps them write perfect, friendly messages, so bad spelling is no longer a clue.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Good spelling ≠ safe",
+        "cue": "spelling"
+      },
+      "punch": "spelling"
+    },
+    {
+      "who": "DAD",
+      "text": "Then how do I tell?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Look for pressure. Act now, your account is locked, you won a prize.",
+      "board": {
+        "type": "checklist",
+        "title": "Red flags",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Act now!",
+            "cue": "act",
+            "ok": false
+          },
+          {
+            "text": "Account locked!",
+            "cue": "locked",
+            "ok": false
+          },
+          {
+            "text": "You won a prize!",
+            "cue": "prize",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What do they usually want?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Your password, a one-time code, a payment, or for you to click a link.",
+      "board": {
+        "type": "checklist",
+        "title": "They want",
+        "icon": "lock",
+        "items": [
+          {
+            "text": "Password",
+            "cue": "password",
+            "ok": false
+          },
+          {
+            "text": "One-time code",
+            "cue": "code",
+            "ok": false
+          },
+          {
+            "text": "Payment or a click",
+            "cue": "payment",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So what should I do?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Pause. Don't click the link. Open the official app or website yourself and check there.",
+      "board": {
+        "type": "steps",
+        "title": "SAFE STEPS",
+        "items": [
+          {
+            "label": "Pause",
+            "icon": "warn",
+            "cue": "pause"
+          },
+          {
+            "label": "Don't click the link",
+            "icon": "x",
+            "cue": "click"
+          },
+          {
+            "label": "Use the official app",
+            "icon": "phone",
+            "cue": "official"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And if I already clicked?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Change your password, call your bank using the number on your card, and report it.",
+      "board": {
+        "type": "steps",
+        "title": "IF YOU CLICKED",
+        "items": [
+          {
+            "label": "Change your password",
+            "icon": "lock",
+            "cue": "change"
+          },
+          {
+            "label": "Call your bank",
+            "icon": "phone",
+            "cue": "bank"
+          },
+          {
+            "label": "Report it",
+            "icon": "shield",
+            "cue": "report"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What about calls from my bank?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Real banks never ask for your password or one-time code. If they do, hang up and call the official number.",
+      "board": {
+        "type": "checklist",
+        "title": "Banks never ask for",
+        "icon": "lock",
+        "items": [
+          {
+            "text": "Your password",
+            "cue": "password",
+            "ok": false
+          },
+          {
+            "text": "A one-time code",
+            "cue": "code",
+            "ok": false
+          },
+          {
+            "text": "Call the official number",
+            "cue": "official",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: pressure is the warning sign.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "PRESSURE = WARNING",
+            "icon": "warn",
+            "cue": "pressure",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "CHECK IT YOURSELF",
+            "icon": "search",
+            "cue": "sign",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time a message says act now... pause and check!"
+    }
+  ]
+}

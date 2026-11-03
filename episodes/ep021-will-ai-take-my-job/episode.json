@@ -1,0 +1,244 @@
+{
+  "id": "ep021",
+  "slug": "will-ai-take-my-job",
+  "status": "ready",
+  "title": "Will AI Take My Job?",
+  "cover_text": "TASKS CHANGE",
+  "description": "Will AI take your job? AI changes tasks more than whole jobs. The people who learn to use it well gain an edge.\n\nA dad asks, his teen gives a balanced, practical answer.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#FutureOfWork",
+    "#AI",
+    "#Jobs",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "will ai take my job",
+    "ai and jobs",
+    "future of work ai",
+    "ai skills"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Replace... or help?",
+    "cue": "next",
+    "left": "user",
+    "right": "robot"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Be honest. Will AI take my job?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "user",
+          "label": "YOU"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "AI"
+        },
+        "mid": "VS",
+        "subtitle": "AI and your job"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Nobody knows exactly. But right now, AI mostly changes tasks, not whole jobs.",
+      "board": {
+        "type": "big",
+        "icon": "target",
+        "text": "Tasks change, not whole jobs",
+        "cue": "tasks"
+      },
+      "punch": "tasks"
+    },
+    {
+      "who": "DAD",
+      "text": "What kind of tasks?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Repetitive ones. Like first drafts, summaries, sorting emails, or filling in forms.",
+      "board": {
+        "type": "steps",
+        "title": "REPETITIVE TASKS",
+        "items": [
+          {
+            "label": "First drafts",
+            "icon": "doc",
+            "cue": "drafts"
+          },
+          {
+            "label": "Summaries",
+            "icon": "book",
+            "cue": "summaries"
+          },
+          {
+            "label": "Sorting emails",
+            "icon": "mail",
+            "cue": "sorting"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And what stays with people?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Judgment, care, trust, creativity, and working with other people.",
+      "board": {
+        "type": "checklist",
+        "title": "Human strengths",
+        "icon": "user",
+        "items": [
+          {
+            "text": "Judgment",
+            "cue": "judgment",
+            "ok": true
+          },
+          {
+            "text": "Care and trust",
+            "cue": "care",
+            "ok": true
+          },
+          {
+            "text": "Working with people",
+            "cue": "working",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So what should I do?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Learn to use AI in your own work. Try it on one boring task every week.",
+      "board": {
+        "type": "steps",
+        "title": "START SMALL",
+        "items": [
+          {
+            "label": "Pick one boring task",
+            "icon": "target",
+            "cue": "boring"
+          },
+          {
+            "label": "Try AI on it",
+            "icon": "robot",
+            "cue": "try"
+          },
+          {
+            "label": "Repeat every week",
+            "icon": "calendar",
+            "cue": "week"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Will that really help?"
+    },
+    {
+      "who": "TEEN",
+      "text": "People who use AI well can do more, faster. That's a skill employers notice.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "WITHOUT AI",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Same old pace",
+              "icon": "calendar",
+              "cue": "people"
+            }
+          ]
+        },
+        "right": {
+          "label": "WITH AI",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Do more, faster",
+              "icon": "check",
+              "cue": "faster",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What if my job changes a lot?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Keep learning. Short online courses and practicing with AI tools help you adapt step by step.",
+      "board": {
+        "type": "steps",
+        "title": "KEEP LEARNING",
+        "items": [
+          {
+            "label": "Short online courses",
+            "icon": "book",
+            "cue": "courses"
+          },
+          {
+            "label": "Practice with AI tools",
+            "icon": "robot",
+            "cue": "practicing"
+          },
+          {
+            "label": "Adapt step by step",
+            "icon": "check",
+            "cue": "adapt"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: let AI do the boring parts.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "AI: BORING TASKS",
+            "icon": "robot",
+            "cue": "boring",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "YOU: JUDGMENT",
+            "icon": "user",
+            "cue": "parts",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you worry about AI... ask, what task can it help me with?"
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "id": "ep034",
+  "slug": "ai-for-job-hunting",
+  "status": "ready",
+  "title": "Using AI for Your Job Search (the Right Way)",
+  "cover_text": "TAILOR, DON'T FAKE",
+  "description": "How to use AI for job hunting: tailor your CV to each job, practice interviews, and polish your writing — without inventing experience.\n\nA dad asks, his teen explains.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#JobSearch",
+    "#AI",
+    "#Career",
+    "#AITips",
+    "#Shorts"
+  ],
+  "tags": [
+    "ai for job search",
+    "ai resume tips",
+    "chatgpt cover letter",
+    "ai interview practice"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Tailored... and true?",
+    "cue": "next",
+    "left": "doc",
+    "right": "check"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Can AI help me find a better job?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "user",
+          "label": "YOU"
+        },
+        "right": {
+          "icon": "suitcase",
+          "label": "NEW JOB"
+        },
+        "mid": "→",
+        "subtitle": "AI for your job search"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "It can help a lot with the work around it. Your CV, cover letters, and interview practice.",
+      "board": {
+        "type": "steps",
+        "title": "IT HELPS WITH",
+        "items": [
+          {
+            "label": "Your CV",
+            "icon": "doc",
+            "cue": "cv"
+          },
+          {
+            "label": "Cover letters",
+            "icon": "mail",
+            "cue": "cover"
+          },
+          {
+            "label": "Interview practice",
+            "icon": "chat",
+            "cue": "interview"
+          }
+        ]
+      },
+      "punch": "help"
+    },
+    {
+      "who": "DAD",
+      "text": "How does it help my CV?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Paste the job description and your CV, then ask what skills to highlight for this job.",
+      "board": {
+        "type": "chat",
+        "title": "TAILOR IT",
+        "items": [
+          {
+            "who": "user",
+            "text": "Which skills to highlight?",
+            "cue": "highlight"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can it write the whole thing?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It can draft, but never let it invent experience. Everything must be true and in your voice.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "OK",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Drafting and polishing",
+              "icon": "check",
+              "cue": "draft",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "NEVER",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Invented experience",
+              "icon": "x",
+              "cue": "invent",
+              "tick": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And interview practice?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Ask it to act as an interviewer for that job, one question at a time, then give you feedback.",
+      "board": {
+        "type": "steps",
+        "title": "PRACTICE",
+        "items": [
+          {
+            "label": "It plays interviewer",
+            "icon": "user",
+            "cue": "interviewer"
+          },
+          {
+            "label": "One question at a time",
+            "icon": "chat",
+            "cue": "one"
+          },
+          {
+            "label": "You get feedback",
+            "icon": "check",
+            "cue": "feedback"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Anything to be careful about?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Remove your phone number and address before pasting, and double check every fact.",
+      "board": {
+        "type": "checklist",
+        "title": "Be careful",
+        "icon": "shield",
+        "items": [
+          {
+            "text": "Remove phone and address",
+            "cue": "remove",
+            "ok": true
+          },
+          {
+            "text": "Double check every fact",
+            "cue": "check",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can AI find job listings for me?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Some tools can search, but always apply on the company's official site and watch out for fake job offers.",
+      "board": {
+        "type": "checklist",
+        "title": "Job listings",
+        "icon": "search",
+        "items": [
+          {
+            "text": "Apply on official sites",
+            "cue": "official",
+            "ok": true
+          },
+          {
+            "text": "Watch for fake offers",
+            "cue": "fake",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: tailor it, practice, stay honest.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "TAILOR AND PRACTICE",
+            "icon": "target",
+            "cue": "tailor",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "STAY HONEST",
+            "icon": "shield",
+            "cue": "honest",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you apply for a job... let AI help, but keep it true!"
+    }
+  ]
+}

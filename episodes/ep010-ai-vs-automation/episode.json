@@ -1,0 +1,242 @@
+{
+  "id": "ep010",
+  "slug": "ai-vs-automation",
+  "status": "ready",
+  "title": "AI vs Automation: What's the Difference?",
+  "cover_text": "RULES vs LEARNING",
+  "description": "AI vs automation: automation follows fixed rules, AI learns from data and handles messy situations.\n\nA dad asks, his teen explains the difference with everyday examples.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AI",
+    "#Automation",
+    "#AIExplained",
+    "#TechExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "ai vs automation",
+    "difference between ai and automation",
+    "what is automation",
+    "ai explained"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Rules... or learning?",
+    "cue": "next",
+    "left": "doc",
+    "right": "brain"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Isn't AI just fancy automation?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "doc",
+          "label": "AUTOMATION"
+        },
+        "right": {
+          "icon": "brain",
+          "label": "AI"
+        },
+        "mid": "VS",
+        "subtitle": "What's the difference?"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Not exactly! Automation follows fixed rules. AI learns from data and can handle messy situations.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "AUTOMATION",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Follows fixed rules",
+              "icon": "doc",
+              "cue": "rules"
+            }
+          ]
+        },
+        "right": {
+          "label": "AI",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Learns from data",
+              "icon": "brain",
+              "cue": "learns"
+            },
+            {
+              "text": "Handles messy cases",
+              "icon": "bulb",
+              "cue": "messy"
+            }
+          ]
+        }
+      },
+      "punch": "learns"
+    },
+    {
+      "who": "DAD",
+      "text": "Give me an automation example."
+    },
+    {
+      "who": "TEEN",
+      "text": "An alarm that rings at seven every day. Or a rule that moves bills into a folder. Same rule, every time.",
+      "board": {
+        "type": "steps",
+        "title": "AUTOMATION",
+        "items": [
+          {
+            "label": "Alarm at 7 AM",
+            "icon": "calendar",
+            "cue": "alarm"
+          },
+          {
+            "label": "Bills → folder",
+            "icon": "mail",
+            "cue": "bills"
+          },
+          {
+            "label": "Same rule, every time",
+            "icon": "check",
+            "cue": "same"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And an AI example?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Reading a messy handwritten note, or understanding what you mean when you ask a question in your own words.",
+      "board": {
+        "type": "steps",
+        "title": "AI",
+        "items": [
+          {
+            "label": "Reads messy handwriting",
+            "icon": "doc",
+            "cue": "handwritten"
+          },
+          {
+            "label": "Understands your words",
+            "icon": "chat",
+            "cue": "understanding"
+          }
+        ],
+        "color": "#E91E63"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So which one is better?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Neither! Automation is fast and predictable. AI is flexible but can make mistakes. Often they work together.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "AUTOMATION",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Fast, predictable",
+              "icon": "check",
+              "cue": "predictable",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "AI",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Flexible",
+              "icon": "bulb",
+              "cue": "flexible",
+              "tick": true
+            },
+            {
+              "text": "Can make mistakes",
+              "icon": "warn",
+              "cue": "mistakes",
+              "tick": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "How do they work together?"
+    },
+    {
+      "who": "TEEN",
+      "text": "AI reads an invoice and pulls out the amount. Then automation pays it on the due date, after you approve.",
+      "board": {
+        "type": "steps",
+        "title": "TEAMWORK",
+        "items": [
+          {
+            "label": "AI reads the invoice",
+            "icon": "doc",
+            "cue": "reads"
+          },
+          {
+            "label": "You approve",
+            "icon": "user",
+            "cue": "approve"
+          },
+          {
+            "label": "Automation pays on time",
+            "icon": "calendar",
+            "cue": "pays"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: rules versus learning.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "AUTOMATION = RULES",
+            "icon": "doc",
+            "cue": "rules",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "AI = LEARNING",
+            "icon": "brain",
+            "cue": "learning",
+            "color": "#E91E63"
+          }
+        ]
+      },
+      "punch": "learning"
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time something happens automatically... ask, is it rules, or learning?"
+    }
+  ]
+}

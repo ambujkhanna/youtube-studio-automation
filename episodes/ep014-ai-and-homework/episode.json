@@ -1,0 +1,248 @@
+{
+  "id": "ep014",
+  "slug": "ai-and-homework",
+  "status": "ready",
+  "title": "AI and Homework: Help or Cheating?",
+  "cover_text": "TUTOR, NOT COPY",
+  "description": "Is using AI for homework cheating? Use it like a tutor to understand — not to copy answers. And follow your school's rules.\n\nA dad asks, his teen explains smart, honest ways to study with AI.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AIForStudents",
+    "#AI",
+    "#Study",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "ai for homework",
+    "is using chatgpt cheating",
+    "study with ai",
+    "ai tutor"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Tutor... or copy?",
+    "cue": "next",
+    "left": "book",
+    "right": "x"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Is using AI for homework cheating?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "book",
+          "label": "TUTOR"
+        },
+        "right": {
+          "icon": "x",
+          "label": "COPY"
+        },
+        "mid": "VS",
+        "subtitle": "Help or cheating?"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "It depends how you use it! Copying answers is cheating. Using it like a tutor is learning.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "CHEATING",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Copy the answer",
+              "icon": "x",
+              "cue": "copying",
+              "tick": false
+            }
+          ]
+        },
+        "right": {
+          "label": "LEARNING",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Use it like a tutor",
+              "icon": "book",
+              "cue": "tutor",
+              "tick": true
+            }
+          ]
+        }
+      },
+      "punch": "tutor"
+    },
+    {
+      "who": "DAD",
+      "text": "What's using it like a tutor?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Ask it to explain a topic simply, or give you a hint instead of the full answer.",
+      "board": {
+        "type": "chat",
+        "title": "ASK FOR HINTS",
+        "items": [
+          {
+            "who": "user",
+            "text": "Explain this simply",
+            "cue": "explain"
+          },
+          {
+            "who": "user",
+            "text": "Just a hint, please",
+            "cue": "hint"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What else is allowed?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Making practice questions, quizzing you before a test, and checking your own work.",
+      "board": {
+        "type": "steps",
+        "title": "SMART STUDY",
+        "items": [
+          {
+            "label": "Practice questions",
+            "icon": "doc",
+            "cue": "practice"
+          },
+          {
+            "label": "Quiz before a test",
+            "icon": "target",
+            "cue": "quizzing"
+          },
+          {
+            "label": "Check your work",
+            "icon": "check",
+            "cue": "checking"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And what about essays?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Write it yourself. Then ask AI for feedback on clarity, not to rewrite the whole thing.",
+      "board": {
+        "type": "steps",
+        "title": "ESSAYS",
+        "items": [
+          {
+            "label": "You write it",
+            "icon": "user",
+            "cue": "write"
+          },
+          {
+            "label": "Ask for feedback",
+            "icon": "chat",
+            "cue": "feedback"
+          },
+          {
+            "label": "You make the edits",
+            "icon": "check",
+            "cue": "rewrite"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Do schools allow AI at all?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Rules differ. Always follow your teacher's rules, and say when you used AI if they ask.",
+      "board": {
+        "type": "checklist",
+        "title": "Be honest",
+        "icon": "shield",
+        "items": [
+          {
+            "text": "Follow your school's rules",
+            "cue": "rules",
+            "ok": true
+          },
+          {
+            "text": "Say when you used AI",
+            "cue": "say",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can teachers tell if I used AI?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Sometimes, but detectors aren't reliable. The best answer is simple: be honest and do your own thinking.",
+      "board": {
+        "type": "checklist",
+        "title": "Be honest",
+        "icon": "shield",
+        "items": [
+          {
+            "text": "Detectors aren't reliable",
+            "cue": "detectors",
+            "ok": false
+          },
+          {
+            "text": "Do your own thinking",
+            "cue": "thinking",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: tutor yes, copy no.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "TUTOR: YES",
+            "icon": "book",
+            "cue": "tutor",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "COPY: NO",
+            "icon": "x",
+            "cue": "copy",
+            "color": "#E91E63"
+          }
+        ]
+      },
+      "punch": "copy"
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you're stuck on homework... ask for a hint, not the answer!"
+    }
+  ]
+}

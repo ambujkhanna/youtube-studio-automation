@@ -1,0 +1,220 @@
+{
+  "id": "ep024",
+  "slug": "robots-vs-ai",
+  "status": "ready",
+  "title": "Robots vs AI: What's the Difference?",
+  "cover_text": "BODY vs BRAIN",
+  "description": "Robots vs AI: a robot is a machine with a body that moves; AI is software that thinks through data. Some robots use AI, many don't.\n\nA dad asks, his teen clears up the confusion.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#Robots",
+    "#AI",
+    "#Robotics",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "robots vs ai",
+    "difference between robot and ai",
+    "what is a robot",
+    "robotics explained"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Body... or brain?",
+    "cue": "next",
+    "left": "robot",
+    "right": "brain"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Is AI the same as a robot?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "robot",
+          "label": "ROBOT"
+        },
+        "right": {
+          "icon": "brain",
+          "label": "AI"
+        },
+        "mid": "VS",
+        "subtitle": "Body vs brain"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "No! A robot is a machine with a body that moves. AI is software, like a brain made of math.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "ROBOT",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "A body that moves",
+              "icon": "robot",
+              "cue": "body"
+            }
+          ]
+        },
+        "right": {
+          "label": "AI",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Software that thinks",
+              "icon": "brain",
+              "cue": "software"
+            }
+          ]
+        }
+      },
+      "punch": "body"
+    },
+    {
+      "who": "DAD",
+      "text": "So a chatbot has no body?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Right. A chatbot is AI without a body. It lives on computers and talks through your screen.",
+      "board": {
+        "type": "big",
+        "icon": "chat",
+        "text": "AI without a body",
+        "cue": "chatbot"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And robots without AI?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Lots! A factory arm that repeats the same move all day just follows a program.",
+      "board": {
+        "type": "steps",
+        "title": "ROBOT WITHOUT AI",
+        "items": [
+          {
+            "label": "Factory arm",
+            "icon": "robot",
+            "cue": "factory"
+          },
+          {
+            "label": "Same move all day",
+            "icon": "calendar",
+            "cue": "repeats"
+          },
+          {
+            "label": "Just a program",
+            "icon": "doc",
+            "cue": "program"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "When do they come together?"
+    },
+    {
+      "who": "TEEN",
+      "text": "A robot vacuum that maps your room, or a delivery robot that avoids people. That's AI inside a robot.",
+      "board": {
+        "type": "steps",
+        "title": "AI + ROBOT",
+        "items": [
+          {
+            "label": "Vacuum maps your room",
+            "icon": "target",
+            "cue": "vacuum"
+          },
+          {
+            "label": "Delivery robot avoids people",
+            "icon": "user",
+            "cue": "avoids"
+          },
+          {
+            "label": "AI is the brain",
+            "icon": "brain",
+            "cue": "inside"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So which is harder to build?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Moving safely in the real world is surprisingly hard. Folding laundry is tougher than writing a poem!",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "EASY FOR AI",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Writing a poem",
+              "icon": "doc",
+              "cue": "poem",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "HARD FOR ROBOTS",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Folding laundry",
+              "icon": "warn",
+              "cue": "laundry",
+              "tick": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: robot is the body, AI is the brain.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "ROBOT = BODY",
+            "icon": "robot",
+            "cue": "robot",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "AI = BRAIN",
+            "icon": "brain",
+            "cue": "brain",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time you see a robot... ask, does it have an AI brain?"
+    }
+  ]
+}

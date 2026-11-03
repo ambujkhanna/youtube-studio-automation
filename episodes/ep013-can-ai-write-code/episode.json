@@ -1,0 +1,228 @@
+{
+  "id": "ep013",
+  "slug": "can-ai-write-code",
+  "status": "ready",
+  "title": "Can AI Write Code?",
+  "cover_text": "CODE + CHECK",
+  "description": "Can AI write code? Yes — it's a great helper for small tasks and explanations, but you still need to test and understand it.\n\nA dad asks, his teen explains AI coding assistants honestly.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#Coding",
+    "#AI",
+    "#Programming",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "can ai write code",
+    "ai coding assistant",
+    "learn to code with ai",
+    "ai programming"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Code... and check?",
+    "cue": "next",
+    "left": "doc",
+    "right": "check"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Can AI really write computer code?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "PROMPT"
+        },
+        "right": {
+          "icon": "doc",
+          "label": "CODE"
+        },
+        "mid": "→",
+        "subtitle": "AI coding assistants"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! You describe what you want in plain English, and it writes code for it.",
+      "board": {
+        "type": "big",
+        "icon": "doc",
+        "text": "Plain English → code",
+        "cue": "english"
+      },
+      "punch": "code"
+    },
+    {
+      "who": "DAD",
+      "text": "So I don't need to learn coding?"
+    },
+    {
+      "who": "TEEN",
+      "text": "You still do! AI code can look right but have bugs, or security holes. Someone has to check it.",
+      "board": {
+        "type": "checklist",
+        "title": "AI code can have",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Hidden bugs",
+            "cue": "bugs",
+            "ok": false
+          },
+          {
+            "text": "Security holes",
+            "cue": "security",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Then what is it good for?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Small tasks, explaining confusing code, and helping beginners learn faster.",
+      "board": {
+        "type": "steps",
+        "title": "GREAT FOR",
+        "items": [
+          {
+            "label": "Small tasks",
+            "icon": "check",
+            "cue": "small"
+          },
+          {
+            "label": "Explaining code",
+            "icon": "book",
+            "cue": "explaining"
+          },
+          {
+            "label": "Learning faster",
+            "icon": "bulb",
+            "cue": "learn"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "How should a beginner use it?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Ask it to explain each line. Run the code, test it, and change something to see what happens.",
+      "board": {
+        "type": "steps",
+        "title": "LEARN WITH IT",
+        "items": [
+          {
+            "label": "Ask it to explain",
+            "icon": "chat",
+            "cue": "explain"
+          },
+          {
+            "label": "Run and test",
+            "icon": "check",
+            "cue": "test"
+          },
+          {
+            "label": "Change and retry",
+            "icon": "target",
+            "cue": "change"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Any rule for real projects?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Never paste passwords or secret keys, and review everything before it goes live.",
+      "board": {
+        "type": "checklist",
+        "title": "Real projects",
+        "icon": "shield",
+        "items": [
+          {
+            "text": "No passwords or keys",
+            "cue": "passwords",
+            "ok": false
+          },
+          {
+            "text": "Review before live",
+            "cue": "review",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Which kind of code is it best at?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Popular languages like Python and JavaScript, because it saw lots of examples of them while learning.",
+      "board": {
+        "type": "checklist",
+        "title": "Best at",
+        "icon": "doc",
+        "items": [
+          {
+            "text": "Python",
+            "cue": "python",
+            "ok": true
+          },
+          {
+            "text": "JavaScript",
+            "cue": "javascript",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: AI writes, you check.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "AI WRITES",
+            "icon": "doc",
+            "cue": "writes",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "YOU CHECK",
+            "icon": "check",
+            "cue": "check",
+            "color": "#E91E63"
+          }
+        ]
+      },
+      "punch": "check"
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time AI writes code for you... ask, did I test it?"
+    }
+  ]
+}

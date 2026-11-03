@@ -1,0 +1,211 @@
+{
+  "id": "ep015",
+  "slug": "what-is-ai-bias",
+  "status": "ready",
+  "title": "Why AI Can Be Unfair (AI Bias)",
+  "cover_text": "BIASED DATA IN",
+  "description": "What is AI bias? If the examples an AI learns from are unfair or incomplete, its decisions can be unfair too.\n\nA dad asks, his teen explains AI bias and how people reduce it.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AIBias",
+    "#AI",
+    "#AIEthics",
+    "#AIExplained",
+    "#Shorts"
+  ],
+  "tags": [
+    "what is ai bias",
+    "ai bias explained",
+    "is ai fair",
+    "ai ethics"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Fair data, fair AI?",
+    "cue": "next",
+    "left": "doc",
+    "right": "shield"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Can AI be unfair? It's just a computer.",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "robot",
+          "label": "NEUTRAL?"
+        },
+        "right": {
+          "icon": "warn",
+          "label": "UNFAIR?"
+        },
+        "mid": "VS",
+        "subtitle": "AI bias, explained"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "It can! AI learns from examples. If the examples are unfair, the AI can copy that unfairness.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Unfair data in → unfair results out",
+        "cue": "unfair"
+      },
+      "punch": "unfair"
+    },
+    {
+      "who": "DAD",
+      "text": "How would examples be unfair?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Maybe some groups are missing, or old decisions in the data were already biased.",
+      "board": {
+        "type": "checklist",
+        "title": "Unfair data",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Some groups missing",
+            "cue": "missing",
+            "ok": false
+          },
+          {
+            "text": "Old biased decisions",
+            "cue": "old",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Give me an example."
+    },
+    {
+      "who": "TEEN",
+      "text": "Imagine a face app trained mostly on some faces. It may work worse on faces it rarely saw.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "TRAINED ON",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Mostly some faces",
+              "icon": "user",
+              "cue": "trained"
+            }
+          ]
+        },
+        "right": {
+          "label": "RESULT",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Worse on others",
+              "icon": "x",
+              "cue": "worse",
+              "tick": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So how do people fix it?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Use more varied data, test results across different groups, and let humans review important decisions.",
+      "board": {
+        "type": "steps",
+        "title": "REDUCING BIAS",
+        "items": [
+          {
+            "label": "More varied data",
+            "icon": "globe",
+            "cue": "varied"
+          },
+          {
+            "label": "Test across groups",
+            "icon": "search",
+            "cue": "test"
+          },
+          {
+            "label": "Human review",
+            "icon": "user",
+            "cue": "humans"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What can I do as a user?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Notice when results seem unfair, report them, and don't treat AI answers as automatically neutral.",
+      "board": {
+        "type": "checklist",
+        "title": "As a user",
+        "icon": "eye",
+        "items": [
+          {
+            "text": "Notice unfair results",
+            "cue": "notice",
+            "ok": true
+          },
+          {
+            "text": "Report them",
+            "cue": "report",
+            "ok": true
+          },
+          {
+            "text": "AI isn't automatically neutral",
+            "cue": "neutral",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: fair data, fair AI.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "DATA SHAPES AI",
+            "icon": "doc",
+            "cue": "fair",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "TEST AND REVIEW",
+            "icon": "search",
+            "cue": "ai",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Follow AI Nation Studio for more. And next time an AI decision seems off... ask, what data did it learn from?"
+    }
+  ]
+}
