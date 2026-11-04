@@ -2,7 +2,7 @@ name: Daily AInation Short
 
 on:
   schedule:
-    - cron: "15 9 * * *"     # 09:15 UTC = 14:45 IST; upload is scheduled to publish at 19:00 IST
+    - cron: "15 9 * * *"     # 09:15 UTC = 14:45 IST; upload is scheduled inside the 17:00-20:00 IST window
   workflow_dispatch:
     inputs:
       dry_run:
@@ -12,6 +12,10 @@ on:
       episode:
         description: "Force an episode id (e.g. ep003); empty = next in backlog"
         required: false
+      publish_now:
+        description: "Publish immediately (no schedule)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -62,10 +66,12 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          PUBLISH_WINDOW: ${{ vars.PUBLISH_WINDOW || '17:00-20:00' }}
         run: |
           ARGS=""
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
           if [ -n "${{ inputs.episode }}" ]; then ARGS="$ARGS --episode ${{ inputs.episode }}"; fi
+          if [ "${{ inputs.publish_now }}" = "true" ]; then ARGS="$ARGS --now"; fi
           python pipeline/daily.py $ARGS
 
       - name: Keep the video as a downloadable artifact (14 days)

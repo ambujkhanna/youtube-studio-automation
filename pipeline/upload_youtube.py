@@ -32,6 +32,8 @@ def upload(path, ep, publish_at_utc_iso):
         "status": {"privacyStatus": "private", "publishAt": publish_at_utc_iso, "selfDeclaredMadeForKids": False,
                    "containsSyntheticMedia": True},
     }
+    if not publish_at_utc_iso:  # publish immediately
+        body["status"].pop("publishAt"); body["status"]["privacyStatus"] = "public"
     yt = _service()
     for attempt in range(2):
         try:
