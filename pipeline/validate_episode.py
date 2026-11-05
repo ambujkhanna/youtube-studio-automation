@@ -26,7 +26,7 @@ def check(path):
         for c in (cues(sc) if sc else []) + ([l["punch"]] if l.get("punch") else []):
             if not any(w.startswith(c.lower()) for w in words): errs.append(f"line {i}: cue '{c}' not in text")
     last = ep["lines"][-1]["text"].lower()
-    if "follow" not in last: errs.append("last line has no Follow call-to-action")
+    if "follow" not in last and "subscribe" not in last: errs.append("last line has no Subscribe/Follow call-to-action")
     if ep.get("loop_card") and ep["loop_card"].get("cue", "next") not in last: errs.append("loop cue not in last line")
     return errs
 

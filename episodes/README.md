@@ -17,7 +17,7 @@ whose `"status"` is `"ready"` and that isn't already recorded in `state.json`.
 | ep008 | 3 Smart Ways to Use AI Every Day | ~62 s |
 
 Scripts follow the public YouTube skills used for EP001: question hook in the first 2–3 s, one idea per beat,
-a board change every few seconds, a single Follow ask, and a last line that loops back to the hook.
+a board change every few seconds, a single Subscribe ask (the animated Subscribe / Like / Share end card pops up when "subscribe" is spoken), and a last line that loops back to the hook.
 
 ## episode.json format
 
@@ -33,7 +33,7 @@ a board change every few seconds, a single Follow ask, and a last line that loop
   "lines": [
     {"who": "DAD",  "text": "Hook question?", "board": {"type": "title", "left": {"icon": "chat", "label": "A"}, "right": {"icon": "robot", "label": "B"}, "subtitle": "..."}},
     {"who": "TEEN", "text": "Answer with a keyword.", "punch": "keyword", "board": {"type": "big", "icon": "bulb", "text": "Key idea", "cue": "keyword"}},
-    {"who": "TEEN", "text": "You got it! Follow AI Nation Studio for more. And next time ... echo of the hook?"}
+    {"who": "TEEN", "text": "You got it! Subscribe to AI Nation Studio, and share this with a friend! And next time ... echo of the hook?"}
   ]
 }
 ```

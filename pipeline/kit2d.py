@@ -443,6 +443,10 @@ def camera(t):
     return cx, cy, z
 
 
+def draw_top(c, t):
+    pass
+
+
 def render_frame(f):
     t = f / FPS
     doodle.SEED = f // 3
@@ -452,6 +456,7 @@ def render_frame(f):
     draw_bg(c, t); draw_board(c, t); draw_bit(c, t)
     for ch_ in CHARS:
         draw_char(c, ch_, t)
+    draw_top(c, t)  # overlays above the characters (end card, reminders, effects)
     c.restore()
     vg = skia.Paint(AntiAlias=True)
     vg.setShader(skia.GradientShader.MakeRadial(skia.Point(W / 2, H * 0.48), 1250, [hexc("#000000", 0.0), hexc("#000000", 0.0), hexc("#0B1E24", 0.10)], [0.0, 0.55, 1.0]))
