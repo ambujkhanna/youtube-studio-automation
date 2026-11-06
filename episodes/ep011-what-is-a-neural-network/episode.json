@@ -100,23 +100,29 @@
       "who": "TEEN",
       "text": "Each connection has a dial. It guesses, checks the answer, and nudges the dials to be a bit less wrong. Millions of times.",
       "board": {
-        "type": "steps",
+        "type": "cycle",
         "title": "HOW IT LEARNS",
+        "center": "🧠",
         "items": [
           {
-            "label": "Make a guess",
-            "icon": "bulb",
+            "icon": "🤔",
+            "label": "Guess",
             "cue": "guesses"
           },
           {
-            "label": "Check the answer",
-            "icon": "search",
+            "icon": "✅",
+            "label": "Check answer",
             "cue": "checks"
           },
           {
-            "label": "Nudge the dials",
-            "icon": "target",
+            "icon": "🎛️",
+            "label": "Nudge dials",
             "cue": "nudges"
+          },
+          {
+            "icon": "🔁",
+            "label": "Repeat",
+            "cue": "millions"
           }
         ],
         "color": "#2ECC71"

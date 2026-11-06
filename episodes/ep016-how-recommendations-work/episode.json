@@ -100,22 +100,23 @@
       "who": "TEEN",
       "text": "It also finds people with similar taste. If they loved a video, it might show it to you too.",
       "board": {
-        "type": "steps",
-        "title": "SIMILAR PEOPLE",
+        "type": "journey",
+        "title": "SIMILAR TASTE",
+        "traveler": "🎬",
         "items": [
           {
-            "label": "People like you",
-            "icon": "user",
+            "icon": "👥",
+            "label": "Similar people",
             "cue": "similar"
           },
           {
-            "label": "They loved a video",
-            "icon": "check",
+            "icon": "❤️",
+            "label": "They loved it",
             "cue": "loved"
           },
           {
-            "label": "It shows it to you",
-            "icon": "eye",
+            "icon": "📱",
+            "label": "Shown to you",
             "cue": "show"
           }
         ]

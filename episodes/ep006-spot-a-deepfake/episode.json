@@ -148,31 +148,26 @@
       "who": "TEEN",
       "text": "Hang up and call them back on a number you know. Voices can be faked too.",
       "board": {
-        "type": "compare",
-        "left": {
-          "label": "DON'T",
-          "color": "#FF4D6D",
-          "items": [
-            {
-              "text": "Send money right away",
-              "icon": "coin",
-              "cue": "hang",
-              "tick": false
-            }
-          ]
-        },
-        "right": {
-          "label": "DO",
-          "color": "#2ECC71",
-          "items": [
-            {
-              "text": "Call back a known number",
-              "icon": "phone",
-              "cue": "call",
-              "tick": true
-            }
-          ]
-        }
+        "type": "journey",
+        "title": "SAFE CALL BACK",
+        "traveler": "☎️",
+        "items": [
+          {
+            "icon": "📵",
+            "label": "Hang up",
+            "cue": "hang"
+          },
+          {
+            "icon": "📞",
+            "label": "Call back",
+            "cue": "call"
+          },
+          {
+            "icon": "🔢",
+            "label": "Known number",
+            "cue": "number"
+          }
+        ]
       }
     },
     {

@@ -1,13 +1,15 @@
-"""Generic episode renderer: episode JSON -> PNG frames (Dad + Teen, living room, whiteboard).
+"""AInation Studio episode renderer: episode JSON -> PNG frames (Dad + Teen, living room, whiteboard).
 
     EPISODE=episodes/ep002/episode.json python pipeline/tts.py      # voices + build/timing.json
     EPISODE=... BG=v2 DOODLE=chars python pipeline/episode_engine.py <frames_dir> [frame ...]
     python pipeline/finish.py <frames_dir> 24 out.mp4
 
 Episode JSON (see episodes/README.md):
-  lines[i] = {"who": "DAD"|"TEEN", "text": "...", "board": {scene}?, "punch": "word"?}
+  "cast": ["LEO", "MIA"] (left asks, right explains) or ["MIA"] (solo, centre)
+  lines[i] = {"who": <cast code>, "text": "...", "board": {scene}?, "punch": "word"?}
   A line's "board" starts a new board scene that stays until the next line with a "board".
-Scene types: title, chat, steps, compare, checklist, big, permission, summary.
+Scene types: title, big, gallery, poem, steps, compare, checklist, summary (+ legacy chat, permission).
+Icons: one emoji ("🐙") or a legacy icon name.
 Items inside scenes may carry "cue": a word of that line; the item pops in when the word is spoken.
 """
 import json, math, os, random, sys
@@ -18,6 +20,8 @@ from kit2d import (P, rr, ell, text, smooth, wob, Track, Char, LN, DUR, NF, B, F
                    appear, fade, scaled, shadow_rrect, bubble, card, icon_chat, icon_robot, icon_check, icon_sun,
                    icon_train, icon_doc, icon_lock, BX, BY, BW, BH, BCX, BCY)
 import icons_extra as IX
+BY, BH = BY + 66, BH - 66  # content starts below the whiteboard header bar (the frame itself still uses kit2d.BY/BH)
+BCY = BY + BH / 2
 import char_line, bg_line
 
 EP = json.load(open(os.environ["EPISODE"]))
@@ -32,8 +36,52 @@ ICONS = {"chat": icon_chat, "robot": icon_robot, "check": icon_check, "sun": ico
          "phone": IX.icon_phone}
 
 
+EMOJI_TF = skia.Typeface.MakeFromFile("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf")
+_EMO = {}
+
+
+def _emoji_drawer(s):
+    s = s.replace("\ufe0f", "").replace("\ufe0e", "")
+    f = skia.Font(EMOJI_TF, 100)
+    if not s or EMOJI_TF is None or 0 in f.textToGlyphs(s):
+        return None
+    b = skia.Rect(); f.measureText(s, bounds=b)
+    def draw(c, x, y, k=1.0, s=s, b=b):
+        sz = 100 * 66 * k / max(b.width(), b.height(), 1)
+        ff = skia.Font(EMOJI_TF, sz); sc = sz / 100
+        c.drawString(s, x - (b.left() + b.width() / 2) * sc, y - (b.top() + b.height() / 2) * sc, ff, K.nofx(P("#000000")))
+    return draw
+
+
+_SVG = {}
+
+
+def _svg_drawer(name):
+    import re as _re, images
+    path = images.resolve(name)
+    if not path:
+        print("warning: picture not found", name); return None
+    txt = open(path, encoding="utf-8").read()
+    m = _re.search(r'viewBox="([-\d.\s,]+)"', txt)
+    vb = [float(x) for x in _re.split(r"[\s,]+", m.group(1).strip())] if m else [0, 0, 100, 100]
+    dom = skia.SVGDOM.MakeFromStream(skia.Stream.MakeFromFile(path)); dom.setContainerSize(skia.Size(vb[2], vb[3]))
+    def draw(c, x, y, k=1.0, dom=dom, vb=vb):
+        box = 66 * k * 1.25  # real illustrations a bit larger than emoji
+        s = box / max(vb[2], vb[3])
+        c.save(); c.translate(x - vb[2] * s / 2, y - vb[3] * s / 2); c.scale(s, s); c.translate(-vb[0], -vb[1]); dom.render(c); c.restore()
+    return draw
+
+
 def ico(name):
-    return ICONS.get(name or "", None)
+    if not name: return None
+    if name in ICONS: return ICONS[name]
+    if isinstance(name, str) and name.startswith("img:"):
+        if name not in _SVG: _SVG[name] = _svg_drawer(name)
+        return _SVG[name] or ICONS["bulb"]
+    if name not in _EMO:
+        _EMO[name] = _emoji_drawer(name)
+        if _EMO[name] is None: print("warning: no emoji glyph for", repr(name), "- using bulb")
+    return _EMO[name] or ICONS["bulb"]
 
 
 # ------------------------------------------------------------------ timing helpers
@@ -55,11 +103,12 @@ def fit(c, s, x, y, size, color, maxw, tf=FONT_XB, align="c", a=1.0):
 
 
 # ------------------------------------------------------------------ characters + lip-sync
-dad = Char("DAD", 296, 0.0)
-teen = Char("TEEN", 784, 2.0)
-CH = {"DAD": dad, "TEEN": teen}
+CAST = EP.get("cast", ["DAD", "TEEN"])
+XPOS = [540] if len(CAST) == 1 else [296, 784]
+CH = {n: Char(n, x, 2.0 * k) for k, (n, x) in enumerate(zip(CAST, XPOS))}
+ORDER = [CH[n] for n in CAST]
 random.seed(5)
-for c in (dad, teen):
+for c in ORDER:
     t = random.uniform(0.6, 1.5)
     while t < DUR:
         c.blinks.append(t); t += random.uniform(2.0, 4.0)
@@ -70,7 +119,7 @@ for chars, ov in [("aɑ", (0.95, 1.0)), ("æ", (0.85, 1.05)), ("ʌɐ", (0.65, 0.
                   ("mbp", (0.0, 0.85)), ("fv", (0.12, 0.98)), ("θð", (0.26, 0.98)), ("ʃʒ", (0.32, 0.62)),
                   ("sztdnkgŋhjɡɾʔç", (0.26, 0.97))]:
     for ch in chars: VIS[ch] = ov
-for c in (dad, teen):
+for c in ORDER:
     c.mo.add(0, 0); c.mw.add(0, 1)
 for ln in LN:
     c = CH[ln["speaker"]]
@@ -95,15 +144,22 @@ def el(t_in, t_out, fn, anchor=None, pivot=None):
     ELEMS.append((t_in, t_out, fn, anchor, pivot))
 
 
-Y0 = BY + 130
+# ------------------------------------------------------------------ big, phone-readable scenes (The CurioKids Club)
+# Everything is sized for a phone screen: text 52-96 px, pictures 2-4x bigger, at most a few words per item.
+Y0 = BY + 70
 scene_starts = [i for i, l in enumerate(ELINES) if l.get("board")]
 CUES = []  # (time, line) of every cued item: drives pointing, looks and camera
+NAVY = "#1F2D44"
+last = len(LN) - 1
+_cta_w = [w for w in LN[last]["words"] if w[0].lower().startswith(("subscrib", "follow"))]
+T_FOLLOW = _cta_w[0][1] if _cta_w else None
 
 
 def scene_window(k):
     i = scene_starts[k]
     t0 = LN[i]["start"] - 0.1 if i else 0.05
     t1 = (LN[scene_starts[k + 1]]["start"] - 0.1) if k + 1 < len(scene_starts) else DUR + 1
+    if T_FOLLOW: t1 = min(t1, T_FOLLOW - 0.05)  # the panel clears for the Subscribe card
     return i, t0, t1
 
 
@@ -113,175 +169,248 @@ def cue_t(i, item, default):
     return default
 
 
+def big_text(c, s, x, y, size, color, maxw, tf=FONT_XB, min_size=46, lines=2, outline=None):
+    """Fit text in maxw: shrink a little, then wrap to 2 lines, then shrink more. Centred on (x, y)."""
+    words = s.split()
+    for sz in range(size, min_size - 1, -2):
+        f = skia.Font(tf, sz)
+        if f.measureText(s) <= maxw:
+            rows = [s]; break
+        if lines >= 2 and len(words) > 1 and sz <= size * 0.9:
+            best = min(range(1, len(words)), key=lambda k: max(f.measureText(" ".join(words[:k])), f.measureText(" ".join(words[k:]))))
+            rows = [" ".join(words[:best]), " ".join(words[best:])]
+            if max(f.measureText(r) for r in rows) <= maxw: break
+    else:
+        f = skia.Font(tf, min_size); rows = [s]; sz = min_size
+    lh = sz * 1.08; y0 = y - lh * (len(rows) - 1) / 2
+    for r_ in rows:
+        if outline:
+            p = skia.Paint(AntiAlias=True, Color=K.hexc(outline)); p.setStyle(skia.Paint.kStroke_Style); p.setStrokeWidth(sz * 0.16)
+            p.setStrokeJoin(skia.Paint.kRound_Join)
+            w_ = f.measureText(r_); c.drawString(r_, x - w_ / 2, y0 + sz * 0.36, f, p)
+        text(c, r_, x, y0, sz, color, tf)
+        y0 += lh
+
+
+def pill(c, x, y, label, col, size=46):
+    f = skia.Font(FONT_XB, size); w = f.measureText(label) + 70
+    r = rr(x - w / 2, y - size * 0.8, w, size * 1.6, size * 0.8); shadow_rrect(c, r, 6, 4, 0.2); c.drawRRect(r, P(col))
+    text(c, label, x, y, size, "#FFFFFF")
+
+
+def card_bg(c, x, y, w, h, col, border="#1F2D44"):
+    r = rr(x - w / 2, y - h / 2, w, h, 34); shadow_rrect(c, r, 8, 6, 0.18); c.drawRRect(r, P(col))
+    pth = skia.Path(); pth.addRRect(r); c.drawPath(pth, char_line.shade_paint(pth, 0.6, fx=False))
+    c.drawRRect(r, P(border, 5))
+
+
+TINTS = ("#FFF1B8", "#DCEBFF", "#FFE0EC", "#DDF7E8", "#EFE3FF", "#FFE6D5")
+COLS = ("#FF4D6D", "#0A84FF", "#8E44AD", "#2E9E5B", "#FF8C42")
+
+
 def build_title(i, t0, t1, sc):
     L, R = sc.get("left", {}), sc.get("right", {})
-    def f(c, t, e, L=L, R=R):
-        sl = 1 - smooth((t - t0) / 0.45)
-        li, ri = ico(L.get("icon", "chat")), ico(R.get("icon", "robot"))
-        li(c, BCX - 250 - sl * 300, BCY - 40, 2.0); fit(c, L.get("label", ""), BCX - 250 - sl * 300, BCY + 70, 40, L.get("color", "#0A84FF"), 330)
-        ri(c, BCX + 250 + sl * 300, BCY - 30, 2.0); fit(c, R.get("label", ""), BCX + 250 + sl * 300, BCY + 70, 40, R.get("color", "#E91E63"), 330)
-    el(t0, t1, f, pivot=(BCX, BCY))
-    el(t0 + 0.4, t1, lambda c, t, e: (c.drawCircle(BCX, BCY + 10, 62, P("#FFC93C")), text(c, sc.get("mid", "VS"), BCX, BCY + 10, 52, "#1F2D44")), (BCX, BCY + 10))
+    for side, S, col in ((-1, L, "#0A84FF"), (1, R, "#E91E63")):
+        x = BCX + side * BW * 0.27
+        def f(c, t, e, S=S, x=x, col=col, side=side):
+            sl = 1 - smooth((t - t0) / 0.45); xx = x + side * sl * 300
+            card_bg(c, xx, BCY - 40, BW * 0.44, 450, TINTS[0 if side < 0 else 2])
+            (ico(S.get("icon")) or IX.icon_bulb)(c, xx, BCY - 120, 3.4)
+            big_text(c, S.get("label", ""), xx, BCY + 100, 60, S.get("color", col), BW * 0.4)
+        el(t0, t1, f, None, (x, BCY))
+    el(t0 + 0.4, t1, lambda c, t, e: (c.drawCircle(BCX, BCY - 40, 74, P("#FFC93C")), c.drawCircle(BCX, BCY - 40, 74, P(NAVY, 6)),
+                                      text(c, sc.get("mid", "?"), BCX, BCY - 40, 78 if len(sc.get("mid", "?")) < 3 else 48, NAVY)), (BCX, BCY - 40))
     if sc.get("subtitle"):
-        el(t0 + 0.9, t1, lambda c, t, e: fit(c, sc["subtitle"], BCX, BCY + 180, 38, "#1F2D44", 820), pivot=(BCX, BCY + 180))
-
-
-def build_chat(i, t0, t1, sc):
-    if sc.get("title"):
-        el(t0, t1, lambda c, t, e: IX.chip(c, BCX, Y0 - 20, sc["title"], sc.get("color", "#0A84FF"), None, 28), (BCX + 160, Y0 - 20))
-    for k, it in enumerate(sc.get("items", [])):
-        y = Y0 + 90 + k * 125
-        ti = cue_t(i, it, t0 + 0.3 + k * 0.8)
-        if it.get("who", "user") == "user":
-            def f(c, t, e, it=it, y=y):
-                IX.icon_user(c, BX + 100, y, 0.75)
-                w = min(620, 60 + skia.Font(FONT_B, 32).measureText(it["text"]))
-                bubble(c, BX + 160 + w / 2, y - 6, w, 92, it["text"], 32 if w < 620 else 26)
-            el(ti, t1, f, (BX + 500, y - 40), (BX + 400, y))
-        else:
-            def f(c, t, e, it=it, y=y):
-                w = min(620, 60 + skia.Font(FONT_B, 32).measureText(it["text"]))
-                bubble(c, BX + BW - 160 - w / 2, y - 6, w, 92, it["text"], 32 if w < 620 else 26, col="#CDE7FF", tail="r")
-                icon_chat(c, BX + BW - 90, y, 1.1)
-            el(ti, t1, f, (BX + BW - 200, y - 40), (BX + BW - 400, y))
-
-
-def build_steps(i, t0, t1, sc):
-    if sc.get("title"):
-        el(t0, t1, lambda c, t, e: IX.chip(c, BCX, Y0 - 20, sc["title"], sc.get("color", "#E91E63"), None, 28), (BCX + 180, Y0 - 20))
-    items = sc.get("items", [])
-    gap = min(104, 420 / max(1, len(items)))
-    cols = ("#FF4D6D", "#0A84FF", "#8E44AD", "#2ECC71", "#FF8C5A")
-    for k, it in enumerate(items):
-        y = Y0 + 80 + k * gap
-        ti = cue_t(i, it, t0 + 0.3 + k * 0.7)
-        def f(c, t, e, it=it, y=y, k=k):
-            r = rr(BCX - 360, y - 38, 720, 76, 24); shadow_rrect(c, r, 6, 4, 0.2); c.drawRRect(r, P("#FFFFFF")); c.drawRRect(r, P(cols[k % 5], 4))
-            c.drawCircle(BCX - 318, y, 24, P(cols[k % 5])); text(c, str(k + 1), BCX - 318, y, 26, "#FFFFFF")
-            ic = ico(it.get("icon"))
-            if ic: ic(c, BCX - 255, y, 0.75)
-            fit(c, it["label"], BCX - (210 if ic else 270), y, 32, "#1F2D44", 540, FONT_XB, "l")
-        el(ti, t1, f, (BCX + 360, y - 30), (BCX, y))
-
-
-def build_compare(i, t0, t1, sc):
-    LX, RX = BCX - 225, BCX + 225
-    for side, X, dc in (("left", LX, "#0A84FF"), ("right", RX, "#E91E63")):
-        S = sc.get(side, {})
-        el(t0, t1, lambda c, t, e, S=S, X=X, dc=dc: IX.chip(c, X, Y0 - 20, S.get("label", ""), S.get("color", dc), None, 26), pivot=(X, Y0 - 20))
-        for k, it in enumerate(S.get("items", [])):
-            y = Y0 + 80 + k * 98
-            ti = cue_t(i, it, t0 + 0.3 + k * 0.6)
-            def f(c, t, e, it=it, X=X, y=y):
-                r = rr(X - 205, y - 38, 410, 76, 22); shadow_rrect(c, r, 6, 4, 0.2); c.drawRRect(r, P(it.get("bg", "#EEF5FF")))
-                ic = ico(it.get("icon"))
-                if ic: ic(c, X - 160, y, 0.7)
-                fit(c, it["text"], X - (118 if ic else 180), y, 27, "#1F2D44", (300 if ic else 360) - (55 if it.get("tick") is not None else 0), FONT_B, "l")
-                if it.get("tick") is not None:
-                    (icon_check if it["tick"] else IX.icon_x)(c, X + 175, y, 0.9)
-            el(ti, t1, f, (X + 200, y - 30), (X, y))
-    el(t0, t1, lambda c, t, e: c.drawLine(BCX, Y0 + 30, BCX, BY + BH - 40, P("#1F2D44", 2, a=0.15)), pivot=(BCX, BCY))
-
-
-def build_checklist(i, t0, t1, sc):
-    if sc.get("title"):
-        ic = ico(sc.get("icon", "search"))
-        el(t0, t1, lambda c, t, e: (ic(c, BCX - 300, Y0 + 10, 1.6), fit(c, sc["title"], BCX + 30, Y0 + 10, 44, "#1F2D44", 560)), (BCX + 300, Y0))
-    for k, it in enumerate(sc.get("items", [])):
-        y = Y0 + 120 + k * 92
-        ti = cue_t(i, it, t0 + 0.4 + k * 0.7)
-        def f(c, t, e, it=it, y=y, ti=ti):
-            IX.row(c, BCX, y, 600, it["text"], ico(it.get("icon")), 30)
-            ck = appear(t, ti + 0.3)
-            if ck:
-                scaled(c, BCX + 260, y, ck); (icon_check if it.get("ok", True) else IX.icon_x)(c, BCX + 260, y, 1.0); c.restore()
-        el(ti, t1, f, (BCX + 300, y - 30), (BCX, y))
+        el(t0 + 0.9, t1, lambda c, t, e: big_text(c, sc["subtitle"], BCX, BY + BH - 75, 52, NAVY, BW - 60, lines=1), pivot=(BCX, BY + BH - 75))
 
 
 def build_big(i, t0, t1, sc):
-    ic = ico(sc.get("icon", "bulb"))
+    ic = ico(sc.get("icon", "bulb")) or IX.icon_bulb
     tin = cue_t(i, sc, t0 + 0.15)
-    el(tin, t1, lambda c, t, e: (ic(c, BCX, BCY - 50, 2.8), fit(c, sc.get("text", ""), BCX, BCY + 130, 48, "#1F2D44", 820)), (BCX + 150, BCY - 120), (BCX, BCY))
-    if sc.get("sub"):
+    has_sub = bool(sc.get("sub"))
+    el(tin, t1, lambda c, t, e: (ic(c, BCX, BCY - (140 if has_sub else 110) + math.sin(t * 3) * 6, 4.6),
+                                 big_text(c, sc.get("text", ""), BCX, BCY + (80 if has_sub else 150), 90, NAVY, BW - 60)), (BCX + 200, BCY - 200), (BCX, BCY))
+    if has_sub:
         ts = cue_t(i, {"cue": sc.get("sub_cue")}, tin + 0.8) if sc.get("sub_cue") else tin + 0.8
-        el(ts, t1, lambda c, t, e: fit(c, sc["sub"], BCX, BCY + 210, 32, sc.get("sub_color", "#0A84FF"), 820, FONT_B), pivot=(BCX, BCY + 210))
+        el(ts, t1, lambda c, t, e: pill(c, BCX, BY + BH - 55, sc["sub"], sc.get("sub_color", "#0A84FF"), 48), pivot=(BCX, BY + BH - 55))
+
+
+def build_gallery(i, t0, t1, sc):
+    items = sc.get("items", [])[:6]; n = len(items)
+    top = BY + 40
+    if sc.get("title"):
+        el(t0, t1, lambda c, t, e: pill(c, BCX, BY + 72, sc["title"], sc.get("color", "#FF8C42"), 46), (BCX + 200, BY + 72))
+        top = BY + 140
+    cols = n if n <= 3 else (2 if n == 4 else 3)
+    rows = (n + cols - 1) // cols
+    cw = (BW - 40) / cols; rh = (BY + BH - 30 - top) / rows
+    for k, it in enumerate(items):
+        r_, c_ = divmod(k, cols); in_row = min(cols, n - r_ * cols)
+        x = BCX + (c_ - (in_row - 1) / 2) * cw; y = top + rh * (r_ + 0.5)
+        ti = cue_t(i, it, t0 + 0.3 + k * 0.6)
+        big = min(cw, rh) / 120
+        def f(c, t, e, it=it, x=x, y=y, k=k, big=big):
+            card_bg(c, x, y, cw - 22, rh - 22, TINTS[k % 6])
+            (ico(it.get("icon")) or IX.icon_bulb)(c, x, y - rh * 0.14, big)
+            big_text(c, it.get("label", ""), x, y + rh * 0.3, 56 if rows == 1 else 46, NAVY, cw - 50, lines=2, min_size=34)
+        el(ti, t1, f, (x + cw / 2 - 30, y - rh / 2 + 30), (x, y))
+
+
+def build_poem(i, t0, t1, sc):
+    """Karaoke style: one verse line at a time, big, with its picture; the poem title stays on top."""
+    vl = sc.get("lines", [])[:4]
+    el(t0, t1, lambda c, t, e: pill(c, BCX, BY + 72, sc.get("title", "Poem"), "#8E44AD", 44), (BCX + 220, BY + 72))
+    times = [cue_t(i, it, t0 + 0.3 + k * 1.6) for k, it in enumerate(vl)]
+    for k, it in enumerate(vl):
+        ti = times[k]; to = times[k + 1] if k + 1 < len(times) else t1
+        def f(c, t, e, it=it, k=k):
+            ic = ico(it.get("icon")) or ico(sc.get("icon"))
+            if ic: ic(c, BCX, BCY - 50 + math.sin(t * 3.2) * 8, 3.6)
+            big_text(c, it.get("text", ""), BCX, BCY + 200, 80, COLS[k % 5], BW - 60, outline="#FFFFFF")
+        el(ti, to, f, None, (BCX, BCY + 60))
+
+
+def _rows(i, t0, t1, items, key, title=None, marks=False):
+    top = BY + 50
+    if title:
+        el(t0, t1, lambda c, t, e: pill(c, BCX, BY + 72, title, "#E91E63", 44), (BCX + 220, BY + 72))
+        top = BY + 150
+    n = max(1, len(items)); gap = min(150, (BY + BH - 30 - top) / n)
+    for k, it in enumerate(items):
+        y = top + gap * (k + 0.5)
+        ti = cue_t(i, it, t0 + 0.3 + k * 0.7)
+        def f(c, t, e, it=it, y=y, k=k, ti=ti):
+            card_bg(c, BCX, y, BW - 60, gap - 18, TINTS[k % 6], COLS[k % 5])
+            ic = ico(it.get("icon"))
+            x0 = BX + 70
+            if ic: ic(c, x0 + 20, y, min(1.6, (gap - 30) / 60)); x0 += 90
+            maxw = BW - (x0 - BX) - (130 if marks else 60)
+            f_ = skia.Font(FONT_XB, 56); s = it.get(key, ""); sz = 56
+            while f_.measureText(s) > maxw and sz > 36: sz -= 2; f_ = skia.Font(FONT_XB, sz)
+            text(c, s, x0, y, sz, NAVY, FONT_XB, "l")
+            if marks and appear(t, ti + 0.3):
+                (icon_check if it.get("ok", True) else IX.icon_x)(c, BX + BW - 90, y, 1.6)
+        el(ti, t1, f, (BX + BW - 60, y - 30), (BCX, y))
+
+
+def build_steps(i, t0, t1, sc): _rows(i, t0, t1, sc.get("items", []), "label", sc.get("title"))
+def build_checklist(i, t0, t1, sc): _rows(i, t0, t1, sc.get("items", []), "text", sc.get("title"), marks=True)
+def build_summary(i, t0, t1, sc): _rows(i, t0, t1, sc.get("rows", []), "text")
+
+
+def build_compare(i, t0, t1, sc):
+    for side, dc in ((-1, "#0A84FF"), (1, "#E91E63")):
+        S = sc.get("left" if side < 0 else "right", {}); X = BCX + side * BW * 0.255
+        el(t0, t1, lambda c, t, e, S=S, X=X, dc=dc: pill(c, X, BY + 72, S.get("label", ""), S.get("color", dc), 46), pivot=(X, BY + 72))
+        items = S.get("items", []); n = max(1, len(items)); gap = min(170, (BY + BH - 180) / n)
+        for k, it in enumerate(items):
+            y = BY + 150 + gap * (k + 0.5)
+            ti = cue_t(i, it, t0 + 0.3 + k * 0.6)
+            def f(c, t, e, it=it, X=X, y=y, k=k):
+                card_bg(c, X, y, BW * 0.48, gap - 18, it.get("bg", TINTS[(k + (0 if X < BCX else 2)) % 6]))
+                ic = ico(it.get("icon"))
+                if ic: ic(c, X - BW * 0.17, y, min(1.4, (gap - 30) / 60))
+                big_text(c, it.get("text", ""), X + (40 if ic else 0), y, 48, NAVY, BW * (0.33 if ic else 0.43), lines=2, min_size=32)
+                if it.get("tick") is not None:
+                    (icon_check if it["tick"] else IX.icon_x)(c, X + BW * 0.21, y - gap / 2 + 26, 1.0)
+            el(ti, t1, f, (X + 220, y - 30), (X, y))
+    el(t0, t1, lambda c, t, e: c.drawLine(BCX, BY + 130, BCX, BY + BH - 30, P(NAVY, 3, a=0.15)), pivot=(BCX, BCY))
+
+
+def build_chat(i, t0, t1, sc):
+    """Big chat bubbles: user on the left, AI on the right (up to 3 messages)."""
+    top = BY + 40
+    if sc.get("title"):
+        el(t0, t1, lambda c, t, e: pill(c, BCX, BY + 50, sc["title"], sc.get("color", "#0A84FF"), 40), (BCX + 200, BY + 50))
+        top = BY + 110
+    items = sc.get("items", [])[:3]; n = max(1, len(items)); gap = (BY + BH - 20 - top) / n
+    for k, it in enumerate(items):
+        y = top + gap * (k + 0.5); user = it.get("who", "user") == "user"
+        ti = cue_t(i, it, t0 + 0.3 + k * 0.8)
+        def f(c, t, e, it=it, y=y, user=user):
+            w = BW - 200; x = BX + 120 + w / 2 if user else BX + BW - 120 - w / 2
+            r = rr(x - w / 2, y - gap / 2 + 14, w, gap - 28, 34); shadow_rrect(c, r, 6, 4, 0.18)
+            c.drawRRect(r, P("#FFF1B8" if user else "#CDE7FF")); c.drawRRect(r, P(NAVY, 4))
+            (IX.icon_user if user else icon_chat)(c, BX + 60 if user else BX + BW - 60, y, 1.2)
+            big_text(c, it.get("text", ""), x, y, 48, NAVY, w - 50, lines=2, min_size=32)
+        el(ti, t1, f, None, (BCX, y))
 
 
 def build_permission(i, t0, t1, sc):
-    def box(c, t, e):
-        r = rr(BCX - 360, Y0 - 50, 720, 410, 30); shadow_rrect(c, r, 12, 8, 0.3); c.drawRRect(r, P("#FFFFFF")); c.drawRRect(r, P("#0A84FF", 4))
-        icon_lock(c, BCX - 290, Y0 + 10, 0.8); fit(c, sc.get("title", "Agent wants to:"), BCX - 240, Y0 + 12, 32, "#1F2D44", 540, FONT_XB, "l")
-    el(t0, t1, box, (BCX + 300, Y0 - 40), (BCX, Y0 + 150))
-    for k, it in enumerate(sc.get("items", [])):
-        y = Y0 + 100 + k * 90
+    """'Agent wants to...' permission card with big rows and Allow / Deny buttons."""
+    el(t0, t1, lambda c, t, e: (card_bg(c, BCX, BCY, BW - 60, BH - 40, "#FFFFFF", "#0A84FF"),
+                                icon_lock(c, BX + 90, BY + 70, 1.0),
+                                big_text(c, sc.get("title", "Agent wants to:"), BCX + 30, BY + 72, 48, NAVY, BW - 220, lines=1)), None, (BCX, BCY))
+    items = sc.get("items", [])[:3]
+    for k, it in enumerate(items):
+        y = BY + 170 + k * 105
         ti = cue_t(i, it, t0 + 0.4 + k * 0.6)
-        el(ti, t1, lambda c, t, e, it=it, y=y: IX.row(c, BCX, y, 600, it["text"], ico(it.get("icon")), 28, "#FFF1B8"), (BCX + 300, y - 20))
+        def f(c, t, e, it=it, y=y):
+            card_bg(c, BCX, y, BW - 140, 88, "#FFF1B8")
+            ic = ico(it.get("icon"))
+            if ic: ic(c, BX + 120, y, 1.0)
+            big_text(c, it.get("text", ""), BCX + 40, y, 44, NAVY, BW - 280, lines=1, min_size=30)
+        el(ti, t1, f, None, (BCX, y))
     ta = cue_t(i, {"cue": sc.get("allow_cue")}, t0 + 1.5)
     def allow(c, t, e):
-        y = Y0 + 300; on = smooth((t - ta - 0.1) / 0.3)
+        y = BY + BH - 80; on = smooth((t - ta - 0.1) / 0.3)
         for k, (lab, col) in enumerate((("DENY", "#B0BEC5"), ("ALLOW", "#2ECC71"))):
-            x = BCX - 130 + k * 260
-            c.drawRRect(rr(x - 110, y - 34, 220, 68, 34), P(col, a=(0.35 + 0.65 * on) if lab == "ALLOW" else 0.6))
-            text(c, lab, x, y, 28, "#1F2D44" if lab == "DENY" else "#FFFFFF")
-    el(t0 + 0.3, t1, allow, None, (BCX, Y0 + 300))
+            x = BCX - 170 + k * 340
+            c.drawRRect(rr(x - 150, y - 44, 300, 88, 44), P(col, a=(0.35 + 0.65 * on) if lab == "ALLOW" else 0.6))
+            text(c, lab, x, y, 44, NAVY if lab == "DENY" else "#FFFFFF")
+    el(t0 + 0.3, t1, allow, None, (BCX, BY + BH - 80))
 
 
-def build_summary(i, t0, t1, sc):
-    for k, it in enumerate(sc.get("rows", [])):
-        y = Y0 + 50 + k * 112
-        ti = cue_t(i, it, t0 + 0.2 + k * 0.8)
-        el(ti, t1, lambda c, t, e, it=it, y=y: card(c, BCX, y, 760, 96, it["text"], 36,
-                                                     (lambda c_, x, yy, kk, n=it.get("icon"): ico(n)(c_, x, yy, 0.85)) if ico(it.get("icon")) else None,
-                                                     accent=it.get("color", "#0A84FF")), (BCX + 380, y - 40), (BCX, y))
-
-
-BUILD = {"title": build_title, "chat": build_chat, "steps": build_steps, "compare": build_compare, "checklist": build_checklist,
-         "big": build_big, "permission": build_permission, "summary": build_summary}
+BUILD = {"chat": build_chat, "permission": build_permission, "gallery": build_gallery, "poem": build_poem, "title": build_title, "steps": build_steps, "compare": build_compare,
+         "checklist": build_checklist, "big": build_big, "summary": build_summary}
+import types, diagrams
+_E = types.SimpleNamespace(el=el, cue_t=cue_t, ico=ico, big_text=big_text, pill=pill, BX=BX, BY=BY, BW=BW, BH=BH,
+                           BCX=BCX, BCY=BCY, LN=LN, K=K)
+for _name, _fn in diagrams.BUILDERS.items():
+    BUILD[_name] = (lambda f: (lambda i, t0, t1, sc: f(_E, i, t0, t1, sc)))(_fn)
 for k in range(len(scene_starts)):
     i, t0, t1 = scene_window(k)
     sc = ELINES[i]["board"]
-    BUILD[sc["type"]](i, t0, t1, sc)
+    BUILD.get(sc["type"], build_big)(i, t0, t1, sc)
 
-# follow pill + loop card on the last line
-last = len(LN) - 1
-_cta_w = [w for w in LN[last]["words"] if w[0].lower().startswith(("subscrib", "follow"))]
-T_FOLLOW = _cta_w[0][1] if _cta_w else None
 import cta
 KIDS_CTA = False
 if T_FOLLOW:
-    for k_ in range(3):  # tap sounds (the card itself is drawn after the board, see below)
+    for k_ in range(3):  # tap sounds (the card itself is drawn on the top layer)
         el(T_FOLLOW + 0.9 + k_ * 1.0, T_FOLLOW + 1.0 + k_ * 1.0, lambda c, t, e: None)
 LOOP = EP.get("loop_card")
 if LOOP:
     tl = wt(last, LOOP.get("cue", "next"))
-    def loopcard(c, t, e):
-        c.drawRRect(rr(BX + 30, BY + 80, BW - 60, BH - 110, 26), P("#FFFFFF"))
-        ico(LOOP.get("left", "chat"))(c, BCX - 250, BCY - 30, 2.0); ico(LOOP.get("right", "robot"))(c, BCX + 250, BCY - 20, 2.0)
-        c.drawCircle(BCX, BCY, 60, P("#FFC93C")); text(c, "?", BCX, BCY, 70, "#1F2D44")
-        fit(c, LOOP["text"], BCX, BCY + 170, 46, "#1F2D44", 820)
-    el(tl, DUR + 1, loopcard, (BCX + 300, BCY - 100), (BCX, BCY))
+    def loopcard(c, t, e):  # top part of the panel; the Subscribe card sits underneath
+        (ico(LOOP.get("left")) or IX.icon_bulb)(c, BCX - 260, BY + 170, 2.8); (ico(LOOP.get("right")) or IX.icon_bulb)(c, BCX + 260, BY + 170, 2.8)
+        c.drawCircle(BCX, BY + 170, 62, P("#FFC93C")); c.drawCircle(BCX, BY + 170, 62, P(NAVY, 6)); text(c, "?", BCX, BY + 170, 76, NAVY)
+        big_text(c, LOOP["text"], BCX, BY + 330, 72, NAVY, BW - 60, lines=2)
+    el(tl, DUR + 1, loopcard, (BCX + 300, BY + 150), (BCX, BY + 260))
 
 
 def draw_board(c, t):
-    K.draw_board_frame(c)
-    for (t_in, t_out, fn, anchor, pivot) in ELEMS:
+    K.draw_board_frame(c, t)
+    for n_, (t_in, t_out, fn, anchor, pivot) in enumerate(ELEMS):
         e = appear(t, t_in, t_out)
         if not e: continue
         px, py = pivot or anchor or (BCX, BCY)
-        scaled(c, px, py, e); fn(c, t, e); c.restore()
+        scaled(c, px, py, e); fn(c, t, e); c.restore()  # pop-in
     c.restore()
+    bg_line.draw_board_front(c, t)  # curtains etc. in FRONT of the content
 
 
 # ------------------------------------------------------------------ automatic acting
-PARTNER = {"DAD": 20, "TEEN": -20}
-BOARD = {"DAD": (12, -12), "TEEN": (-12, -12)}
+PARTNER = {n: (20 if c.x < 500 else -20 if c.x > 580 else 0) for n, c in CH.items()}
+BOARD = {n: ((12, -12) if c.x < 500 else (-12, -12) if c.x > 580 else (0, -16)) for n, c in CH.items()}
 cues_by_line = {}
 for tc, i in sorted(CUES):
     cues_by_line.setdefault(i, []).append(tc)
 for i, ln in enumerate(LN):
-    sp = CH[ln["speaker"]]; lsn = "TEEN" if ln["speaker"] == "DAD" else "DAD"; li = CH[lsn]
+    sp = CH[ln["speaker"]]; others = [n for n in CAST if n != ln["speaker"]]
+    lsn = others[0] if others else None; li = CH[lsn] if lsn else None
     a, b = ln["start"], ln["end"]; dur = b - a; txt = ln["text"].strip()
-    sp.look(a - 0.25, 0, 0); li.look(a - 0.1, PARTNER[lsn], 0, 3)
+    sp.look(a - 0.25, 0, 0)
+    if li: li.look(a - 0.1, PARTNER[lsn], 0, 3)
     q, ex = txt.endswith("?"), "!" in txt
     if q:
         sp.gesture(1, "palms", a + 0.1, min(b, a + 2.4)); sp.gesture(-1, "palms", a + 0.15, min(b, a + 2.45))
@@ -294,11 +423,12 @@ for i, ln in enumerate(LN):
         if k == 0 or tc - cues_by_line[i][k - 1] > 1.2:
             sp.gesture(sp.inner, "point" if k % 2 == 0 else "point2", tc - 0.12, min(b, tc + 1.2))
             sp.look(tc - 0.15, *BOARD[ln["speaker"]]); sp.look(min(b, tc + 1.1), 0, 0)
-            li.look(tc + 0.05, *BOARD[lsn]); li.look(tc + 1.3, PARTNER[lsn], 0, 3)
-    if dur > 5 and lsn == "DAD":
+            if li: li.look(tc + 0.05, *BOARD[lsn]); li.look(tc + 1.3, PARTNER[lsn], 0, 3)
+    if li and dur > 5 and lsn == CAST[0]:
         li.gesture(li.inner, "chin", a + 0.6, a + min(dur - 0.6, 3.5))
-    sp.brows(b + 0.4, 0, 0); li.nod(b - 0.1, 8)
-    for c in (sp, li):
+    sp.brows(b + 0.4, 0, 0)
+    if li: li.nod(b - 0.1, 8)
+    for c in ([sp, li] if li else [sp]):
         c.smile.add(b + 0.5, 0.45)
 
 # finale: hop + wave + happy eyes
@@ -308,7 +438,7 @@ for dt, v in ((0.12, 40), (0.3, 0), (0.36, -6), (0.44, 0)):
     CH[lastl["speaker"]].hop.add(lastl["start"] + dt, v)
 if T_FOLLOW:
     tw_end = min(DUR - 0.2, (wt(last, LOOP.get("cue", "next")) - 0.2) if LOOP else DUR - 0.2)
-    for c in (teen, dad):
+    for c in ORDER:
         s = -c.inner
         c.pose(s, "rest", T_FOLLOW - 0.3); k = 0
         while T_FOLLOW + k * 0.27 < tw_end:
@@ -330,7 +460,10 @@ SHOTS = [(0.0, "wide")]
 for i, ln in enumerate(LN):
     if i == 0:
         continue
-    who = "dad" if ln["speaker"] == "DAD" else "teen"
+    who = ln["speaker"] if len(CAST) > 1 else ("wide" if i % 3 else ln["speaker"])
+    _sc_i = max([j for j in scene_starts if j <= i] or [0])
+    if ELINES[_sc_i].get("board", {}).get("type") in diagrams.BUILDERS:  # keep the animated diagram on screen
+        who = "board"
     SHOTS.append((ln["start"] - 0.05, "wide" if i % 4 == 0 or i == last else who))
     cl = cues_by_line.get(i, [])
     if cl and ln["end"] - ln["start"] > 2.5:
@@ -350,18 +483,27 @@ for t_, k in SHOTS:  # drop cuts closer than 1.2 s and repeated shots
         continue
     dedup.append((t_, k))
 SHOTS = dedup
-CAMS = {"wide": (540, 960, 1.0, 1.05), "dad": (dad.x + 10, 1090, 1.95, 2.05), "teen": (teen.x - 10, 1150, 1.95, 2.05),
-        "board": (540, 640, 1.08, 1.13)}
+HEADY = {"DAD": (1090, 1.95), "TEEN": (1150, 1.95), "MIA": (1150, 1.95), "LEO": (1320, 2.2)}
+CAMS = {"wide": (540, 960, 1.0, 1.05), "board": (540, 930, 1.03, 1.05)}
+for n, c in CH.items():
+    hy, z = HEADY[n]
+    CAMS[n] = (c.x + (10 if c.x < 540 else -10 if c.x > 540 else 0), hy, z, z + 0.1)
 PUNCH = [wt(i, l["punch"]) for i, l in enumerate(ELINES) if l.get("punch")]
 
 _top1 = K.draw_top
-K.draw_top = lambda c, t: (_top1(c, t), cta.end_card(c, t, T_FOLLOW, K, KIDS_CTA) if T_FOLLOW else None)
+K.draw_top = lambda c, t: (_top1(c, t), cta.end_card(c, t, T_FOLLOW, K, KIDS_CTA, cy=BY + BH - 110) if T_FOLLOW else None)
 if not KIDS_CTA:
     T_REMIND = DUR * 0.42
     if T_FOLLOW is None or T_REMIND + 3.5 < T_FOLLOW:
         _top0 = K.draw_top
         K.draw_top = lambda c, t: (_top0(c, t), cta.reminder(c, t, T_REMIND, K))
-K.CHARS = [dad, teen]; K.SHOTS = SHOTS; K.CAMS = CAMS; K.PUNCH = PUNCH; K.LOGO_T = T_FOLLOW or DUR + 10
+def _speaker_x(t):
+    cur = LN[0]
+    for ln in LN:
+        if ln["start"] - 0.2 <= t: cur = ln
+    return CH[cur["speaker"]].x
+bg_line.SPEAKER_X = _speaker_x
+K.CHARS = ORDER; K.SHOTS = SHOTS; K.CAMS = CAMS; K.PUNCH = PUNCH; K.LOGO_T = T_FOLLOW or DUR + 10
 K.draw_board = draw_board; K.CHARMOD = char_line; K.draw_bg = bg_line.draw_bg; K.draw_board_frame = bg_line.draw_board_frame
 
 
@@ -374,7 +516,7 @@ def worker(args):
 
 def make_thumbnail():
     import thumbnail
-    path = thumbnail.make(os.path.join(B, "thumbnail.jpg"), K, [dad, teen], EP, ico)
+    path = thumbnail.make(os.path.join(B, "thumbnail.jpg"), K, ORDER, EP, ico)
     print("thumbnail", path)
 
 

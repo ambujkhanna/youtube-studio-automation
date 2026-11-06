@@ -101,22 +101,23 @@
       "who": "TEEN",
       "text": "Yes. When millions of people mark something as spam, the filter learns to catch similar emails.",
       "board": {
-        "type": "steps",
+        "type": "cycle",
         "title": "IT LEARNS",
+        "center": "📧",
         "items": [
           {
-            "label": "People mark spam",
-            "icon": "user",
+            "icon": "🚩",
+            "label": "People mark",
             "cue": "mark"
           },
           {
+            "icon": "🧠",
             "label": "Filter learns",
-            "icon": "brain",
             "cue": "learns"
           },
           {
-            "label": "Catches similar emails",
-            "icon": "check",
+            "icon": "🧲",
+            "label": "Catch similar",
             "cue": "catch"
           }
         ],

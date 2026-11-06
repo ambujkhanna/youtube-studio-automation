@@ -56,10 +56,21 @@
       "who": "TEEN",
       "text": "It's called text recognition. AI finds the text in the picture, then reads each letter.",
       "board": {
-        "type": "big",
-        "icon": "eye",
-        "text": "Find the text, read the letters",
-        "cue": "recognition"
+        "type": "journey",
+        "title": "PHOTO TO TEXT",
+        "traveler": "📷",
+        "items": [
+          {
+            "icon": "🔍",
+            "label": "Find text",
+            "cue": "finds"
+          },
+          {
+            "icon": "🔤",
+            "label": "Read letters",
+            "cue": "reads"
+          }
+        ]
       },
       "punch": "recognition"
     },

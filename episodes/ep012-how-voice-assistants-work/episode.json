@@ -56,22 +56,23 @@
       "who": "TEEN",
       "text": "Three steps! It hears, it understands, and it talks back.",
       "board": {
-        "type": "steps",
-        "title": "3 STEPS",
+        "type": "journey",
+        "title": "THREE STEPS",
+        "traveler": "💬",
         "items": [
           {
+            "icon": "👂",
             "label": "Hear",
-            "icon": "phone",
             "cue": "hears"
           },
           {
+            "icon": "🧠",
             "label": "Understand",
-            "icon": "brain",
             "cue": "understands"
           },
           {
+            "icon": "🔊",
             "label": "Talk back",
-            "icon": "chat",
             "cue": "talks"
           }
         ]

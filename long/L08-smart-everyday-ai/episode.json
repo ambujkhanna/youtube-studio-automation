@@ -1,0 +1,875 @@
+{
+  "id": "L08",
+  "slug": "smart-everyday-ai",
+  "short_id": "ep008",
+  "status": "ready",
+  "cast": [
+    "DAD",
+    "TEEN"
+  ],
+  "title": "Smart Ways to Use AI Every Day (and How to Ask Better)",
+  "cover_text": "ASK BETTER",
+  "description": "Smart, everyday ways to use AI, plus a simple recipe for prompts that get useful answers.\n\nA dad asks, his teen daughter explains: how to summarize long emails, draft and rewrite messages, learn and plan with AI, write clear prompts with task, context and format, and stay smart and safe by checking facts and keeping private info out. Then a quick quiz to test yourself.\n\nWant the 60-second versions? They're on our Shorts tab.\n\nAInation Studio — AI, explained simply for families. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AITips",
+    "#AI",
+    "#Prompting",
+    "#AIExplained",
+    "#AIForFamilies"
+  ],
+  "tags": [
+    "how to use ai every day",
+    "better ai prompts",
+    "prompt tips for beginners",
+    "ai for busy parents",
+    "chatbot tips",
+    "ai for families"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "What will you ask AI?",
+    "cue": "next",
+    "left": "bulb",
+    "right": "robot"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Everyone says AI can save time. But what can it actually do for me, on a normal day?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "user",
+          "label": "YOU"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "AI HELPER"
+        },
+        "subtitle": "Smart everyday AI",
+        "mid": "+"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Loads! And the secret isn't the app. It's how you ask. Good questions get good answers.",
+      "board": {
+        "type": "big",
+        "icon": "chat",
+        "text": "How you ask matters",
+        "cue": "ask"
+      },
+      "punch": "ask"
+    },
+    {
+      "who": "DAD",
+      "text": "So what's the plan?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Three everyday uses: summarize, draft, and learn. Then a simple recipe for better prompts, and a few rules to stay safe.",
+      "board": {
+        "type": "steps",
+        "title": "TODAY",
+        "items": [
+          {
+            "label": "Summarize",
+            "icon": "doc",
+            "cue": "summarize"
+          },
+          {
+            "label": "Draft",
+            "icon": "mail",
+            "cue": "draft"
+          },
+          {
+            "label": "Learn",
+            "icon": "book",
+            "cue": "learn"
+          },
+          {
+            "label": "Better prompts",
+            "icon": "bulb",
+            "cue": "prompts"
+          },
+          {
+            "label": "Stay safe",
+            "icon": "shield",
+            "cue": "safe"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Number one. What do you mean by summarize?",
+      "chapter": "Summarize",
+      "board": {
+        "type": "big",
+        "icon": "doc",
+        "text": "1. Summarize",
+        "cue": "summarize"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Paste in a long email, article, or document, and ask for the key points. It turns a wall of text into a short list.",
+      "board": {
+        "type": "chat",
+        "title": "SUMMARIZE",
+        "items": [
+          {
+            "who": "user",
+            "text": "Give me the key points",
+            "cue": "paste"
+          },
+          {
+            "who": "bot",
+            "text": "1... 2... 3...",
+            "cue": "list"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Like the school newsletter that goes on for pages?",
+      "board": {
+        "type": "big",
+        "icon": "📰",
+        "text": "Long newsletter?",
+        "cue": "newsletter"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly. Ask: what are the dates, and what do I need to do? You get just the important parts.",
+      "board": {
+        "type": "chat",
+        "title": "ASK FOR WHAT MATTERS",
+        "items": [
+          {
+            "who": "user",
+            "text": "Dates and to-dos?",
+            "cue": "dates"
+          },
+          {
+            "who": "bot",
+            "text": "Here's what to do...",
+            "cue": "important"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "But skim the original for anything important. Summaries can miss things, or get details wrong.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Skim the original",
+        "cue": "skim",
+        "sub": "Summaries can miss things",
+        "sub_cue": "miss"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Number two. Can it help me write?",
+      "chapter": "Draft and rewrite",
+      "board": {
+        "type": "big",
+        "icon": "mail",
+        "text": "2. Draft & rewrite",
+        "cue": "write"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes. Ask for a first draft. A polite reply, a thank-you note, a complaint that stays calm. Then make it sound like you.",
+      "board": {
+        "type": "chat",
+        "title": "DRAFT",
+        "items": [
+          {
+            "who": "user",
+            "text": "A polite reply, please",
+            "cue": "polite"
+          },
+          {
+            "who": "bot",
+            "text": "Here's a draft...",
+            "cue": "sound"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Why not just send what it writes?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Because it doesn't know you or the full situation. It can sound stiff, or say things you didn't mean. You're the editor.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "AI DRAFT",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Can sound stiff",
+              "icon": "warn",
+              "cue": "stiff"
+            }
+          ]
+        },
+        "right": {
+          "label": "YOU",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "The editor",
+              "icon": "check",
+              "cue": "editor",
+              "tick": true
+            }
+          ]
+        }
+      },
+      "punch": "editor"
+    },
+    {
+      "who": "DAD",
+      "text": "Can it fix my own writing too?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Totally. Paste your text and ask: make this shorter, friendlier, or clearer. You pick the tone, it does the rewriting.",
+      "board": {
+        "type": "steps",
+        "title": "REWRITE IT",
+        "items": [
+          {
+            "label": "Shorter",
+            "icon": "✂️",
+            "cue": "shorter"
+          },
+          {
+            "label": "Friendlier",
+            "icon": "🙂",
+            "cue": "friendlier"
+          },
+          {
+            "label": "Clearer",
+            "icon": "bulb",
+            "cue": "clearer"
+          }
+        ],
+        "color": "#8E44AD"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Number three. You said learn?",
+      "chapter": "Learn and plan",
+      "board": {
+        "type": "big",
+        "icon": "book",
+        "text": "3. Learn & plan",
+        "cue": "learn"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Ask it to explain something like you're new to it. Then keep asking follow-up questions until it clicks.",
+      "board": {
+        "type": "chat",
+        "title": "LEARN",
+        "items": [
+          {
+            "who": "user",
+            "text": "Explain like I'm new",
+            "cue": "explain"
+          },
+          {
+            "who": "bot",
+            "text": "Think of it like...",
+            "cue": "follow-up"
+          }
+        ],
+        "color": "#8E44AD"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Like a patient tutor.",
+      "board": {
+        "type": "big",
+        "icon": "user",
+        "text": "A patient tutor",
+        "cue": "patient"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Right. You can even ask it to quiz you. Great before a test, or when learning a new skill for work.",
+      "board": {
+        "type": "chat",
+        "title": "QUIZ ME",
+        "items": [
+          {
+            "who": "user",
+            "text": "Quiz me on this",
+            "cue": "quiz"
+          },
+          {
+            "who": "bot",
+            "text": "Question 1...",
+            "cue": "test"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can it help plan things too? Like dinners for the week?",
+      "board": {
+        "type": "big",
+        "icon": "calendar",
+        "text": "Plan the week?",
+        "cue": "plan"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Sure. Tell it what you have, what you like, and any limits. It can suggest meals, a shopping list, or a schedule.",
+      "board": {
+        "type": "journey",
+        "title": "PLAN IT",
+        "traveler": "📝",
+        "items": [
+          {
+            "icon": "🥕",
+            "label": "What you have",
+            "cue": "have"
+          },
+          {
+            "icon": "❤️",
+            "label": "What you like",
+            "cue": "like"
+          },
+          {
+            "icon": "🚫",
+            "label": "Your limits",
+            "cue": "limits"
+          },
+          {
+            "icon": "🛒",
+            "label": "Meals & list",
+            "cue": "meals"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "For health, money, or legal questions, use it to prepare your questions, then check with a real expert.",
+      "board": {
+        "type": "big",
+        "icon": "shield",
+        "text": "Check with an expert",
+        "cue": "expert"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "You said the secret is how you ask. Sometimes I get really useless answers.",
+      "chapter": "Better prompts",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "x",
+          "label": "VAGUE"
+        },
+        "right": {
+          "icon": "bulb",
+          "label": "CLEAR"
+        },
+        "subtitle": "Better prompts",
+        "mid": "→"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Usually that's because the prompt is too vague. A prompt is just the instructions you give the AI.",
+      "board": {
+        "type": "big",
+        "icon": "chat",
+        "text": "Prompt = instructions",
+        "cue": "instructions"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So what's a vague one?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Like, write a poem. About what? How long? For who? The AI has to guess.",
+      "board": {
+        "type": "chat",
+        "title": "VAGUE PROMPT",
+        "items": [
+          {
+            "who": "user",
+            "text": "Write a poem.",
+            "cue": "write"
+          },
+          {
+            "who": "bot",
+            "text": "About what? How long?",
+            "cue": "guess"
+          }
+        ],
+        "color": "#FF4D6D"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay, how do I fix it?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Use three parts. The task, what to do. The context, who it's for and why. And the format, like length or style.",
+      "board": {
+        "type": "steps",
+        "title": "GOOD PROMPT",
+        "items": [
+          {
+            "label": "Task: what to do",
+            "icon": "target",
+            "cue": "task"
+          },
+          {
+            "label": "Context: who & why",
+            "icon": "book",
+            "cue": "context"
+          },
+          {
+            "label": "Format: length, style",
+            "icon": "doc",
+            "cue": "format"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Example, please!"
+    },
+    {
+      "who": "TEEN",
+      "text": "Write a short, funny poem for my dad's birthday. He loves fishing and bad jokes. Keep it under eight lines.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "VAGUE",
+          "color": "#FF4D6D",
+          "items": [
+            {
+              "text": "Write a poem",
+              "icon": "doc",
+              "cue": "write"
+            }
+          ]
+        },
+        "right": {
+          "label": "CLEAR",
+          "color": "#2ECC71",
+          "items": [
+            {
+              "text": "Funny birthday poem",
+              "icon": "target",
+              "cue": "funny",
+              "tick": true
+            },
+            {
+              "text": "Loves fishing",
+              "icon": "book",
+              "cue": "fishing",
+              "tick": true
+            },
+            {
+              "text": "Under 8 lines",
+              "icon": "doc",
+              "cue": "under",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Hey, I do love fishing!",
+      "board": {
+        "type": "big",
+        "icon": "🎣",
+        "text": "Loves fishing!",
+        "cue": "fishing"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Bonus tip: give it a role. Like, you are a friendly coach, or a patient teacher. It changes the style of the answer.",
+      "board": {
+        "type": "big",
+        "icon": "user",
+        "text": "Give it a role",
+        "cue": "role",
+        "sub": "\"You are a patient teacher...\"",
+        "sub_cue": "teacher"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And if the answer still isn't right?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Treat it as a conversation. Ask, read the answer, then reply with what to change. Shorter, friendlier, add an example. Repeat until it's right.",
+      "board": {
+        "type": "cycle",
+        "title": "REFINE IT",
+        "center": "💬",
+        "items": [
+          {
+            "icon": "💬",
+            "label": "Ask",
+            "cue": "ask"
+          },
+          {
+            "icon": "👀",
+            "label": "Read it",
+            "cue": "read"
+          },
+          {
+            "icon": "✏️",
+            "label": "Ask for changes",
+            "cue": "reply"
+          },
+          {
+            "icon": "🔁",
+            "label": "Repeat",
+            "cue": "repeat"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Another trick: ask it to ask you questions first. Like, before you answer, ask me what you need to know.",
+      "board": {
+        "type": "chat",
+        "title": "LET IT ASK YOU",
+        "items": [
+          {
+            "who": "user",
+            "text": "Ask me questions first",
+            "cue": "before"
+          },
+          {
+            "who": "bot",
+            "text": "Who is it for?",
+            "cue": "know"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "This is great. Is there a catch?",
+      "chapter": "Stay smart and safe",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Any catch?",
+        "cue": "catch"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Two big ones. First, AI can sound confident and still be wrong. It sometimes makes things up.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Confident ≠ correct",
+        "cue": "confident",
+        "sub": "It can make things up",
+        "sub_cue": "makes"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "So check important facts with a trusted source, especially dates, numbers, health, and money.",
+      "board": {
+        "type": "checklist",
+        "title": "Double-check",
+        "icon": "search",
+        "items": [
+          {
+            "text": "Dates & numbers",
+            "cue": "dates",
+            "ok": true
+          },
+          {
+            "text": "Health",
+            "cue": "health",
+            "ok": true
+          },
+          {
+            "text": "Money",
+            "cue": "money",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And the second?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Privacy. Don't paste passwords, bank details, ID numbers, or private family info. Assume what you type may be stored.",
+      "board": {
+        "type": "checklist",
+        "title": "Keep it out",
+        "icon": "lock",
+        "items": [
+          {
+            "text": "Passwords",
+            "cue": "passwords",
+            "ok": false
+          },
+          {
+            "text": "Bank details",
+            "cue": "bank",
+            "ok": false
+          },
+          {
+            "text": "ID numbers",
+            "cue": "id",
+            "ok": false
+          },
+          {
+            "text": "Private family info",
+            "cue": "private",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What about kids using it for homework?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Use it like a tutor, not a cheat sheet. Ask it to explain, then do the work yourself, and follow your school's rules.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "YES",
+          "color": "#2ECC71",
+          "items": [
+            {
+              "text": "Like a tutor",
+              "icon": "check",
+              "cue": "tutor",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "NO",
+          "color": "#FF4D6D",
+          "items": [
+            {
+              "text": "A cheat sheet",
+              "icon": "x",
+              "cue": "cheat"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And which app should we use?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Any good chatbot works. Try a free one, ask the same question in two apps, and keep the one you like best.",
+      "board": {
+        "type": "steps",
+        "title": "PICK AN APP",
+        "items": [
+          {
+            "label": "Try a free one",
+            "icon": "coin",
+            "cue": "free"
+          },
+          {
+            "label": "Ask the same question",
+            "icon": "chat",
+            "cue": "same"
+          },
+          {
+            "label": "Keep your favorite",
+            "icon": "check",
+            "cue": "keep"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Quiz time, Dad! What are the three parts of a good prompt? Think...",
+      "chapter": "Quiz",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Quiz time!",
+        "cue": "quiz",
+        "sub": "3 parts of a prompt?",
+        "sub_cue": "parts"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Task, context, and format!",
+      "board": {
+        "type": "steps",
+        "title": "GOOD PROMPT",
+        "items": [
+          {
+            "label": "Task",
+            "icon": "target",
+            "cue": "task"
+          },
+          {
+            "label": "Context",
+            "icon": "book",
+            "cue": "context"
+          },
+          {
+            "label": "Format",
+            "icon": "doc",
+            "cue": "format"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Next. AI gives you a confident answer about a medicine. What do you do? Think...",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Confident answer?",
+        "cue": "confident"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Check it with a trusted source, like a doctor or pharmacist.",
+      "board": {
+        "type": "big",
+        "icon": "check",
+        "text": "Check a trusted source",
+        "cue": "trusted"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Last one. Should you paste your bank password to get help? Think...",
+      "board": {
+        "type": "big",
+        "icon": "lock",
+        "text": "Bank password?",
+        "cue": "bank"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Never! Passwords stay private.",
+      "board": {
+        "type": "big",
+        "icon": "x",
+        "text": "Never!",
+        "cue": "never"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: summarize, draft, and learn, with clear prompts, and check what matters.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "SUMMARIZE, DRAFT, LEARN",
+            "icon": "bulb",
+            "cue": "summarize",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "TASK, CONTEXT, FORMAT",
+            "icon": "target",
+            "cue": "clear",
+            "color": "#E91E63"
+          },
+          {
+            "text": "CHECK & STAY PRIVATE",
+            "icon": "shield",
+            "cue": "check",
+            "color": "#2ECC71"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Perfect score! Start small. Try one of these today, and see how much time it saves.",
+      "board": {
+        "type": "big",
+        "icon": "bulb",
+        "text": "Try one today",
+        "cue": "try"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Subscribe to AI Nation Studio, and share this with a friend! And next time you're stuck... what will you ask AI to help with?"
+    }
+  ]
+}

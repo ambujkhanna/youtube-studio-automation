@@ -1,0 +1,653 @@
+{
+  "id": "L02",
+  "slug": "why-ai-makes-things-up",
+  "short_id": "ep003",
+  "status": "ready",
+  "title": "Why AI Makes Things Up (and How to Catch It) | AI Hallucinations",
+  "cover_text": "CONFIDENT ≠ CORRECT",
+  "description": "Learn why AI chatbots sometimes make things up, where it happens most, and simple habits to catch it before it fools you.\n\nA dad asks, his teen explains AI 'hallucinations' in plain English, with a quick quiz at the end. Want the 60-second version? It's on our Shorts tab.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AI",
+    "#AIHallucination",
+    "#FactCheck",
+    "#AIExplained",
+    "#AILiteracy"
+  ],
+  "tags": [
+    "ai hallucination",
+    "why does ai make things up",
+    "ai wrong answers",
+    "fact check ai",
+    "fake sources ai",
+    "ai accuracy",
+    "ai explained for families"
+  ],
+  "cast": [
+    "DAD",
+    "TEEN"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Sounds sure... but is it true?",
+    "left": "robot",
+    "right": "search",
+    "cue": "next"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "I asked AI for a book about our town. It gave me a title, an author, everything. But the book doesn't exist! What happened?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "robot",
+          "label": "SOUNDS SURE"
+        },
+        "right": {
+          "icon": "warn",
+          "label": "BUT FAKE?"
+        },
+        "subtitle": "Why AI makes things up"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "That's called a hallucination. Today: why it happens, where it shows up most, and how to catch it. Plus a quiz!",
+      "board": {
+        "type": "gallery",
+        "title": "TODAY",
+        "items": [
+          {
+            "icon": "🤖",
+            "label": "Why?",
+            "cue": "why"
+          },
+          {
+            "icon": "📍",
+            "label": "Where",
+            "cue": "where"
+          },
+          {
+            "icon": "🔍",
+            "label": "Catch it",
+            "cue": "catch"
+          },
+          {
+            "icon": "❓",
+            "label": "Quiz",
+            "cue": "quiz"
+          }
+        ]
+      },
+      "punch": "hallucination"
+    },
+    {
+      "who": "DAD",
+      "text": "A hallucination? Like seeing things?",
+      "chapter": "What it is"
+    },
+    {
+      "who": "TEEN",
+      "text": "Sort of! In AI, it means the answer sounds confident and real, but it's false or made up.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Confident, but false",
+        "cue": "confident",
+        "sub": "Sounds real. Isn't.",
+        "sub_cue": "false"
+      },
+      "punch": "false"
+    },
+    {
+      "who": "DAD",
+      "text": "So it's lying to me?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not on purpose. Lying means you know the truth and hide it. The AI isn't checking truth at all. It's making text that sounds right.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "LYING",
+          "color": "#FF4D6D",
+          "items": [
+            {
+              "text": "Knows truth, hides it",
+              "icon": "🤥",
+              "cue": "know",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "AI MISTAKE",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Not checking truth",
+              "icon": "robot",
+              "cue": "checking",
+              "tick": true
+            },
+            {
+              "text": "Just sounds right",
+              "icon": "chat",
+              "cue": "sounds",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Then why does it make things up?",
+      "chapter": "Why it happens"
+    },
+    {
+      "who": "TEEN",
+      "text": "Remember, it's a next-word predictor. It picks words that are likely to come next, based on patterns it learned. Likely isn't the same as true.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "Likely ≠ true",
+        "cue": "likely"
+      },
+      "punch": "true"
+    },
+    {
+      "who": "DAD",
+      "text": "But why invent a whole book?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Book titles have a pattern: a catchy title, an author name, a year. If it never saw the real answer, it can still fill in that pattern.",
+      "board": {
+        "type": "journey",
+        "title": "HOW A FAKE BOOK HAPPENS",
+        "traveler": "📕",
+        "items": [
+          {
+            "icon": "📖",
+            "label": "Title",
+            "cue": "titles"
+          },
+          {
+            "icon": "👤",
+            "label": "Author",
+            "cue": "author"
+          },
+          {
+            "icon": "📅",
+            "label": "Year",
+            "cue": "year"
+          },
+          {
+            "icon": "🧩",
+            "label": "Fills the gaps",
+            "cue": "fill"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So it's guessing the shape of an answer."
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly. And it's trained to be helpful, so it usually tries to answer instead of saying, I don't know.",
+      "board": {
+        "type": "big",
+        "icon": "🙋",
+        "text": "Tries to help, even when unsure",
+        "cue": "helpful"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Like a student bluffing on a test?"
+    },
+    {
+      "who": "TEEN",
+      "text": "A bit! Except it doesn't know it's bluffing. That's why it sounds so calm and sure.",
+      "board": {
+        "type": "big",
+        "icon": "😐",
+        "text": "Bluffing, without knowing it",
+        "cue": "bluffing",
+        "sub": "calm and sure",
+        "sub_cue": "calm"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can a question trick it?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Sometimes! If your question has a wrong idea built in, it might go along with it. Good tools often push back, but not always.",
+      "board": {
+        "type": "chat",
+        "title": "A TRICK QUESTION",
+        "color": "#FF8C42",
+        "items": [
+          {
+            "who": "user",
+            "text": "Why is the moon made of cheese?",
+            "cue": "wrong"
+          },
+          {
+            "who": "bot",
+            "text": "It isn't! It's rock.",
+            "cue": "push"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What makes it more likely to happen?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Rare topics, very specific details, and anything after its training stopped. Less information means more guessing.",
+      "board": {
+        "type": "checklist",
+        "title": "MORE LIKELY WITH",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Rare topics",
+            "cue": "rare",
+            "ok": false
+          },
+          {
+            "text": "Very specific details",
+            "cue": "specific",
+            "ok": false
+          },
+          {
+            "text": "Very recent events",
+            "cue": "after",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So what should I watch out for most?",
+      "chapter": "Danger zones"
+    },
+    {
+      "who": "TEEN",
+      "text": "Quotes, numbers, dates and sources. It can invent a quote nobody said, a statistic, or a link that goes nowhere.",
+      "board": {
+        "type": "gallery",
+        "title": "WATCH OUT",
+        "items": [
+          {
+            "icon": "💬",
+            "label": "Quotes",
+            "cue": "quotes"
+          },
+          {
+            "icon": "🔢",
+            "label": "Numbers",
+            "cue": "numbers"
+          },
+          {
+            "icon": "📅",
+            "label": "Dates",
+            "cue": "dates"
+          },
+          {
+            "icon": "🔗",
+            "label": "Sources",
+            "cue": "sources"
+          }
+        ],
+        "color": "#FF4D6D"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Fake links? Really?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! A link can look perfect, with a real website name, and still lead nowhere. Always click and check.",
+      "board": {
+        "type": "big",
+        "icon": "🔗",
+        "text": "Looks real ≠ is real",
+        "cue": "look",
+        "sub": "Click it. Check it.",
+        "sub_cue": "click"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Has that caused real problems?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes. There have been news stories about people trusting made-up references, even in serious work. That's why checking matters.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Fake references, real trouble",
+        "cue": "references"
+      },
+      "punch": "checking"
+    },
+    {
+      "who": "DAD",
+      "text": "What about health or money stuff?"
+    },
+    {
+      "who": "TEEN",
+      "text": "That's where mistakes hurt most. Use AI to understand the basics, but make decisions with a doctor or another real expert.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "AI: GOOD FOR",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Learning basics",
+              "icon": "bulb",
+              "cue": "understand",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "ASK AN EXPERT",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Health choices",
+              "icon": "🩺",
+              "cue": "doctor",
+              "tick": true
+            },
+            {
+              "text": "Money choices",
+              "icon": "coin",
+              "cue": "expert",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And school projects?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Same rule. If it gives you a fact or a quote for an essay, find it in a real source first. Your teacher will check!",
+      "board": {
+        "type": "steps",
+        "title": "FOR SCHOOL",
+        "items": [
+          {
+            "label": "Got a fact?",
+            "icon": "doc",
+            "cue": "fact"
+          },
+          {
+            "label": "Find a real source",
+            "icon": "book",
+            "cue": "source"
+          },
+          {
+            "label": "Then use it",
+            "icon": "check",
+            "cue": "first"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay, give me a game plan.",
+      "chapter": "How to catch it"
+    },
+    {
+      "who": "TEEN",
+      "text": "Four habits. Ask for sources. Open them. Cross-check with a trusted site. And ask again in a different way.",
+      "board": {
+        "type": "cycle",
+        "title": "FACT-CHECK LOOP",
+        "center": "🔍",
+        "items": [
+          {
+            "icon": "📚",
+            "label": "Ask for sources",
+            "cue": "sources"
+          },
+          {
+            "icon": "🔗",
+            "label": "Open them",
+            "cue": "open"
+          },
+          {
+            "icon": "✅",
+            "label": "Cross-check",
+            "cue": "cross"
+          },
+          {
+            "icon": "🔁",
+            "label": "Ask differently",
+            "cue": "different"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Why ask again differently?"
+    },
+    {
+      "who": "TEEN",
+      "text": "If the answers keep changing, that's a warning sign. Real facts usually stay the same.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Answers keep changing? Warning!",
+        "cue": "changing"
+      },
+      "punch": "warning"
+    },
+    {
+      "who": "DAD",
+      "text": "Can't I just ask it how sure it is?"
+    },
+    {
+      "who": "TEEN",
+      "text": "You can, but its own confidence isn't reliable. It can say it's very sure and still be wrong. Checking beats trusting.",
+      "board": {
+        "type": "big",
+        "icon": "🎯",
+        "text": "Checking beats trusting",
+        "cue": "checking"
+      },
+      "punch": "checking"
+    },
+    {
+      "who": "DAD",
+      "text": "Does web search help?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Tools that search the web and show sources help a lot, because you can see where facts came from. But still open the links. It can misread them.",
+      "board": {
+        "type": "steps",
+        "title": "WEB SEARCH",
+        "items": [
+          {
+            "label": "Shows its sources",
+            "icon": "globe",
+            "cue": "sources"
+          },
+          {
+            "label": "You see where",
+            "icon": "eye",
+            "cue": "see"
+          },
+          {
+            "label": "Still open links",
+            "icon": "search",
+            "cue": "open"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can I tell it it's okay not to know?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Add, if you're not sure, say so. It doesn't fix everything, but it can help.",
+      "board": {
+        "type": "chat",
+        "title": "BETTER PROMPT",
+        "color": "#2ECC71",
+        "items": [
+          {
+            "who": "user",
+            "text": "If you're not sure, say so.",
+            "cue": "add"
+          },
+          {
+            "who": "bot",
+            "text": "I'm not certain about this one.",
+            "cue": "help"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Quiz time! Question one. What's an AI hallucination? Think...",
+      "chapter": "Quiz",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Q1: What's a hallucination?",
+        "cue": "hallucination"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "An answer that sounds confident, but is false.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Confident, but false",
+        "cue": "confident"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Question two. AI gives you a perfect-looking link. What do you do? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🔗",
+        "text": "Q2: Perfect link. Now what?",
+        "cue": "link"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Click it and check it's real before I trust it.",
+      "board": {
+        "type": "big",
+        "icon": "check",
+        "text": "Click and check",
+        "cue": "click"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Last one. Why does AI make things up? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "Q3: Why does it happen?",
+        "cue": "why"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "It predicts likely words. Likely isn't the same as true.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "Likely ≠ true",
+        "cue": "likely"
+      },
+      "punch": "true"
+    },
+    {
+      "who": "TEEN",
+      "text": "Three for three! Let's recap. It predicts likely words, it can sound sure and be wrong, and you protect yourself by checking.",
+      "chapter": "Recap",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "PREDICTS LIKELY WORDS",
+            "icon": "brain",
+            "cue": "predicts",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "SURE ≠ RIGHT",
+            "icon": "warn",
+            "cue": "sure",
+            "color": "#FF4D6D"
+          },
+          {
+            "text": "CHECK WHAT MATTERS",
+            "icon": "search",
+            "cue": "checking",
+            "color": "#2ECC71"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So confident doesn't mean correct.",
+      "board": {
+        "type": "big",
+        "icon": "shield",
+        "text": "Confident ≠ correct",
+        "cue": "confident"
+      },
+      "punch": "correct"
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Subscribe to AI Nation Studio, and share this with a friend! And next time AI sounds super sure... ask, is it actually true?"
+    }
+  ]
+}

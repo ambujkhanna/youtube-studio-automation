@@ -67,3 +67,20 @@ GitHub Actions: a daily run takes roughly 10–15 minutes; the free tier for pri
 See `episodes/README.md`. Each episode is one JSON file; validate with
 `python pipeline/validate_episode.py episodes/*/episode.json` (also safe to skip — the daily run fails closed).
 Keep at least a week of `"status": "ready"` episodes in the backlog; the run reports when it's empty.
+
+## Weekly long videos (16:9, 3–8 min) — added 2026-11-06
+
+- **Workflow:** `.github/workflows/weekly-long.yml` runs **once a week**. It takes the next ready script in `long/` (L01, L02, …) and renders a **1920×1080** video. The board or stage is on the left, the characters are on the right, and captions sit under the board.
+- **Upload:** it uploads the video like a Short (Private until the API audit, then scheduled in the PUBLISH_WINDOW). YouTube **chapters** are added to the description automatically from the script's `"chapter"` markers, and `#Shorts` is removed. A **16:9 thumbnail** is designed and uploaded.
+- **Run time:** a long render takes about 40–60 minutes. One per week per channel fits GitHub's free minutes. To test it, go to Actions → the weekly workflow → Run workflow and tick **dry_run**. The MP4 and thumbnail appear in the run's Artifacts.
+- **Scripts:** 8 are ready in `long/`. The format is in `long/README.md`. Check scripts with:
+  ```bash
+  python pipeline/validate_episode.py long/*/episode.json
+  ```
+- **Tip:** in YouTube Studio, set each Short's "Related video" to its long version.
+
+## Real illustrations, diagrams and fonts — added 2026-11-06
+
+- **Real science drawings:** any icon can be `img:<Category>/<Author>/<name>`; the full list is in `assets/IMAGE_INDEX.txt`. They come from Bioicons (Servier Medical Art and others), using only licences that allow commercial use. The daily run downloads any missing drawing from GitHub, and the credits required by CC BY are **added to the YouTube description automatically**.
+- **Animated diagrams:** `body` (blood, nerve, air and food flows), `cycle`, `journey` and `orbit`. See `episodes/README.md` and `pipeline/diagrams.py`.
+- **Fonts** (SIL Open Font License, licence files in `fonts/`): The CurioKids Club uses Fredoka for boards and Lilita One for captions. AInation Studio uses Poppins.

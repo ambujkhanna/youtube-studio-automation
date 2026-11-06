@@ -71,12 +71,26 @@
       "who": "TEEN",
       "text": "Live captions turn speech into text on screen, for people who are deaf or hard of hearing.",
       "board": {
-        "type": "big",
-        "icon": "chat",
-        "text": "Live captions",
-        "cue": "captions",
-        "sub": "speech → text on screen",
-        "sub_cue": "text"
+        "type": "journey",
+        "title": "LIVE CAPTIONS",
+        "traveler": "🗣️",
+        "items": [
+          {
+            "icon": "🎙️",
+            "label": "Speech",
+            "cue": "speech"
+          },
+          {
+            "icon": "📝",
+            "label": "Text",
+            "cue": "text"
+          },
+          {
+            "icon": "📱",
+            "label": "On screen",
+            "cue": "screen"
+          }
+        ]
       }
     },
     {

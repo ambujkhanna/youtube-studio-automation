@@ -116,22 +116,28 @@
       "who": "TEEN",
       "text": "It plans a safe path, then controls steering, speed, and brakes, many times every second.",
       "board": {
-        "type": "steps",
-        "title": "EVERY SECOND",
+        "type": "cycle",
+        "title": "MANY TIMES A SECOND",
+        "center": "🚗",
         "items": [
           {
-            "label": "Plan a safe path",
-            "icon": "target",
+            "icon": "🗺️",
+            "label": "Plan path",
             "cue": "plans"
           },
           {
-            "label": "Steer and set speed",
-            "icon": "check",
+            "icon": "🧭",
+            "label": "Steering",
             "cue": "steering"
           },
           {
-            "label": "Brake if needed",
-            "icon": "warn",
+            "icon": "⚡",
+            "label": "Speed",
+            "cue": "speed"
+          },
+          {
+            "icon": "🛑",
+            "label": "Brakes",
             "cue": "brakes"
           }
         ],

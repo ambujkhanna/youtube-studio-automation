@@ -131,23 +131,29 @@
       "who": "TEEN",
       "text": "Pause. Don't click the link. Open the official app or website yourself and check there.",
       "board": {
-        "type": "steps",
-        "title": "SAFE STEPS",
+        "type": "journey",
+        "title": "SAFE CHECK",
+        "traveler": "📩",
         "items": [
           {
+            "icon": "⏸️",
             "label": "Pause",
-            "icon": "warn",
             "cue": "pause"
           },
           {
-            "label": "Don't click the link",
-            "icon": "x",
-            "cue": "click"
+            "icon": "🚫",
+            "label": "Don't click",
+            "cue": "don't"
           },
           {
-            "label": "Use the official app",
-            "icon": "phone",
+            "icon": "📱",
+            "label": "Official app",
             "cue": "official"
+          },
+          {
+            "icon": "✅",
+            "label": "Check there",
+            "cue": "check"
           }
         ],
         "color": "#2ECC71"

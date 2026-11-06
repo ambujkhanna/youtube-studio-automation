@@ -141,22 +141,23 @@
       "who": "TEEN",
       "text": "Ask it to act as an interviewer for that job, one question at a time, then give you feedback.",
       "board": {
-        "type": "steps",
-        "title": "PRACTICE",
+        "type": "cycle",
+        "title": "PRACTICE LOOP",
+        "center": "🎤",
         "items": [
           {
-            "label": "It plays interviewer",
-            "icon": "user",
+            "icon": "🧑",
+            "label": "Interviewer",
             "cue": "interviewer"
           },
           {
-            "label": "One question at a time",
-            "icon": "chat",
-            "cue": "one"
+            "icon": "❓",
+            "label": "One question",
+            "cue": "question"
           },
           {
-            "label": "You get feedback",
-            "icon": "check",
+            "icon": "💬",
+            "label": "Feedback",
             "cue": "feedback"
           }
         ],

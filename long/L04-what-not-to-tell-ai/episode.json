@@ -1,0 +1,689 @@
+{
+  "id": "L04",
+  "slug": "what-not-to-tell-ai",
+  "short_id": "ep005",
+  "status": "ready",
+  "title": "What Not to Tell AI: Privacy Rules for Chatbots (Family Guide)",
+  "cover_text": "STOP. DON'T PASTE.",
+  "description": "Learn what never to share with an AI chatbot, where your chats can go, and easy habits and settings that keep your family's private info safe.\n\nA dad asks, his teen explains AI privacy basics, with a quick quiz at the end. Want the 60-second version? It's on our Shorts tab.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AI",
+    "#Privacy",
+    "#OnlineSafety",
+    "#AIExplained",
+    "#CyberSafety"
+  ],
+  "tags": [
+    "ai privacy",
+    "what not to share with ai",
+    "is it safe to use ai chatbots",
+    "chatbot privacy settings",
+    "ai safety for families",
+    "data privacy ai",
+    "ai at work rules"
+  ],
+  "cast": [
+    "DAD",
+    "TEEN"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Would you post it publicly?",
+    "left": "chat",
+    "right": "lock",
+    "cue": "next"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "I've been telling AI everything lately. My schedule, my bank questions, even a work file. That's fine, right?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "HELPFUL"
+        },
+        "right": {
+          "icon": "lock",
+          "label": "PRIVATE?"
+        },
+        "subtitle": "What not to tell AI"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Hmm, let's talk about that! Today: where your chats can go, what to never share, and some easy safer habits.",
+      "board": {
+        "type": "gallery",
+        "title": "TODAY",
+        "items": [
+          {
+            "icon": "💬",
+            "label": "Where chats go",
+            "cue": "chats"
+          },
+          {
+            "icon": "🚫",
+            "label": "Never share",
+            "cue": "never"
+          },
+          {
+            "icon": "✅",
+            "label": "Safer habits",
+            "cue": "safer"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Where do my chats even go? It's just me and the computer.",
+      "chapter": "Where chats go"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not quite. Your message travels to the company's servers. It can be stored there, at least for a while, depending on the service.",
+      "board": {
+        "type": "journey",
+        "title": "YOUR MESSAGE'S TRIP",
+        "traveler": "✉️",
+        "items": [
+          {
+            "icon": "💻",
+            "label": "Your device",
+            "cue": "message"
+          },
+          {
+            "icon": "☁️",
+            "label": "Company servers",
+            "cue": "servers"
+          },
+          {
+            "icon": "🗄️",
+            "label": "Stored a while",
+            "cue": "stored"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Stored? Who sees it?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Depending on the service, chats may be used to improve the AI, and some may be reviewed by people. The privacy settings tell you more.",
+      "board": {
+        "type": "steps",
+        "title": "YOUR CHAT MAY BE",
+        "items": [
+          {
+            "label": "Used to improve AI",
+            "icon": "brain",
+            "cue": "improve"
+          },
+          {
+            "label": "Reviewed by people",
+            "icon": "user",
+            "cue": "reviewed"
+          },
+          {
+            "label": "Check the settings",
+            "icon": "eye",
+            "cue": "settings"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay, but it's not like it's posted online."
+    },
+    {
+      "who": "TEEN",
+      "text": "Usually not. But accounts get hacked, data leaks happen, and shared chat links can be seen by anyone with the link.",
+      "board": {
+        "type": "checklist",
+        "title": "OTHER RISKS",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Hacked accounts",
+            "cue": "hacked",
+            "ok": false
+          },
+          {
+            "text": "Data leaks",
+            "cue": "leaks",
+            "ok": false
+          },
+          {
+            "text": "Shared chat links",
+            "cue": "shared",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Hmm. And on the family laptop?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Anyone using the same account can scroll back through your chat history. So sign out, or use your own account.",
+      "board": {
+        "type": "big",
+        "icon": "👀",
+        "text": "Same account = same history",
+        "cue": "account",
+        "sub": "Sign out, or use your own",
+        "sub_cue": "sign"
+      },
+      "punch": "history"
+    },
+    {
+      "who": "DAD",
+      "text": "So the rule is..."
+    },
+    {
+      "who": "TEEN",
+      "text": "Treat a chatbot like a helpful stranger online. Friendly and useful, but not someone you tell your secrets.",
+      "board": {
+        "type": "big",
+        "icon": "shield",
+        "text": "Treat it like a stranger online",
+        "cue": "stranger"
+      },
+      "punch": "stranger"
+    },
+    {
+      "who": "DAD",
+      "text": "So what should I never type in?",
+      "chapter": "Never share"
+    },
+    {
+      "who": "TEEN",
+      "text": "Passwords, and those one-time login codes. No real service needs you to paste them into a chat.",
+      "board": {
+        "type": "checklist",
+        "title": "NEVER SHARE",
+        "icon": "lock",
+        "items": [
+          {
+            "text": "Passwords",
+            "cue": "passwords",
+            "ok": false
+          },
+          {
+            "text": "One-time codes",
+            "cue": "one-time",
+            "ok": false
+          }
+        ]
+      },
+      "punch": "passwords"
+    },
+    {
+      "who": "DAD",
+      "text": "What about my bank stuff?"
+    },
+    {
+      "who": "TEEN",
+      "text": "General money questions are fine. But never paste card numbers, bank account details, or ID numbers like your passport number.",
+      "board": {
+        "type": "checklist",
+        "title": "NEVER SHARE",
+        "icon": "coin",
+        "items": [
+          {
+            "text": "Card numbers",
+            "cue": "card",
+            "ok": false
+          },
+          {
+            "text": "Bank details",
+            "cue": "bank",
+            "ok": false
+          },
+          {
+            "text": "ID or passport numbers",
+            "cue": "passport",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So I can ask how a budget works, just not with my account number."
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly! Same with your home address plus when you're away, or private photos. Those could be misused if they ever leaked.",
+      "board": {
+        "type": "gallery",
+        "title": "ALSO KEEP OUT",
+        "items": [
+          {
+            "icon": "🏠",
+            "label": "Home address",
+            "cue": "address"
+          },
+          {
+            "icon": "✈️",
+            "label": "When you're away",
+            "cue": "away"
+          },
+          {
+            "icon": "📷",
+            "label": "Private photos",
+            "cue": "photos"
+          }
+        ],
+        "color": "#FF4D6D"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And other people's info?"
+    },
+    {
+      "who": "TEEN",
+      "text": "That's their privacy, not yours to share. Don't paste a friend's messages, medical details, or phone number without asking them.",
+      "board": {
+        "type": "checklist",
+        "title": "NOT YOURS TO SHARE",
+        "icon": "user",
+        "items": [
+          {
+            "text": "Friends' messages",
+            "cue": "messages",
+            "ok": false
+          },
+          {
+            "text": "Medical details",
+            "cue": "medical",
+            "ok": false
+          },
+          {
+            "text": "Phone numbers",
+            "cue": "phone",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Now, the work file I pasted. Was that bad?",
+      "chapter": "Work and health"
+    },
+    {
+      "who": "TEEN",
+      "text": "It might be. Many companies have rules about AI. Use approved tools, and never paste secret documents or customer data into a public chatbot.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "OK",
+          "color": "#2ECC71",
+          "items": [
+            {
+              "text": "Approved tools",
+              "icon": "check",
+              "cue": "approved",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "NOT OK",
+          "color": "#FF4D6D",
+          "items": [
+            {
+              "text": "Secret documents",
+              "icon": "doc",
+              "cue": "secret",
+              "tick": false
+            },
+            {
+              "text": "Customer data",
+              "icon": "user",
+              "cue": "customer",
+              "tick": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What if I take out the names?"
+    },
+    {
+      "who": "TEEN",
+      "text": "That helps a lot! Replace names with Person A, remove numbers and addresses, and only share the part you need help with.",
+      "board": {
+        "type": "steps",
+        "title": "CLEAN IT FIRST",
+        "items": [
+          {
+            "label": "Names → Person A",
+            "icon": "user",
+            "cue": "replace"
+          },
+          {
+            "label": "Remove numbers",
+            "icon": "x",
+            "cue": "remove"
+          },
+          {
+            "label": "Share only what's needed",
+            "icon": "target",
+            "cue": "only"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And health questions?"
+    },
+    {
+      "who": "TEEN",
+      "text": "You can ask what a word on a report means. But leave out your full name and record numbers, and check anything important with your doctor.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "OK TO ASK",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "What a word means",
+              "icon": "bulb",
+              "cue": "word",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "LEAVE OUT",
+          "color": "#FF4D6D",
+          "items": [
+            {
+              "text": "Name & record numbers",
+              "icon": "x",
+              "cue": "name",
+              "tick": false
+            },
+            {
+              "text": "Decisions: ask a doctor",
+              "icon": "🩺",
+              "cue": "doctor",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What about younger kids using it?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Same rules for everyone. Check the app's age rules, and kids should tell a parent if anything feels weird.",
+      "board": {
+        "type": "steps",
+        "title": "FOR KIDS & TEENS",
+        "items": [
+          {
+            "label": "Same rules",
+            "icon": "check",
+            "cue": "same"
+          },
+          {
+            "label": "Check age rules",
+            "icon": "calendar",
+            "cue": "age"
+          },
+          {
+            "label": "Tell a parent",
+            "icon": "user",
+            "cue": "parent"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay, give me the safety routine.",
+      "chapter": "Safer habits"
+    },
+    {
+      "who": "TEEN",
+      "text": "Before you hit enter, run a quick loop. Read it, remove private details, ask if you'd post it publicly, then send.",
+      "board": {
+        "type": "cycle",
+        "title": "BEFORE YOU SEND",
+        "center": "💬",
+        "items": [
+          {
+            "icon": "👀",
+            "label": "Read it",
+            "cue": "read"
+          },
+          {
+            "icon": "✂️",
+            "label": "Remove details",
+            "cue": "remove"
+          },
+          {
+            "icon": "🌍",
+            "label": "Would I post it?",
+            "cue": "post"
+          },
+          {
+            "icon": "📤",
+            "label": "Send",
+            "cue": "send"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Post it publicly? Like on social media?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Right. If you wouldn't post it publicly, don't paste it into a chatbot. That one rule covers most things.",
+      "board": {
+        "type": "big",
+        "icon": "lock",
+        "text": "Wouldn't post it? Don't paste it.",
+        "cue": "post"
+      },
+      "punch": "paste"
+    },
+    {
+      "who": "DAD",
+      "text": "And the settings you mentioned?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Open the privacy settings. Many tools let you turn off training on your chats, use a temporary chat, or delete old history.",
+      "board": {
+        "type": "steps",
+        "title": "CHECK SETTINGS",
+        "items": [
+          {
+            "label": "Training: off",
+            "icon": "🔕",
+            "cue": "training"
+          },
+          {
+            "label": "Temporary chat",
+            "icon": "⏳",
+            "cue": "temporary"
+          },
+          {
+            "label": "Delete old chats",
+            "icon": "🗑️",
+            "cue": "delete"
+          }
+        ],
+        "color": "#8E44AD"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And if some app asks for my password to unlock a better AI?"
+    },
+    {
+      "who": "TEEN",
+      "text": "That's a scam warning sign! Only log in on the real app or website you know. Never type passwords into a chat.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Password in a chat? Scam!",
+        "cue": "scam"
+      },
+      "punch": "scam"
+    },
+    {
+      "who": "TEEN",
+      "text": "Quiz time! Question one. Is it okay to paste a one-time login code into a chatbot? Think...",
+      "chapter": "Quiz",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Q1: Paste a login code?",
+        "cue": "login"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Never! No real service needs that.",
+      "board": {
+        "type": "big",
+        "icon": "x",
+        "text": "Never!",
+        "cue": "never"
+      },
+      "punch": "never"
+    },
+    {
+      "who": "TEEN",
+      "text": "Question two. You want help with a work email about a customer. What do you do first? Think...",
+      "board": {
+        "type": "big",
+        "icon": "doc",
+        "text": "Q2: Work email help?",
+        "cue": "work"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Remove the names and details, and use the tools my company allows.",
+      "board": {
+        "type": "checklist",
+        "title": "DO THIS",
+        "icon": "check",
+        "items": [
+          {
+            "text": "Remove names",
+            "cue": "remove",
+            "ok": true
+          },
+          {
+            "text": "Approved tools",
+            "cue": "allows",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Last one. What's the one rule that covers most things? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "Q3: The one rule?",
+        "cue": "rule"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "If I wouldn't post it publicly, I don't paste it.",
+      "board": {
+        "type": "big",
+        "icon": "lock",
+        "text": "Wouldn't post? Don't paste.",
+        "cue": "post"
+      },
+      "punch": "paste"
+    },
+    {
+      "who": "TEEN",
+      "text": "Nailed it! Recap time. Chats can be stored, secrets stay out, clean up details, and check your settings.",
+      "chapter": "Recap",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "CHATS CAN BE STORED",
+            "icon": "doc",
+            "cue": "stored",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "SECRETS STAY OUT",
+            "icon": "lock",
+            "cue": "secrets",
+            "color": "#FF4D6D"
+          },
+          {
+            "text": "REMOVE DETAILS",
+            "icon": "x",
+            "cue": "clean",
+            "color": "#FF8C42"
+          },
+          {
+            "text": "CHECK SETTINGS",
+            "icon": "shield",
+            "cue": "settings",
+            "color": "#2ECC71"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Helpful tool, not my diary.",
+      "board": {
+        "type": "big",
+        "icon": "book",
+        "text": "Helpful tool, not a diary",
+        "cue": "helpful"
+      },
+      "punch": "diary"
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Subscribe to AI Nation Studio, and share this with a friend! And next time you're about to paste something... ask, would I post this publicly?"
+    }
+  ]
+}

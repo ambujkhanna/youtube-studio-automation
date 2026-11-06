@@ -119,23 +119,24 @@
       "who": "TEEN",
       "text": "It learns patterns from huge amounts of examples, then builds new combinations that fit those patterns.",
       "board": {
-        "type": "steps",
+        "type": "journey",
         "title": "HOW IT CREATES",
+        "traveler": "✨",
         "items": [
           {
-            "label": "Learns patterns",
-            "icon": "brain",
+            "icon": "📚",
+            "label": "Learn",
+            "cue": "learns"
+          },
+          {
+            "icon": "🧩",
+            "label": "Patterns",
             "cue": "patterns"
           },
           {
-            "label": "From huge examples",
-            "icon": "book",
-            "cue": "examples"
-          },
-          {
-            "label": "Builds new combos",
-            "icon": "bulb",
-            "cue": "combinations"
+            "icon": "🏗️",
+            "label": "Build new",
+            "cue": "builds"
           }
         ],
         "color": "#0A84FF"

@@ -1,0 +1,850 @@
+{
+  "id": "L05",
+  "slug": "how-ai-learns",
+  "short_id": "ep011",
+  "status": "ready",
+  "cast": [
+    "DAD",
+    "TEEN"
+  ],
+  "title": "How AI Learns: Neural Networks and Training, Explained Simply",
+  "cover_text": "HOW AI LEARNS",
+  "description": "How does AI learn? Neural networks, layers, and the guess, check, adjust loop called training, explained simply.\n\nA dad asks, his teen daughter explains: what a neural network really is, how its layers spot edges, shapes and objects, how tiny dials get nudged after every mistake, and why good training data matters so much. Then a quick quiz to test yourself.\n\nWant the 60-second version? It's on our Shorts tab.\n\nAInation Studio — AI, explained simply for families. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#NeuralNetwork",
+    "#AI",
+    "#MachineLearning",
+    "#AIExplained",
+    "#AIForFamilies"
+  ],
+  "tags": [
+    "how ai learns",
+    "neural network explained simply",
+    "what is training data",
+    "machine learning for beginners",
+    "deep learning explained",
+    "ai for families"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "How did it learn?",
+    "cue": "next",
+    "left": "brain",
+    "right": "target"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Your phone can recognize your face, and AI can write a poem. But how does a computer actually learn anything?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "brain",
+          "label": "LEARN?"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "COMPUTER"
+        },
+        "subtitle": "How AI learns",
+        "mid": "?"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Great question! Nobody types in all the rules. Instead, the AI learns from lots of examples, a bit like we do.",
+      "board": {
+        "type": "big",
+        "icon": "book",
+        "text": "Learns from examples",
+        "cue": "examples"
+      },
+      "punch": "examples"
+    },
+    {
+      "who": "DAD",
+      "text": "So what are we going to find out today?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Four things. What a neural network is, how its layers work, how it learns from mistakes, and why training data matters so much.",
+      "board": {
+        "type": "steps",
+        "title": "TODAY",
+        "items": [
+          {
+            "label": "Neural networks",
+            "icon": "brain",
+            "cue": "neural"
+          },
+          {
+            "label": "Layers",
+            "icon": "target",
+            "cue": "layers"
+          },
+          {
+            "label": "Learning from mistakes",
+            "icon": "check",
+            "cue": "mistakes"
+          },
+          {
+            "label": "Training data",
+            "icon": "book",
+            "cue": "data"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay, start with the name. Neural network. Is there a real brain inside the computer?",
+      "chapter": "What is a neural network?",
+      "board": {
+        "type": "big",
+        "icon": "🧠",
+        "text": "A real brain?",
+        "cue": "brain"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "No. It's inspired by brain cells called neurons, but it's really just math running on a computer.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "BRAIN",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Real neurons",
+              "icon": "brain",
+              "cue": "neurons"
+            }
+          ]
+        },
+        "right": {
+          "label": "NEURAL NETWORK",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Math on a computer",
+              "icon": "robot",
+              "cue": "math",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Math? What kind of math?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Simple math, but lots of it. Each tiny unit takes in numbers, mixes them using weights, and passes a new number along.",
+      "board": {
+        "type": "journey",
+        "title": "ONE TINY UNIT",
+        "traveler": "🔢",
+        "items": [
+          {
+            "icon": "📥",
+            "label": "Numbers in",
+            "cue": "takes"
+          },
+          {
+            "icon": "⚖️",
+            "label": "Mix with weights",
+            "cue": "weights"
+          },
+          {
+            "icon": "📤",
+            "label": "Pass it on",
+            "cue": "passes"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Weights? Like at the gym?",
+      "board": {
+        "type": "big",
+        "icon": "🏋️",
+        "text": "Weights?",
+        "cue": "weights"
+      },
+      "punch": "gym"
+    },
+    {
+      "who": "TEEN",
+      "text": "Ha, no. Think of a weight as a dial. Turn it up, and that input matters more. Turn it down, and it matters less.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "DIAL UP",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Matters more",
+              "icon": "check",
+              "cue": "more",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "DIAL DOWN",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Matters less",
+              "icon": "x",
+              "cue": "less"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And how many dials are there?"
+    },
+    {
+      "who": "TEEN",
+      "text": "In big modern AI, there can be billions. Nobody sets them by hand. The network finds good settings by itself, during training.",
+      "board": {
+        "type": "big",
+        "icon": "🎛️",
+        "text": "Billions of dials",
+        "cue": "billions",
+        "sub": "Set by training",
+        "sub_cue": "training"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "You keep saying layers. Why does it need layers?",
+      "chapter": "Layers",
+      "board": {
+        "type": "big",
+        "icon": "🥞",
+        "text": "Why layers?",
+        "cue": "layers"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Because the units are stacked. Each layer passes its results to the next, so the network builds up from simple to complex.",
+      "board": {
+        "type": "steps",
+        "title": "STACKED LAYERS",
+        "items": [
+          {
+            "label": "Input layer",
+            "icon": "doc",
+            "cue": "stacked"
+          },
+          {
+            "label": "Middle layers",
+            "icon": "brain",
+            "cue": "passes"
+          },
+          {
+            "label": "Output",
+            "icon": "target",
+            "cue": "complex"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Show me with an example. Say, a photo of a cat.",
+      "board": {
+        "type": "big",
+        "icon": "🐱",
+        "text": "Example: a cat photo",
+        "cue": "cat"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Early layers spot simple things, like edges and colors. Middle layers combine those into shapes, like ears and eyes.",
+      "board": {
+        "type": "steps",
+        "title": "LAYER BY LAYER",
+        "items": [
+          {
+            "label": "Edges & colors",
+            "icon": "eye",
+            "cue": "edges"
+          },
+          {
+            "label": "Shapes: ears, eyes",
+            "icon": "target",
+            "cue": "shapes"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Then the last layers put it all together and say: this is probably a cat.",
+      "board": {
+        "type": "big",
+        "icon": "check",
+        "text": "Probably a cat!",
+        "cue": "probably"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Probably? It isn't sure?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Right. It gives a best guess with a confidence score. Like, mostly cat, a little bit dog.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "CAT",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Most likely",
+              "icon": "check",
+              "cue": "mostly",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "DOG",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "A little",
+              "icon": "x",
+              "cue": "little"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So it can be wrong?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes, especially with unusual pictures, like a cat in a costume. That's why we still double-check what AI tells us.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Unusual = tricky",
+        "cue": "unusual",
+        "sub": "Double-check AI",
+        "sub_cue": "double-check"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay, here's the big one. How does it learn in the first place?",
+      "chapter": "Learning from mistakes",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "x",
+          "label": "WRONG"
+        },
+        "right": {
+          "icon": "check",
+          "label": "RIGHT"
+        },
+        "subtitle": "Learning from mistakes",
+        "mid": "→"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "At the start, all the dials are set randomly. So its first guesses are basically nonsense.",
+      "board": {
+        "type": "big",
+        "icon": "🎲",
+        "text": "Random dials at first",
+        "cue": "randomly"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Then what?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It looks at an example, like a photo labeled cat, and makes a guess. Then it checks the guess against the right answer.",
+      "board": {
+        "type": "journey",
+        "title": "ONE EXAMPLE",
+        "traveler": "🖼️",
+        "items": [
+          {
+            "icon": "🏷️",
+            "label": "Labeled photo",
+            "cue": "labeled"
+          },
+          {
+            "icon": "🤔",
+            "label": "Make a guess",
+            "cue": "guess"
+          },
+          {
+            "icon": "✅",
+            "label": "Check the answer",
+            "cue": "checks"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And if it's wrong?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It measures how wrong it was, then nudges every dial a tiny bit in the direction that makes the answer less wrong.",
+      "board": {
+        "type": "big",
+        "icon": "🎛️",
+        "text": "Nudge the dials",
+        "cue": "nudges",
+        "sub": "A tiny bit",
+        "sub_cue": "tiny"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Just a tiny bit? Why not fix it all at once?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Big jumps would mess up what it learned before. Small steps, over and over, slowly add up to something smart.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "BIG JUMPS",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Mess up old lessons",
+              "icon": "x",
+              "cue": "mess"
+            }
+          ]
+        },
+        "right": {
+          "label": "SMALL STEPS",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Slowly get smart",
+              "icon": "check",
+              "cue": "slowly",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So it's a loop."
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly. Guess, check, adjust, repeat. Millions of times, with lots of examples. That loop is what we call training.",
+      "board": {
+        "type": "cycle",
+        "title": "TRAINING LOOP",
+        "center": "🧠",
+        "items": [
+          {
+            "icon": "🤔",
+            "label": "Guess",
+            "cue": "guess"
+          },
+          {
+            "icon": "✅",
+            "label": "Check",
+            "cue": "check"
+          },
+          {
+            "icon": "🎛️",
+            "label": "Adjust",
+            "cue": "adjust"
+          },
+          {
+            "icon": "🔁",
+            "label": "Repeat",
+            "cue": "repeat"
+          }
+        ],
+        "color": "#2ECC71"
+      },
+      "punch": "training"
+    },
+    {
+      "who": "DAD",
+      "text": "That's a bit like me learning to throw darts.",
+      "board": {
+        "type": "big",
+        "icon": "🎯",
+        "text": "Like learning darts",
+        "cue": "darts"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Totally! You throw, see where it lands, adjust your aim, and throw again. The AI just does it with math instead of muscles.",
+      "board": {
+        "type": "cycle",
+        "title": "DARTS LOOP",
+        "center": "🎯",
+        "items": [
+          {
+            "icon": "✋",
+            "label": "Throw",
+            "cue": "throw"
+          },
+          {
+            "icon": "👀",
+            "label": "See where it lands",
+            "cue": "see"
+          },
+          {
+            "icon": "💪",
+            "label": "Adjust your aim",
+            "cue": "adjust"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Where do all those examples come from?",
+      "chapter": "Why data matters",
+      "board": {
+        "type": "big",
+        "icon": "book",
+        "text": "Examples from where?",
+        "cue": "examples"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "People collect them. Photos with labels, text from books and websites, recordings of speech. That's called training data.",
+      "board": {
+        "type": "steps",
+        "title": "TRAINING DATA",
+        "items": [
+          {
+            "label": "Labeled photos",
+            "icon": "eye",
+            "cue": "photos"
+          },
+          {
+            "label": "Text",
+            "icon": "book",
+            "cue": "text"
+          },
+          {
+            "label": "Speech recordings",
+            "icon": "phone",
+            "cue": "recordings"
+          }
+        ],
+        "color": "#8E44AD"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Does it matter what's in there?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Hugely. An AI can only learn from what it sees. If the examples are wrong or one-sided, it learns those mistakes too.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Bad data, bad AI",
+        "cue": "wrong"
+      },
+      "punch": "hugely"
+    },
+    {
+      "who": "DAD",
+      "text": "Give me an example."
+    },
+    {
+      "who": "TEEN",
+      "text": "Say you only show it photos of orange cats. Later, it might not recognize a black cat as a cat at all.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "TRAINED ON",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Only orange cats",
+              "icon": "🟠",
+              "cue": "orange"
+            }
+          ]
+        },
+        "right": {
+          "label": "MIGHT MISS",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "A black cat",
+              "icon": "⚫",
+              "cue": "black"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So that's where unfair AI can come from?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Often, yes. That's why builders try to use varied, fair data, and why people keep testing AI after it's built.",
+      "board": {
+        "type": "checklist",
+        "title": "Better AI needs",
+        "icon": "shield",
+        "items": [
+          {
+            "text": "Varied data",
+            "cue": "varied",
+            "ok": true
+          },
+          {
+            "text": "Fair data",
+            "cue": "fair",
+            "ok": true
+          },
+          {
+            "text": "Ongoing testing",
+            "cue": "testing",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Once it's trained, does it keep learning from me while I use it?",
+      "board": {
+        "type": "big",
+        "icon": "phone",
+        "text": "Learning from me?",
+        "cue": "learning"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Usually not on the spot. Training happens first, on powerful computers. When you use the app, the dials are mostly fixed.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "TRAINING",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Slow, huge computers",
+              "icon": "warn",
+              "cue": "training"
+            }
+          ]
+        },
+        "right": {
+          "label": "USING IT",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Quick, dials fixed",
+              "icon": "check",
+              "cue": "fixed",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "But some companies may use chats to train future versions. So check the settings, and keep private info out.",
+      "board": {
+        "type": "checklist",
+        "title": "Your chats",
+        "icon": "lock",
+        "items": [
+          {
+            "text": "Check the settings",
+            "cue": "settings",
+            "ok": true
+          },
+          {
+            "text": "Keep private info out",
+            "cue": "private",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Quiz time, Dad! Question one. At the very start of training, how are the dials set? Think...",
+      "chapter": "Quiz",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Quiz time!",
+        "cue": "quiz",
+        "sub": "Dials at the start?",
+        "sub_cue": "dials"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Randomly! So the first guesses are nonsense.",
+      "board": {
+        "type": "big",
+        "icon": "🎲",
+        "text": "Randomly!",
+        "cue": "randomly"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Correct! Question two. What are the four steps of the training loop? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🔁",
+        "text": "The training loop?",
+        "cue": "training"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Guess, check, adjust, and repeat!",
+      "board": {
+        "type": "cycle",
+        "title": "TRAINING LOOP",
+        "center": "🧠",
+        "items": [
+          {
+            "icon": "🤔",
+            "label": "Guess",
+            "cue": "guess"
+          },
+          {
+            "icon": "✅",
+            "label": "Check",
+            "cue": "check"
+          },
+          {
+            "icon": "🎛️",
+            "label": "Adjust",
+            "cue": "adjust"
+          },
+          {
+            "icon": "🔁",
+            "label": "Repeat",
+            "cue": "repeat"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Last one. If an AI only ever sees orange cats, what might go wrong? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🐈",
+        "text": "Only orange cats?",
+        "cue": "orange"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "It might not recognize other cats. Bad data, bad results.",
+      "board": {
+        "type": "big",
+        "icon": "check",
+        "text": "Bad data, bad results",
+        "cue": "bad"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: layers of dials, a guess-and-check loop, and good data.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "LAYERS OF DIALS",
+            "icon": "brain",
+            "cue": "layers",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "GUESS, CHECK, ADJUST",
+            "icon": "🔁",
+            "cue": "guess",
+            "color": "#E91E63"
+          },
+          {
+            "text": "GOOD DATA MATTERS",
+            "icon": "book",
+            "cue": "data",
+            "color": "#2ECC71"
+          }
+        ]
+      },
+      "punch": "loop"
+    },
+    {
+      "who": "TEEN",
+      "text": "Perfect score! And remember, it's math, not magic. It learns patterns, and it can still make mistakes.",
+      "board": {
+        "type": "big",
+        "icon": "bulb",
+        "text": "Math, not magic",
+        "cue": "math"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Subscribe to AI Nation Studio, and share this with a friend! And next time your phone recognizes a face... can you explain how it learned?"
+    }
+  ]
+}

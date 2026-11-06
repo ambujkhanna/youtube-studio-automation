@@ -1,0 +1,850 @@
+{
+  "id": "L07",
+  "slug": "how-ai-makes-pictures",
+  "short_id": "ep007",
+  "status": "ready",
+  "cast": [
+    "DAD",
+    "TEEN"
+  ],
+  "title": "How AI Makes Pictures From Words: Image Generators Explained",
+  "cover_text": "NOISE → PICTURE",
+  "description": "How do AI image generators turn words into pictures? From random static to a finished image, explained simply.\n\nA dad asks, his teen daughter explains: how image AI learned from captioned pictures, how it cleans up noise step by step guided by your words, how to write better image prompts, how to check if a photo is real, and how to use AI pictures fairly and safely. Then a quick quiz to test yourself.\n\nWant the 60-second version? It's on our Shorts tab.\n\nAInation Studio — AI, explained simply for families. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AIArt",
+    "#AI",
+    "#ImageGenerator",
+    "#AIExplained",
+    "#AIForFamilies"
+  ],
+  "tags": [
+    "how ai makes pictures",
+    "ai image generator explained",
+    "how ai art works",
+    "image prompt tips",
+    "is this photo ai",
+    "ai for families"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Static... into a picture?",
+    "cue": "next",
+    "left": "chat",
+    "right": "🖼️"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "I typed, a cat astronaut on the moon, and the AI drew it in seconds. How does it turn words into a picture?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "WORDS"
+        },
+        "right": {
+          "icon": "🖼️",
+          "label": "PICTURE"
+        },
+        "subtitle": "How AI image generators work",
+        "mid": "→"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "It's a cool trick. Many image generators start with pure noise, like TV static, and clean it up step by step until a picture appears.",
+      "board": {
+        "type": "big",
+        "icon": "📺",
+        "text": "Noise → picture",
+        "cue": "noise"
+      },
+      "punch": "noise"
+    },
+    {
+      "who": "DAD",
+      "text": "Static? Okay, you've lost me already."
+    },
+    {
+      "who": "TEEN",
+      "text": "Don't worry. We'll see how it learned, how noise becomes a picture, how to write better prompts, and how to use it fairly and safely.",
+      "board": {
+        "type": "steps",
+        "title": "TODAY",
+        "items": [
+          {
+            "label": "How it learned",
+            "icon": "brain",
+            "cue": "learned"
+          },
+          {
+            "label": "Noise to picture",
+            "icon": "🖼️",
+            "cue": "noise"
+          },
+          {
+            "label": "Better prompts",
+            "icon": "bulb",
+            "cue": "prompts"
+          },
+          {
+            "label": "Fair & safe use",
+            "icon": "shield",
+            "cue": "fairly"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Start at the beginning. How does it even know what a cat looks like?",
+      "chapter": "How it learned",
+      "board": {
+        "type": "big",
+        "icon": "🐱",
+        "text": "What's a cat?",
+        "cue": "cat"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "During training, it studied a huge number of pictures, each with a caption describing what's in it.",
+      "board": {
+        "type": "steps",
+        "title": "HOW IT LEARNED",
+        "items": [
+          {
+            "label": "Huge number of pictures",
+            "icon": "🖼️",
+            "cue": "pictures"
+          },
+          {
+            "label": "Each with a caption",
+            "icon": "doc",
+            "cue": "caption"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "So it learned links between words and looks. Fluffy, whiskers, pointy ears? That's a cat. Orange sky over the sea? That's a sunset.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "WORDS",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Fluffy, whiskers",
+              "icon": "chat",
+              "cue": "fluffy"
+            }
+          ]
+        },
+        "right": {
+          "label": "LOOKS LIKE",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "A cat",
+              "icon": "🐱",
+              "cue": "cat"
+            },
+            {
+              "text": "A sunset",
+              "icon": "sun",
+              "cue": "sunset"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So does it keep all those pictures inside, like a giant photo album?",
+      "board": {
+        "type": "big",
+        "icon": "book",
+        "text": "A giant photo album?",
+        "cue": "album"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Not like an album. Mostly it stores patterns, a sense of what things usually look like, in its learned dials. Not a folder of photos.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "MOSTLY STORES",
+          "color": "#2ECC71",
+          "items": [
+            {
+              "text": "Patterns",
+              "icon": "brain",
+              "cue": "patterns",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "NOT",
+          "color": "#FF4D6D",
+          "items": [
+            {
+              "text": "A photo folder",
+              "icon": "x",
+              "cue": "folder"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Though researchers have found it can sometimes copy bits of its training pictures too closely. That's one reason people debate it.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Can copy too closely",
+        "cue": "copy"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay, back to the static. How does noise turn into a cat astronaut?",
+      "chapter": "From noise to picture",
+      "board": {
+        "type": "big",
+        "icon": "📺",
+        "text": "Noise → cat astronaut?",
+        "cue": "noise"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "First, picture the training. They took clear pictures and added noise, a little at a time, until they were just static.",
+      "board": {
+        "type": "journey",
+        "title": "ADDING NOISE",
+        "traveler": "🖼️",
+        "items": [
+          {
+            "icon": "🖼️",
+            "label": "Clear picture",
+            "cue": "clear"
+          },
+          {
+            "icon": "🌫️",
+            "label": "A little noise",
+            "cue": "little"
+          },
+          {
+            "icon": "📺",
+            "label": "Just static",
+            "cue": "static"
+          }
+        ],
+        "color": "#8E44AD"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Then the AI practiced the reverse. Look at a noisy picture, and guess which noise to remove to make it clearer.",
+      "board": {
+        "type": "journey",
+        "title": "REMOVING NOISE",
+        "traveler": "🧹",
+        "items": [
+          {
+            "icon": "📺",
+            "label": "Noisy picture",
+            "cue": "noisy"
+          },
+          {
+            "icon": "🤔",
+            "label": "Guess the noise",
+            "cue": "guess"
+          },
+          {
+            "icon": "✨",
+            "label": "A bit clearer",
+            "cue": "clearer"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So it's basically a really good noise cleaner.",
+      "board": {
+        "type": "big",
+        "icon": "🧹",
+        "text": "A noise cleaner",
+        "cue": "cleaner"
+      },
+      "punch": "cleaner"
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly. When you type a prompt, it starts from fresh random static, then cleans it step by step, guided by your words, again and again.",
+      "board": {
+        "type": "cycle",
+        "title": "EACH STEP",
+        "center": "🖼️",
+        "items": [
+          {
+            "icon": "🎲",
+            "label": "Random static",
+            "cue": "random"
+          },
+          {
+            "icon": "🧹",
+            "label": "Remove some noise",
+            "cue": "cleans"
+          },
+          {
+            "icon": "🎯",
+            "label": "Follow your words",
+            "cue": "guided"
+          },
+          {
+            "icon": "🔁",
+            "label": "Repeat",
+            "cue": "again"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Is that why every picture comes out different?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes. Different starting static gives a different picture, even with the same words. So you can ask for a few versions and pick one.",
+      "board": {
+        "type": "big",
+        "icon": "🎲",
+        "text": "New static, new picture",
+        "cue": "different",
+        "sub": "Try a few versions",
+        "sub_cue": "versions"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "But where do my words come in, exactly?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Part of the system turns your prompt into numbers that capture its meaning. At each step, those numbers nudge the cleanup toward your idea.",
+      "board": {
+        "type": "journey",
+        "title": "WORDS GUIDE IT",
+        "traveler": "💬",
+        "items": [
+          {
+            "icon": "💬",
+            "label": "Your prompt",
+            "cue": "prompt"
+          },
+          {
+            "icon": "🔢",
+            "label": "Meaning as numbers",
+            "cue": "numbers"
+          },
+          {
+            "icon": "🎯",
+            "label": "Nudges each step",
+            "cue": "nudge"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Sometimes my pictures come out weird. How do I get better ones?",
+      "chapter": "Better prompts",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "x",
+          "label": "WEIRD"
+        },
+        "right": {
+          "icon": "check",
+          "label": "WOW"
+        },
+        "subtitle": "Better image prompts",
+        "mid": "→"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Be specific. The AI can't read your mind. Describe the subject, the style, the setting, and the lighting.",
+      "board": {
+        "type": "steps",
+        "title": "GOOD IMAGE PROMPT",
+        "items": [
+          {
+            "label": "Subject",
+            "icon": "target",
+            "cue": "subject"
+          },
+          {
+            "label": "Style",
+            "icon": "bulb",
+            "cue": "style"
+          },
+          {
+            "label": "Setting",
+            "icon": "globe",
+            "cue": "setting"
+          },
+          {
+            "label": "Lighting",
+            "icon": "sun",
+            "cue": "lighting"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Give me an example."
+    },
+    {
+      "who": "TEEN",
+      "text": "Instead of, a dog, try: a happy golden puppy in a garden, cartoon style, soft morning light.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "VAGUE",
+          "color": "#FF4D6D",
+          "items": [
+            {
+              "text": "A dog",
+              "icon": "x",
+              "cue": "dog"
+            }
+          ]
+        },
+        "right": {
+          "label": "SPECIFIC",
+          "color": "#2ECC71",
+          "items": [
+            {
+              "text": "Happy puppy, garden",
+              "icon": "check",
+              "cue": "happy",
+              "tick": true
+            },
+            {
+              "text": "Cartoon, morning light",
+              "icon": "check",
+              "cue": "cartoon",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And if it's still not right?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Change one thing at a time. Add a detail, remove one, then try again. It's like adjusting a recipe.",
+      "board": {
+        "type": "cycle",
+        "title": "REFINE IT",
+        "center": "🖼️",
+        "items": [
+          {
+            "icon": "✏️",
+            "label": "Change one thing",
+            "cue": "change"
+          },
+          {
+            "icon": "➕",
+            "label": "Add a detail",
+            "cue": "add"
+          },
+          {
+            "icon": "➖",
+            "label": "Remove one",
+            "cue": "remove"
+          },
+          {
+            "icon": "🔁",
+            "label": "Try again",
+            "cue": "try"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can it write words in the picture, like a birthday sign?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Sometimes. Text and hands often used to come out garbled. Newer tools do better, but always check the small details.",
+      "board": {
+        "type": "big",
+        "icon": "eye",
+        "text": "Check text & hands",
+        "cue": "text"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "If AI pictures look so real, how do I know if a photo online is real?",
+      "chapter": "Real or fake?",
+      "board": {
+        "type": "big",
+        "icon": "🕵️",
+        "text": "Real or AI?",
+        "cue": "real"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "It's getting harder. Look for odd details, like weird hands, melted text, or backgrounds that don't make sense.",
+      "board": {
+        "type": "checklist",
+        "title": "Clues",
+        "icon": "search",
+        "items": [
+          {
+            "text": "Weird hands",
+            "cue": "hands",
+            "ok": false
+          },
+          {
+            "text": "Melted text",
+            "cue": "melted",
+            "ok": false
+          },
+          {
+            "text": "Odd backgrounds",
+            "cue": "backgrounds",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "But clues aren't proof. The best check is the source. Who posted it first, and do trusted news sites show it too?",
+      "board": {
+        "type": "journey",
+        "title": "CHECK THE SOURCE",
+        "traveler": "🔍",
+        "items": [
+          {
+            "icon": "👀",
+            "label": "Clues aren't proof",
+            "cue": "clues"
+          },
+          {
+            "icon": "🧐",
+            "label": "Who posted it?",
+            "cue": "posted"
+          },
+          {
+            "icon": "📰",
+            "label": "Trusted news?",
+            "cue": "trusted"
+          }
+        ],
+        "color": "#8E44AD"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Do some apps label AI pictures?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Some do, with labels or hidden watermarks. That helps, but labels can be missing, so still think before you share.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "LABELS HELP",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Labels & watermarks",
+              "icon": "check",
+              "cue": "labels",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "BUT",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Can be missing",
+              "icon": "warn",
+              "cue": "missing"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Is it okay to use AI pictures for anything?",
+      "chapter": "Fair and safe use",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "check",
+          "label": "OKAY"
+        },
+        "right": {
+          "icon": "x",
+          "label": "NOT OKAY"
+        },
+        "subtitle": "Using AI pictures well",
+        "mid": "VS"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "For fun, cards, and school projects your teacher allows, usually yes. Just say it was made with AI.",
+      "board": {
+        "type": "checklist",
+        "title": "Usually fine",
+        "icon": "check",
+        "items": [
+          {
+            "text": "Fun & cards",
+            "cue": "fun",
+            "ok": true
+          },
+          {
+            "text": "Allowed school projects",
+            "cue": "school",
+            "ok": true
+          },
+          {
+            "text": "Say it's AI",
+            "cue": "say",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And what's not okay?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Never make fake pictures of real people to embarrass them or trick others. That can really hurt someone, and it can even be illegal.",
+      "board": {
+        "type": "checklist",
+        "title": "Not okay",
+        "icon": "x",
+        "items": [
+          {
+            "text": "Fakes of real people",
+            "cue": "fake",
+            "ok": false
+          },
+          {
+            "text": "Tricking others",
+            "cue": "trick",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What about artists? Is it fair to them?"
+    },
+    {
+      "who": "TEEN",
+      "text": "That's a big, open question. Many tools learned from artists' work, often without asking. People are still debating credit, permission, and pay.",
+      "board": {
+        "type": "steps",
+        "title": "STILL DEBATED",
+        "items": [
+          {
+            "label": "Credit",
+            "icon": "user",
+            "cue": "credit"
+          },
+          {
+            "label": "Permission",
+            "icon": "check",
+            "cue": "permission"
+          },
+          {
+            "label": "Pay",
+            "icon": "coin",
+            "cue": "pay"
+          }
+        ],
+        "color": "#E91E63"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Also, keep personal photos private. Don't upload pictures of friends or family to random apps without asking them first.",
+      "board": {
+        "type": "big",
+        "icon": "lock",
+        "text": "Ask before uploading",
+        "cue": "upload"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Quiz time, Dad! Question one. What does an AI picture usually start as? Think...",
+      "chapter": "Quiz",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Quiz time!",
+        "cue": "quiz",
+        "sub": "It starts as...?",
+        "sub_cue": "start"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Random static! Then it cleans it up, step by step.",
+      "board": {
+        "type": "big",
+        "icon": "📺",
+        "text": "Static!",
+        "cue": "static"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Question two. Name the four parts of a good image prompt. Think...",
+      "board": {
+        "type": "big",
+        "icon": "bulb",
+        "text": "Good prompt = ?",
+        "cue": "prompt"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Subject, style, setting, and lighting!",
+      "board": {
+        "type": "steps",
+        "title": "GOOD IMAGE PROMPT",
+        "items": [
+          {
+            "label": "Subject",
+            "icon": "target",
+            "cue": "subject"
+          },
+          {
+            "label": "Style",
+            "icon": "bulb",
+            "cue": "style"
+          },
+          {
+            "label": "Setting",
+            "icon": "globe",
+            "cue": "setting"
+          },
+          {
+            "label": "Lighting",
+            "icon": "sun",
+            "cue": "lighting"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Nice! Last one. You see a shocking photo online. What's the best check? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🕵️",
+        "text": "Shocking photo?",
+        "cue": "shocking"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Check the source. Who posted it, and do trusted sites show it too?",
+      "board": {
+        "type": "big",
+        "icon": "search",
+        "text": "Check the source",
+        "cue": "source"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: noise in, words guide it, picture out.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "NOISE IN",
+            "icon": "📺",
+            "cue": "noise",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "WORDS GUIDE IT",
+            "icon": "chat",
+            "cue": "words",
+            "color": "#E91E63"
+          },
+          {
+            "text": "PICTURE OUT",
+            "icon": "🖼️",
+            "cue": "picture",
+            "color": "#2ECC71"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Perfect score! And create kindly. Be clear in your prompts, check the source, and never fake real people.",
+      "board": {
+        "type": "big",
+        "icon": "shield",
+        "text": "Create kindly",
+        "cue": "kindly"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Subscribe to AI Nation Studio, and share this with a friend! And next time you see an amazing AI picture... will you remember it started as static?"
+    }
+  ]
+}

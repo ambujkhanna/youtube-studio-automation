@@ -101,26 +101,27 @@
       "who": "TEEN",
       "text": "Exactly. Each step removes a bit of noise, nudged toward your words, until a new picture appears.",
       "board": {
-        "type": "steps",
+        "type": "cycle",
         "title": "EACH STEP",
-        "color": "#0A84FF",
+        "center": "🖼️",
         "items": [
           {
-            "label": "Remove a bit of noise",
-            "icon": "search",
+            "icon": "🧹",
+            "label": "Remove noise",
             "cue": "removes"
           },
           {
-            "label": "Nudge toward your words",
-            "icon": "target",
+            "icon": "🎯",
+            "label": "Follow words",
             "cue": "nudged"
           },
           {
-            "label": "Repeat → new picture",
-            "icon": "check",
-            "cue": "picture"
+            "icon": "🔁",
+            "label": "Repeat",
+            "cue": "until"
           }
-        ]
+        ],
+        "color": "#0A84FF"
       }
     },
     {

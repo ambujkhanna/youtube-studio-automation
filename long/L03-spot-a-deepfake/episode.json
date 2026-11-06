@@ -1,0 +1,676 @@
+{
+  "id": "L03",
+  "slug": "spot-a-deepfake",
+  "short_id": "ep006",
+  "status": "ready",
+  "title": "How to Spot a Deepfake: Clues, Source Checks & Fake Voice Calls",
+  "cover_text": "REAL OR FAKE?",
+  "description": "Learn how to spot a deepfake: what they are, the visual and audio clues, why checking the source beats your eyes, and what to do about fake voice calls.\n\nA dad asks, his teen explains deepfakes simply, with a quick quiz at the end. Want the 60-second version? It's on our Shorts tab.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#Deepfake",
+    "#AI",
+    "#FactCheck",
+    "#OnlineSafety",
+    "#AIExplained"
+  ],
+  "tags": [
+    "how to spot a deepfake",
+    "what is a deepfake",
+    "ai fake video",
+    "ai voice scam",
+    "deepfake detection",
+    "family code word",
+    "fake news ai"
+  ],
+  "cast": [
+    "DAD",
+    "TEEN"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Real... or fake?",
+    "left": "eye",
+    "right": "warn",
+    "cue": "next"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "I just saw a video of a famous actor selling a miracle diet pill. Was that even real?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "eye",
+          "label": "REAL"
+        },
+        "right": {
+          "icon": "warn",
+          "label": "FAKE?"
+        },
+        "subtitle": "How to spot a deepfake"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Maybe not! It could be a deepfake. Today: what they are, the clues, the best check, and how to handle fake calls.",
+      "board": {
+        "type": "gallery",
+        "title": "TODAY",
+        "items": [
+          {
+            "icon": "❓",
+            "label": "What",
+            "cue": "what"
+          },
+          {
+            "icon": "👀",
+            "label": "Clues",
+            "cue": "clues"
+          },
+          {
+            "icon": "🔍",
+            "label": "Best check",
+            "cue": "best"
+          },
+          {
+            "icon": "📞",
+            "label": "Fake calls",
+            "cue": "calls"
+          }
+        ]
+      },
+      "punch": "deepfake"
+    },
+    {
+      "who": "DAD",
+      "text": "Okay, start at the start. What exactly is a deepfake?",
+      "chapter": "What is a deepfake?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It's a video, photo, or voice recording made or changed with AI, so it looks like a real person did something they never did.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Deepfake = AI-made fake",
+        "cue": "video",
+        "sub": "video • photo • voice",
+        "sub_cue": "voice"
+      },
+      "punch": "never"
+    },
+    {
+      "who": "DAD",
+      "text": "How do people even make those?"
+    },
+    {
+      "who": "TEEN",
+      "text": "The AI studies lots of photos or recordings of a person. It learns their face or voice, then makes new ones that copy them.",
+      "board": {
+        "type": "journey",
+        "title": "HOW A DEEPFAKE IS MADE",
+        "traveler": "🤖",
+        "items": [
+          {
+            "icon": "🖼️",
+            "label": "Many photos",
+            "cue": "photos"
+          },
+          {
+            "icon": "🧠",
+            "label": "Learns the face",
+            "cue": "learns"
+          },
+          {
+            "icon": "🎭",
+            "label": "Makes a fake",
+            "cue": "makes"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And anyone can do this?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Sadly, the tools keep getting easier to use. That's why fakes show up everywhere, from silly jokes to scams.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "JOKES",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Silly edits",
+              "icon": "😂",
+              "cue": "jokes",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "SCAMS",
+          "color": "#FF4D6D",
+          "items": [
+            {
+              "text": "Fake ads & calls",
+              "icon": "warn",
+              "cue": "scams",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Wait, so not every fake is bad?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Some are clearly labeled, for fun or movies. The trouble is fakes that pretend to be real, to trick you, scare you, or take your money.",
+      "board": {
+        "type": "checklist",
+        "title": "THE BAD ONES",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Trick you",
+            "cue": "trick",
+            "ok": false
+          },
+          {
+            "text": "Scare you",
+            "cue": "scare",
+            "ok": false
+          },
+          {
+            "text": "Take your money",
+            "cue": "money",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So how do I spot one with my own eyes?",
+      "chapter": "Look and listen"
+    },
+    {
+      "who": "TEEN",
+      "text": "Look closely at the details. Hands with odd fingers, strange teeth or earrings, and blurry edges around the face or hair.",
+      "board": {
+        "type": "checklist",
+        "title": "LOOK FOR",
+        "icon": "eye",
+        "items": [
+          {
+            "text": "Odd fingers",
+            "cue": "fingers",
+            "ok": false
+          },
+          {
+            "text": "Strange teeth",
+            "cue": "teeth",
+            "ok": false
+          },
+          {
+            "text": "Blurry edges",
+            "cue": "blurry",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What else?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Lighting and shadows that don't match, blinking that looks off, and lips that don't quite match the words.",
+      "board": {
+        "type": "gallery",
+        "title": "MORE CLUES",
+        "items": [
+          {
+            "icon": "💡",
+            "label": "Lighting",
+            "cue": "lighting"
+          },
+          {
+            "icon": "👁️",
+            "label": "Blinking",
+            "cue": "blinking"
+          },
+          {
+            "icon": "👄",
+            "label": "Lip sync",
+            "cue": "lips"
+          }
+        ],
+        "color": "#FF8C42"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And for voices?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Listen for a flat or robotic tone, or weird pauses. And in pictures, words in the background are often garbled.",
+      "board": {
+        "type": "steps",
+        "title": "LISTEN & LOOK",
+        "items": [
+          {
+            "label": "Flat, robotic tone",
+            "icon": "🤖",
+            "cue": "flat"
+          },
+          {
+            "label": "Weird pauses",
+            "icon": "⏸️",
+            "cue": "pauses"
+          },
+          {
+            "label": "Garbled background text",
+            "icon": "doc",
+            "cue": "garbled"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Got it. So if it looks fine, it's real?"
+    },
+    {
+      "who": "TEEN",
+      "text": "No! The newest fakes can look almost perfect. Clues help, but finding no clues proves nothing. Your eyes alone aren't enough.",
+      "board": {
+        "type": "big",
+        "icon": "eye",
+        "text": "No clues ≠ real",
+        "cue": "clues"
+      },
+      "punch": "enough"
+    },
+    {
+      "who": "DAD",
+      "text": "Then what's the best check?",
+      "chapter": "Check the source"
+    },
+    {
+      "who": "TEEN",
+      "text": "The source. Don't just ask, does it look real? Ask, who posted it, and where did it come from?",
+      "board": {
+        "type": "big",
+        "icon": "search",
+        "text": "Check the source",
+        "cue": "source",
+        "sub": "Who posted it first?",
+        "sub_cue": "posted"
+      },
+      "punch": "source"
+    },
+    {
+      "who": "DAD",
+      "text": "How do I actually do that?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Follow the trail. Find who posted it first. Look for the same story on trusted news sites. If nobody serious reports it, be suspicious.",
+      "board": {
+        "type": "journey",
+        "title": "FOLLOW THE TRAIL",
+        "traveler": "🔍",
+        "items": [
+          {
+            "icon": "📱",
+            "label": "Who posted first?",
+            "cue": "posted"
+          },
+          {
+            "icon": "📰",
+            "label": "Trusted news",
+            "cue": "trusted"
+          },
+          {
+            "icon": "🤔",
+            "label": "Nobody? Be careful",
+            "cue": "suspicious"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What if it's a real video?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Even real videos can be old, or cut to change the meaning. Check the date and the full clip, not just a short piece.",
+      "board": {
+        "type": "steps",
+        "title": "REAL BUT MISLEADING?",
+        "items": [
+          {
+            "label": "Old video?",
+            "icon": "calendar",
+            "cue": "old"
+          },
+          {
+            "label": "Cut short?",
+            "icon": "✂️",
+            "cue": "cut"
+          },
+          {
+            "label": "Check date & full clip",
+            "icon": "check",
+            "cue": "date"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Any tools that help?"
+    },
+    {
+      "who": "TEEN",
+      "text": "A reverse image search can show where a picture appeared before. And some apps label AI-made content, but labels can be missing.",
+      "board": {
+        "type": "steps",
+        "title": "HANDY CHECKS",
+        "items": [
+          {
+            "label": "Reverse image search",
+            "icon": "search",
+            "cue": "reverse"
+          },
+          {
+            "label": "AI labels, sometimes",
+            "icon": "🏷️",
+            "cue": "label"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And what if a video makes me really angry?"
+    },
+    {
+      "who": "TEEN",
+      "text": "That's a red flag! Fakes are often made to make you angry, scared, or rushed. Strong feelings are your cue to pause.",
+      "board": {
+        "type": "big",
+        "icon": "🛑",
+        "text": "Strong feelings? Pause.",
+        "cue": "feelings"
+      },
+      "punch": "pause"
+    },
+    {
+      "who": "DAD",
+      "text": "So I feel it, pause, then check?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes. Pause, check the source, and only then decide whether to share. If you're not sure, don't share it.",
+      "board": {
+        "type": "cycle",
+        "title": "BEFORE YOU SHARE",
+        "center": "📲",
+        "items": [
+          {
+            "icon": "⏸️",
+            "label": "Pause",
+            "cue": "pause"
+          },
+          {
+            "icon": "🔍",
+            "label": "Check source",
+            "cue": "check"
+          },
+          {
+            "icon": "🤔",
+            "label": "Decide",
+            "cue": "decide"
+          },
+          {
+            "icon": "🚫",
+            "label": "Unsure? Skip it",
+            "cue": "sure"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Now the scary one. What if someone calls sounding exactly like my daughter, asking for money?",
+      "chapter": "Fake voice calls"
+    },
+    {
+      "who": "TEEN",
+      "text": "Voices can be copied with AI. Scammers fake an emergency so you panic and pay fast.",
+      "board": {
+        "type": "big",
+        "icon": "phone",
+        "text": "Voices can be copied",
+        "cue": "voices",
+        "sub": "Panic is their plan",
+        "sub_cue": "panic"
+      },
+      "punch": "panic"
+    },
+    {
+      "who": "DAD",
+      "text": "So what do I do?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Hang up. Call me back on the number you already know. If it's really me, I'll answer.",
+      "board": {
+        "type": "journey",
+        "title": "SAFE CALL BACK",
+        "traveler": "☎️",
+        "items": [
+          {
+            "icon": "📵",
+            "label": "Hang up",
+            "cue": "hang"
+          },
+          {
+            "icon": "📞",
+            "label": "Call back",
+            "cue": "call"
+          },
+          {
+            "icon": "🔢",
+            "label": "Known number",
+            "cue": "number"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Smart. Anything else?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Pick a family code word that only we know. If a caller can't say it, it's not us.",
+      "board": {
+        "type": "chat",
+        "title": "FAMILY CODE WORD",
+        "color": "#8E44AD",
+        "items": [
+          {
+            "who": "user",
+            "text": "What's our code word?",
+            "cue": "code"
+          },
+          {
+            "who": "bot",
+            "text": "Uh... I forgot?",
+            "cue": "can't"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And never send money just because a voice sounds right.",
+      "board": {
+        "type": "big",
+        "icon": "coin",
+        "text": "Never pay on a voice alone",
+        "cue": "voice"
+      },
+      "punch": "never"
+    },
+    {
+      "who": "TEEN",
+      "text": "Quiz time! Question one. A video looks perfect, no weird hands, no blur. Is it definitely real? Think...",
+      "chapter": "Quiz",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Q1: Looks perfect = real?",
+        "cue": "perfect"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "No! Good fakes can look perfect. I'd check the source.",
+      "board": {
+        "type": "big",
+        "icon": "search",
+        "text": "Check the source",
+        "cue": "source"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Right! Question two. A post makes you furious and says, share now! What's step one? Think...",
+      "board": {
+        "type": "big",
+        "icon": "😡",
+        "text": "Q2: Furious? Step one?",
+        "cue": "furious"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Pause. Strong feelings mean slow down.",
+      "board": {
+        "type": "big",
+        "icon": "🛑",
+        "text": "Pause",
+        "cue": "pause"
+      },
+      "punch": "pause"
+    },
+    {
+      "who": "TEEN",
+      "text": "Last one. A family member calls, asking for money urgently. What do you do? Think...",
+      "board": {
+        "type": "big",
+        "icon": "phone",
+        "text": "Q3: Urgent money call?",
+        "cue": "money"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Hang up, call back on a number I know, and ask for our code word.",
+      "board": {
+        "type": "checklist",
+        "title": "DO THIS",
+        "icon": "check",
+        "items": [
+          {
+            "text": "Hang up",
+            "cue": "hang",
+            "ok": true
+          },
+          {
+            "text": "Call a known number",
+            "cue": "call",
+            "ok": true
+          },
+          {
+            "text": "Ask the code word",
+            "cue": "code",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Perfect! Let's recap. Look for clues, but trust the source more than your eyes. Pause when you feel strong emotions, and verify calls.",
+      "chapter": "Recap",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "LOOK FOR CLUES",
+            "icon": "eye",
+            "cue": "clues",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "CHECK THE SOURCE",
+            "icon": "search",
+            "cue": "source",
+            "color": "#2ECC71"
+          },
+          {
+            "text": "PAUSE ON BIG FEELINGS",
+            "icon": "warn",
+            "cue": "pause",
+            "color": "#FF4D6D"
+          },
+          {
+            "text": "VERIFY CALLS",
+            "icon": "phone",
+            "cue": "verify",
+            "color": "#8E44AD"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Pause, check, then share. Got it.",
+      "board": {
+        "type": "big",
+        "icon": "check",
+        "text": "Pause. Check. Then share.",
+        "cue": "pause"
+      },
+      "punch": "check"
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Subscribe to AI Nation Studio, and share this with a friend! And next time a video shocks you... ask, is it real or fake?"
+    }
+  ]
+}

@@ -171,23 +171,29 @@
       "who": "TEEN",
       "text": "Use short, clear sentences. Then translate it back to check it still means the same thing.",
       "board": {
-        "type": "steps",
-        "title": "BETTER RESULTS",
+        "type": "cycle",
+        "title": "ROUND TRIP",
+        "center": "🌍",
         "items": [
           {
-            "label": "Short, clear sentences",
-            "icon": "doc",
+            "icon": "✏️",
+            "label": "Clear sentence",
             "cue": "short"
           },
           {
-            "label": "Translate it back",
-            "icon": "globe",
+            "icon": "➡️",
+            "label": "Translate",
+            "cue": "translate"
+          },
+          {
+            "icon": "⬅️",
+            "label": "Back again",
             "cue": "back"
           },
           {
-            "label": "Check the meaning",
-            "icon": "check",
-            "cue": "means"
+            "icon": "✅",
+            "label": "Same meaning",
+            "cue": "same"
           }
         ],
         "color": "#2ECC71"

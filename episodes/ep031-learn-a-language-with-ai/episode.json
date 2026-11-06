@@ -185,23 +185,24 @@
       "who": "TEEN",
       "text": "Many apps have voice mode. You talk, it replies out loud, and you can practice real conversations.",
       "board": {
-        "type": "steps",
-        "title": "VOICE MODE",
+        "type": "cycle",
+        "title": "VOICE PRACTICE",
+        "center": "💬",
         "items": [
           {
+            "icon": "🗣️",
             "label": "You talk",
-            "icon": "user",
             "cue": "talk"
           },
           {
-            "label": "It replies out loud",
-            "icon": "chat",
+            "icon": "🔊",
+            "label": "AI replies",
             "cue": "replies"
           },
           {
-            "label": "Real conversations",
-            "icon": "globe",
-            "cue": "conversations"
+            "icon": "🔁",
+            "label": "Practice",
+            "cue": "practice"
           }
         ]
       }

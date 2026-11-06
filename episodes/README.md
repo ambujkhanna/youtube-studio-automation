@@ -48,3 +48,10 @@ a board change every few seconds, a single Subscribe ask (the animated Subscribe
 - Aim for 12–14 lines ≈ 60–75 s. Never invent numbers or sources; keep health/money advice general.
 
 Check before committing: `python pipeline/validate_episode.py episodes/*/episode.json`
+
+## New scene types and pictures (2026-11-06)
+
+- **Animated diagrams:** `cycle` (steps in an oval with arrows; e.g. how AI learns), `journey` (stops on a road with a travelling emoji; e.g. question → tokens → answer), `orbit` and `body`. Fields are in `pipeline/diagrams.py`.
+- **Big readable boards:** `chat` (up to 3 bubbles), `permission`, `title`, `big`, `steps`, `compare`, `checklist`, `summary`, `gallery`. Keep labels short; text is drawn large and shrinks or wraps if needed.
+- **Icons:** the old named icons, any common emoji, or real drawings `img:<Category>/<Author>/<name>` from `assets/IMAGE_INDEX.txt`. Credits are added to the description automatically.
+- **Ending:** "Subscribe to AI Nation Studio, and share this with a friend! And next time …?". The Subscribe / Like / Share card appears on "subscribe".

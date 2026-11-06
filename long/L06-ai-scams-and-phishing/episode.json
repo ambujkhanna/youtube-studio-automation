@@ -1,0 +1,841 @@
+{
+  "id": "L06",
+  "slug": "ai-scams-and-phishing",
+  "short_id": "ep017",
+  "status": "ready",
+  "cast": [
+    "DAD",
+    "TEEN"
+  ],
+  "title": "AI Scams and Phishing: How to Spot Them and Stay Safe",
+  "cover_text": "PAUSE BEFORE CLICK",
+  "description": "How to spot AI-powered scams and phishing, and the simple habits that keep your family safe.\n\nA dad asks, his teen daughter explains: why perfect spelling is no longer a safety sign, the red flags to watch for, voice-clone calls and a family code word, the pause-and-check habit, and exactly what to do if you already clicked. Then a quick quiz to test yourself.\n\nWant the 60-second version? It's on our Shorts tab.\n\nAInation Studio — AI, explained simply for families. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#ScamAlert",
+    "#AI",
+    "#Phishing",
+    "#CyberSafety",
+    "#AIForFamilies"
+  ],
+  "tags": [
+    "ai scams",
+    "how to spot phishing",
+    "voice clone scam",
+    "family code word",
+    "online safety for families",
+    "scam message tips"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Pause before you click?",
+    "cue": "next",
+    "left": "mail",
+    "right": "warn"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "I got a message from my bank saying my account is locked. It looked totally real. Could it be a scam?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "mail",
+          "label": "MESSAGE"
+        },
+        "right": {
+          "icon": "warn",
+          "label": "SCAM?"
+        },
+        "subtitle": "AI scams, simple checks",
+        "mid": "VS"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "It could be. Scammers now use AI to write messages, copy voices, and even fake videos. But a few simple habits beat most of them.",
+      "board": {
+        "type": "big",
+        "icon": "shield",
+        "text": "Simple habits win",
+        "cue": "habits"
+      },
+      "punch": "habits"
+    },
+    {
+      "who": "DAD",
+      "text": "So what will we cover?"
+    },
+    {
+      "who": "TEEN",
+      "text": "How AI changed scams, the red flags to watch for, voice and video tricks, a safe-check habit, and what to do if you already clicked.",
+      "board": {
+        "type": "steps",
+        "title": "TODAY",
+        "items": [
+          {
+            "label": "How scams changed",
+            "icon": "robot",
+            "cue": "changed"
+          },
+          {
+            "label": "Red flags",
+            "icon": "warn",
+            "cue": "red"
+          },
+          {
+            "label": "Voice & video tricks",
+            "icon": "phone",
+            "cue": "voice"
+          },
+          {
+            "label": "Safe-check habit",
+            "icon": "check",
+            "cue": "safe-check"
+          },
+          {
+            "label": "If you clicked",
+            "icon": "shield",
+            "cue": "clicked"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "First, what is phishing, exactly?",
+      "chapter": "Why scams got smarter",
+      "board": {
+        "type": "big",
+        "icon": "🎣",
+        "text": "Phishing?",
+        "cue": "phishing"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Phishing is when someone pretends to be a company or person you trust, to trick you into giving away passwords, codes, or money.",
+      "board": {
+        "type": "journey",
+        "title": "HOW PHISHING WORKS",
+        "traveler": "🎣",
+        "items": [
+          {
+            "icon": "🎭",
+            "label": "Pretends to be trusted",
+            "cue": "pretends"
+          },
+          {
+            "icon": "💬",
+            "label": "Tricks you",
+            "cue": "trick"
+          },
+          {
+            "icon": "🔑",
+            "label": "Takes passwords or money",
+            "cue": "passwords"
+          }
+        ],
+        "color": "#FF4D6D"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "I thought scam messages were full of spelling mistakes.",
+      "board": {
+        "type": "big",
+        "icon": "x",
+        "text": "Spelling mistakes?",
+        "cue": "spelling"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "They used to be. Now AI can write perfect, friendly messages in many languages, so good spelling is no longer a sign it's safe.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "OLD SCAMS",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Spelling mistakes",
+              "icon": "x",
+              "cue": "used"
+            }
+          ]
+        },
+        "right": {
+          "label": "AI SCAMS",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Perfect & friendly",
+              "icon": "warn",
+              "cue": "perfect"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What else can AI do for them?"
+    },
+    {
+      "who": "TEEN",
+      "text": "It can make messages personal, using details from your public posts, like your job, your pet's name, or a recent trip.",
+      "board": {
+        "type": "steps",
+        "title": "PUBLIC CLUES",
+        "items": [
+          {
+            "label": "Your job",
+            "icon": "suitcase",
+            "cue": "job"
+          },
+          {
+            "label": "Your pet's name",
+            "icon": "🐶",
+            "cue": "pet"
+          },
+          {
+            "label": "A recent trip",
+            "icon": "globe",
+            "cue": "trip"
+          }
+        ],
+        "color": "#8E44AD"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "That's creepy."
+    },
+    {
+      "who": "TEEN",
+      "text": "It is. So a message that knows things about you isn't proof it's real. And think about what you share publicly.",
+      "board": {
+        "type": "big",
+        "icon": "lock",
+        "text": "Knows you ≠ real",
+        "cue": "knows",
+        "sub": "Share less publicly",
+        "sub_cue": "share"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So how do I spot a scam if it looks perfect?",
+      "chapter": "Red flags",
+      "board": {
+        "type": "big",
+        "icon": "search",
+        "text": "Spot the red flags",
+        "cue": "spot"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Look at how the message wants you to feel. Scams love pressure. Act now, your account is locked, you won a prize.",
+      "board": {
+        "type": "checklist",
+        "title": "Pressure flags",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Act now!",
+            "cue": "act",
+            "ok": false
+          },
+          {
+            "text": "Account locked!",
+            "cue": "locked",
+            "ok": false
+          },
+          {
+            "text": "You won a prize!",
+            "cue": "prize",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Why pressure?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Because when we panic or get excited, we stop thinking carefully. Scammers want you to rush.",
+      "board": {
+        "type": "big",
+        "icon": "⏱️",
+        "text": "Rushing = risk",
+        "cue": "rush"
+      },
+      "punch": "rush"
+    },
+    {
+      "who": "DAD",
+      "text": "What else should I watch for?"
+    },
+    {
+      "who": "TEEN",
+      "text": "What they ask for. Your password, a one-time code, your card details, or payment by gift card or crypto.",
+      "board": {
+        "type": "checklist",
+        "title": "They ask for",
+        "icon": "lock",
+        "items": [
+          {
+            "text": "Password",
+            "cue": "password",
+            "ok": false
+          },
+          {
+            "text": "One-time code",
+            "cue": "one-time",
+            "ok": false
+          },
+          {
+            "text": "Card details",
+            "cue": "card",
+            "ok": false
+          },
+          {
+            "text": "Gift cards or crypto",
+            "cue": "gift",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And links?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Be careful with links. A web address can look almost right but be slightly off, like an extra letter or a strange ending.",
+      "board": {
+        "type": "big",
+        "icon": "🔗",
+        "text": "Almost-right links",
+        "cue": "links",
+        "sub": "One letter off",
+        "sub_cue": "letter"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "So here's the rule. Real banks and companies won't ask for your password or one-time code by message or phone.",
+      "board": {
+        "type": "checklist",
+        "title": "They won't ask for",
+        "icon": "shield",
+        "items": [
+          {
+            "text": "Your password",
+            "cue": "password",
+            "ok": false
+          },
+          {
+            "text": "Your one-time code",
+            "cue": "one-time",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "You mentioned voices. Can AI really copy someone's voice?",
+      "chapter": "Voice and video tricks",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "user",
+          "label": "REAL"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "COPY"
+        },
+        "subtitle": "Voice clones",
+        "mid": "VS"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes. From a short recording, AI can make a voice that sounds like someone you know. Scammers may call pretending family is in trouble.",
+      "board": {
+        "type": "journey",
+        "title": "VOICE CLONE SCAM",
+        "traveler": "📞",
+        "items": [
+          {
+            "icon": "🎙️",
+            "label": "Short recording",
+            "cue": "recording"
+          },
+          {
+            "icon": "🤖",
+            "label": "AI copies the voice",
+            "cue": "sounds"
+          },
+          {
+            "icon": "🆘",
+            "label": "Fake emergency",
+            "cue": "trouble"
+          }
+        ],
+        "color": "#FF4D6D"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "That's scary. What do I do if I get a call like that?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Hang up, and call the person back on the number you already have. A real family member won't mind.",
+      "board": {
+        "type": "steps",
+        "title": "SUSPICIOUS CALL",
+        "items": [
+          {
+            "label": "Hang up",
+            "icon": "x",
+            "cue": "hang"
+          },
+          {
+            "label": "Call back yourself",
+            "icon": "phone",
+            "cue": "call"
+          },
+          {
+            "label": "Use the number you have",
+            "icon": "check",
+            "cue": "number"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Some families also pick a secret code word that only they know. If the caller can't say it, that's a big warning sign.",
+      "board": {
+        "type": "big",
+        "icon": "🔐",
+        "text": "Family code word",
+        "cue": "code",
+        "sub": "No word? Warning!",
+        "sub_cue": "warning"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "I like that. Let's pick ours tonight, at dinner, not online.",
+      "board": {
+        "type": "big",
+        "icon": "🍽️",
+        "text": "Pick it in person",
+        "cue": "dinner"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "And videos can be faked too. If a video call feels off, or someone famous promises you money, be extra careful.",
+      "board": {
+        "type": "checklist",
+        "title": "Video red flags",
+        "icon": "eye",
+        "items": [
+          {
+            "text": "Something feels off",
+            "cue": "off",
+            "ok": false
+          },
+          {
+            "text": "Famous person + money",
+            "cue": "famous",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay. So what's the one habit that protects me?",
+      "chapter": "The safe-check habit",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "warn",
+          "label": "PANIC"
+        },
+        "right": {
+          "icon": "check",
+          "label": "PAUSE"
+        },
+        "subtitle": "The safe-check habit",
+        "mid": "→"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Pause. Don't click, don't reply. Then open the official app or website yourself, and check there.",
+      "board": {
+        "type": "journey",
+        "title": "SAFE CHECK",
+        "traveler": "📩",
+        "items": [
+          {
+            "icon": "⏸️",
+            "label": "Pause",
+            "cue": "pause"
+          },
+          {
+            "icon": "🚫",
+            "label": "Don't click",
+            "cue": "don't"
+          },
+          {
+            "icon": "📱",
+            "label": "Official app",
+            "cue": "official"
+          },
+          {
+            "icon": "✅",
+            "label": "Check there",
+            "cue": "check"
+          }
+        ],
+        "color": "#2ECC71"
+      },
+      "punch": "pause"
+    },
+    {
+      "who": "DAD",
+      "text": "Why not just tap the link to check?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Because the link might lead to a fake page that looks just like the real one. Typing the address yourself, or using the app, is safer.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "TAP THE LINK",
+          "color": "#FF4D6D",
+          "items": [
+            {
+              "text": "Might be fake",
+              "icon": "x",
+              "cue": "fake"
+            }
+          ]
+        },
+        "right": {
+          "label": "GO YOURSELF",
+          "color": "#2ECC71",
+          "items": [
+            {
+              "text": "Type it or use the app",
+              "icon": "check",
+              "cue": "typing",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And if someone calls saying they're from my bank?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Hang up and call the number on the back of your card. Real banks will never be upset that you checked.",
+      "board": {
+        "type": "big",
+        "icon": "phone",
+        "text": "Number on your card",
+        "cue": "card",
+        "sub": "Real banks won't mind",
+        "sub_cue": "real"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Also turn on two-step verification for important accounts. Then a stolen password alone isn't enough to get in.",
+      "board": {
+        "type": "checklist",
+        "title": "Extra shield",
+        "icon": "shield",
+        "items": [
+          {
+            "text": "Two-step verification",
+            "cue": "two-step",
+            "ok": true
+          },
+          {
+            "text": "Stolen password not enough",
+            "cue": "stolen",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Anything else?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Use a different password for each important account, and keep your phone and apps updated. A password manager can help.",
+      "board": {
+        "type": "checklist",
+        "title": "Everyday shields",
+        "icon": "lock",
+        "items": [
+          {
+            "text": "Different passwords",
+            "cue": "different",
+            "ok": true
+          },
+          {
+            "text": "Keep apps updated",
+            "cue": "updated",
+            "ok": true
+          },
+          {
+            "text": "Password manager",
+            "cue": "manager",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay, but what if I already clicked? Or typed my password?",
+      "chapter": "If you clicked",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Already clicked?",
+        "cue": "clicked"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Don't panic, and don't feel embarrassed. It happens to smart people. Just act fast.",
+      "board": {
+        "type": "big",
+        "icon": "💙",
+        "text": "It happens. Act fast.",
+        "cue": "act"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Change that password right away, and anywhere else you used it. If money or cards are involved, call your bank on the official number.",
+      "board": {
+        "type": "steps",
+        "title": "IF YOU CLICKED",
+        "items": [
+          {
+            "label": "Change the password",
+            "icon": "lock",
+            "cue": "change"
+          },
+          {
+            "label": "Change it everywhere",
+            "icon": "🔁",
+            "cue": "anywhere"
+          },
+          {
+            "label": "Call your bank",
+            "icon": "phone",
+            "cue": "call"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Should I tell anyone?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes. Report the message in the app or email service, and tell your family. Warning others helps stop scams spreading.",
+      "board": {
+        "type": "steps",
+        "title": "THEN",
+        "items": [
+          {
+            "label": "Report it",
+            "icon": "shield",
+            "cue": "report"
+          },
+          {
+            "label": "Tell family",
+            "icon": "user",
+            "cue": "tell"
+          },
+          {
+            "label": "Warn others",
+            "icon": "mail",
+            "cue": "warning"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And for kids or grandparents?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Talk about it often. Agree that anyone can ask, is this real, without feeling silly. Asking first is always okay.",
+      "board": {
+        "type": "big",
+        "icon": "user",
+        "text": "Asking is always okay",
+        "cue": "asking"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Quiz time, Dad! A message has perfect spelling and knows your name. Is it safe? Think...",
+      "chapter": "Quiz",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Quiz time!",
+        "cue": "quiz",
+        "sub": "Perfect spelling = safe?",
+        "sub_cue": "perfect"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Not necessarily! AI writes perfect messages now. I still check it myself.",
+      "board": {
+        "type": "big",
+        "icon": "x",
+        "text": "Still check!",
+        "cue": "check"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Right! Next. Your bank calls and asks for your one-time code. What do you do? Think...",
+      "board": {
+        "type": "big",
+        "icon": "📞",
+        "text": "Bank wants your code?",
+        "cue": "code"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Never share it. Hang up, and call the number on my card.",
+      "board": {
+        "type": "big",
+        "icon": "check",
+        "text": "Hang up, call back",
+        "cue": "hang"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Last one. A family member calls in trouble, needing money fast. What's your move? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🆘",
+        "text": "Urgent family call?",
+        "cue": "family"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Hang up, call them back on their usual number, and ask for our code word!",
+      "board": {
+        "type": "steps",
+        "title": "MY MOVE",
+        "items": [
+          {
+            "label": "Hang up",
+            "icon": "x",
+            "cue": "hang"
+          },
+          {
+            "label": "Call back",
+            "icon": "phone",
+            "cue": "call"
+          },
+          {
+            "label": "Ask the code word",
+            "icon": "🔐",
+            "cue": "code"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: pressure is a warning sign, check it yourself, and never share codes.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "PRESSURE = WARNING",
+            "icon": "warn",
+            "cue": "pressure",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "CHECK IT YOURSELF",
+            "icon": "search",
+            "cue": "check",
+            "color": "#E91E63"
+          },
+          {
+            "text": "NEVER SHARE CODES",
+            "icon": "lock",
+            "cue": "never",
+            "color": "#2ECC71"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Perfect score! And if something slips through, act fast and report it. No shame, just action.",
+      "board": {
+        "type": "big",
+        "icon": "shield",
+        "text": "Act fast, report it",
+        "cue": "act"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Subscribe to AI Nation Studio, and share this with a friend! And next time a message says act now... will you pause and check?"
+    }
+  ]
+}

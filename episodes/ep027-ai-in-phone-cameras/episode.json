@@ -100,22 +100,23 @@
       "who": "TEEN",
       "text": "AI finds the person, separates them from the background, then blurs the background like a big camera.",
       "board": {
-        "type": "steps",
+        "type": "journey",
         "title": "PORTRAIT MODE",
+        "traveler": "📷",
         "items": [
           {
-            "label": "Find the person",
-            "icon": "user",
+            "icon": "🔍",
+            "label": "Find person",
             "cue": "finds"
           },
           {
-            "label": "Separate background",
-            "icon": "target",
+            "icon": "✂️",
+            "label": "Separate",
             "cue": "separates"
           },
           {
-            "label": "Blur the background",
-            "icon": "eye",
+            "icon": "🌫️",
+            "label": "Blur backdrop",
             "cue": "blurs"
           }
         ],

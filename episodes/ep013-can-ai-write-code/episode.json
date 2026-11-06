@@ -126,22 +126,28 @@
       "who": "TEEN",
       "text": "Ask it to explain each line. Run the code, test it, and change something to see what happens.",
       "board": {
-        "type": "steps",
-        "title": "LEARN WITH IT",
+        "type": "cycle",
+        "title": "LEARN BY DOING",
+        "center": "💻",
         "items": [
           {
-            "label": "Ask it to explain",
-            "icon": "chat",
+            "icon": "💬",
+            "label": "Explain",
             "cue": "explain"
           },
           {
-            "label": "Run and test",
-            "icon": "check",
+            "icon": "▶️",
+            "label": "Run it",
+            "cue": "run"
+          },
+          {
+            "icon": "🧪",
+            "label": "Test it",
             "cue": "test"
           },
           {
-            "label": "Change and retry",
-            "icon": "target",
+            "icon": "✏️",
+            "label": "Change it",
             "cue": "change"
           }
         ],

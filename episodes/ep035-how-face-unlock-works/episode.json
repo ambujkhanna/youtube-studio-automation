@@ -71,23 +71,29 @@
       "who": "TEEN",
       "text": "It scans again, makes a new map, and compares. If they match closely enough, it unlocks.",
       "board": {
-        "type": "steps",
-        "title": "EACH UNLOCK",
+        "type": "journey",
+        "title": "UNLOCKING",
+        "traveler": "🙂",
         "items": [
           {
-            "label": "Scan again",
-            "icon": "eye",
+            "icon": "📷",
+            "label": "Scan",
             "cue": "scans"
           },
           {
-            "label": "New number map",
-            "icon": "brain",
-            "cue": "map"
+            "icon": "🗺️",
+            "label": "New map",
+            "cue": "makes"
           },
           {
-            "label": "Compare and match",
-            "icon": "check",
+            "icon": "⚖️",
+            "label": "Compare",
             "cue": "compares"
+          },
+          {
+            "icon": "🔓",
+            "label": "Unlock",
+            "cue": "unlocks"
           }
         ]
       }

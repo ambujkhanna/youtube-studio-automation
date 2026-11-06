@@ -163,18 +163,24 @@
       "who": "TEEN",
       "text": "Yes! Ask it to summarize the chat so far, then paste that summary into a fresh chat.",
       "board": {
-        "type": "chat",
-        "title": "SMART TRICK",
+        "type": "journey",
+        "title": "FRESH START",
+        "traveler": "💬",
         "items": [
           {
-            "who": "user",
-            "text": "Summarize our chat so far",
+            "icon": "📝",
+            "label": "Summarize",
             "cue": "summarize"
           },
           {
-            "who": "user",
-            "text": "Paste into a new chat",
+            "icon": "📋",
+            "label": "Paste it",
             "cue": "paste"
+          },
+          {
+            "icon": "🆕",
+            "label": "Fresh chat",
+            "cue": "fresh"
           }
         ],
         "color": "#0A84FF"

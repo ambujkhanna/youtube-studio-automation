@@ -1,0 +1,770 @@
+{
+  "id": "L01",
+  "slug": "how-chatgpt-works",
+  "short_id": "ep004",
+  "status": "ready",
+  "title": "How ChatGPT-Style AI Works: Tokens, Training & Next-Word Guessing",
+  "cover_text": "NEXT-WORD MACHINE",
+  "description": "Learn how ChatGPT-style AI tools turn your question into an answer: tokens, training, next-word guessing, and the limits you should know.\n\nA dad asks, his teen explains large language models step by step, with a quick quiz at the end. Want the 60-second version? It's on our Shorts tab.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
+  "hashtags": [
+    "#AI",
+    "#AIChatbots",
+    "#LLM",
+    "#AIExplained",
+    "#Tokens"
+  ],
+  "tags": [
+    "how chatgpt-style ai works",
+    "what is an llm",
+    "large language model explained",
+    "what are tokens in ai",
+    "how ai chatbots work",
+    "ai explained for families",
+    "next word prediction"
+  ],
+  "cast": [
+    "DAD",
+    "TEEN"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Just guessing the next word?",
+    "left": "chat",
+    "right": "brain",
+    "cue": "next"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Okay, settle this. How do ChatGPT-style tools actually work? Is there a tiny person in there typing?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "YOU ASK"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "IT ANSWERS"
+        },
+        "subtitle": "What happens in between?",
+        "mid": "?"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "No tiny person! Today I'll show you what happens between your question and the answer, step by step.",
+      "board": {
+        "type": "big",
+        "icon": "🔍",
+        "text": "Question → ??? → Answer",
+        "cue": "question"
+      },
+      "punch": "step"
+    },
+    {
+      "who": "DAD",
+      "text": "And why it sometimes gets things wrong?"
+    },
+    {
+      "who": "TEEN",
+      "text": "That too. We'll cover tokens, training, how answers get written, and the limits. Then a quiz, so pay attention!",
+      "board": {
+        "type": "gallery",
+        "title": "TODAY",
+        "items": [
+          {
+            "icon": "🧩",
+            "label": "Tokens",
+            "cue": "tokens"
+          },
+          {
+            "icon": "📚",
+            "label": "Training",
+            "cue": "training"
+          },
+          {
+            "icon": "✍️",
+            "label": "Answers",
+            "cue": "answers"
+          },
+          {
+            "icon": "⚠️",
+            "label": "Limits",
+            "cue": "limits"
+          },
+          {
+            "icon": "❓",
+            "label": "Quiz",
+            "cue": "quiz"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So start simple. What is it, really?",
+      "chapter": "The next-word machine"
+    },
+    {
+      "who": "TEEN",
+      "text": "It's a large language model, or L L M. At its heart, it's a machine that guesses the next word.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "LLM = large language model",
+        "cue": "language",
+        "sub": "a next-word guesser",
+        "sub_cue": "guesses"
+      },
+      "punch": "guesses"
+    },
+    {
+      "who": "DAD",
+      "text": "Guesses? Like when my phone suggests the next word in a text?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Same idea, but much bigger. Try it. If I say, peanut butter and, what comes next?",
+      "board": {
+        "type": "chat",
+        "title": "FINISH IT",
+        "color": "#0A84FF",
+        "items": [
+          {
+            "who": "user",
+            "text": "Peanut butter and…",
+            "cue": "peanut"
+          },
+          {
+            "who": "bot",
+            "text": "jelly? jam?",
+            "cue": "next"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Jelly! Or jam."
+    },
+    {
+      "who": "TEEN",
+      "text": "See? You didn't look it up. You've seen that pattern many times. The model learned patterns like that from a huge amount of text.",
+      "board": {
+        "type": "steps",
+        "title": "HOW YOU GUESSED",
+        "items": [
+          {
+            "label": "Seen it many times",
+            "icon": "eye",
+            "cue": "seen"
+          },
+          {
+            "label": "Spot the pattern",
+            "icon": "target",
+            "cue": "pattern"
+          },
+          {
+            "label": "AI: huge amounts of text",
+            "icon": "book",
+            "cue": "huge"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "But it writes whole essays, not one word."
+    },
+    {
+      "who": "TEEN",
+      "text": "Right, it just repeats the guess. Pick one word, add it, then guess again, and again, until the answer is done.",
+      "board": {
+        "type": "cycle",
+        "title": "ONE WORD AT A TIME",
+        "center": "✍️",
+        "items": [
+          {
+            "icon": "🔮",
+            "label": "Guess",
+            "cue": "guess"
+          },
+          {
+            "icon": "👆",
+            "label": "Pick one",
+            "cue": "pick"
+          },
+          {
+            "icon": "➕",
+            "label": "Add it",
+            "cue": "add"
+          },
+          {
+            "icon": "🔁",
+            "label": "Repeat",
+            "cue": "again"
+          }
+        ],
+        "color": "#0A84FF"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Wait, does it really read words like we do?",
+      "chapter": "Tokens"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not quite. It splits your text into small pieces called tokens. A token can be a whole word, part of a word, or even a comma.",
+      "board": {
+        "type": "big",
+        "icon": "🧩",
+        "text": "Tokens = small pieces of text",
+        "cue": "tokens"
+      },
+      "punch": "tokens"
+    },
+    {
+      "who": "DAD",
+      "text": "Part of a word? Show me."
+    },
+    {
+      "who": "TEEN",
+      "text": "A long word such as unbelievable might be split into pieces, like un, believ, and able. The exact split depends on the tool.",
+      "board": {
+        "type": "gallery",
+        "title": "UNBELIEVABLE →",
+        "items": [
+          {
+            "icon": "🧩",
+            "label": "un",
+            "cue": "like"
+          },
+          {
+            "icon": "🧩",
+            "label": "believ",
+            "cue": "believ"
+          },
+          {
+            "icon": "🧩",
+            "label": "able",
+            "cue": "able"
+          }
+        ],
+        "color": "#8E44AD"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And then it reads the pieces?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Each token is turned into numbers. Computers are great with numbers, so the model does math on them to find patterns between the tokens.",
+      "board": {
+        "type": "journey",
+        "title": "TEXT TO NUMBERS",
+        "traveler": "🧩",
+        "items": [
+          {
+            "icon": "🔤",
+            "label": "Tokens",
+            "cue": "token"
+          },
+          {
+            "icon": "🔢",
+            "label": "Numbers",
+            "cue": "numbers"
+          },
+          {
+            "icon": "🧮",
+            "label": "Math",
+            "cue": "math"
+          },
+          {
+            "icon": "🔗",
+            "label": "Patterns",
+            "cue": "patterns"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So where did it learn all these patterns?",
+      "chapter": "How it learned"
+    },
+    {
+      "who": "TEEN",
+      "text": "First comes training. It practiced on a huge amount of text, like books and websites, guessing hidden next words over and over.",
+      "board": {
+        "type": "steps",
+        "title": "STEP 1: TRAINING",
+        "items": [
+          {
+            "label": "Huge amount of text",
+            "icon": "book",
+            "cue": "huge"
+          },
+          {
+            "label": "Guess the hidden word",
+            "icon": "🙈",
+            "cue": "guessing"
+          },
+          {
+            "label": "Over and over",
+            "icon": "🔁",
+            "cue": "over"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "How does it know if a guess was right?"
+    },
+    {
+      "who": "TEEN",
+      "text": "The real next word is in the text, so it can check! When it guesses wrong, its settings get adjusted a tiny bit. Repeat that a huge number of times.",
+      "board": {
+        "type": "cycle",
+        "title": "LEARNING LOOP",
+        "center": "🧠",
+        "items": [
+          {
+            "icon": "🔍",
+            "label": "Check",
+            "cue": "check"
+          },
+          {
+            "icon": "❌",
+            "label": "Wrong?",
+            "cue": "wrong"
+          },
+          {
+            "icon": "🔧",
+            "label": "Adjust a bit",
+            "cue": "adjusted"
+          },
+          {
+            "icon": "🔁",
+            "label": "Repeat",
+            "cue": "repeat"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "And then it's ready to chat?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not yet. Next, people give it example conversations and rate its answers, so it learns to be more helpful and safer.",
+      "board": {
+        "type": "steps",
+        "title": "STEP 2: TUNING",
+        "items": [
+          {
+            "label": "Example chats",
+            "icon": "chat",
+            "cue": "example"
+          },
+          {
+            "label": "People rate answers",
+            "icon": "👍",
+            "cue": "rate"
+          },
+          {
+            "label": "More helpful & safer",
+            "icon": "shield",
+            "cue": "helpful"
+          }
+        ],
+        "color": "#E91E63"
+      },
+      "punch": "rate"
+    },
+    {
+      "who": "DAD",
+      "text": "So it's basically read a library and had a coach."
+    },
+    {
+      "who": "TEEN",
+      "text": "Ha, nice way to put it! A library for language patterns, and a coach for manners.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "LIBRARY",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Language patterns",
+              "icon": "book",
+              "cue": "patterns",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "COACH",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Helpful manners",
+              "icon": "user",
+              "cue": "manners",
+              "tick": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Okay, so what happens when I actually type a question?",
+      "chapter": "From question to answer"
+    },
+    {
+      "who": "TEEN",
+      "text": "Let's follow it. Your question becomes tokens. The model looks at the whole chat, guesses the next token, and repeats until the answer is done.",
+      "board": {
+        "type": "journey",
+        "title": "YOUR QUESTION'S TRIP",
+        "traveler": "💬",
+        "items": [
+          {
+            "icon": "❓",
+            "label": "Question",
+            "cue": "question"
+          },
+          {
+            "icon": "🧩",
+            "label": "Tokens",
+            "cue": "tokens"
+          },
+          {
+            "icon": "🔮",
+            "label": "Next-word guesses",
+            "cue": "guesses"
+          },
+          {
+            "icon": "✅",
+            "label": "Answer",
+            "cue": "answer"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Does it always pick the most likely word?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not always. There's a little randomness, so it can pick a likely word that isn't the top one. That's why the same question can get different answers.",
+      "board": {
+        "type": "big",
+        "icon": "🎲",
+        "text": "A bit of randomness",
+        "cue": "randomness",
+        "sub": "same question, different answers",
+        "sub_cue": "different"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Huh. So asking twice could give me two versions."
+    },
+    {
+      "who": "TEEN",
+      "text": "Yep! It also reads the whole chat so far. So if you mention your dog early on, it can use that later in the same chat.",
+      "board": {
+        "type": "chat",
+        "title": "IT READS THE CHAT",
+        "color": "#2ECC71",
+        "items": [
+          {
+            "who": "user",
+            "text": "My dog loves long walks.",
+            "cue": "dog"
+          },
+          {
+            "who": "bot",
+            "text": "Try a park trail with your dog!",
+            "cue": "later"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So it remembers everything about me forever?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not by default. A new chat usually starts fresh, unless the tool has a memory feature. And very long chats can lose track of early details.",
+      "board": {
+        "type": "checklist",
+        "title": "MEMORY",
+        "icon": "brain",
+        "items": [
+          {
+            "text": "New chat starts fresh",
+            "cue": "new",
+            "ok": true
+          },
+          {
+            "text": "Some tools have memory",
+            "cue": "memory",
+            "ok": true
+          },
+          {
+            "text": "Long chats lose track",
+            "cue": "long",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So does it understand me like a person does?",
+      "chapter": "What it can't do"
+    },
+    {
+      "who": "TEEN",
+      "text": "Not like a person. It's amazing with language, but it has no feelings or life experience. Scientists still debate what it really understands.",
+      "board": {
+        "type": "compare",
+        "left": {
+          "label": "GREAT AT",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Language",
+              "icon": "chat",
+              "cue": "language",
+              "tick": true
+            }
+          ]
+        },
+        "right": {
+          "label": "DOESN'T HAVE",
+          "color": "#FF4D6D",
+          "items": [
+            {
+              "text": "Feelings",
+              "icon": "❤️",
+              "cue": "feelings",
+              "tick": false
+            },
+            {
+              "text": "Life experience",
+              "icon": "🌍",
+              "cue": "experience",
+              "tick": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Can it be wrong?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Definitely. It's built to sound likely, not to check facts. So it can say something false in a very confident voice.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "Sounds likely ≠ true",
+        "cue": "likely"
+      },
+      "punch": "confident"
+    },
+    {
+      "who": "DAD",
+      "text": "Does it know today's news?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Only what was in its training text, which stops at a certain date. Some tools can search the web, so check if yours does.",
+      "board": {
+        "type": "steps",
+        "title": "TODAY'S NEWS?",
+        "items": [
+          {
+            "label": "Learned up to a date",
+            "icon": "calendar",
+            "cue": "training"
+          },
+          {
+            "label": "Some tools search the web",
+            "icon": "globe",
+            "cue": "search"
+          },
+          {
+            "label": "Check yours",
+            "icon": "check",
+            "cue": "check"
+          }
+        ],
+        "color": "#FF8C42"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So for anything important..."
+    },
+    {
+      "who": "TEEN",
+      "text": "Use it as a smart helper, then double-check facts that matter, like health, money or school work.",
+      "board": {
+        "type": "steps",
+        "title": "USE IT WISELY",
+        "items": [
+          {
+            "label": "Smart helper",
+            "icon": "bulb",
+            "cue": "helper"
+          },
+          {
+            "label": "Double-check facts",
+            "icon": "search",
+            "cue": "double"
+          },
+          {
+            "label": "Health, money, school",
+            "icon": "shield",
+            "cue": "health"
+          }
+        ],
+        "color": "#2ECC71"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Quiz time, Dad! Question one. What is a token? Think...",
+      "chapter": "Quiz",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Q1: What is a token?",
+        "cue": "token"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "A small piece of text. A word, or part of a word!",
+      "board": {
+        "type": "big",
+        "icon": "🧩",
+        "text": "A small piece of text",
+        "cue": "piece"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Correct! Question two. How does it write an answer? Think...",
+      "board": {
+        "type": "big",
+        "icon": "❓",
+        "text": "Q2: How does it write?",
+        "cue": "write"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "One token at a time, guessing what comes next.",
+      "board": {
+        "type": "big",
+        "icon": "🔮",
+        "text": "One token at a time",
+        "cue": "token"
+      },
+      "punch": "next"
+    },
+    {
+      "who": "TEEN",
+      "text": "Yes! Last one. Does sounding confident mean it's correct? Think...",
+      "board": {
+        "type": "big",
+        "icon": "🤔",
+        "text": "Q3: Confident = correct?",
+        "cue": "confident"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Nope. Confident doesn't mean correct. Check what matters.",
+      "board": {
+        "type": "big",
+        "icon": "search",
+        "text": "Check what matters",
+        "cue": "check"
+      },
+      "punch": "correct"
+    },
+    {
+      "who": "TEEN",
+      "text": "Perfect score! Let's recap. It splits text into tokens, learned patterns from tons of text, writes one word at a time, and can still be wrong.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "SPLITS INTO TOKENS",
+            "icon": "🧩",
+            "cue": "tokens",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "LEARNED PATTERNS",
+            "icon": "book",
+            "cue": "patterns",
+            "color": "#E91E63"
+          },
+          {
+            "text": "ONE WORD AT A TIME",
+            "icon": "✍️",
+            "cue": "writes",
+            "color": "#8E44AD"
+          },
+          {
+            "text": "CAN BE WRONG",
+            "icon": "warn",
+            "cue": "wrong",
+            "color": "#FF4D6D"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "A giant next-word guesser. Not magic, and not a tiny person.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "Not magic. A next-word guesser.",
+        "cue": "magic"
+      },
+      "punch": "magic"
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Subscribe to AI Nation Studio, and share this with a friend! And next time it answers you... remember, is it just guessing the next word?"
+    }
+  ]
+}
