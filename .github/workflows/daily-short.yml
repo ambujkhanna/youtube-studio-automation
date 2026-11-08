@@ -20,6 +20,9 @@ on:
         description: "Only post the chosen episode (fill 'episode') to Facebook + Instagram - no YouTube upload"
         type: boolean
         default: false
+      script:
+        description: "Make a video from YOUR script: path of the file, e.g. scripts/bees.txt (format: scripts/README.md)"
+        required: false
       social_backfill:
         description: "Post videos already on YouTube to Facebook + Instagram (how many this run; 0 = off)"
         type: choice
@@ -113,6 +116,7 @@ jobs:
           if [ "${{ inputs.publish_now }}" = "true" ]; then ARGS="$ARGS --now"; fi
           if [ "${{ inputs.refresh_thumbnails }}" = "true" ]; then ARGS="$ARGS --refresh-thumbnails"; fi
           if [ "${{ inputs.social_only }}" = "true" ]; then ARGS="$ARGS --social-only"; fi
+          if [ -n "${{ inputs.script }}" ]; then ARGS="$ARGS --script ${{ inputs.script }}"; fi
           if [ -n "${{ inputs.social_backfill }}" ] && [ "${{ inputs.social_backfill }}" != "0" ]; then ARGS="$ARGS --social-backfill ${{ inputs.social_backfill }}"; fi
           python pipeline/daily.py $ARGS
 

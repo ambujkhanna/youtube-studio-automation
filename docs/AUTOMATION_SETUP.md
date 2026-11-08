@@ -119,3 +119,10 @@ After each YouTube upload, the same video is also posted as a **Reel** to the ch
 - **Speed:** the first run installs Chatterbox and downloads its model (about 10 extra minutes); later runs use the cache.
 - **Safety net:** if Chatterbox fails, or a Short comes out longer than 3 minutes, the run uses the Kokoro voices and still posts. The run summary shows `Voices: chatterbox` or `Voices: kokoro`. Repo variable `TTS_ENGINE` = `kokoro` switches back for good.
 - **Saving results:** the "Commit run state" step uses `pipeline/save_state.py`. It merges this run's results with anything other runs saved meanwhile, so queued runs no longer fail with "push rejected".
+
+## Videos from your own script (added 2026-11-08)
+
+Write a script in `scripts/` (a plain text file), then Run workflow → **script**: `scripts/<file>.txt`. Tick **dry_run** the first time to watch the MP4 from Artifacts.
+- **Format and limits:** see `scripts/README.md`: header (`TITLE:` and optional `COVER:`, `HASHTAGS:`, `TITLE_BOARD:`), `---`, then `NAME: text | emoji Board text` lines. Use 9–16 lines and about 110–180 words.
+- **Problems** stop the run before rendering and are listed in the run summary.
+- **One file = one video.** A file that was already uploaded is never uploaded again; save the script under a new name instead.

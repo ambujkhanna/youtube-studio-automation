@@ -17,7 +17,8 @@ import datetime as dt, glob, json, os, random, re, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PIPE = os.path.join(ROOT, "pipeline")
 LONG = "--long" in sys.argv
-EPDIR = os.path.join(ROOT, "long" if LONG else "episodes")
+SCRIPT = sys.argv[sys.argv.index("--script") + 1] if "--script" in sys.argv else ""  # scripts/<name>.txt -> custom/<id>/
+EPDIR = os.path.join(ROOT, "custom" if SCRIPT else "long" if LONG else "episodes")
 STATE = os.path.join(EPDIR, "state.json")
 OUT = os.path.join(ROOT, "out")
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
@@ -181,6 +182,22 @@ def main():
     forced = args[args.index("--episode") + 1] if "--episode" in args else None
     now_mode = "--now" in args
     state = load_state()
+    if SCRIPT:  # a video from your own script: convert + check it first (nothing is rendered if there are problems)
+        import script2episode
+        sp = SCRIPT if os.path.isabs(SCRIPT) else os.path.join(ROOT, SCRIPT)
+        if not os.path.exists(sp):
+            summary(f"### ❌ Script not found: `{SCRIPT}`\n\nPut it in the `scripts/` folder and type its path, e.g. `scripts/bees.txt`.")
+            print("script not found:", sp); return 1
+        epf_, probs = script2episode.convert(sp)
+        if probs:
+            summary(f"### ❌ Script `{SCRIPT}` has problems - nothing was made\n\n" + "\n".join(f"- {x}" for x in probs) +
+                    "\n\nFix them (format: `scripts/README.md`) and run again.")
+            print("script problems:", probs); return 1
+        forced = json.load(open(epf_, encoding="utf-8"))["id"]
+        prev = state["episodes"].get(forced, {})
+        if (prev.get("hi", {}) if (globals().get("HI")) else prev).get("status") == "uploaded" and not dry:
+            summary(f"### ⚠️ `{SCRIPT}` was already uploaded ({prev.get('url', '')}). To post a new video, save the script under a new file name.")
+            print("already uploaded:", forced); return 1
     ep = pick(state, forced)
     if not ep:
         print("No ready episode left in the backlog. Add episodes/<id>/episode.json files."); return 0

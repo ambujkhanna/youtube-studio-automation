@@ -1,0 +1,18 @@
+# Example script for AInation Studio - lines starting with # are ignored
+TITLE: What Is a Prompt? 💬 AI Explained Simply
+COVER: PROMPT POWER
+HASHTAGS: #AI #ChatGPT #Prompting
+TITLE_BOARD: 💬 Your words -> 🤖 AI answer
+---
+DAD: Everyone keeps saying "prompt". What is a prompt?
+TEEN: A prompt is simply what you type to an AI. Your question or instruction.   | 💬 What you type
+DAD: So "write me a poem" is a prompt?
+TEEN: Yes! But a vague prompt gets a vague answer.   | 🌫️ Vague in, vague out
+DAD: How do I write a better one?
+TEEN: Give it context. Who is it for, what style, and how long.   | 🎯 Context ; who, style, length
+DAD: Like "a short funny poem about cats for my daughter"?
+TEEN: Exactly! Now the AI knows the audience, the tone, and the topic.   | 🐱 Audience, tone, topic
+DAD: And if the answer still isn't right?
+TEEN: Just reply and ask it to change things. It's a conversation, not a one-shot.   | 🔁 Keep refining
+DAD: So, clear words in, better answers out.
+TEEN: You got it! Subscribe to AI Nation Studio, and share this with a friend!
