@@ -131,17 +131,50 @@ def refresh_thumbnails():
             os.makedirs(OUT, exist_ok=True)
             import shutil; dst = os.path.join(OUT, f"{eid}_thumbnail.jpg"); shutil.copy(os.path.join(PIPE, "build", "thumbnail.jpg"), dst)
             rec["thumbnail"] = set_thumbnail(rec["video_id"], dst)
+            import meta_post, re as _re  # also update the cover of the Facebook Reel/video, if it was posted there
+            m = _re.search(r"(\d{6,})", str(rec.get("facebook", "")))
+            if m and meta_post.have_meta() and str(rec.get("facebook", "")).startswith("posted"):
+                rec["facebook_cover"] = meta_post.fb_set_thumbnail(m.group(1), dst)
         except Exception as e:
             rec["thumbnail"] = f"refresh failed: {e}"[:200]
-        done.append(f"- {eid}: {rec['thumbnail']}")
+        done.append(f"- {eid}: YouTube {rec['thumbnail']}" + (f" | Facebook {rec['facebook_cover']}" if rec.get("facebook_cover") else ""))
         print(eid, rec["thumbnail"])
     json.dump(state, open(STATE, "w"), indent=2)
-    summary("### 🖼️ Thumbnails refreshed\n\n" + ("\n".join(done) or "- no uploaded videos found"))
+    summary("### 🖼️ Thumbnails refreshed\n\n" + ("\n".join(done) or "- no uploaded videos found") +
+            "\n\nInstagram covers of already-posted Reels can't be changed by the API: in the Instagram app use Edit → Edit cover.")
+    return 0
+
+
+def social_backfill(n):
+    """Post already-uploaded YouTube videos that are not on Facebook/Instagram yet (oldest first, n per run).
+    Uses the Kokoro voices so the posted video matches the YouTube version."""
+    import meta_post
+    if not meta_post.have_meta():
+        summary("### 📣 Social backfill\n\n- META secrets are not set"); return 0
+    st_file = os.path.join(ROOT, "episodes", "state.json"); todo = []
+    ids = {json.load(open(f, encoding="utf-8")).get("id") for f in glob.glob(os.path.join(ROOT, "episodes", "*", "episode.json"))}
+    for eid, rec in json.load(open(st_file)).get("episodes", {}).items():
+        if rec.get("status") != "uploaded" or eid not in ids: continue
+        if not str(rec.get("facebook", "")).startswith("posted") or \
+                (meta_post.have_ig() and not str(rec.get("instagram", "")).startswith("posted")):
+            todo.append((rec.get("uploaded_at", ""), eid))
+    todo.sort(); done = []
+    for _, eid in todo[:n]:
+        r = subprocess.run([sys.executable, os.path.join(PIPE, "daily.py"), "--social-only", "--episode", eid], cwd=ROOT,
+                           env={**os.environ, "TTS_ENGINE": "kokoro", "GITHUB_STEP_SUMMARY": ""})
+        rec = json.load(open(st_file))["episodes"].get(eid, {})
+        done.append(f"- {eid}: Facebook {rec.get('facebook', '-')} | Instagram {rec.get('instagram', '-')}" + ("" if r.returncode == 0 else " (render failed)"))
+        print(done[-1])
+    left = max(0, len(todo) - n)
+    summary("### 📣 Social backfill\n\n" + ("\n".join(done) or "- nothing left to post: every uploaded video is on Facebook/Instagram") +
+            (f"\n\n{left} more to go: run it again (or tomorrow)." if left else ""))
     return 0
 
 
 def main():
     args = sys.argv[1:]
+    if "--social-backfill" in args:
+        return social_backfill(int(args[args.index("--social-backfill") + 1]))
     if "--refresh-thumbnails" in args:
         return refresh_thumbnails()
     dry = "--dry-run" in args
