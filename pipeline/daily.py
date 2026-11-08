@@ -21,6 +21,9 @@ EPDIR = os.path.join(ROOT, "long" if LONG else "episodes")
 STATE = os.path.join(EPDIR, "state.json")
 OUT = os.path.join(ROOT, "out")
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
+# Chatterbox voices: exaggeration 0.5 = natural explainer delivery; cfg 0.35 (lower = slower)
+VOICE_ENV = {"CB_EXAGGERATION": "0.5", "CB_CFG": "0.35"}
+BRAND_LINE = "🤖 More AI explained simply: search AInation Studio on YouTube"
 
 
 def sh(cmd, env=None, cwd=ROOT):
@@ -78,7 +81,7 @@ def qc(path, ep):
     dur = float(p["format"]["duration"])
     v = [s for s in p["streams"] if s["codec_type"] == "video"]
     a = [s for s in p["streams"] if s["codec_type"] == "audio"]
-    lo, hi, size = (90, 900, (1920, 1080)) if LONG else (45, 180, (1080, 1920))
+    lo, hi, size = (90, 900, (1920, 1080)) if LONG else (20, 180, (1080, 1920))
     if not (lo <= dur <= hi): problems.append(f"duration {dur:.1f}s outside {lo}-{hi}s")
     if not v or (v[0]["width"], v[0]["height"]) != size: problems.append(f"video is not {size[0]}x{size[1]}")
     if not a: problems.append("no audio stream")
@@ -123,7 +126,7 @@ def refresh_thumbnails():
         if rec.get("status") != "uploaded" or not rec.get("video_id") or eid not in eps: continue
         env = {"EPISODE": eps[eid], "BG": "v2", "DOODLE": "chars", "FORMAT": "long" if LONG else "short", "THUMB_ONLY": "1"}
         try:
-            sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": eps[eid]})
+            sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": eps[eid], "TTS_ENGINE": "kokoro"})  # thumbnail only: fast voices
             sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), "x"], env, cwd=PIPE)
             os.makedirs(OUT, exist_ok=True)
             import shutil; dst = os.path.join(OUT, f"{eid}_thumbnail.jpg"); shutil.copy(os.path.join(PIPE, "build", "thumbnail.jpg"), dst)
@@ -163,9 +166,16 @@ def main():
         print("Episode file invalid - not rendering:", errs); return 1
     os.makedirs(OUT, exist_ok=True)
     frames = os.path.join(OUT, f"{eid}_frames"); mp4 = os.path.join(OUT, f"AInation_{'long_' if LONG else ''}{eid}.mp4")
-    sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf})
-    sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), frames], {"EPISODE": epf, "BG": "v2", "DOODLE": "chars", "FORMAT": "long" if LONG else "short"}, cwd=PIPE)
-    sh([sys.executable, os.path.join(PIPE, "finish.py"), frames, "24", mp4], {"EPISODE": epf, "FORMAT": "long" if LONG else "short"})
+    def render(voice_env):
+        import shutil; shutil.rmtree(frames, ignore_errors=True)
+        sh([sys.executable, os.path.join(PIPE, "tts.py")], {"EPISODE": epf, **VOICE_ENV, **voice_env})
+        sh([sys.executable, os.path.join(PIPE, "episode_engine.py"), frames], {"EPISODE": epf, "BG": "v2", "DOODLE": "chars", "FORMAT": "long" if LONG else "short"}, cwd=PIPE)
+        sh([sys.executable, os.path.join(PIPE, "finish.py"), frames, "24", mp4], {"EPISODE": epf, "FORMAT": "long" if LONG else "short"})
+    render({})
+    if json.load(open(os.path.join(PIPE, "build", "timing.json"))).get("engine") == "chatterbox" and \
+            float(probe(mp4)["format"]["duration"]) > (900 if LONG else 180):  # too long with the expressive voices
+        print("note: video too long with Chatterbox voices - re-rendering with Kokoro voices")
+        render({"TTS_ENGINE": "kokoro"})
     thumb = mp4[:-4] + "_thumbnail.jpg"
     if os.path.exists(os.path.join(PIPE, "build", "thumbnail.jpg")):
         import shutil; shutil.copy(os.path.join(PIPE, "build", "thumbnail.jpg"), thumb)
@@ -173,6 +183,7 @@ def main():
         thumb = None
     problems = qc(mp4, ep)
     rec = state["episodes"].setdefault(eid, {})
+    rec["voices"] = json.load(open(os.path.join(PIPE, "build", "timing.json"))).get("engine", "kokoro")
     rec.update({"title": ep["title"], "rendered_at": dt.datetime.now(IST).isoformat(timespec="seconds"),
                 "duration_s": round(float(probe(mp4)["format"]["duration"]), 2)})
     if problems:
@@ -185,11 +196,17 @@ def main():
         if ch: ep["description"] = ep["description"].rstrip() + "\n\nChapters:\n" + ch
         ep["hashtags"] = [h for h in ep.get("hashtags", []) if h.lower() != "#shorts"]
     from upload_youtube import have_credentials, upload, set_thumbnail
+    import meta_post
+    if "--social-only" in args and not dry:  # post this episode to Facebook / Instagram only (no YouTube)
+        social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG, rec) if meta_post.have_meta() else {"facebook": "no META secrets configured"}
+        rec.update({k: v.replace(" (kept, not re-posted)", "") for k, v in social.items()}); json.dump(state, open(STATE, "w"), indent=2)
+        print("Social only:", social)
+        summary(f"### 📣 Social post for {eid}\n\n" + "\n".join(f"- {k.title()}: {v}" for k, v in social.items())); return 0
     if dry or not have_credentials():
         rec.update({"status": "rendered", "note": "dry run" if dry else "no YouTube credentials configured"})
         json.dump(state, open(STATE, "w"), indent=2)
         print("Rendered + QC passed (not uploaded):", mp4)
-        summary(f"### 🎬 Rendered {eid} (not uploaded: {rec['note']})\n\n- {ep['title']} — {rec['duration_s']} s, QC passed\n- Download the video and its thumbnail from this run's **Artifacts**.")
+        summary(f"### 🎬 Rendered {eid} (not uploaded: {rec['note']})\n\n- {ep['title']} — {rec['duration_s']} s, QC passed, voices: {rec['voices']}\n- Download the video and its thumbnail from this run's **Artifacts**.")
         return 0
     if now_mode:
         vid = upload(mp4, ep, None); when = "immediately (public now, if the API project is audited)"
@@ -200,11 +217,13 @@ def main():
         when = slot.strftime("%d %b %Y, %H:%M IST"); rec["publish_at_ist"] = slot.isoformat(timespec="minutes")
     rec.pop("note", None)
     rec["thumbnail"] = set_thumbnail(vid, thumb) if thumb else "not rendered"
+    social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG, rec)  # Facebook Page + Instagram (if META secrets are set)
+    rec.update(social)
     rec.update({"status": "uploaded", "video_id": vid, "url": f"https://www.youtube.com/{'watch?v=' if LONG else 'shorts/'}{vid}",
                 "uploaded_at": dt.datetime.now(IST).isoformat(timespec="seconds")})
     json.dump(state, open(STATE, "w"), indent=2)
     print("Uploaded:", rec["url"], "publish:", when)
-    summary(f"### ✅ Uploaded {eid}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Thumbnail: {rec['thumbnail']}\n"
+    summary(f"### ✅ Uploaded {eid}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Voices: {rec['voices']}\n- Thumbnail: {rec['thumbnail']}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
             "- Note: until the YouTube API audit is approved, YouTube keeps API uploads **Private** — "
             "set it to Public (or Schedule) in YouTube Studio → Content.")
     return 0
