@@ -6,6 +6,7 @@ Note: videos uploaded by an unaudited API project are locked to PRIVATE until Go
 project audit. Until then the video is uploaded privately and you flip it to public in YouTube Studio.
 """
 import os, sys, time
+import hashtags
 
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
 
@@ -27,7 +28,7 @@ def upload(path, ep, publish_at_utc_iso):
     from googleapiclient.http import MediaFileUpload
     import images  # credits required by CC BY illustrations
     cred = images.credits(ep)
-    desc = ep["description"].rstrip() + ("\n\n" + cred if cred else "") + "\n\n" + " ".join(ep.get("hashtags", []))
+    desc = ep["description"].rstrip() + ("\n\n" + cred if cred else "") + "\n\n" + " ".join(hashtags.pick(ep.get("hashtags", []), "youtube"))
     body = {
         "snippet": {"title": ep["title"][:100], "description": desc[:4900], "tags": ep.get("tags", [])[:15],
                     "categoryId": "28", "defaultLanguage": "en", "defaultAudioLanguage": "en"},
