@@ -1,1 +1,17 @@
-{"episodes": {}}
+{
+  "episodes": {
+    "L01": {
+      "voices": "chatterbox",
+      "title": "How ChatGPT-Style AI Works: Tokens, Training & Next-Word Guessing",
+      "rendered_at": "2026-11-08T17:50:14+05:30",
+      "duration_s": 264.66,
+      "publish_at_ist": "2026-11-08T19:15+05:30",
+      "thumbnail": "set",
+      "facebook": "posted (video 1144671368045184)",
+      "status": "uploaded",
+      "video_id": "phkWVT141FQ",
+      "url": "https://www.youtube.com/watch?v=phkWVT141FQ",
+      "uploaded_at": "2026-11-08T17:50:42+05:30"
+    }
+  }
+}
