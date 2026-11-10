@@ -1,7 +1,7 @@
 # Daily Shorts Automation — Requirements and Runbook
 
 **Last updated:** 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
-**Status:** Requirements recorded; implementation and authorization pending.
+**Status (updated 2026-11-10T13:11:34+05:30 (2026-11-10T07:41:34Z)):** ⚠️ Historical requirements document from the planning phase. Daily automation is **implemented and live**: see `docs/AUTOMATION_SETUP.md` and `docs/CHANNELS_REFERENCE.md` for how it works today (publish window 17:00–20:00 IST, not the 7:00 PM target below).
 
 ## Goal
 

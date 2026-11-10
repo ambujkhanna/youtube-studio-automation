@@ -21,10 +21,15 @@ from kit2d import (P, rr, ell, text, smooth, wob, Track, Char, LN, DUR, NF, B, F
                    icon_train, icon_doc, icon_lock, BX, BY, BW, BH, BCX, BCY)
 import icons_extra as IX
 BY, BH = BY + 66, BH - 66  # content starts below the whiteboard header bar (the frame itself still uses kit2d.BY/BH)
+# content stays inside the screen of every board look (thick 3D bezel / whiteboard rails / hanging border)
+BX, BW = BX + 30, BW - 60
+BY, BH = BY + 20, BH - 44
+BCX = BX + BW / 2
 BCY = BY + BH / 2
 import char_line, bg_line
 
 EP = json.load(open(os.environ["EPISODE"]))
+if not getattr(bg_line, "KIDS", False): print("board look:", bg_line.pick_board_style(EP.get("board_style")))
 ELINES = EP["lines"]
 assert len(ELINES) == len(LN), "timing.json does not match the episode: run tts.py with the same EPISODE first"
 
@@ -192,16 +197,30 @@ def big_text(c, s, x, y, size, color, maxw, tf=FONT_XB, min_size=46, lines=2, ou
         y0 += lh
 
 
-def pill(c, x, y, label, col, size=46):
-    f = skia.Font(FONT_XB, size); w = f.measureText(label) + 70
+def pill(c, x, y, label, col, size=46, maxw=None):
+    """Rounded label pill; shrinks the font so it never touches the screen edges."""
+    maxw = maxw or (BW - 80)
+    f = skia.Font(FONT_XB, size)
+    while size > 26 and f.measureText(label) + 56 > maxw:
+        size -= 2; f = skia.Font(FONT_XB, size)
+    w = min(maxw, f.measureText(label) + 56)
     r = rr(x - w / 2, y - size * 0.8, w, size * 1.6, size * 0.8); shadow_rrect(c, r, 6, 4, 0.2); c.drawRRect(r, P(col))
     text(c, label, x, y, size, "#FFFFFF")
 
 
 def card_bg(c, x, y, w, h, col, border="#1F2D44"):
-    r = rr(x - w / 2, y - h / 2, w, h, 34); shadow_rrect(c, r, 8, 6, 0.18); c.drawRRect(r, P(col))
-    pth = skia.Path(); pth.addRRect(r); c.drawPath(pth, char_line.shade_paint(pth, 0.6, fx=False))
-    c.drawRRect(r, P(border, 5))
+    """Modern UI card (owner: 'modern UI feel'): soft two-layer shadow, gentle top-light gradient, hairline border."""
+    r = rr(x - w / 2, y - h / 2, w, h, 28)
+    shadow_rrect(c, r, 14, 10, 0.10); shadow_rrect(c, r, 3, 2, 0.10)
+    g = skia.Paint(AntiAlias=True)
+    g.setShader(skia.GradientShader.MakeLinear([(0, y - h / 2), (0, y + h / 2)], [K.hexc(_mixc(col, "#FFFFFF", 0.35)), K.hexc(col)]))
+    c.drawRRect(r, g)
+    c.drawRRect(r, P(_mixc(col, "#1F2D44", 0.22), 2.5))
+
+
+def _mixc(a, b, t):
+    a, b = a.lstrip("#"), b.lstrip("#")
+    return "#" + "".join(f"{int(int(a[i:i+2], 16) * (1 - t) + int(b[i:i+2], 16) * t):02X}" for i in (0, 2, 4))
 
 
 TINTS = ("#FFF1B8", "#DCEBFF", "#FFE0EC", "#DDF7E8", "#EFE3FF", "#FFE6D5")
@@ -282,8 +301,8 @@ def _rows(i, t0, t1, items, key, title=None, marks=False):
         def f(c, t, e, it=it, y=y, k=k, ti=ti):
             card_bg(c, BCX, y, BW - 60, gap - 18, TINTS[k % 6], COLS[k % 5])
             ic = ico(it.get("icon"))
-            x0 = BX + 70
-            if ic: ic(c, x0 + 20, y, min(1.6, (gap - 30) / 60)); x0 += 90
+            x0 = BX + 66
+            if ic: ic(c, x0 + 30, y, min(1.35, (gap - 40) / 60)); x0 += 96
             maxw = BW - (x0 - BX) - (130 if marks else 60)
             f_ = skia.Font(FONT_XB, 56); s = it.get(key, ""); sz = 56
             while f_.measureText(s) > maxw and sz > 36: sz -= 2; f_ = skia.Font(FONT_XB, sz)
@@ -301,7 +320,7 @@ def build_summary(i, t0, t1, sc): _rows(i, t0, t1, sc.get("rows", []), "text")
 def build_compare(i, t0, t1, sc):
     for side, dc in ((-1, "#0A84FF"), (1, "#E91E63")):
         S = sc.get("left" if side < 0 else "right", {}); X = BCX + side * BW * 0.255
-        el(t0, t1, lambda c, t, e, S=S, X=X, dc=dc: pill(c, X, BY + 72, S.get("label", ""), S.get("color", dc), 46), pivot=(X, BY + 72))
+        el(t0, t1, lambda c, t, e, S=S, X=X, dc=dc: pill(c, X, BY + 72, S.get("label", ""), S.get("color", dc), 46, BW * 0.46), pivot=(X, BY + 72))
         items = S.get("items", []); n = max(1, len(items)); gap = min(170, (BY + BH - 180) / n)
         for k, it in enumerate(items):
             y = BY + 150 + gap * (k + 0.5)
@@ -318,22 +337,52 @@ def build_compare(i, t0, t1, sc):
 
 
 def build_chat(i, t0, t1, sc):
-    """Big chat bubbles: user on the left, AI on the right (up to 3 messages)."""
+    """Modern chat UI: user bubbles on the right (blue, white text), AI on the left (white, robot avatar, a short
+    'typing' animation before the reply). Bubbles hug their text; avatars stay inside the screen."""
+    IN = 52  # inner margin: clears the thickest board bezel
     top = BY + 40
     if sc.get("title"):
-        el(t0, t1, lambda c, t, e: pill(c, BCX, BY + 50, sc["title"], sc.get("color", "#0A84FF"), 40), (BCX + 200, BY + 50))
-        top = BY + 110
-    items = sc.get("items", [])[:3]; n = max(1, len(items)); gap = (BY + BH - 20 - top) / n
+        el(t0, t1, lambda c, t, e: pill(c, BCX, BY + 62, sc["title"], sc.get("color", "#0A84FF"), 38), (BCX + 200, BY + 62))
+        top = BY + 120
+    items = sc.get("items", [])[:3]; n = max(1, len(items)); gap = min(190, (BY + BH - 30 - top) / n)
+    top = top + max(0.0, (BY + BH - 30 - top) - gap * n) / 2  # centre the conversation on the screen
+    f = skia.Font(FONT_B, 52); maxw = BW - 2 * IN - 150
+    def wrap(txt):
+        if f.measureText(txt) <= maxw: return [txt]
+        w_ = txt.split(); k = min(range(1, len(w_)), key=lambda j: max(f.measureText(" ".join(w_[:j])), f.measureText(" ".join(w_[j:])))) if len(w_) > 1 else 1
+        return [" ".join(w_[:k]), " ".join(w_[k:])]
     for k, it in enumerate(items):
         y = top + gap * (k + 0.5); user = it.get("who", "user") == "user"
         ti = cue_t(i, it, t0 + 0.3 + k * 0.8)
-        def f(c, t, e, it=it, y=y, user=user):
-            w = BW - 200; x = BX + 120 + w / 2 if user else BX + BW - 120 - w / 2
-            r = rr(x - w / 2, y - gap / 2 + 14, w, gap - 28, 34); shadow_rrect(c, r, 6, 4, 0.18)
-            c.drawRRect(r, P("#FFF1B8" if user else "#CDE7FF")); c.drawRRect(r, P(NAVY, 4))
-            (IX.icon_user if user else icon_chat)(c, BX + 60 if user else BX + BW - 60, y, 1.2)
-            big_text(c, it.get("text", ""), x, y, 48, NAVY, w - 50, lines=2, min_size=32)
-        el(ti, t1, f, None, (BCX, y))
+        def bubble(c, t, e, it=it, y=y, user=user, ti=ti):
+            rows = wrap(it.get("text", "")); tw = max(f.measureText(r_) for r_ in rows)
+            bw, bh = tw + 70, 38 + 62 * len(rows); av = 36
+            if user:
+                x1 = BX + BW - IN; x0 = x1 - bw; ax = None
+                fill, tc = "#0A84FF", "#FFFFFF"
+            else:
+                ax = BX + IN + av; x0 = ax + av + 18; x1 = x0 + bw
+                fill, tc = "#FFFFFF", "#1F2D44"
+            y0 = y - bh / 2
+            r = skia.RRect.MakeRectXY(skia.Rect.MakeLTRB(x0, y0, x1, y0 + bh), 30, 30)
+            shadow_rrect(c, r, 10, 6, 0.10)
+            if user:
+                g = skia.Paint(AntiAlias=True); g.setShader(skia.GradientShader.MakeLinear([(0, y0), (0, y0 + bh)], [K.hexc("#3B9BFF"), K.hexc("#0A6CFF")])); c.drawRRect(r, g)
+                tail = skia.Path(); tail.moveTo(x1 - 26, y0 + bh - 2); tail.quadTo(x1 + 4, y0 + bh + 6, x1 + 10, y0 + bh - 14); tail.lineTo(x1 - 6, y0 + bh - 30); tail.close(); c.drawPath(tail, P("#0A6CFF"))
+            else:
+                c.drawRRect(r, P(fill)); c.drawRRect(r, P("#DCE3EE", 2.5))
+                c.drawCircle(ax, y0 + bh - av, av, P("#1F2D44")); icon_chat(c, ax, y0 + bh - av, 0.62)
+            typing = (not user) and t < ti + 0.55
+            if typing:  # three bouncing dots
+                for d in range(3):
+                    yy = y + math.sin((t - ti) * 9 - d * 0.9) * 6
+                    c.drawCircle(x0 + 34 + d * 26, yy, 8, P("#9AA7B8"))
+            else:
+                yy = y - 31 * (len(rows) - 1)
+                for r_ in rows:
+                    tx = x0 + 35
+                    c.drawString(r_, tx, yy + 52 * 0.36, f, P(tc)); yy += 62
+        el(ti, t1, bubble, None, (BX + BW - IN if user else BX + IN, y))
 
 
 def build_permission(i, t0, t1, sc):
@@ -389,6 +438,11 @@ if LOOP:
 
 
 def draw_board(c, t):
+    swing = max(0.0, 1.0 - t / 0.45) if not getattr(bg_line, "KIDS", False) else 0.0
+    if swing > 0:  # 3D entrance: the display swings in on its left hinge (~0.45 s), then stays flat (readable)
+        e = swing * swing * (3 - 2 * swing); ang = 55 * e
+        c.save(); c.translate(BX, BCY); c.skew(0, -0.18 * e); c.scale(max(0.05, math.cos(math.radians(ang))), 1.0 - 0.06 * e)
+        c.translate(-BX, -BCY)
     K.draw_board_frame(c, t)
     for n_, (t_in, t_out, fn, anchor, pivot) in enumerate(ELEMS):
         e = appear(t, t_in, t_out)
@@ -397,6 +451,7 @@ def draw_board(c, t):
         scaled(c, px, py, e); fn(c, t, e); c.restore()  # pop-in
     c.restore()
     bg_line.draw_board_front(c, t)  # curtains etc. in FRONT of the content
+    if swing > 0: c.restore()
 
 
 # ------------------------------------------------------------------ automatic acting

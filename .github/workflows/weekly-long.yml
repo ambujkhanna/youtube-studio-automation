@@ -20,6 +20,11 @@ on:
         description: "Only post the chosen episode (fill 'episode') to Facebook + Instagram - no YouTube upload"
         type: boolean
         default: false
+      board_style:
+        description: "Board look for THIS run (default = repo variable BOARD_STYLE, else hanging)"
+        type: choice
+        default: "default"
+        options: ["default", "hanging", "display", "whiteboard"]
       refresh_thumbnails:
         description: "Only re-make and upload thumbnails for videos already uploaded (no new video)"
         type: boolean
@@ -101,6 +106,8 @@ jobs:
           TTS_ENGINE: ${{ vars.TTS_ENGINE || 'chatterbox' }}
           CB_PYTHON: /home/runner/cbenv/bin/python
           CB_TURBO_LAUGHS: ${{ vars.CB_TURBO_LAUGHS || '1' }}
+          BOARD_STYLE: ${{ vars.BOARD_STYLE || 'hanging' }}
+          BOARD_STYLE_RUN: ${{ inputs.board_style || '' }}
         run: |
           ARGS=""
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi

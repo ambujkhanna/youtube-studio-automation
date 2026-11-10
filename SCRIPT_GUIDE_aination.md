@@ -30,10 +30,11 @@ DAD: So "write me a poem" is a prompt?
 |---|---|---|---|
 | `TITLE:` | **yes** | YouTube title | max **70** characters; one emoji at the end is nice |
 | `COVER:` | no | 1–3 BIG words on the thumbnail | default: from the title |
-| `HASHTAGS:` | no | your hashtags, space-separated | the channel's own tags and `#Shorts` are added |
+| `HASHTAGS:` | no | your topic hashtags, space-separated (most important first) | the channel tag **#AInationstudio** is always added (2nd place). Instagram gets **5** in total, Facebook 10, YouTube 15 (+ `#Shorts`) |
 | `DESCRIPTION:` | no | 1–2 sentences for YouTube/Facebook/Instagram | default: the first answer line |
 | `TAGS:` | no | YouTube search tags, comma-separated | |
 | `TITLE_BOARD:` | no | the opening board: `emoji Word -> emoji Word` | default: a big board with the title question |
+| `BOARD:` | no | board look for this video: `hanging`, `display` or `whiteboard` | default: the channel's look (repo variable `BOARD_STYLE`, else `hanging`) |
 
 **Dialogue (below `---`):** one line per spoken line: `NAME: what they say`
 

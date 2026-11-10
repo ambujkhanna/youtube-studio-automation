@@ -3,9 +3,13 @@
   "channelId": "aination-studio",
   "displayName": "AInation Studio",
   "nameStatus": "registered_youtube_channel",
-  "youtube": {"channelId": "UCexKyxd_qyUUmFQHKs983nw", "handle": "@AI.nationstudio", "url": "https://www.youtube.com/@AI.nationstudio"},
-  "nameAvailabilityChecked": false,
-  "handleAvailabilityChecked": false,
+  "youtube": {
+    "channelId": "UCexKyxd_qyUUmFQHKs983nw",
+    "handle": "@AI.nationstudio",
+    "url": "https://www.youtube.com/@AI.nationstudio"
+  },
+  "nameAvailabilityChecked": true,
+  "handleAvailabilityChecked": true,
   "trademarkChecked": false,
   "positioningStatus": "confirmed",
   "positioning": "Broad AI and technology channel covering AI tools, AI agents, automation, practical demonstrations, real-world use cases, productivity workflows, experiments, and emerging technology explained clearly for a global English-speaking audience.",
@@ -15,17 +19,18 @@
   "audience": "global",
   "format": "youtube_shorts",
   "targetDurationSeconds": {
-    "min": 30,
-    "max": 60
+    "typical_min": 45,
+    "typical_max": 90,
+    "qc_min": 20,
+    "qc_max": 180
   },
   "publishing": {
-    "enabled": false,
-    "frequency": "daily",
-    "localTime": "19:00",
+    "enabled": true,
+    "frequency": "daily Shorts + weekly long video (Sunday 10:00 IST)",
+    "window": "17:00-20:00",
     "timezone": "Asia/Kolkata",
-    "initialPrivacy": "private",
-    "unattendedPublishingAllowedAfterPilotValidation": true,
-    "requireVerifiedDestination": true,
+    "initialPrivacy": "private (until the YouTube API audit is approved; the owner publishes or schedules in Studio)",
+    "socialPosting": "Facebook Page + Instagram Reels after each upload",
     "skipIfQualityGateFails": true
   },
   "editorial": {
@@ -39,19 +44,20 @@
     "generateTitle": true,
     "generateDescription": true,
     "generateRelevantHashtags": true,
-    "reviewYoutubeAIGeneratedContentDisclosurePerVideo": true,
-    "madeForKidsMustBeReviewedPerVideo": true
+    "madeForKids": "false (fixed in pipeline/upload_youtube.py)",
+    "containsSyntheticMedia": "true for every video (pipeline/upload_youtube.py); per-video review not implemented"
   },
   "budget": {
     "additionalMonthlyRecurringBudgetINR": 0,
     "paidServicesRequireExplicitApproval": true
   },
-  "lastUpdated": "2026-10-30T22:42:04+05:30 (2026-10-30T17:12:04Z)",
+  "lastUpdated": "2026-11-10T13:11:14+05:30 (2026-11-10T07:41:14Z)",
   "contentPillars": [
     "AI tools and practical demonstrations",
     "AI agents and autonomous workflows",
     "Automation and productivity",
     "Real-world AI use cases and experiments",
     "Emerging AI and technology explained"
-  ]
+  ],
+  "_note": "Reference only: the pipeline does not read this file. Live settings are repo variables + pipeline/*.py (see docs/CHANNELS_REFERENCE.md)."
 }

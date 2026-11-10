@@ -18,12 +18,17 @@ W, H = 1080, 1920
 FONT_XB = skia.Typeface.MakeFromFile("/usr/share/fonts/opentype/inter/Inter-ExtraBold.otf")
 FONT_B = skia.Typeface.MakeFromFile("/usr/share/fonts/opentype/inter/Inter-Bold.otf")
 FONT_SB = skia.Typeface.MakeFromFile("/usr/share/fonts/opentype/inter/Inter-SemiBold.otf")
-# Channel fonts (SIL Open Font License, shipped in fonts/): Poppins (modern, geometric) for AInation Studio
+# Channel fonts (SIL Open Font License, shipped in fonts/): M PLUS U for AInation Studio (owner's choice, 2026-11-10;
+# static Latin-only instances made from Google Fonts' MPLUSU[wght].ttf), Poppins as fallback
 _FD = os.path.join(os.path.dirname(HERE), "fonts")
 if os.path.exists(os.path.join(_FD, "Poppins-ExtraBold.ttf")):
-    FONT_XB = skia.Typeface.MakeFromFile(os.path.join(_FD, "Poppins-ExtraBold.ttf"))
-    FONT_B = skia.Typeface.MakeFromFile(os.path.join(_FD, "Poppins-Bold.ttf"))
+    FONT_XB = skia.Typeface.MakeFromFile(os.path.join(_FD, "Poppins-Bold.ttf"))
+    FONT_B = skia.Typeface.MakeFromFile(os.path.join(_FD, "Poppins-SemiBold.ttf"))
     FONT_SB = skia.Typeface.MakeFromFile(os.path.join(_FD, "Poppins-SemiBold.ttf"))
+if os.path.exists(os.path.join(_FD, "MPLUSU-Bold.ttf")):
+    FONT_XB = skia.Typeface.MakeFromFile(os.path.join(_FD, "MPLUSU-Bold.ttf"))
+    FONT_B = skia.Typeface.MakeFromFile(os.path.join(_FD, "MPLUSU-SemiBold.ttf"))
+    FONT_SB = skia.Typeface.MakeFromFile(os.path.join(_FD, "MPLUSU-SemiBold.ttf"))
 if doodle.ON:
     FONT_XB = doodle.typeface("title"); FONT_B = doodle.typeface("body"); FONT_SB = doodle.typeface("body")
 

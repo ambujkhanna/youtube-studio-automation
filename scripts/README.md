@@ -34,6 +34,7 @@ DAD: So "write me a poem" is a prompt?
 | `DESCRIPTION:` | no | 1–2 sentences for YouTube/Facebook/Instagram | default: the first answer line |
 | `TAGS:` | no | YouTube search tags, comma-separated | |
 | `TITLE_BOARD:` | no | the opening board: `emoji Word -> emoji Word` | default: a big board with the title question |
+| `BOARD:` | no | board look for this video: `hanging`, `display` or `whiteboard` | default: the channel's look (repo variable `BOARD_STYLE`, else `hanging`) |
 
 **Dialogue (below `---`):** one line per spoken line: `NAME: what they say`
 

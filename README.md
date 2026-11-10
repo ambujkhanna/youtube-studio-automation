@@ -14,12 +14,13 @@ A zero-additional-subscription-cost, AI-assisted system for researching, creatin
 
 Hashtag: **#AInationstudio**
 
-## Project status
-- Repository: private
-- Current phase: Phase 0 — foundation and workflow design
-- First channel: AInation Studio (working name; name availability not yet checked)
-- Initial format: YouTube Shorts
-- First pilot requires review; routine publishing is intended to be unattended after validation
+## Project status (updated 2026-11-10T13:11:14+05:30 (2026-11-10T07:41:14Z))
+- Repository: **public** at the moment (keeps GitHub Actions minutes free); never commit secrets
+- Phase: **in production**. Daily AInation Studio Shorts (publish 17:00–20:00 IST) and a weekly 16:9 long video (Sunday 10:00 IST), rendered and uploaded by GitHub Actions; also posted to the Facebook Page and Instagram
+- Voices: Chatterbox (Dad/Teen cloned) + Turbo for laughs, with Kokoro as automatic backup; typical Short 45–90 s (QC 20–180 s)
+- Uploads stay Private until the YouTube API audit is approved; the owner publishes or schedules them in Studio
+- Day-to-day reference: [docs/CHANNELS_REFERENCE.md](docs/CHANNELS_REFERENCE.md) (all workflow options, secrets, variables) and [docs/AUTOMATION_SETUP.md](docs/AUTOMATION_SETUP.md)
+- Older planning documents below (OVERALL_OBJECTIVE, PLAN, PROGRESS, CONVERSATION) describe the early ChatGPT-era design phase and may be out of date
 
 ## Core documents
 - [Windows development setup](docs/WINDOWS_DEVELOPMENT.md) — selected Windows platform and planned local toolchain.

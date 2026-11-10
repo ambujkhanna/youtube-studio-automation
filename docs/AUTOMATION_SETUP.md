@@ -9,9 +9,10 @@ The daily run is fully automatic once these one-time steps are done. Nothing her
 ```text
 GitHub Actions (daily 09:15 UTC = 14:45 IST, or "Run workflow" manually)
   → pick next ready episode in episodes/  (skips ones already uploaded)
-  → voices (Kokoro, free) → frames → MP4 with captions + music
-  → automated QC (1080×1920, 45–180 s, audio level, captions, title/description)
-  → upload to YouTube as PRIVATE, scheduled to publish 19:00 IST
+  → voices (Chatterbox, with Kokoro as automatic backup) → frames → MP4 with captions, opening hook, end card + music
+  → automated QC (1080×1920, 20–180 s, audio level, captions, title/description)
+  → upload to YouTube as PRIVATE, scheduled in a random slot 17:00–20:00 IST (repo variable PUBLISH_WINDOW)
+  → post to the Facebook Page + Instagram as a Reel (designed cover)
   → write result to episodes/state.json + keep the MP4 as a run artifact for 14 days
 ```
 
@@ -57,7 +58,7 @@ YouTube locks videos uploaded through a **new, unaudited** API project to **Priv
 Until the audit is approved, each day's video arrives as a private upload and you click **Public** in YouTube Studio
 (about 10 seconds a day). To remove that step, apply for the audit:
 https://support.google.com/youtube/contact/yt_api_form (YouTube API Services — Audit and Quota Extension).
-Once approved, uploads publish automatically at 19:00 IST with no manual step.
+Once approved, uploads publish automatically at their scheduled 17:00–20:00 IST slot with no manual step.
 
 Quota: the default 10,000 units/day is plenty (one upload ≈ 1,600 units).
 GitHub Actions: a daily run takes roughly 10–15 minutes; the free tier for private repos (2,000 min/month) covers it.
@@ -126,3 +127,15 @@ Write a script in `scripts/` (a plain text file), then Run workflow → **script
 - **Format and limits:** see `scripts/README.md`: header (`TITLE:` and optional `COVER:`, `HASHTAGS:`, `TITLE_BOARD:`), `---`, then `NAME: text | emoji Board text` lines. Use 9–16 lines and about 110–180 words.
 - **Problems** stop the run before rendering and are listed in the run summary.
 - **One file = one video.** A file that was already uploaded is never uploaded again; save the script under a new name instead.
+
+## Board look (added 2026-11-10)
+
+Repo variable `BOARD_STYLE` (Settings → Secrets and variables → Actions → Variables): `hanging` (default: dark rounded border hanging from two ceiling rods), `display` (3D screen with a thick black bezel) or `whiteboard` (aluminium frame, corner caps, magnets, marker tray). All are original drawings in `pipeline/bg_line.py`.
+
+**Change it for one video only** (the first one that is set wins):
+1. **Run workflow → board_style** (`default` / `hanging` / `display` / `whiteboard`): only that run.
+2. **In the episode:** `"board_style": "display"` at the top level of `episode.json`, or `BOARD: display` in your script. That video always uses this look.
+3. **Repo variable `BOARD_STYLE`:** every video.
+4. Nothing set → `hanging`.
+
+A misspelt value is ignored (the validator and the script check report it), and the run log prints `board look: …`.

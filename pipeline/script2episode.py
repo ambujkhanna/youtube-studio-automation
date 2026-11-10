@@ -53,7 +53,7 @@ def parse(text):
         if not m:
             probs.append(f"line {n}: not understood - expected 'NAME: text' (e.g. 'MIA: Hello!'): {s[:60]}"); continue
         key, val = m.group(1).strip().upper().replace(" ", "_"), m.group(2).strip()
-        if not body and key in ("TITLE", "COVER", "DESCRIPTION", "HASHTAGS", "TAGS", "TITLE_BOARD", "TITLE_HI", "DESCRIPTION_HI"):
+        if not body and key in ("TITLE", "COVER", "DESCRIPTION", "HASHTAGS", "TAGS", "TITLE_BOARD", "TITLE_HI", "DESCRIPTION_HI", "BOARD"):
             head[key] = val; continue
         body = True
         if key == "HI":
@@ -159,6 +159,10 @@ def build(path):
           "hashtags": list(dict.fromkeys([h if h.startswith("#") else "#" + h for h in tags] + CH["hashtags"]))[:8],
           "tags": [t.strip() for t in head.get("TAGS", "").split(",") if t.strip()] or [q.lower()],
           "cast": cast, "lines": eps}
+    if head.get("BOARD"):
+        bs = head["BOARD"].strip().lower()
+        if bs in ("hanging", "display", "whiteboard"): ep["board_style"] = bs
+        else: return None, None, [f"BOARD: '{head['BOARD']}' is not a board look (use hanging, display or whiteboard)"]
     hi = None
     if use_hi:
         hi = {"title_hi": head["TITLE_HI"], "description_hi": head.get("DESCRIPTION_HI") or lines[1]["hi"],
