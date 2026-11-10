@@ -505,3 +505,27 @@ The user said: “Leave it. You are not capable to Make videos”.
 - Acknowledged that the procedural 2D samples did not meet the professional animation quality the user wanted, and that presenting them as meaningful progress toward the target was misleading.
 - Do not initiate further video experiments, recommend more setup, ask the user to install tools, or suggest spending credits unless the user explicitly reopens the video work.
 - No further video was generated in this turn. No credits were spent.
+
+
+---
+
+## 2026-11-10T09:00:00+05:30 — YouTube growth engineering branch
+
+The user authorized implementation and GitHub push in new branches for both channel repositories. The existing main branches remain untouched.
+
+### AInation Studio changes on feat/youtube-growth-engine
+- Added pipeline/analytics.py, a read-only YouTube Analytics API collector.
+- Added tests/test_analytics.py and wired unit tests into the analytics workflow.
+- Added docs/ANALYTICS.md with OAuth setup, local execution, outputs, retention limits and interpretation notes.
+- Added .github/workflows/youtube-analytics.yml for manual date-range collection and daily scheduled collection.
+- Updated README links/status and refreshed this progress record.
+- The collector stores per-video views, engaged views, watch time, average view duration/percentage, likes, comments, shares and video-page subscriber gains/losses in SQLite, CSV and Markdown outputs.
+- The workflow uses a dedicated YT_ANALYTICS_REFRESH_TOKEN with youtube.readonly; the upload token is not changed.
+- Four unit tests passed in GitHub Actions for both repositories, including SQLite persistence and report export. The live API call was skipped because YT_ANALYTICS_REFRESH_TOKEN is not configured; a read-only token and API enablement are still required.
+- Actions cache is best-effort persistence; artifacts are retained for 90 days. A durable private data store remains an open decision.
+
+### CurioKids changes
+The same analytics collector, tests, documentation and workflow were added to ambujkhanna/The-CurioKids-Club on its feat/youtube-growth-engine branch. README wording was corrected to describe the actual audience-setting variable and current English/Hindi publish windows. No audience/compliance setting was changed.
+
+### Guardrails
+No upload token, publishing workflow, publishing schedule, synthetic-media flag, Made-for-Kids declaration, episode state or existing production code was changed. Both feature branches were pushed; neither was merged into main.
