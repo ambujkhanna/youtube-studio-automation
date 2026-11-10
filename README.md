@@ -4,6 +4,16 @@
 
 A zero-additional-subscription-cost, AI-assisted system for researching, creating, reviewing, publishing, and improving YouTube Shorts across three planned English-language channels.
 
+## Follow AInation Studio
+
+| Platform | Link |
+|---|---|
+| ▶️ YouTube | https://www.youtube.com/@AI.nationstudio |
+| 📘 Facebook | https://www.facebook.com/profile.php?id=61596527993377 |
+| 📸 Instagram | https://www.instagram.com/ai.nationstudio/ |
+
+Hashtag: **#AInationstudio**
+
 ## Project status
 - Repository: private
 - Current phase: Phase 0 — foundation and workflow design
@@ -35,7 +45,6 @@ Read OVERALL_OBJECTIVE.md, PLAN.md, PROGRESS.md, and CONVERSATION.md. Verify rep
 ## Repository safety
 Do not commit credentials, private channel login details, personal data, copyrighted source media, or generated assets without a clear need and rights to store them. Use environment variables or local secret stores for credentials.
 
-
 ## Portable project context and agent onboarding
 
 This repository must be sufficient to onboard a new human contributor, a fresh ChatGPT conversation, or a different AI agent without access to prior chats.
@@ -64,9 +73,7 @@ This repository must be sufficient to onboard a new human contributor, a fresh C
 
 Use the copy/paste prompt in AGENT_HANDOVER.md. Resume from the exact Next actions in PROGRESS.md; do not ask the user to repeat documented decisions.
 
-
 **Channel 1 working name:** AInation Studio. Name availability and trademark status are not yet verified.
-
 
 ## Latest channel and development decisions
 
