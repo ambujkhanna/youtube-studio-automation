@@ -128,7 +128,8 @@
       "status": "uploaded",
       "video_id": "F-WQ15PwZJM",
       "url": "https://www.youtube.com/shorts/F-WQ15PwZJM",
-      "uploaded_at": "2026-11-10T01:29:07+05:30"
+      "uploaded_at": "2026-11-10T01:29:07+05:30",
+      "facebook_cover": "cover set"
     },
     "ep011": {
       "voices": "chatterbox",
@@ -142,7 +143,8 @@
       "status": "uploaded",
       "video_id": "4qHM2dg4Jec",
       "url": "https://www.youtube.com/shorts/4qHM2dg4Jec",
-      "uploaded_at": "2026-11-10T15:05:22+05:30"
+      "uploaded_at": "2026-11-10T15:05:22+05:30",
+      "facebook_cover": "cover set"
     }
   }
 }
