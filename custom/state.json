@@ -7,6 +7,14 @@
       "duration_s": 61.84,
       "status": "rendered",
       "note": "dry run"
+    },
+    "s-ollama": {
+      "voices": "chatterbox",
+      "title": "Ollama Explained: Run AI Locally on Your PC \ud83e\udd16",
+      "rendered_at": "2026-11-11T17:54:33+05:30",
+      "duration_s": 60.2,
+      "status": "rendered",
+      "note": "dry run"
     }
   }
 }
