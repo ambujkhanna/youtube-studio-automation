@@ -21,7 +21,7 @@ on:
         type: boolean
         default: false
       script:
-        description: "Make a video from YOUR script: path of the file, e.g. scripts/bees.txt (format: scripts/README.md)"
+        description: "Make a video from YOUR script: a file path (scripts/bees.txt) OR paste the whole script here (format: scripts/README.md)"
         required: false
       social_backfill:
         description: "Post videos already on YouTube to Facebook + Instagram (how many this run; 0 = off)"
@@ -114,6 +114,9 @@ jobs:
           TTS_ENGINE: ${{ vars.TTS_ENGINE || 'chatterbox' }}
           CB_PYTHON: /home/runner/cbenv/bin/python
           CB_TURBO_LAUGHS: ${{ vars.CB_TURBO_LAUGHS || '1' }}
+          INTRO: ${{ vars.INTRO || 'on' }}
+          OUTRO: ${{ vars.OUTRO || 'on' }}
+          SCRIPT_IN: ${{ inputs.script }}
           BOARD_STYLE: ${{ vars.BOARD_STYLE || 'hanging' }}
           BOARD_STYLE_RUN: ${{ inputs.board_style || '' }}
         run: |
@@ -123,7 +126,6 @@ jobs:
           if [ "${{ inputs.publish_now }}" = "true" ]; then ARGS="$ARGS --now"; fi
           if [ "${{ inputs.refresh_thumbnails }}" = "true" ]; then ARGS="$ARGS --refresh-thumbnails"; fi
           if [ "${{ inputs.social_only }}" = "true" ]; then ARGS="$ARGS --social-only"; fi
-          if [ -n "${{ inputs.script }}" ]; then ARGS="$ARGS --script ${{ inputs.script }}"; fi
           if [ -n "${{ inputs.social_backfill }}" ] && [ "${{ inputs.social_backfill }}" != "0" ]; then ARGS="$ARGS --social-backfill ${{ inputs.social_backfill }}"; fi
           python pipeline/daily.py $ARGS
 
@@ -136,6 +138,7 @@ jobs:
             out/*.mp4
             out/*_thumbnail.jpg
             out/*.jpg
+            out/*.txt
           retention-days: 14
           if-no-files-found: ignore
 

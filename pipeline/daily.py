@@ -17,7 +17,7 @@ import datetime as dt, glob, json, os, random, re, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PIPE = os.path.join(ROOT, "pipeline")
 LONG = "--long" in sys.argv
-SCRIPT = sys.argv[sys.argv.index("--script") + 1] if "--script" in sys.argv else ""  # scripts/<name>.txt -> custom/<id>/
+SCRIPT = (sys.argv[sys.argv.index("--script") + 1] if "--script" in sys.argv else os.environ.get("SCRIPT_IN", "")).strip()  # scripts/<name>.txt, or a pasted script -> custom/<id>/
 EPDIR = os.path.join(ROOT, "custom" if SCRIPT else "long" if LONG else "episodes")
 STATE = os.path.join(EPDIR, "state.json")
 OUT = os.path.join(ROOT, "out")
@@ -184,7 +184,16 @@ def main():
     state = load_state()
     if SCRIPT:  # a video from your own script: convert + check it first (nothing is rendered if there are problems)
         import script2episode
-        sp = SCRIPT if os.path.isabs(SCRIPT) else os.path.join(ROOT, SCRIPT)
+        if re.search(r"(?i)\bTITLE\s*:", SCRIPT) and not SCRIPT.lower().endswith(".txt"):  # pasted script text
+            txt = script2episode.from_pasted(SCRIPT)
+            m_ = re.search(r"(?im)^TITLE:(.*)$", txt)
+            slug = re.sub(r"[^a-z0-9]+", "-", (m_.group(1) if m_ else "pasted").lower()).strip("-")[:34] or "pasted"
+            os.makedirs(OUT, exist_ok=True)
+            sp = os.path.join(OUT, f"pasted-{slug}.txt")  # kept with the run's Artifacts
+            open(sp, "w", encoding="utf-8").write(txt)
+            print("pasted script saved as", sp)
+        else:
+            sp = SCRIPT if os.path.isabs(SCRIPT) else os.path.join(ROOT, SCRIPT)
         if not os.path.exists(sp):
             summary(f"### ❌ Script not found: `{SCRIPT}`\n\nPut it in the `scripts/` folder and type its path, e.g. `scripts/bees.txt`.")
             print("script not found:", sp); return 1
@@ -226,6 +235,8 @@ def main():
             float(probe(mp4)["format"]["duration"]) > (900 if LONG else 180):  # too long with the expressive voices
         print("note: video too long with Chatterbox voices - re-rendering with Kokoro voices")
         render({"TTS_ENGINE": "kokoro"})
+    import bumpers  # "Welcome to …" logo intro + "Find us online" links card (repo variables INTRO / OUTRO)
+    extras = bumpers.wrap(mp4, LONG); print("intro/outro:", extras)
     thumb = mp4[:-4] + "_thumbnail.jpg"
     if os.path.exists(os.path.join(PIPE, "build", "thumbnail.jpg")):
         import shutil; shutil.copy(os.path.join(PIPE, "build", "thumbnail.jpg"), thumb)

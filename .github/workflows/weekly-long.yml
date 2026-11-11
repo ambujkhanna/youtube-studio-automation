@@ -106,6 +106,8 @@ jobs:
           TTS_ENGINE: ${{ vars.TTS_ENGINE || 'chatterbox' }}
           CB_PYTHON: /home/runner/cbenv/bin/python
           CB_TURBO_LAUGHS: ${{ vars.CB_TURBO_LAUGHS || '1' }}
+          INTRO: ${{ vars.INTRO || 'on' }}
+          OUTRO: ${{ vars.OUTRO || 'on' }}
           BOARD_STYLE: ${{ vars.BOARD_STYLE || 'hanging' }}
           BOARD_STYLE_RUN: ${{ inputs.board_style || '' }}
         run: |

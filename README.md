@@ -9,7 +9,7 @@ A zero-additional-subscription-cost, AI-assisted system for researching, creatin
 | Platform | Link |
 |---|---|
 | ▶️ YouTube | https://www.youtube.com/@AI.nationstudio |
-| 📘 Facebook | https://www.facebook.com/profile.php?id=61596527993377 |
+| 📘 Facebook | https://www.facebook.com/AI.nationStudio |
 | 📸 Instagram | https://www.instagram.com/ai.nationstudio/ |
 
 Hashtag: **#AInationstudio**
