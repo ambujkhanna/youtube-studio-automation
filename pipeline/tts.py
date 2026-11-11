@@ -69,6 +69,19 @@ if EP_FILE:  # data-driven episode (episodes/<id>/episode.json)
     # The CurioKids Club voices: [kokoro voice, speed, pitch shift in semitones (optional)]. Override per episode with "voices".
     VOICES = {"MIA": ("af_heart", 1.05), "LEO": ("af_sky", 1.08, 2.5), "DAD": ("am_michael", 0.95), "TEEN": ("af_heart", 1.05)}
     VOICES.update({k: tuple(v) for k, v in _ep.get("voices", {}).items()})
+def speakable(t, lang="en"):
+    """Text as it should be SAID: 'llama3.2' -> 'llama 3 point 2', 'ollama.com' -> 'ollama dot com', 'v2.1.0' -> 'v 2 point 1 point 0'."""
+    pt, dt_ = (" दशमलव ", " डॉट ") if lang == "hi" else (" point ", " dot ")
+    t = re.sub(r"\b([A-Za-z0-9-]+)\.(com|org|net|ai|io|in|dev|app|co)\b", lambda m: m.group(1) + dt_.rstrip() + " " + m.group(2), t)
+    t = re.sub(r"(?<=[A-Za-z])(?=\d)", " ", t)  # llama3 -> llama 3
+    t = re.sub(r"\d+(?:\.\d+)+", lambda m: pt.join(m.group(0).split(".")) if not re.fullmatch(r"\d+\.\d{3,}", m.group(0)) else m.group(0), t)
+    return re.sub(r"\s{2,}", " ", t)
+
+
+if EP_FILE:  # spoken text only: the boards and the episode file keep '3.2', 'ollama.com'
+    _lang = globals().get("LANG", "en")
+    RAW = [(w, speakable(t, _lang)) for w, t in RAW]
+    LINES = [(w, speakable(t, _lang)) for w, t in LINES]
 GAP = 0.28  # seconds between lines
 if EP_FILE:
     GAP = float(_ep.get("gap") or os.environ.get("TTS_GAP") or 0.45)

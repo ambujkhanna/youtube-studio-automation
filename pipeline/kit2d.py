@@ -61,6 +61,7 @@ def ell(cx, cy, rx, ry):
 
 
 ARROWS = ("→", "->", "➜", "➡", "➡️")
+SAFE_W = None  # board width (set by episode_engine): no text drawn by text() may be wider than this - it shrinks to fit
 
 
 def text(c, s, x, y, size, color, tf=FONT_XB, align="c", a=1.0):
@@ -74,6 +75,8 @@ def text(c, s, x, y, size, color, tf=FONT_XB, align="c", a=1.0):
         tf = skia.FontMgr().matchFamilyStyleCharacter("", skia.FontStyle.Bold(), ["en"], ord(miss[0])) or tf
     f = skia.Font(tf, size)
     w = f.measureText(s)
+    while SAFE_W and w > SAFE_W and size > 14:  # never wider than the board
+        size *= 0.95; f = skia.Font(tf, size); w = f.measureText(s)
     dx = {"c": -w / 2, "l": 0, "r": -w}[align]
     tp_ = nofx(P(color, a=a))
     c.drawString(s, x + dx, y + size * 0.36, f, tp_)
