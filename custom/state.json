@@ -36,7 +36,8 @@
       "instagram": "failed: 1) direct: [size-budget] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [3 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [2 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"R | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
       "video_id": "ToSaTHNDoEg",
       "url": "https://www.youtube.com/shorts/ToSaTHNDoEg",
-      "uploaded_at": "2026-11-14T11:42:18+05:30"
+      "uploaded_at": "2026-11-14T11:42:18+05:30",
+      "thumbnail_checked": "2026-11-14T15:41+05:30 set"
     }
   }
 }
