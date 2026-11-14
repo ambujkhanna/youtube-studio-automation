@@ -39,12 +39,25 @@ def _req(url, data=None, headers=None, method=None, raw=None, timeout=600):
         with urllib.request.urlopen(rq, timeout=timeout) as r:
             return json.loads(r.read().decode() or "{}")
     except urllib.error.HTTPError as e:
-        msg = e.read().decode(errors="replace")
+        raw_msg = e.read().decode(errors="replace")
+        msg = raw_msg
         try:
-            msg = json.loads(msg).get("error", {}).get("message", msg)
+            payload = json.loads(raw_msg)
+            # rupload errors use debug_info rather than the normal Graph API error envelope.
+            if isinstance(payload, dict) and payload.get("debug_info"):
+                info = payload["debug_info"]
+                detail = info.get("message", "")
+                try:
+                    nested = json.loads(detail)
+                    detail = nested.get("error", {}).get("message", detail)
+                except Exception:
+                    pass
+                msg = f'{info.get("type", "upload error")}; retriable={info.get("retriable")}; {detail}'
+            else:
+                msg = payload.get("error", {}).get("message", raw_msg)
         except Exception:
             pass
-        raise RuntimeError(f"HTTP {e.code}: {msg[:300]}")
+        raise RuntimeError(f"HTTP {e.code}: {msg[:500]}")
 
 
 def caption(ep, brand_line, platform="instagram"):
@@ -257,6 +270,7 @@ def _ig_direct(ig, tok, path, cap):
     cid = c["id"]; uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/v21.0/{cid}"
     with open(path, "rb") as fh:
         data = fh.read()
+    print(f"Instagram upload attempt: container={cid}, file={os.path.basename(path)}, bytes={len(data)}", flush=True)
     _req(uri, raw=data, headers={"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(len(data)),
                                  "Content-Type": "application/octet-stream"})
     return _ig_wait_publish(ig, cid, tok)
@@ -267,18 +281,23 @@ def post_instagram(path, cap):
     src = path
     path = ig_safe(src)
     err = ""
-    # 1) direct (resumable) upload; Instagram sometimes rejects one encoding and accepts another
-    #    (2026-11-08: two of four episodes were rejected with the same recipe), so try a ladder of encodings
-    tries = [("size-budget", path), ("3 Mbps", None), ("2 Mbps", None), ("1.5 Mbps", None)]
-    for k, (name, p) in enumerate(tries):
+    # 1) Direct resumable uploads. Use distinct encodings: the old size-budget and
+    #    3 Mbps entries often produced byte-for-byte equivalent files and wasted a full attempt.
+    #    Keep a useful spread of sizes for Meta's video processor.
+    tries = [("3 Mbps", 3000), ("2.4 Mbps", 2400), ("1.8 Mbps", 1800), ("1.2 Mbps", 1200)]
+    for k, (name, bitrate) in enumerate(tries):
+        p = path if k == 0 else ig_safe(src, kb=bitrate, tag=f"ig{k}")
         try:
-            if p is None:
-                p = ig_safe(src, kb={"3 Mbps": 3000, "2 Mbps": 2000, "1.5 Mbps": 1500}[name], tag=f"ig{k}")
             vid = _ig_direct(ig, tok, p, cap)
-            return f"posted (reel {vid})" + (f" with the {name} copy" if k else "")
+            return f"posted (reel {vid}) with the {name} copy"
         except Exception as e:
-            err = f"{err} [{name}] {str(e)[:90]}"
-            time.sleep(20)
+            detail = str(e)
+            err = f"{err} [{name}] {detail[:220]}"
+            print(f"Instagram {name} attempt failed: {detail[:500]}", flush=True)
+            if k < len(tries) - 1:
+                # Give Meta's asynchronous media workers a little breathing room before
+                # creating the next independent container.
+                time.sleep(min(90, 30 * (k + 1)))
     err = err.strip()[:300]
     # 2) upload the Instagram-format copy to the Page as a hidden (unpublished) video, then let Instagram fetch it
     err2 = ""
