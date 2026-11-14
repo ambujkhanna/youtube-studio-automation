@@ -204,7 +204,22 @@
       "instagram": "posted (reel 18000759200828001) with the 1.2 Mbps copy, designed cover",
       "video_id": "bZJ750vF410",
       "url": "https://www.youtube.com/shorts/bZJ750vF410",
-      "uploaded_at": "2026-11-14T15:40:47+05:30"
+      "uploaded_at": "2026-11-14T15:40:47+05:30",
+      "thumbnail_checked": "2026-11-14T21:30+05:30 set"
+    },
+    "ep016": {
+      "voices": "chatterbox",
+      "title": "Why YouTube Knows What You Like",
+      "rendered_at": "2026-11-14T21:27:00+05:30",
+      "duration_s": 60.65,
+      "publish_at_ist": "2026-11-15T17:00+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "facebook": "posted (reel 1810860323395963), cover set",
+      "instagram": "posted (reel 18131599399839656) with the 2.4 Mbps copy, designed cover",
+      "status": "uploaded",
+      "video_id": "jIUZl0r4Gks",
+      "url": "https://www.youtube.com/shorts/jIUZl0r4Gks",
+      "uploaded_at": "2026-11-14T21:30:19+05:30"
     }
   }
 }
