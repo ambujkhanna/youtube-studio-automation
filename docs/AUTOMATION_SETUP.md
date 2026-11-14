@@ -22,7 +22,7 @@ Without YouTube secrets the run still renders + QCs (a "dry run") — download t
 ## Step 1 — Try it without YouTube (5 minutes)
 
 1. GitHub → your repo → **Actions** tab → enable workflows if asked.
-2. Click **Daily AInation Short** → **Run workflow** → tick **dry_run** → **Run**.
+2. Click **Daily AInation Short** → **Run workflow** → set **action** to *Dry run* → **Run**.
 3. After ~10–15 minutes open the run → **Artifacts** → download the MP4 and watch it.
 
 ## Step 2 — Give the workflow permission to upload (one time, ~20 minutes, no Python needed)
@@ -49,7 +49,7 @@ Without YouTube secrets the run still renders + QCs (a "dry run") — download t
 
 ## Step 3 — First real run
 
-Actions → Daily AInation Short → Run workflow (dry_run **unticked**). The run log ends with the video URL.
+Actions → Daily AInation Short → Run workflow (action: *Next video*). The run log ends with the video URL.
 Check it in YouTube Studio, set the audience/AI-disclosure options if prompted, and publish.
 
 ## Important: the YouTube API audit
@@ -73,7 +73,7 @@ Keep at least a week of `"status": "ready"` episodes in the backlog; the run rep
 
 - **Workflow:** `.github/workflows/weekly-long.yml` runs **once a week**. It takes the next ready script in `long/` (L01, L02, …) and renders a **1920×1080** video. The board or stage is on the left, the characters are on the right, and captions sit under the board.
 - **Upload:** it uploads the video like a Short (Private until the API audit, then scheduled in the PUBLISH_WINDOW). YouTube **chapters** are added to the description automatically from the script's `"chapter"` markers, and `#Shorts` is removed. A **16:9 thumbnail** is designed and uploaded.
-- **Run time:** a long render takes about 40–60 minutes. One per week per channel fits GitHub's free minutes. To test it, go to Actions → the weekly workflow → Run workflow and tick **dry_run**. The MP4 and thumbnail appear in the run's Artifacts.
+- **Run time:** a long render takes about 40–60 minutes. One per week per channel fits GitHub's free minutes. To test it, go to Actions → the weekly workflow → Run workflow and set **action** to *Dry run*. The MP4 and thumbnail appear in the run's Artifacts.
 - **Scripts:** 8 are ready in `long/`. The format is in `long/README.md`. Check scripts with:
   ```bash
   python pipeline/validate_episode.py long/*/episode.json
@@ -107,7 +107,7 @@ After each YouTube upload, the same video is also posted as a **Reel** to the ch
 - **Caption:** the title, the first paragraph of the description, the brand line and the hashtags.
 - **Results:** shown in the run summary (Facebook / Instagram: posted or failed). A failure never blocks the YouTube upload.
 
-**Test, or post an older episode:** Actions → daily workflow → Run workflow → tick **social_only** and enter the **episode** id (e.g. `ep002`). It renders that episode and posts it to Facebook and Instagram only.
+**Test, or post an older episode:** Actions → daily workflow → Run workflow → set **post_to** to *Facebook + Instagram only* and enter the **episode** id (e.g. `ep002`). It renders that episode and posts it to Facebook and Instagram only.
 
 ## Voices: Chatterbox (added 2026-11-08)
 
@@ -123,7 +123,7 @@ After each YouTube upload, the same video is also posted as a **Reel** to the ch
 
 ## Videos from your own script (added 2026-11-08)
 
-Write a script in `scripts/` (a plain text file), then Run workflow → **script**: `scripts/<file>.txt`. Tick **dry_run** the first time to watch the MP4 from Artifacts.
+Write a script in `scripts/` (a plain text file), then Run workflow → **script**: `scripts/<file>.txt`. Set **action** to *Dry run* the first time to watch the MP4 from Artifacts.
 - **Format and limits:** see `scripts/README.md`: header (`TITLE:` and optional `COVER:`, `HASHTAGS:`, `TITLE_BOARD:`), `---`, then `NAME: text | emoji Board text` lines. Use 9–16 lines and about 110–180 words.
 - **Problems** stop the run before rendering and are listed in the run summary.
 - **One file = one video.** A file that was already uploaded is never uploaded again; save the script under a new name instead.

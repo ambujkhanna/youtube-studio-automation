@@ -78,10 +78,10 @@ Other tags like `[giggle]` are **not** supported, and the check will tell you.
 | Field | Value |
 |---|---|
 | script | `scripts/your-file.txt` |
-| dry_run | ✅ **for the first try**: you get the MP4 in the run's **Artifacts** to watch |
-| publish_now | optional: publish right away instead of the next 17:00–20:00 IST slot |
+| action: *Dry run* | ✅ **for the first try**: you get the MP4 in the run's **Artifacts** to watch |
+| action: *Next video, publish now* | optional: publish right away instead of the next 17:00–20:00 IST slot |
 
-Then run again **without** dry_run to upload it to YouTube and post it to Facebook and Instagram. The summary shows the links.
+Then run again with action *Next video (scheduled)* to upload it to YouTube and post it to Facebook and Instagram. The summary shows the links.
 
 ## 6. Checklist before you run
 - [ ] `TITLE:` present, ≤ 70 characters
