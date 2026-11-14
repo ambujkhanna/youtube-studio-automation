@@ -174,7 +174,22 @@
       "video_id": "9RvrBXtBo7k",
       "url": "https://www.youtube.com/shorts/9RvrBXtBo7k",
       "uploaded_at": "2026-11-11T22:52:44+05:30",
-      "facebook_cover": "cover set"
+      "facebook_cover": "cover set",
+      "thumbnail_checked": "2026-11-14T10:24+05:30 set"
+    },
+    "ep014": {
+      "voices": "chatterbox",
+      "title": "AI and Homework: Help or Cheating?",
+      "rendered_at": "2026-11-14T10:15:56+05:30",
+      "duration_s": 64.66,
+      "publish_at_ist": "2026-11-14T10:15+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "facebook": "posted (reel 1434998285471280), cover set",
+      "instagram": "failed: 1) direct: [size-budget] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [3 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [2 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"R | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+      "status": "uploaded",
+      "video_id": "LsI3PkS5md8",
+      "url": "https://www.youtube.com/shorts/LsI3PkS5md8",
+      "uploaded_at": "2026-11-14T10:24:16+05:30"
     }
   }
 }
