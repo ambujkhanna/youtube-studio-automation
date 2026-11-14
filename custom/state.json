@@ -23,6 +23,14 @@
       "uploaded_at": "2026-11-11T18:10:03+05:30",
       "facebook_cover": "cover set",
       "thumbnail_checked": "2026-11-14T10:25+05:30 set"
+    },
+    "s-childrens-day-2026": {
+      "voices": "chatterbox",
+      "title": "Happy Children's Day: Imagine a Brighter Future! \ud83c\udf88",
+      "rendered_at": "2026-11-14T11:07:27+05:30",
+      "duration_s": 65.96,
+      "status": "rendered",
+      "note": "dry run"
     }
   }
 }
