@@ -22,7 +22,12 @@ def _service():
                         client_id=os.environ["YT_CLIENT_ID"], client_secret=os.environ["YT_CLIENT_SECRET"], scopes=SCOPES)
     try:  # a time limit on every YouTube call, so a stalled connection fails (and is reported) instead of hanging the run
         import httplib2, google_auth_httplib2
-        http = google_auth_httplib2.AuthorizedHttp(creds, http=httplib2.Http(timeout=int(os.environ.get("YT_TIMEOUT", "300"))))
+        base_http = httplib2.Http(timeout=int(os.environ.get("YT_TIMEOUT", "300")))
+        # Google resumable uploads use HTTP 308 as "Resume Incomplete", not a redirect.
+        # googleapiclient's default transport excludes 308 from redirect handling; because
+        # this project supplies a custom AuthorizedHttp, apply the same setting explicitly.
+        base_http.redirect_codes = base_http.redirect_codes - {308}
+        http = google_auth_httplib2.AuthorizedHttp(creds, http=base_http)
         return build("youtube", "v3", http=http, cache_discovery=False)
     except ImportError:
         return build("youtube", "v3", credentials=creds, cache_discovery=False)
@@ -49,7 +54,8 @@ def upload(path, ep, publish_at_utc_iso):
                                      media_body=MediaFileUpload(path, mimetype="video/mp4", chunksize=8 * 1024 * 1024, resumable=True))
             resp = None
             while resp is None:
-                _, resp = req.next_chunk()
+                # next_chunk handles the protocol's 308 Resume Incomplete response.
+                _, resp = req.next_chunk(num_retries=5)
             return resp["id"]
         except HttpError as e:
             # older API surfaces may reject the synthetic-media flag: retry once without it
