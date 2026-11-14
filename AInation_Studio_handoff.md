@@ -15,6 +15,7 @@
 - **One handoff file per channel** (this file and its sibling). Every change gets a **timestamp (IST, with UTC)** in the change log, and older entries are never deleted.
 - **Graphics direction:** doodle line-art characters; bright, shaded, vibrant colours; phone-readable big text; real illustrations instead of metaphor emoji; animated diagrams for processes. Agree visuals with stills before rendering videos.
 - **Facts:** correct and general; say "scientists think" where science isn't settled; no invented numbers; kids content kept safe.
+- **Push command:** always give ONE copy-paste line, e.g. `git add -A && git commit -m "…" && git push origin main` (owner, 2026-11-14).
 
 ## How it runs
 - **Daily Short** (`.github/workflows/daily-short.yml`, 09:15 UTC = 14:45 IST): the next ready `episodes/epNNN-*/episode.json` goes through voices (Kokoro: DAD am_michael, TEEN af_heart), frames (skia: living room `BG=v2`, big whiteboard 40/150/1000/700, doodle characters, shading, colour grade), captions, a per-episode original music track, QC (1080×1920, 45–180 s), and upload in the PUBLISH_WINDOW (default 17:00–20:00 IST). Then the 3D-style thumbnail is set (the channel is verified), `episodes/state.json` is updated, and the MP4 is kept as an artifact.
