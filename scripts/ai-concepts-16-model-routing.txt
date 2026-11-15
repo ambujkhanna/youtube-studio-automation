@@ -1,0 +1,15 @@
+TITLE: Model Routing: Choosing the Right AI Model 🛣️
+COVER: MODEL ROUTING
+HASHTAGS: #AI #ModelRouting #LLM #LearnAI
+DESCRIPTION: Discover how applications choose different AI models based on task needs, quality, speed and cost.
+TAGS: model routing, AI models, LLM routing, AI optimisation
+TITLE_BOARD: 🧭 Task -> 🤖 Right Model
+---
+DAD: Does every AI task need the biggest and most expensive model?
+TEEN: No! Model routing sends a request to a model that fits the task. | 🧭 Model routing ; choose a model
+DAD: How does it decide?
+TEEN: The application can consider complexity, expected quality, response speed and cost.
+DAD: Give me an example.
+TEEN: A simple rewrite might use a fast model, while a complex analysis could need a more capable one.
+DAD: So one app can use several models?
+TEEN: Yes, when designed that way. Subscribe to AI Nation Studio, and share this with a friend!
