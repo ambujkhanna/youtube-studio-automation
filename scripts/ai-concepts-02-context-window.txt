@@ -1,0 +1,15 @@
+TITLE: Context Window: AI's Working Space 🪟
+COVER: CONTEXT WINDOW
+HASHTAGS: #AI #ContextWindow #LLM #LearnAI
+DESCRIPTION: Understand the context window and how much information an AI model can process at once.
+TAGS: context window, AI memory, LLM context, ChatGPT basics
+TITLE_BOARD: 📚 Information -> 🪟 Context
+---
+DAD: Can an AI read an unlimited amount of information at once?
+TEEN: No! Language models have a limit called a context window. Think of it like a desk: only a certain amount of paperwork fits at one time. | 🪟 Context ; working space
+DAD: What goes on that desk?
+TEEN: Your latest message, relevant conversation history, instructions and sometimes retrieved documents.
+DAD: What if the conversation gets too long?
+TEEN: Older details may be left out or summarized, depending on the application.
+DAD: So a bigger context window fits more information?
+TEEN: Yes, but more space doesn't guarantee perfect understanding. Subscribe to AI Nation Studio, and share this with a friend!
