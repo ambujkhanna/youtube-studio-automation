@@ -1,0 +1,15 @@
+TITLE: AI Latency: Why Does It Take So Long? ⏱️
+COVER: AI LATENCY
+HASHTAGS: #AI #Latency #Performance #LearnAI
+DESCRIPTION: Understand response time and the factors that affect how quickly an AI system answers.
+TAGS: AI latency, response time, inference performance, LLM speed
+TITLE_BOARD: 📩 Request -> ⏱️ Response
+---
+DAD: Why does AI sometimes answer instantly and sometimes make me wait?
+TEEN: That's related to latency: the time a system takes to respond to a request. | ⏱️ Latency ; response time
+DAD: What affects it?
+TEEN: Network speed, server load, model size, prompt length and how much text is generated can all matter.
+DAD: Can developers make it faster?
+TEEN: They can optimise infrastructure, models, caching and request handling.
+DAD: So speed is part of a good AI experience?
+TEEN: Absolutely! Subscribe to AI Nation Studio, and share this with a friend!
