@@ -1,0 +1,15 @@
+TITLE: AI Agents: From Chatting to Completing Tasks 🚀
+COVER: AI AGENTS
+HASHTAGS: #AI #AIAgents #AgenticAI #LearnAI
+DESCRIPTION: Learn how AI agents use models, tools and multi-step workflows to work towards a goal.
+TAGS: AI agents, agentic AI, AI automation, autonomous agents
+TITLE_BOARD: 🎯 Goal -> 🤖 Agent -> ✅ Steps
+---
+DAD: Can AI do more than answer a question? Can it work towards a goal?
+TEEN: That's what AI agents are designed to do. They can plan steps, use tools and respond to results as they work towards an objective. | 🤖 AI agent ; goal-directed workflow
+DAD: Give me an example.
+TEEN: A travel-planning agent might research destinations, compare hotels and prepare an itinerary.
+DAD: So it can handle several connected steps?
+TEEN: Yes, depending on its tools and permissions. Some systems can even coordinate multiple agents.
+DAD: Should we let it do everything without checking?
+TEEN: No! Important actions need safeguards and human approval. Subscribe to AI Nation Studio, and share this with a friend!
