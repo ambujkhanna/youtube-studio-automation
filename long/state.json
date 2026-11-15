@@ -24,7 +24,21 @@
       "status": "uploaded",
       "video_id": "VZNj3VlKsec",
       "url": "https://www.youtube.com/watch?v=VZNj3VlKsec",
-      "uploaded_at": "2026-11-14T11:14:38+05:30"
+      "uploaded_at": "2026-11-14T11:14:38+05:30",
+      "thumbnail_checked": "2026-11-15T18:26+05:30 set"
+    },
+    "L03": {
+      "voices": "chatterbox",
+      "title": "How to Spot a Deepfake: Clues, Source Checks & Fake Voice Calls",
+      "rendered_at": "2026-11-15T18:23:27+05:30",
+      "duration_s": 233.28,
+      "publish_at_ist": "2026-11-15T19:35+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "facebook": "posted (video 30246899478233242), cover set",
+      "status": "uploaded",
+      "video_id": "97JuMO_xNnw",
+      "url": "https://www.youtube.com/watch?v=97JuMO_xNnw",
+      "uploaded_at": "2026-11-15T18:25:22+05:30"
     }
   }
 }
