@@ -505,3 +505,10 @@ The user said: “Leave it. You are not capable to Make videos”.
 - Acknowledged that the procedural 2D samples did not meet the professional animation quality the user wanted, and that presenting them as meaningful progress toward the target was misleading.
 - Do not initiate further video experiments, recommend more setup, ask the user to install tools, or suggest spending credits unless the user explicitly reopens the video work.
 - No further video was generated in this turn. No credits were spent.
+
+
+## AI concepts script batch — 2026-11-15T18:54:12.898Z
+- [x] Added 20 individual AInation Studio custom-script files under `scripts/ai-concepts-*` covering the 20 concepts from the user's Instagram reference image.
+- [x] Each file uses the documented custom-script header and DAD/TEEN dialogue format, with title, cover, hashtags, description, tags, title board and picture cues.
+- [ ] Dry-run each script through the Daily AInation Short workflow and review the rendered videos before publishing.
+- Note: Topics 18 and 20 were partly obscured in the screenshot and were interpreted as Evaluation and AI Agents respectively.
