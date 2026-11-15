@@ -1,0 +1,15 @@
+TITLE: Tokens: How AI Reads Text 🧩
+COVER: AI TOKENS
+HASHTAGS: #AI #Tokens #ChatGPT #LearnAI
+DESCRIPTION: Learn how language models split text into tokens and why token counts matter.
+TAGS: AI tokens, tokenization, LLM basics, ChatGPT explained
+TITLE_BOARD: 📝 Text -> 🧩 Tokens
+---
+DAD: Does ChatGPT read every word exactly the way we do?
+TEEN: Not quite! Before a language model processes text, it breaks it into smaller pieces called tokens. | 🧩 Tokens ; pieces of text
+DAD: Are tokens always complete words?
+TEEN: No. A token can be a whole word, part of a word, punctuation, or another text unit.
+DAD: So one sentence can become lots of tokens?
+TEEN: Exactly! The model processes those tokens as numerical IDs. Token counts affect how much text fits in a request and can affect usage costs.
+DAD: So word count and token count aren't the same?
+TEEN: Right! That's why tokens matter. Subscribe to AI Nation Studio, and share this with a friend!
