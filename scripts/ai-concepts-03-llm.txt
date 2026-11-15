@@ -1,0 +1,15 @@
+TITLE: LLM Explained: What Is a Language Model? 🤖
+COVER: WHAT IS LLM
+HASHTAGS: #AI #LLM #ChatGPT #LearnAI
+DESCRIPTION: A simple explanation of Large Language Models and how AI assistants generate text.
+TAGS: LLM explained, large language model, GPT, Claude, AI basics
+TITLE_BOARD: 📚 Language -> 🤖 LLM
+---
+DAD: What does LLM mean? I hear it everywhere!
+TEEN: It means Large Language Model. It's an AI model trained on lots of language examples to learn patterns and generate text. | 🤖 LLM ; language model
+DAD: Is that how ChatGPT answers questions?
+TEEN: Yes. Models can help write, explain, summarize, translate and generate code.
+DAD: Does it think exactly like a human?
+TEEN: No. It predicts and generates likely text based on patterns it learned. Human-like answers don't mean human-like understanding.
+DAD: So it's powerful, but not a person?
+TEEN: Exactly! Subscribe to AI Nation Studio, and share this with a friend!
