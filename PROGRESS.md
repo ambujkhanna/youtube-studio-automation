@@ -39,6 +39,13 @@ The user approved the broad strategy and created the private GitHub repository. 
 5. Implement and test the first Windows-compatible renderer and QC checks.
 6. Select the first pilot Short and run it end-to-end before enabling unattended daily publishing at 7:00 PM IST.
 
+
+## AI concepts script batch — 2026-11-15T18:54:12.898Z
+- [x] Added 20 individual AInation Studio custom-script files under `scripts/ai-concepts-*` covering the 20 concepts from the user's Instagram reference image.
+- [x] Each file uses the documented custom-script header and DAD/TEEN dialogue format, with title, cover, hashtags, description, tags, title board and picture cues.
+- [ ] Dry-run each script through the Daily AInation Short workflow and review the rendered videos before publishing.
+- Note: Topics 18 and 20 were partly obscured in the screenshot and were interpreted as Evaluation and AI Agents respectively.
+
 ## Update protocol
 At the end of every meaningful work session:
 - Append a timestamped entry to CONVERSATION.md with new requirements, decisions, outcomes, and rationale.
