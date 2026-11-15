@@ -1,0 +1,15 @@
+TITLE: RAG Explained: AI Answers From Your Documents 📚
+COVER: WHAT IS RAG
+HASHTAGS: #AI #RAG #GenerativeAI #LearnAI
+DESCRIPTION: See how Retrieval-Augmented Generation uses external information to support AI answers.
+TAGS: RAG, retrieval augmented generation, AI knowledge base, enterprise AI
+TITLE_BOARD: 📚 Retrieve -> 🤖 Generate
+---
+DAD: Can an AI answer questions using my company's documents?
+TEEN: Yes! One approach is RAG, short for Retrieval-Augmented Generation. It searches for relevant information and gives it to the language model as context. | 📚 Retrieve ; find useful information
+DAD: So it doesn't rely only on training data?
+TEEN: Correct. It can use current or private information from connected sources, if access is configured.
+DAD: Does that guarantee the answer is correct?
+TEEN: No. The documents may be incomplete, and the model can still make mistakes.
+DAD: So we should verify important answers?
+TEEN: Always! Subscribe to AI Nation Studio, and share this with a friend!
