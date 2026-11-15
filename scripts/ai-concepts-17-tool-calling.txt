@@ -1,0 +1,15 @@
+TITLE: AI Tool Calling: Let Models Use Tools 🔧
+COVER: TOOL CALLING
+HASHTAGS: #AI #ToolCalling #AIAgents #LearnAI
+DESCRIPTION: Learn how an AI model can request external functions and services to complete tasks.
+TAGS: tool calling, function calling, AI automation, LLM tools
+TITLE_BOARD: 🤖 AI -> 🔧 Tool -> 📋 Result
+---
+DAD: Can AI do more than write answers, like check weather or calculate a bill?
+TEEN: Yes! With tool calling, a model can request an application to run a function or use an external service. | 🔧 Tool calling ; use external functions
+DAD: Does the model run the tool itself?
+TEEN: Usually the application executes the requested tool, then sends the result back to the model.
+DAD: Could it send an email?
+TEEN: If an authorised email tool is available, yes. Important actions should use permissions and confirmation.
+DAD: So tools connect AI to real actions!
+TEEN: Exactly! Subscribe to AI Nation Studio, and share this with a friend!
