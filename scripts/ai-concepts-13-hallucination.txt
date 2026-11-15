@@ -1,0 +1,15 @@
+TITLE: AI Hallucinations: When AI Makes Things Up ⚠️
+COVER: AI HALLUCINATIONS
+HASHTAGS: #AI #Hallucination #ResponsibleAI #LearnAI
+DESCRIPTION: Find out why AI can produce confident-sounding but incorrect information.
+TAGS: AI hallucination, ChatGPT mistakes, AI accuracy, responsible AI
+TITLE_BOARD: 🤖 Confident -> ⚠️ Incorrect
+---
+DAD: Why does AI sometimes give a confident answer that's completely wrong?
+TEEN: That can be an AI hallucination: information that sounds convincing but is incorrect or made up. | ⚠️ Hallucination ; plausible but wrong
+DAD: Why does that happen?
+TEEN: A language model generates likely text. That doesn't guarantee every statement is factually correct.
+DAD: Should we stop using AI?
+TEEN: No! Use it thoughtfully. Check important facts, ask for sources and verify those sources independently.
+DAD: So confidence isn't the same as correctness?
+TEEN: Exactly! Subscribe to AI Nation Studio, and share this with a friend!
