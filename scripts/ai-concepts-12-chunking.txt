@@ -1,0 +1,15 @@
+TITLE: Chunking: Why AI Splits Big Documents ✂️
+COVER: CHUNKING
+HASHTAGS: #AI #Chunking #RAG #LearnAI
+DESCRIPTION: Learn why large documents are split into smaller sections for AI search and retrieval.
+TAGS: chunking, document splitting, RAG, text processing
+TITLE_BOARD: 📄 Document -> ✂️ Chunks
+---
+DAD: Why would an AI system split my big PDF into smaller pieces?
+TEEN: That's called chunking. A document is divided into smaller sections so each part can be processed and searched. | ✂️ Chunking ; smaller sections
+DAD: Why not keep the whole document together?
+TEEN: Smaller chunks can make retrieval more focused and help fit information into a model's context window.
+DAD: Can chunks be too small?
+TEEN: Yes. They might lose useful context. Very large chunks can make search less precise.
+DAD: So choosing the right size matters?
+TEEN: Exactly! Subscribe to AI Nation Studio, and share this with a friend!
