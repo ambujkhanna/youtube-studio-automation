@@ -220,7 +220,7 @@
       "video_id": "jIUZl0r4Gks",
       "url": "https://www.youtube.com/shorts/jIUZl0r4Gks",
       "uploaded_at": "2026-11-14T21:30:19+05:30",
-      "thumbnail_checked": "2026-11-15T22:10+05:30 set"
+      "thumbnail_checked": "2026-11-17T01:19+05:30 set"
     },
     "ep017": {
       "voices": "chatterbox",
@@ -234,7 +234,22 @@
       "status": "uploaded",
       "video_id": "IEvSYutwVY8",
       "url": "https://www.youtube.com/shorts/IEvSYutwVY8",
-      "uploaded_at": "2026-11-15T22:10:05+05:30"
+      "uploaded_at": "2026-11-15T22:10:05+05:30",
+      "thumbnail_checked": "2026-11-17T01:19+05:30 set"
+    },
+    "ep018": {
+      "voices": "chatterbox",
+      "title": "What Is Generative AI?",
+      "rendered_at": "2026-11-17T01:12:39+05:30",
+      "duration_s": 62.16,
+      "publish_at_ist": "2026-11-17T17:30+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "facebook": "posted (reel 1512552457596453), cover set",
+      "instagram": "failed: 1) direct: [3 Mbps] HTTP 400: Unsupported post request. Object with ID '17841470566153163' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://d [2.4 Mbps] HTTP 400: Unsupported post request. Object with ID '1784147 | 2) hidden copy: HTTP 400: Unsupported post request. Object with ID '17841470566153163' does not exist, cannot be loaded due to missing permissions, or does  | 3) FB reel copy: HTTP 400: Unsupported post request. Object with ID '17841470566153163' does not exist, cannot be loade",
+      "status": "uploaded",
+      "video_id": "HB9h_78vRPg",
+      "url": "https://www.youtube.com/shorts/HB9h_78vRPg",
+      "uploaded_at": "2026-11-17T01:18:43+05:30"
     }
   }
 }
