@@ -281,3 +281,16 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 - [x] 30 episode files added under `episodes/` (60–70 s each), validated; list in `episodes/BATCH_EP009-EP038.md`.
 - Backlog now covers EP002–EP038 = 37 daily Shorts (~5 weeks).
 - Next top-up due when ~7 ready episodes remain.
+
+
+## 2026-11-18T22:04:00+05:30 — Analytics-led growth loop status
+
+- [x] Read-only YouTube Analytics collection verified; latest run #19 completed successfully (GitHub Actions run 44341681018).
+- [x] Latest artifact generated (artifact 14443188651); includes CSV, Markdown, SQLite and generated growth brief files.
+- [x] Channel-specific growth brief generator and unit tests committed on `feat/youtube-growth-engine`.
+- [x] Daily Short workflow updated to retrieve the latest successful analytics artifact and surface the brief in the run summary; advisory only.
+- [x] Pull request opened: https://github.com/ambujkhanna/youtube-studio-automation/pull/1
+- [ ] Merge blocked: GitHub currently reports PR mergeability as `dirty`; branch is 10 commits ahead and 56 behind `main`. Do not force-merge or overwrite newer main changes.
+- [ ] Rebase/sync feature work with current main, resolve conflicts, rerun tests and daily-workflow dry run, then merge only after clean validation.
+- Data-quality issue: latest report metadata coverage was 52.6%; repair unknown video/episode mappings before topic-level conclusions.
+- Guardrails: no upload credentials, episode queue, publishing settings, schedule, or upload behavior changed. Growth brief does not auto-edit scripts or publish.
