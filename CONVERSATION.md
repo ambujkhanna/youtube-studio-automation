@@ -507,6 +507,46 @@ The user said: “Leave it. You are not capable to Make videos”.
 - No further video was generated in this turn. No credits were spent.
 
 
+---
+
+## 2026-11-10T09:00:00+05:30 — YouTube growth engineering branch
+
+The user authorized implementation and GitHub push in new branches for both channel repositories. The existing main branches remain untouched.
+
+### AInation Studio changes on feat/youtube-growth-engine
+- Added pipeline/analytics.py, a read-only YouTube Analytics API collector.
+- Added tests/test_analytics.py and wired unit tests into the analytics workflow.
+- Added docs/ANALYTICS.md with OAuth setup, local execution, outputs, retention limits and interpretation notes.
+- Added .github/workflows/youtube-analytics.yml for manual date-range collection and daily scheduled collection.
+- Updated README links/status and refreshed this progress record.
+- The collector stores per-video views, engaged views, watch time, average view duration/percentage, likes, comments, shares and video-page subscriber gains/losses in SQLite, CSV and Markdown outputs.
+- The workflow uses a dedicated YT_ANALYTICS_REFRESH_TOKEN with youtube.readonly; the upload token is not changed.
+- Four unit tests passed in GitHub Actions for both repositories, including SQLite persistence and report export. The live API call was skipped because YT_ANALYTICS_REFRESH_TOKEN is not configured; a read-only token and API enablement are still required.
+- Actions cache is best-effort persistence; artifacts are retained for 90 days. A durable private data store remains an open decision.
+
+### CurioKids changes
+The same analytics collector, tests, documentation and workflow were added to ambujkhanna/The-CurioKids-Club on its feat/youtube-growth-engine branch. README wording was corrected to describe the actual audience-setting variable and current English/Hindi publish windows. No audience/compliance setting was changed.
+
+### Guardrails
+No upload token, publishing workflow, publishing schedule, synthetic-media flag, Made-for-Kids declaration, episode state or existing production code was changed. Both feature branches were pushed; neither was merged into main.
+
+
+## 2026-11-18T22:04:00+05:30 — Analytics-led growth implementation status
+
+User authorized implementation, validation and merge after satisfaction. The feature branch contains the analytics collector, channel-specific growth brief generator, tests, workflow integration and documentation. Latest analytics workflow run #19 succeeded and generated artifact 14443188651, containing CSV, Markdown, SQLite and growth brief outputs.
+
+The daily Short workflow retrieves the latest successful analytics artifact and adds the advisory growth brief to the GitHub Actions run summary. It does not modify queued episode JSON, rendering/upload behavior, publishing schedule or compliance settings.
+
+PR #1: https://github.com/ambujkhanna/youtube-studio-automation/pull/1. As of 2026-11-18T22:04:00+05:30, GitHub reports the PR as non-mergeable (`dirty`); feature branch is 10 commits ahead and 56 behind main. Merge intentionally deferred to avoid overwriting production changes. Next: synchronize with main, resolve conflicts, run unit tests and daily workflow dry run, inspect results, then merge.
+
+Latest report metadata coverage: 52.6%. Unknown video/episode mappings need repair before drawing strong topic-level conclusions.
+
+
+## 2026-11-18T22:12:00+05:30 — PR merge-readiness and documentation policy
+
+User confirmed the Markdown progress/conversation files are to be maintained by the assistant throughout this project; do not ask the user to create or update them. Verified that `PROGRESS.md`, `CONVERSATION.md`, and `docs/GROWTH_ENGINE.md` are pushed on `feat/youtube-growth-engine`.
+
+Current PR #1 remains open and is not merge-ready: GitHub reports `mergeable=false` / `dirty`; branch is 13 commits ahead and 56 behind main. Latest analytics run #22 failed during Google OAuth refresh with `invalid_grant: Token has been expired or revoked`. The workflow's artifact upload step still ran, but it must not be treated as a fresh valid metrics report. Required: rotate only the AInation `YT_ANALYTICS_REFRESH_TOKEN` secret, then sync/rebase with main, resolve conflicts and rerun tests plus daily-workflow validation before merge. Upload token and publishing behavior must remain untouched.
 ## AI concepts script batch — 2026-11-15T18:54:12.898Z
 - [x] Added 20 individual AInation Studio custom-script files under `scripts/ai-concepts-*` covering the 20 concepts from the user's Instagram reference image.
 - [x] Each file uses the documented custom-script header and DAD/TEEN dialogue format, with title, cover, hashtags, description, tags, title board and picture cues.

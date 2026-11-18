@@ -1,11 +1,15 @@
 # Project Progress
 
-**Last updated:** 2026-11-01T14:13:11+05:30 (2026-11-01T08:43:11Z)
-**Current phase:** Phase 3/4 — local production engine and pilot Short (see latest dated section)
-**Overall status:** Foundation documentation and Channel 1 configuration created; production engine not yet implemented.
+**Last updated:** 2026-11-10T09:20:00+05:30
+**Current phase:** Existing production pipelines operational; analytics foundation on feature branch, pending OAuth authorization and CI verification.
+**Overall status:** AInation Studio has daily Shorts and weekly long-form automation. A read-only YouTube Analytics collector, report workflow, tests and setup guide have been added to `feat/youtube-growth-engine`; no analytics token has been configured and no live collection has yet been verified.
 
-## Current snapshot
-The user approved the broad strategy and created the private GitHub repository. README.md and the four requested core documents have been committed to main and read back successfully. No production pipeline or Short has been implemented yet.
+## Current snapshot (verified 2026-11-10)
+- `pipeline/daily.py`, upload/render/QC modules, episode state, and daily/weekly GitHub Actions workflows are present on `main`.
+- `pipeline/analytics.py`, `tests/test_analytics.py`, `docs/ANALYTICS.md`, and `.github/workflows/youtube-analytics.yml` are present on `feat/youtube-growth-engine`.
+- The analytics workflow is read-only and does not change publishing, upload credentials, or episode state.
+- GitHub Actions scheduled workflows only execute from the default branch; the analytics schedule will become active after the feature branch is merged. A manual workflow run can be selected from the branch once GitHub exposes the workflow there.
+- Four analytics unit tests passed in GitHub Actions for both repositories on 2026-11-10, including SQLite persistence and CSV/Markdown export coverage. The live API call was intentionally skipped because `YT_ANALYTICS_REFRESH_TOKEN` is not configured. The first live report remains blocked until that secret is configured with `https://www.googleapis.com/auth/youtube.readonly` and YouTube Analytics API is enabled.
 
 ## Completed
 - [x] Agreed on three channel themes and sequential launch.
@@ -25,19 +29,18 @@ The user approved the broad strategy and created the private GitHub repository. 
 - [x] Select Windows as the development platform.
 - [ ] Confirm Windows version and hardware specifications.
 
-## Blockers and open decisions
-- Windows is selected; exact Windows version, CPU, RAM, GPU, and available disk space remain to be confirmed.
-- Local TTS and visual-generation approach remain to be evaluated for quality, license, and zero recurring cost.
-- Candidate skill repositories have not yet been installed, adapted, or tested here.
-- YouTube API/OAuth integration is not selected or implemented.
+## Current blockers and open decisions
+- Create a separate read-only OAuth refresh token for AInation Studio using `https://www.googleapis.com/auth/youtube.readonly`; do not replace the upload token.
+- Confirm the YouTube Analytics API is enabled in the Google Cloud project.
+- Decide whether the SQLite database should remain an Actions cache/artifact or move to a durable private store. The cache is best-effort; each run's artifact is retained for 90 days.
+- The new workflow and unit tests have run successfully on the feature branch. The daily schedule will only activate after the feature branch is merged into the default branch.
 
-## Next actions
-1. Verify the connected Metricool YouTube destination is the intended AImation Studio channel.
-2. Confirm Windows version, CPU, RAM, GPU, and available disk space.
-3. Review the three candidate skill repositories, including licenses, dependencies, external services, and runtime requirements.
-4. Finalize AImation Studio's audience promise, voice, visual identity, and repeatable content formats for the confirmed broad AI/technology positioning.
-5. Implement and test the first Windows-compatible renderer and QC checks.
-6. Select the first pilot Short and run it end-to-end before enabling unattended daily publishing at 7:00 PM IST.
+## Current next actions
+1. Configure `YT_ANALYTICS_REFRESH_TOKEN` in repository Actions secrets using the correct AInation Studio Brand Account.
+2. Review and run the analytics unit tests on the feature branch or after merging.
+3. Run a manual analytics collection for a completed date range and inspect the CSV, Markdown report and SQLite output.
+4. Decide on durable analytics retention before relying on long-term trend comparisons.
+5. Use the first verified report to establish channel baselines before making content/thumbnail experiments.
 
 
 ## AI concepts script batch — 2026-11-15T18:54:12.898Z
@@ -285,3 +288,25 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 - [x] 30 episode files added under `episodes/` (60–70 s each), validated; list in `episodes/BATCH_EP009-EP038.md`.
 - Backlog now covers EP002–EP038 = 37 daily Shorts (~5 weeks).
 - Next top-up due when ~7 ready episodes remain.
+
+
+## 2026-11-18T22:04:00+05:30 — Analytics-led growth loop status
+
+- [x] Read-only YouTube Analytics collection verified; latest run #19 completed successfully (GitHub Actions run 44341681018).
+- [x] Latest artifact generated (artifact 14443188651); includes CSV, Markdown, SQLite and generated growth brief files.
+- [x] Channel-specific growth brief generator and unit tests committed on `feat/youtube-growth-engine`.
+- [x] Daily Short workflow updated to retrieve the latest successful analytics artifact and surface the brief in the run summary; advisory only.
+- [x] Pull request opened: https://github.com/ambujkhanna/youtube-studio-automation/pull/1
+- [ ] Merge blocked: GitHub currently reports PR mergeability as `dirty`; branch is 10 commits ahead and 56 behind `main`. Do not force-merge or overwrite newer main changes.
+- [ ] Rebase/sync feature work with current main, resolve conflicts, rerun tests and daily-workflow dry run, then merge only after clean validation.
+- Data-quality issue: latest report metadata coverage was 52.6%; repair unknown video/episode mappings before topic-level conclusions.
+- Guardrails: no upload credentials, episode queue, publishing settings, schedule, or upload behavior changed. Growth brief does not auto-edit scripts or publish.
+
+
+## 2026-11-18T22:12:00+05:30 — Latest PR readiness check
+
+- [x] Confirmed `PROGRESS.md`, `CONVERSATION.md`, and `docs/GROWTH_ENGINE.md` are pushed to `feat/youtube-growth-engine`.
+- [x] Rechecked PR #1 and branch comparison against `main`.
+- [ ] Not ready to merge: PR is open but GitHub reports `mergeable=false`, `mergeable_state=dirty`; branch diverged (13 commits ahead, 56 behind main).
+- [ ] Latest analytics workflow run #22 failed at token exchange with Google OAuth `invalid_grant: Token has been expired or revoked`. Artifact upload still ran, but it is not a fresh successful analytics collection.
+- Next: user must rotate/reauthorize the AInation analytics refresh token and update only `YT_ANALYTICS_REFRESH_TOKEN` in this repo; do not change upload token. Then sync branch with main, resolve conflicts, run tests and daily-workflow validation, and merge only when clean.

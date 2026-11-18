@@ -1,6 +1,6 @@
 # YouTube Studio Automation
 
-**Last updated:** 2026-10-30T22:37:39+05:30 (2026-10-30T17:07:39Z)
+**Last updated:** 2026-11-10T09:00:00+05:30
 
 A zero-additional-subscription-cost, AI-assisted system for researching, creating, reviewing, publishing, and improving YouTube Shorts across three planned English-language channels.
 
@@ -14,6 +14,12 @@ A zero-additional-subscription-cost, AI-assisted system for researching, creatin
 
 Hashtag: **#AInationstudio**
 
+## Project status
+- Repository: public
+- Current phase: operational content pipeline; read-only analytics foundation added on `feat/youtube-growth-engine` (OAuth setup and first run pending)
+- First channel: AInation Studio (working name; name availability not yet checked)
+- Initial format: YouTube Shorts
+- First pilot requires review; routine publishing is intended to be unattended after validation
 ## Project status (updated 2026-11-10T13:11:14+05:30 (2026-11-10T07:41:14Z))
 - Repository: **public** at the moment (keeps GitHub Actions minutes free); never commit secrets
 - Phase: **in production**. Daily AInation Studio Shorts (publish 17:00–20:00 IST) and a weekly 16:9 long video (Sunday 10:00 IST), rendered and uploaded by GitHub Actions; also posted to the Facebook Page and Instagram
@@ -30,6 +36,7 @@ Hashtag: **#AInationstudio**
 - [Plan](PLAN.md) — phases, architecture, workflows, milestones.
 - [Progress](PROGRESS.md) — status, completed work, blockers, next actions.
 - [Conversation log](CONVERSATION.md) — requirements, decisions, reasoning, and changes.
+- [YouTube Analytics collection](docs/ANALYTICS.md) — read-only metrics, OAuth setup, local database, reports and workflow.
 
 ## Working principles
 1. Automate repeatable work; retain human review for quality, accuracy, rights, and publishing.
