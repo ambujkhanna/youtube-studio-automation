@@ -69,6 +69,8 @@ def check(path):
     if not lo <= len(ep["lines"]) <= hi: errs.append(f"{len(ep['lines'])} lines (aim for {'40-80' if long_ else '11-14'})")
     if long_ and sum(1 for l in ep["lines"] if l.get("chapter")) < 3: errs.append("long video needs at least 3 lines with a \"chapter\" title")
     if not ep["lines"][0].get("board"): errs.append("line 0 must start a board scene")
+    if ep.get("board_style") and ep["board_style"] not in ("hanging", "display", "whiteboard"):
+        errs.append("board_style must be hanging, display or whiteboard (or left out = channel default)")
     for i, l in enumerate(ep["lines"]):
         if l.get("who") not in cast: errs.append(f"line {i}: who '{l.get('who')}' is not in cast {cast}")
         if len(l.get("text", "")) > 230: errs.append(f"line {i}: text too long (> 230 chars)")

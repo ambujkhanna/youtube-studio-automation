@@ -9,9 +9,10 @@ The daily run is fully automatic once these one-time steps are done. Nothing her
 ```text
 GitHub Actions (daily 09:15 UTC = 14:45 IST, or "Run workflow" manually)
   → pick next ready episode in episodes/  (skips ones already uploaded)
-  → voices (Kokoro, free) → frames → MP4 with captions + music
-  → automated QC (1080×1920, 45–180 s, audio level, captions, title/description)
-  → upload to YouTube as PRIVATE, scheduled to publish 19:00 IST
+  → voices (Chatterbox, with Kokoro as automatic backup) → frames → MP4 with captions, opening hook, end card + music
+  → automated QC (1080×1920, 20–180 s, audio level, captions, title/description)
+  → upload to YouTube as PRIVATE, scheduled in a random slot 17:00–20:00 IST (repo variable PUBLISH_WINDOW)
+  → post to the Facebook Page + Instagram as a Reel (designed cover)
   → write result to episodes/state.json + keep the MP4 as a run artifact for 14 days
 ```
 
@@ -21,7 +22,7 @@ Without YouTube secrets the run still renders + QCs (a "dry run") — download t
 ## Step 1 — Try it without YouTube (5 minutes)
 
 1. GitHub → your repo → **Actions** tab → enable workflows if asked.
-2. Click **Daily AInation Short** → **Run workflow** → tick **dry_run** → **Run**.
+2. Click **Daily AInation Short** → **Run workflow** → set **action** to *Dry run* → **Run**.
 3. After ~10–15 minutes open the run → **Artifacts** → download the MP4 and watch it.
 
 ## Step 2 — Give the workflow permission to upload (one time, ~20 minutes, no Python needed)
@@ -48,7 +49,7 @@ Without YouTube secrets the run still renders + QCs (a "dry run") — download t
 
 ## Step 3 — First real run
 
-Actions → Daily AInation Short → Run workflow (dry_run **unticked**). The run log ends with the video URL.
+Actions → Daily AInation Short → Run workflow (action: *Next video*). The run log ends with the video URL.
 Check it in YouTube Studio, set the audience/AI-disclosure options if prompted, and publish.
 
 ## Important: the YouTube API audit
@@ -57,7 +58,7 @@ YouTube locks videos uploaded through a **new, unaudited** API project to **Priv
 Until the audit is approved, each day's video arrives as a private upload and you click **Public** in YouTube Studio
 (about 10 seconds a day). To remove that step, apply for the audit:
 https://support.google.com/youtube/contact/yt_api_form (YouTube API Services — Audit and Quota Extension).
-Once approved, uploads publish automatically at 19:00 IST with no manual step.
+Once approved, uploads publish automatically at their scheduled 17:00–20:00 IST slot with no manual step.
 
 Quota: the default 10,000 units/day is plenty (one upload ≈ 1,600 units).
 GitHub Actions: a daily run takes roughly 10–15 minutes; the free tier for private repos (2,000 min/month) covers it.
@@ -72,7 +73,7 @@ Keep at least a week of `"status": "ready"` episodes in the backlog; the run rep
 
 - **Workflow:** `.github/workflows/weekly-long.yml` runs **once a week**. It takes the next ready script in `long/` (L01, L02, …) and renders a **1920×1080** video. The board or stage is on the left, the characters are on the right, and captions sit under the board.
 - **Upload:** it uploads the video like a Short (Private until the API audit, then scheduled in the PUBLISH_WINDOW). YouTube **chapters** are added to the description automatically from the script's `"chapter"` markers, and `#Shorts` is removed. A **16:9 thumbnail** is designed and uploaded.
-- **Run time:** a long render takes about 40–60 minutes. One per week per channel fits GitHub's free minutes. To test it, go to Actions → the weekly workflow → Run workflow and tick **dry_run**. The MP4 and thumbnail appear in the run's Artifacts.
+- **Run time:** a long render takes about 40–60 minutes. One per week per channel fits GitHub's free minutes. To test it, go to Actions → the weekly workflow → Run workflow and set **action** to *Dry run*. The MP4 and thumbnail appear in the run's Artifacts.
 - **Scripts:** 8 are ready in `long/`. The format is in `long/README.md`. Check scripts with:
   ```bash
   python pipeline/validate_episode.py long/*/episode.json
@@ -106,7 +107,7 @@ After each YouTube upload, the same video is also posted as a **Reel** to the ch
 - **Caption:** the title, the first paragraph of the description, the brand line and the hashtags.
 - **Results:** shown in the run summary (Facebook / Instagram: posted or failed). A failure never blocks the YouTube upload.
 
-**Test, or post an older episode:** Actions → daily workflow → Run workflow → tick **social_only** and enter the **episode** id (e.g. `ep002`). It renders that episode and posts it to Facebook and Instagram only.
+**Test, or post an older episode:** Actions → daily workflow → Run workflow → set **post_to** to *Facebook + Instagram only* and enter the **episode** id (e.g. `ep002`). It renders that episode and posts it to Facebook and Instagram only.
 
 ## Voices: Chatterbox (added 2026-11-08)
 
@@ -122,7 +123,26 @@ After each YouTube upload, the same video is also posted as a **Reel** to the ch
 
 ## Videos from your own script (added 2026-11-08)
 
-Write a script in `scripts/` (a plain text file), then Run workflow → **script**: `scripts/<file>.txt`. Tick **dry_run** the first time to watch the MP4 from Artifacts.
+Write a script in `scripts/` (a plain text file), then Run workflow → **script**: `scripts/<file>.txt`. Set **action** to *Dry run* the first time to watch the MP4 from Artifacts.
 - **Format and limits:** see `scripts/README.md`: header (`TITLE:` and optional `COVER:`, `HASHTAGS:`, `TITLE_BOARD:`), `---`, then `NAME: text | emoji Board text` lines. Use 9–16 lines and about 110–180 words.
 - **Problems** stop the run before rendering and are listed in the run summary.
 - **One file = one video.** A file that was already uploaded is never uploaded again; save the script under a new name instead.
+
+## Board look (added 2026-11-10)
+
+Repo variable `BOARD_STYLE` (Settings → Secrets and variables → Actions → Variables): `hanging` (default: dark rounded border hanging from two ceiling rods), `display` (3D screen with a thick black bezel) or `whiteboard` (aluminium frame, corner caps, magnets, marker tray). All are original drawings in `pipeline/bg_line.py`.
+
+**Change it for one video only** (the first one that is set wins):
+1. **Run workflow → board_style** (`default` / `hanging` / `display` / `whiteboard`): only that run.
+2. **In the episode:** `"board_style": "display"` at the top level of `episode.json`, or `BOARD: display` in your script. That video always uses this look.
+3. **Repo variable `BOARD_STYLE`:** every video.
+4. Nothing set → `hanging`.
+
+A misspelt value is ignored (the validator and the script check report it), and the run log prints `board look: …`.
+
+## Intro, end card and "Find us online" (added 2026-11-11 12:26 IST)
+
+Every video now starts with a 2-second **intro** ("Welcome to" + the animated channel logo + a short original music sting; Hindi videos say "आपका स्वागत है") and ends with a 3.5-second **"Find us online"** card listing the YouTube, Facebook and Instagram links. The links are in `pipeline/hashtags.py` (`LINKS`); the kids logo is `assets/brand/logo.png` (from your `branding/` folder).
+- Repo variables `INTRO` = `off` / `OUTRO` = `off` switch them off (default `on`). Shorts never go over 180 s: if the extras would push a Short over, they are left out and the log says so.
+- Tip: Shorts lose viewers in the first 2 seconds. If the retention graph in YouTube Studio drops at the start, try `INTRO=off` for a week and compare.
+- End card buttons now size to their text (no more text touching the outline); the old "Search … on YouTube, Instagram, Facebook" strip is replaced by the links card.

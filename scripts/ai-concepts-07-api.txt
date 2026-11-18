@@ -1,0 +1,15 @@
+TITLE: API Explained: How Apps Connect to AI 🔌
+COVER: WHAT IS API
+HASHTAGS: #AI #API #SoftwareDevelopment #LearnAI
+DESCRIPTION: Understand how APIs let applications communicate with AI models and other services.
+TAGS: API explained, AI API, application programming interface, software development
+TITLE_BOARD: 📱 App -> 🔌 API -> ☁️ Service
+---
+DAD: How does a mobile app send a question to an AI model?
+TEEN: Often through an API: Application Programming Interface. It's a defined way for software systems to communicate. | 🔌 API ; software connection
+DAD: Can you give me an example?
+TEEN: Your app sends a request to an AI service through the API, and the service sends a response back.
+DAD: Like a waiter carrying an order to the kitchen?
+TEEN: Exactly! The API connects the request and response.
+DAD: So developers can add AI without building a model themselves?
+TEEN: That's one big benefit! Subscribe to AI Nation Studio, and share this with a friend!

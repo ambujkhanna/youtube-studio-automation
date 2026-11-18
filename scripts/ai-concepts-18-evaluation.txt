@@ -1,0 +1,15 @@
+TITLE: AI Evaluation: How Do We Test AI Quality? 🧪
+COVER: AI EVALUATION
+HASHTAGS: #AI #Evaluation #LLMTesting #LearnAI
+DESCRIPTION: Explore how developers test AI systems for quality, accuracy, safety and performance.
+TAGS: AI evaluation, LLM evaluation, AI testing, model quality
+TITLE_BOARD: 🤖 AI -> 🧪 Evaluation
+---
+DAD: We built an AI assistant. How do we know if it's actually good?
+TEEN: We evaluate it using test cases and clear quality criteria. | 🧪 Evaluation ; measure performance
+DAD: What should we check?
+TEEN: Accuracy, relevance, consistency, safety and response time are common measures.
+DAD: Can we compare answers with correct examples?
+TEEN: Yes. Some tests compare against reference answers. Other tasks need human reviewers to judge usefulness.
+DAD: So just getting an answer isn't enough?
+TEEN: Right! A working AI isn't automatically a reliable AI. Subscribe to AI Nation Studio, and share this with a friend!

@@ -1,0 +1,15 @@
+TITLE: AI Temperature: More Creative or Predictable? 🌡️
+COVER: AI TEMPERATURE
+HASHTAGS: #AI #Temperature #LLM #LearnAI
+DESCRIPTION: Learn how temperature influences randomness and variety in language model responses.
+TAGS: AI temperature, LLM sampling, model creativity, prompt engineering
+TITLE_BOARD: 🌡️ Temperature -> 🎨 Variety
+---
+DAD: Why can an AI give different answers to the same question?
+TEEN: One setting that can affect this is temperature. It influences how varied or predictable the model's next-token choices can be. | 🌡️ Temperature ; sampling setting
+DAD: What happens at a low temperature?
+TEEN: The output generally becomes more predictable and focused.
+DAD: And a higher temperature?
+TEEN: It can produce more varied and surprising wording.
+DAD: So higher is always more creative and better?
+TEEN: Not always! The best setting depends on the task and model. Subscribe to AI Nation Studio, and share this with a friend!

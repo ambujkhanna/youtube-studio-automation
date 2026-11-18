@@ -1,0 +1,15 @@
+TITLE: AI Inference: How Answers Are Generated ⚙️
+COVER: AI INFERENCE
+HASHTAGS: #AI #Inference #MachineLearning #LearnAI
+DESCRIPTION: Learn what happens when a trained AI model receives input and generates an output.
+TAGS: AI inference, model inference, machine learning, LLM
+TITLE_BOARD: 📥 Input -> ⚙️ Inference -> 📤 Output
+---
+DAD: What happens after I press send on an AI chat?
+TEEN: The model performs a process called inference. It takes your input and generates an output using what it learned during training. | ⚙️ Inference ; using a trained model
+DAD: So training and inference are different?
+TEEN: Yes! Training is when a model learns patterns from data.
+DAD: And inference is when it uses that learning?
+TEEN: Exactly. Asking a trained model to explain photosynthesis is inference.
+DAD: Like studying first, then answering a question?
+TEEN: That's a great comparison! Subscribe to AI Nation Studio, and share this with a friend!

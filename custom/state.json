@@ -1,0 +1,43 @@
+{
+  "episodes": {
+    "s-pasted-ollama-explained-run-ai-locally-o": {
+      "voices": "chatterbox",
+      "title": "Ollama Explained: Run AI Locally on Your PC \ud83e\udd16",
+      "rendered_at": "2026-11-11T12:57:59+05:30",
+      "duration_s": 61.84,
+      "status": "rendered",
+      "note": "dry run"
+    },
+    "s-ollama": {
+      "voices": "chatterbox",
+      "title": "Ollama Explained: Run AI Locally on Your PC \ud83e\udd16",
+      "rendered_at": "2026-11-11T18:08:04+05:30",
+      "duration_s": 60.2,
+      "status": "uploaded",
+      "publish_at_ist": "2026-11-11T18:08+05:30",
+      "thumbnail": "set",
+      "facebook": "posted (reel 1533941925230805), cover set",
+      "instagram": "posted (reel 18073362986502634), designed cover",
+      "video_id": "uhSn_4CVPHQ",
+      "url": "https://www.youtube.com/shorts/uhSn_4CVPHQ",
+      "uploaded_at": "2026-11-11T18:10:03+05:30",
+      "facebook_cover": "cover set",
+      "thumbnail_checked": "2026-11-14T10:25+05:30 set"
+    },
+    "s-childrens-day-2026": {
+      "voices": "chatterbox",
+      "title": "Happy Children's Day: Imagine a Brighter Future! \ud83c\udf88",
+      "rendered_at": "2026-11-14T11:35:37+05:30",
+      "duration_s": 65.96,
+      "status": "uploaded",
+      "publish_at_ist": "2026-11-14T11:35+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "facebook": "posted (reel 1665755228387823), cover set",
+      "instagram": "failed: 1) direct: [size-budget] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [3 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Reque [2 Mbps] HTTP 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"R | 2) hidden copy: processing Error: Media upload has failed with error code 2207076 | 3) FB reel copy: processing Error: Media upload has failed with error code 2207076",
+      "video_id": "ToSaTHNDoEg",
+      "url": "https://www.youtube.com/shorts/ToSaTHNDoEg",
+      "uploaded_at": "2026-11-14T11:42:18+05:30",
+      "thumbnail_checked": "2026-11-14T21:30+05:30 set"
+    }
+  }
+}

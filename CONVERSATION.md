@@ -547,3 +547,8 @@ Latest report metadata coverage: 52.6%. Unknown video/episode mappings need repa
 User confirmed the Markdown progress/conversation files are to be maintained by the assistant throughout this project; do not ask the user to create or update them. Verified that `PROGRESS.md`, `CONVERSATION.md`, and `docs/GROWTH_ENGINE.md` are pushed on `feat/youtube-growth-engine`.
 
 Current PR #1 remains open and is not merge-ready: GitHub reports `mergeable=false` / `dirty`; branch is 13 commits ahead and 56 behind main. Latest analytics run #22 failed during Google OAuth refresh with `invalid_grant: Token has been expired or revoked`. The workflow's artifact upload step still ran, but it must not be treated as a fresh valid metrics report. Required: rotate only the AInation `YT_ANALYTICS_REFRESH_TOKEN` secret, then sync/rebase with main, resolve conflicts and rerun tests plus daily-workflow validation before merge. Upload token and publishing behavior must remain untouched.
+## AI concepts script batch — 2026-11-15T18:54:12.898Z
+- [x] Added 20 individual AInation Studio custom-script files under `scripts/ai-concepts-*` covering the 20 concepts from the user's Instagram reference image.
+- [x] Each file uses the documented custom-script header and DAD/TEEN dialogue format, with title, cover, hashtags, description, tags, title board and picture cues.
+- [ ] Dry-run each script through the Daily AInation Short workflow and review the rendered videos before publishing.
+- Note: Topics 18 and 20 were partly obscured in the screenshot and were interpreted as Evaluation and AI Agents respectively.

@@ -1,0 +1,116 @@
+{
+  "id": "ep029",
+  "slug": "what-are-ai-agents",
+  "status": "ready",
+  "title": "What Are AI Agents and Can They Work for You?",
+  "cover_text": "AI THAT TAKES ACTION",
+  "description": "AI agents can use tools for multi-step tasks. Limit permissions and approve sensitive actions.\n\nA dad asks, his teen explains AI. AI Nation Studio — Imagine. Explore. Innovate.",
+  "hashtags": [
+    "#AI",
+    "#AIExplained",
+    "#AITips",
+    "#AInationStudio",
+    "#Shorts"
+  ],
+  "tags": [
+    "AI explained",
+    "what are ai agents",
+    "AI tips",
+    "artificial intelligence"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Think before you share",
+    "cue": "next",
+    "left": "chat",
+    "right": "robot"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "What Are AI Agents and Can They Work for You? Really?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "DAD"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "AI"
+        },
+        "mid": "?",
+        "subtitle": "AI explained simply"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "AI agents can use tools and carry out multiple steps toward a goal.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "AI AGENTS CAN USE TOOLS AND CARRY OUT MULTIPLE STEPS T",
+        "cue": "AI"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "An agent might research options, compare them and prepare a plan."
+    },
+    {
+      "who": "TEEN",
+      "text": "It can take actions only if it has suitable tools and permissions.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "IT CAN TAKE ACTIONS ONLY IF IT HAS SUITABLE TOOLS AND ",
+        "cue": "It"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Require human approval before purchases or other sensitive actions."
+    },
+    {
+      "who": "TEEN",
+      "text": "Review results, limit permissions and stay in control.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "REVIEW RESULTS, LIMIT PERMISSIONS AND STAY IN CONTROL.",
+        "cue": "Review"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What's the one thing I should remember?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Pause, check the details, and use your judgement before acting.",
+      "board": {
+        "type": "big",
+        "icon": "check",
+        "text": "PAUSE AND VERIFY",
+        "cue": "verify"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "That sounds like a smart rule."
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
+    }
+  ]
+}

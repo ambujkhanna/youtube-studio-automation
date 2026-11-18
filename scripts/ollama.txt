@@ -1,0 +1,20 @@
+TITLE: Ollama Explained: Run AI Locally on Your PC 🤖
+COVER: RUN AI LOCALLY
+HASHTAGS: #Ollama #LocalAI #AITools #ArtificialIntelligence #Shorts
+DESCRIPTION: Discover Ollama, a simple way to run AI models locally on your computer without relying on cloud-based AI services.
+TAGS: Ollama, Local AI, Run AI Locally, AI Models, Llama, AI Tools
+TITLE_BOARD: 💻 Your PC -> 🤖 Local AI
+---
+DAD: Did you know you can run an AI chatbot directly on your own computer?
+TEEN: Yes! It's possible with Ollama.   | 🤖 AI on your PC
+DAD: Ollama? What exactly is it?
+TEEN: Ollama lets you download and run AI models like Llama locally, instead of sending every question to an online AI service.   | 💻 Local AI
+DAD: But why would someone do that?
+TEEN: More privacy, control over your models, and no cloud API charges. Your computer does the processing!
+DAD: Sounds interesting! How do we get started?
+TEEN: Just visit ollama.com, then download and install Ollama for your operating system.   | 🌐 Ollama website
+DAD: And how do we run our first AI?
+TEEN: Open your terminal and type: ollama run llama3.2. Ollama downloads the model if needed, then you can start chatting!   | ⌨️ ollama run llama3.2
+DAD: So, our computer becomes an AI assistant?
+TEEN: Exactly! Just remember, performance depends on your computer's hardware.
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

@@ -1,0 +1,15 @@
+TITLE: AI Embeddings: Turning Meaning Into Numbers 🔢
+COVER: AI EMBEDDINGS
+HASHTAGS: #AI #Embeddings #VectorSearch #LearnAI
+DESCRIPTION: Discover how embeddings represent text and other data as numerical vectors for similarity search.
+TAGS: embeddings, vector embeddings, semantic search, machine learning
+TITLE_BOARD: 💬 Meaning -> 🔢 Vectors
+---
+DAD: How can a computer find two sentences with similar meanings?
+TEEN: AI systems can use embeddings. They turn information, like words or images, into lists of numbers called vectors. | 🔢 Vectors ; numerical representation
+DAD: But how can numbers represent meaning?
+TEEN: A model learns to place related items near each other in a mathematical space.
+DAD: So puppy and dog could be close together?
+TEEN: Exactly! That helps systems find related content even when the wording is different.
+DAD: Where is this useful?
+TEEN: Search, recommendations and RAG systems. Subscribe to AI Nation Studio, and share this with a friend!

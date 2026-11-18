@@ -1,0 +1,15 @@
+TITLE: Fine-Tuning: Customise a Pretrained AI Model 🎯
+COVER: FINE-TUNING
+HASHTAGS: #AI #FineTuning #MachineLearning #LearnAI
+DESCRIPTION: Learn how fine-tuning adapts a pretrained model for a more specialised task.
+TAGS: fine tuning, AI training, pretrained model, machine learning
+TITLE_BOARD: 🧠 Pretrained -> 🎯 Fine-tuned
+---
+DAD: Can we adapt an existing AI model instead of starting from zero?
+TEEN: Yes! A technique called fine-tuning trains a pretrained model further using carefully prepared examples. | 🎯 Fine-tuning ; adapt a model
+DAD: What could that help with?
+TEEN: It can adapt a model's behaviour for a specialised task, format or domain.
+DAD: Is that the same as uploading company documents?
+TEEN: No. Connecting documents for retrieval is different. Fine-tuning changes the model's learned parameters.
+DAD: So we choose the method based on the goal?
+TEEN: Exactly! Subscribe to AI Nation Studio, and share this with a friend!

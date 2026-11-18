@@ -340,17 +340,129 @@ def draw_board_frame(c, t=0.0):
         if PANEL == "stage":
             import theatre; return theatre.back(c, t)
         return {"cloud": _kids_cloud, "book": _kids_book}.get(PANEL, _kids_cloud)(c, t)
-    r = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX, BY, BW, BH), 34, 34)
-    sh = P("#000000", a=0.10); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 14))
-    c.save(); c.translate(8, 12); c.drawRRect(r, sh); c.restore()
-    c.drawRRect(r, P("#FFFFFF")); c.drawRRect(r, P(INK, 8))
-    inner = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX + 4, BY + 4, BW - 8, BH - 8), 30, 30)
+    {"whiteboard": _whiteboard, "display": _display_3d}.get(BOARD_STYLE, _hanging_board)(c)
+
+
+BOARD_STYLES = ("hanging", "display", "whiteboard")
+# AInation board look. Default 'hanging' (owner 2026-11-10). Priority: Run-workflow option (BOARD_STYLE_RUN)
+# > the episode's "board_style" field (set by episode_engine via pick_board_style) > repo variable BOARD_STYLE > hanging.
+BOARD_STYLE = os.environ.get("BOARD_STYLE", "").strip().lower()
+if BOARD_STYLE not in BOARD_STYLES: BOARD_STYLE = "hanging"
+
+
+def pick_board_style(episode_value=None):
+    """Set and return the board look for this render."""
+    global BOARD_STYLE
+    for v in (os.environ.get("BOARD_STYLE_RUN", ""), episode_value or ""):
+        v = str(v).strip().lower()
+        if v in BOARD_STYLES: BOARD_STYLE = v; break
+    return BOARD_STYLE
+
+
+def _whiteboard(c):
+    """Classic office whiteboard: brushed aluminium frame, dark corner caps, glossy surface, magnets,
+    handwritten label and a marker tray with markers + eraser (original drawing, inspired by common whiteboards)."""
+    fw = 20; outer = skia.Rect.MakeXYWH(BX, BY, BW, BH)
+    for off, blur, a_ in ((22, 26, 0.14), (8, 8, 0.16)):  # shadow on the wall
+        sh = P("#0B1530", a=a_); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, blur))
+        c.save(); c.translate(off * 0.35, off); c.drawRRect(skia.RRect.MakeRectXY(outer, 12, 12), sh); c.restore()
+    c.drawRRect(skia.RRect.MakeRectXY(outer, 12, 12), _lg(0, BY, 0, BY + fw, ["#F4F6F9", "#BFC6D0", "#E6EAF0"]))
+    for x0, y0, x1, y1 in ((BX, BY, BX + BW, BY + fw), (BX, BY + BH - fw, BX + BW, BY + BH)):  # top/bottom rails
+        c.drawRect(skia.Rect.MakeLTRB(x0, y0, x1, y1), _lg(0, y0, 0, y1, ["#FAFBFC", "#C3CAD4", "#9AA3AF"], [0, 0.5, 1]))
+    for x0 in (BX, BX + BW - fw):  # side rails
+        c.drawRect(skia.Rect.MakeLTRB(x0, BY, x0 + fw, BY + BH), _lg(x0, 0, x0 + fw, 0, ["#FAFBFC", "#C3CAD4", "#9AA3AF"], [0, 0.5, 1]))
+    surf = skia.Rect.MakeXYWH(BX + fw, BY + fw, BW - 2 * fw, BH - 2 * fw)
+    c.drawRect(surf, _lg(0, surf.top(), 0, surf.bottom(), ["#FFFFFF", "#FBFCFE", "#F1F4F8"]))
+    c.drawRect(surf, P("#7C8794", 2, a=0.6))
+    gl = skia.Path(); gl.moveTo(surf.left() + surf.width() * 0.62, surf.top()); gl.lineTo(surf.left() + surf.width() * 0.70, surf.top())
+    gl.lineTo(surf.left() + surf.width() * 0.48, surf.bottom()); gl.lineTo(surf.left() + surf.width() * 0.40, surf.bottom()); gl.close()
+    c.drawPath(gl, P("#E8EEF6", a=0.55))
+    for cx_, cy_ in ((BX, BY), (BX + BW, BY), (BX, BY + BH), (BX + BW, BY + BH)):  # corner caps
+        r = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(cx_ - 26, cy_ - 26, 52, 52), 12, 12)
+        c.drawRRect(r, _lg(cx_ - 26, cy_ - 26, cx_ + 26, cy_ + 26, ["#4A4F5A", "#23262D", "#14161A"]))
+        c.drawRRect(r, P("#FFFFFF", 2, a=0.18))
+    for i, col in enumerate(("#FF5A5F", "#3BB273", "#8E5CC9", "#FFB400")):  # glossy magnets
+        mx, my = surf.left() + 34 + i * 34, surf.top() + 28
+        c.drawCircle(mx + 2, my + 4, 13, P("#000000", a=0.18)); c.drawCircle(mx, my, 13, _lg(mx, my - 13, mx, my + 13, [_mix(col, "#FFFFFF", 0.35), col, _mix(col, "#000000", 0.25)]))
+        c.drawCircle(mx - 4, my - 5, 4, P("#FFFFFF", a=0.8))
+    hand = skia.Typeface.MakeFromFile(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "fonts", "Caveat-Bold.ttf"))
+    f = skia.Font(hand, 40); lab = "AI explained"; w = f.measureText(lab)
+    c.drawString(lab, surf.right() - w - 26, surf.top() + 42, f, P("#2563EB"))
+    c.drawLine(surf.right() - w - 26, surf.top() + 50, surf.right() - 26, surf.top() + 47, P("#2563EB", 3))
+    ty = BY + BH  # marker tray with markers + eraser
+    c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeLTRB(BX + 70, ty - 2, BX + BW - 70, ty + 16), 6, 6), _lg(0, ty, 0, ty + 16, ["#DCE1E8", "#9EA7B3"]))
+    def marker(x, col, ang=0):
+        c.save(); c.translate(x, ty - 6); c.rotate(ang)
+        c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(0, -9, 110, 18), 9, 9), _lg(0, -9, 0, 9, ["#FFFFFF", "#E3E7EC"])); c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(0, -9, 110, 18), 9, 9), P("#8C96A3", 2))
+        c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(78, -11, 40, 22), 9, 9), P(col)); c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(14, -9, 40, 18), 4, 4), P(col, a=0.8))
+        c.restore()
+    c.save(); c.translate(BX + 120, ty - 14)
+    c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(0, -14, 120, 28), 8, 8), _lg(0, -14, 0, 14, ["#FFD966", "#F2B705"]))
+    c.drawRect(skia.Rect.MakeXYWH(0, 6, 120, 8), P("#3A3F47")); c.restore()
+    marker(BX + 290, "#2DBE60"); marker(BX + 440, "#2563EB", -6); marker(BX + BW - 260, "#E5484D")
+
+
+def _hanging_board(c):
+    """Board hanging from two ceiling rods, thick dark rounded border, flat clean surface (original drawing)."""
+    for x in (BX + 170, BX + BW - 170):  # rods to the ceiling
+        c.drawRect(skia.Rect.MakeLTRB(x - 7, 0, x + 7, BY + 10), _lg(x - 7, 0, x + 7, 0, ["#3B4660", "#1F2A44", "#151D33"]))
+    outer = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX, BY, BW, BH), 44, 44)
+    sh = P("#0B1530", a=0.16); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 22))
+    c.save(); c.translate(10, 20); c.drawRRect(outer, sh); c.restore()
+    c.drawRRect(outer, _lg(BX, BY, BX, BY + BH, ["#2E3A5C", "#1F2A44"]))
+    m = 22; inner = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX + m, BY + m, BW - 2 * m, BH - 2 * m), 26, 26)
+    c.drawRRect(inner, _lg(0, BY + m, 0, BY + BH - m, ["#FFFFFF", "#F4F7FB"]))
+    ish = P("#0B1530", 10, a=0.08); ish.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 6)); c.drawRRect(inner, ish)
+    K.text(c, "AI EXPLAINED", BX + BW - m - 26, BY + m + 32, 24, "#5B6B80", K.FONT_XB, "r")
+
+
+def _lg(x0, y0, x1, y1, cols, pos=None):
+    p = skia.Paint(AntiAlias=True)
+    p.setShader(skia.GradientShader.MakeLinear([(x0, y0), (x1, y1)], [K.hexc(h) if isinstance(h, str) else h for h in cols], pos))
+    return p
+
+
+def _display_3d(c):
+    """AInation board as a 3D smart display on the wall: thick bevelled bezel with visible depth, deep soft shadow,
+    recessed gradient screen with an inner shadow and a faint glass reflection (owner: 'add shading, make it 3D')."""
+    D = 18  # thickness of the display (visible at the bottom/right)
+    outer = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX, BY, BW, BH), 38, 38)
+    # 1) soft contact + long shadow on the wall
+    for off, blur, a_ in ((28, 34, 0.16), (10, 10, 0.18)):
+        sh = P("#0B1530", a=a_); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, blur))
+        c.save(); c.translate(off * 0.45, off); c.drawRRect(outer, sh); c.restore()
+    # 2) side/depth: the same shape pushed down-right, darker (reads as thickness)
+    for k in range(D, 0, -2):
+        c.save(); c.translate(k * 0.55, k); c.drawRRect(outer, P(_mix("#1A1A1E", "#050506", k / D))); c.restore()
+    # 3) bezel with a top-left light / bottom-right dark gradient + bevel highlight
+    c.drawRRect(outer, _lg(BX, BY, BX + BW * 0.3, BY + BH, ["#3A3A40", "#1B1B1F", "#0B0B0D"], [0, 0.45, 1]))
+    hl = P("#FFFFFF", 3, a=0.28); c.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX + 3, BY + 3, BW - 6, BH - 6), 35, 35), hl)
+    # 4) recessed screen
+    m = 26; scr = skia.Rect.MakeXYWH(BX + m, BY + m, BW - 2 * m, BH - 2 * m)  # thick black bezel (owner)
+    inner = skia.RRect.MakeRectXY(scr, 24, 24)
+    c.drawRRect(inner, _lg(0, scr.top(), 0, scr.bottom(), ["#FFFFFF", "#F6F9FF", "#E9F0FB"], [0, 0.55, 1]))
     c.save(); c.clipRRect(inner, doAntiAlias=True)
-    c.drawRect(skia.Rect.MakeXYWH(BX, BY, BW, 66), P("#BDE3FF" if KIDS else "#FFE08A"))
-    c.drawLine(BX, BY + 66, BX + BW, BY + 66, P(INK, 5))
-    for i, col in enumerate(("#FF6B6B", "#FFD23F", "#7BD389")):
-        c.drawCircle(BX + 46 + i * 30, BY + 34, 9, P(col)); c.drawCircle(BX + 46 + i * 30, BY + 34, 9, P(INK, 3))
-    K.text(c, "FUN FACTS" if KIDS else "AI EXPLAINED", BX + BW - 36, BY + 34, 24, "#1D1D1F", K.FONT_XB, "r")
+    hb = 62  # header bar
+    c.drawRect(skia.Rect.MakeXYWH(scr.left(), scr.top(), scr.width(), hb), _lg(0, scr.top(), 0, scr.top() + hb, ["#FFE89C", "#FFD54F", "#F7C531"]))
+    c.drawRect(skia.Rect.MakeXYWH(scr.left(), scr.top() + hb - 3, scr.width(), 3), P("#C99A12", a=0.55))
+    ish = P("#0B1530", a=0.22); ish.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 9))  # inner shadow under the bar
+    c.drawRect(skia.Rect.MakeXYWH(scr.left(), scr.top() + hb - 6, scr.width(), 10), ish)
+    for i, col in enumerate(("#FF6B6B", "#FFD23F", "#7BD389")):  # glossy traffic-light dots
+        cx_, cy_ = scr.left() + 34 + i * 30, scr.top() + hb / 2
+        c.drawCircle(cx_, cy_ + 1.5, 10, P("#000000", a=0.18)); c.drawCircle(cx_, cy_, 10, P(col))
+        c.drawCircle(cx_ - 3, cy_ - 3.5, 3.5, P("#FFFFFF", a=0.75))
+    K.text(c, "AI EXPLAINED", scr.right() - 26, scr.top() + hb / 2, 24, "#3A2A00", K.FONT_XB, "r")
+    # faint diagonal glass reflection across the screen
+    gl = skia.Path(); gl.moveTo(scr.left() + scr.width() * 0.55, scr.top()); gl.lineTo(scr.left() + scr.width() * 0.78, scr.top())
+    gl.lineTo(scr.left() + scr.width() * 0.40, scr.bottom()); gl.lineTo(scr.left() + scr.width() * 0.17, scr.bottom()); gl.close()
+    c.drawPath(gl, _lg(0, scr.top(), 0, scr.bottom(), [skia.Color(255, 255, 255, 46), skia.Color(255, 255, 255, 0)]))
+    # top edge inner shadow of the recess
+    c.drawRRect(inner, P("#0B1530", 5, a=0.10))
+
+
+def _mix(a, b, t):
+    a, b = a.lstrip("#"), b.lstrip("#")
+    return "#" + "".join(f"{int(int(a[i:i+2], 16) * (1 - t) + int(b[i:i+2], 16) * t):02X}" for i in (0, 2, 4))
 
 
 def _kids_panel(c):

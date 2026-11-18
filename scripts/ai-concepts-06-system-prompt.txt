@@ -1,0 +1,15 @@
+TITLE: System Prompt: Instructions Behind AI 🧭
+COVER: SYSTEM PROMPT
+HASHTAGS: #AI #SystemPrompt #PromptEngineering #LearnAI
+DESCRIPTION: Learn how higher-level instructions guide an AI assistant's role, style and behaviour.
+TAGS: system prompt, prompt engineering, AI instructions, LLM behaviour
+TITLE_BOARD: 📋 Instructions -> 🤖 Behaviour
+---
+DAD: Why can an AI assistant act like a tutor or a coding helper?
+TEEN: Its behaviour can be guided by system instructions, often called a system prompt. | 📋 Instructions ; role and rules
+DAD: What might those instructions say?
+TEEN: They could say, "Explain maths in simple language," or "Answer like a helpful coding assistant."
+DAD: So they guide how the AI responds?
+TEEN: Yes. They can define a role, style, boundaries and other rules.
+DAD: Does that guarantee the AI always follows them?
+TEEN: No. Instructions guide behaviour, but systems still need testing and safeguards. Subscribe to AI Nation Studio, and share this with a friend!

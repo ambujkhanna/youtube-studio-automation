@@ -39,12 +39,25 @@ def _req(url, data=None, headers=None, method=None, raw=None, timeout=600):
         with urllib.request.urlopen(rq, timeout=timeout) as r:
             return json.loads(r.read().decode() or "{}")
     except urllib.error.HTTPError as e:
-        msg = e.read().decode(errors="replace")
+        raw_msg = e.read().decode(errors="replace")
+        msg = raw_msg
         try:
-            msg = json.loads(msg).get("error", {}).get("message", msg)
+            payload = json.loads(raw_msg)
+            # rupload errors use debug_info rather than the normal Graph API error envelope.
+            if isinstance(payload, dict) and payload.get("debug_info"):
+                info = payload["debug_info"]
+                detail = info.get("message", "")
+                try:
+                    nested = json.loads(detail)
+                    detail = nested.get("error", {}).get("message", detail)
+                except Exception:
+                    pass
+                msg = f'{info.get("type", "upload error")}; retriable={info.get("retriable")}; {detail}'
+            else:
+                msg = payload.get("error", {}).get("message", raw_msg)
         except Exception:
             pass
-        raise RuntimeError(f"HTTP {e.code}: {msg[:300]}")
+        raise RuntimeError(f"HTTP {e.code}: {msg[:500]}")
 
 
 def caption(ep, brand_line, platform="instagram"):
@@ -53,7 +66,11 @@ def caption(ep, brand_line, platform="instagram"):
     import hashtags
     desc = ep.get("description", "").split("\n\n")[0].strip()
     tags = hashtags.pick(list(ep.get("hashtags", [])) + list(ep.get("social_hashtags", [])), platform)
-    out = f"{ep['title']}\n\n{desc}\n\n{hashtags.ENGAGE.get(platform, '')}\n{brand_line}\n\n" + " ".join(tags)
+    head = hashtags.with_brand(ep["title"], 300)
+    if hashtags.BRAND.lower() in head.lower():  # channel tag already in the first line: count it once (Instagram max 5)
+        tags = [t for t in tags if t.lower() != hashtags.BRAND.lower()]
+    links = hashtags.links_block(platform)
+    out = f"{head}\n\n{desc}\n\n{hashtags.ENGAGE.get(platform, '')}\n{brand_line}\n\n" + (links + "\n\n" if links else "") + " ".join(tags)
     return out[:2100]
 
 
@@ -80,8 +97,7 @@ def post_facebook(path, ep, cap, long=False):
                     off, end = int(r["start_offset"]), int(r["end_offset"])
             _req(f"{GRAPH}/{page}/videos", {"upload_phase": "finish", "upload_session_id": sid, "access_token": tok,
                                              "title": ep["title"][:250], "description": cap})
-            if vid: fb_set_thumbnail(vid)
-            return f"posted (video {vid})"
+            return f"posted (video {vid}), " + (fb_cover_when_ready(vid, tok) if vid else "no cover")
         # Reel: start -> upload bytes -> finish (published now)
         st = _req(f"{GRAPH}/{page}/video_reels", {"upload_phase": "start", "access_token": tok})
         vid = st["video_id"]
@@ -91,8 +107,7 @@ def post_facebook(path, ep, cap, long=False):
         _req(f"{GRAPH}/{page}/video_reels", {"upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED",
                                               "description": cap, "access_token": tok})
         LAST["fb_video_id"] = vid
-        fb_set_thumbnail(vid)
-        return f"posted (reel {vid})"
+        return f"posted (reel {vid}), " + fb_cover_when_ready(vid, tok)
     except Exception as e:
         return f"failed: {e}"[:300]
 
@@ -138,12 +153,31 @@ def fb_set_thumbnail(vid, jpg=None):
     try:
         body, hd = _multipart({"is_preferred": "true", "access_token": os.environ["META_PAGE_TOKEN"]}, "source", "thumb.jpg",
                               open(jpg, "rb").read())
-        _req(f"{GRAPH}/{vid}/thumbnails", raw=body, headers=hd)
+        _req(f"{GRAPH}/{vid}/thumbnails", raw=body, headers=hd, timeout=120)
         return "cover set"
     except Exception as e:
         print("note: Facebook cover not set:", str(e)[:150])
         if "does not exist" in str(e): return "cover not set: video not found on the Page (deleted?)"
         return "cover not set: " + str(e)[:120]
+
+
+def fb_cover_when_ready(vid, tok, wait=300):
+    """Set the designed cover once Facebook has finished processing the video (setting it earlier silently fails)."""
+    t0 = time.time()
+    while time.time() - t0 < wait:
+        try:
+            s = _req(f"{GRAPH}/{vid}?fields=status&access_token={urllib.parse.quote(tok)}").get("status", {})
+            if s.get("video_status") in ("ready", "published") or s.get("processing_phase", {}).get("status") == "complete": break
+            if s.get("video_status") == "error": return "cover not set: Facebook could not process the video"
+        except Exception:
+            pass
+        time.sleep(15)
+    res = "no thumbnail"
+    for _ in range(3):
+        res = fb_set_thumbnail(vid)
+        if res in ("cover set", "no thumbnail") or "deleted" in res: break
+        time.sleep(20)
+    return res
 
 
 def _fb_source(vid, tok, wait=600):
@@ -236,6 +270,7 @@ def _ig_direct(ig, tok, path, cap):
     cid = c["id"]; uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/v21.0/{cid}"
     with open(path, "rb") as fh:
         data = fh.read()
+    print(f"Instagram upload attempt: container={cid}, file={os.path.basename(path)}, bytes={len(data)}", flush=True)
     _req(uri, raw=data, headers={"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(len(data)),
                                  "Content-Type": "application/octet-stream"})
     return _ig_wait_publish(ig, cid, tok)
@@ -246,18 +281,23 @@ def post_instagram(path, cap):
     src = path
     path = ig_safe(src)
     err = ""
-    # 1) direct (resumable) upload; Instagram sometimes rejects one encoding and accepts another
-    #    (2026-11-08: two of four episodes were rejected with the same recipe), so try a ladder of encodings
-    tries = [("size-budget", path), ("3 Mbps", None), ("2 Mbps", None), ("1.5 Mbps", None)]
-    for k, (name, p) in enumerate(tries):
+    # 1) Direct resumable uploads. Use distinct encodings: the old size-budget and
+    #    3 Mbps entries often produced byte-for-byte equivalent files and wasted a full attempt.
+    #    Keep a useful spread of sizes for Meta's video processor.
+    tries = [("3 Mbps", 3000), ("2.4 Mbps", 2400), ("1.8 Mbps", 1800), ("1.2 Mbps", 1200)]
+    for k, (name, bitrate) in enumerate(tries):
+        p = path if k == 0 else ig_safe(src, kb=bitrate, tag=f"ig{k}")
         try:
-            if p is None:
-                p = ig_safe(src, kb={"3 Mbps": 3000, "2 Mbps": 2000, "1.5 Mbps": 1500}[name], tag=f"ig{k}")
             vid = _ig_direct(ig, tok, p, cap)
-            return f"posted (reel {vid})" + (f" with the {name} copy" if k else "")
+            return f"posted (reel {vid}) with the {name} copy"
         except Exception as e:
-            err = f"{err} [{name}] {str(e)[:90]}"
-            time.sleep(20)
+            detail = str(e)
+            err = f"{err} [{name}] {detail[:220]}"
+            print(f"Instagram {name} attempt failed: {detail[:500]}", flush=True)
+            if k < len(tries) - 1:
+                # Give Meta's asynchronous media workers a little breathing room before
+                # creating the next independent container.
+                time.sleep(min(90, 30 * (k + 1)))
     err = err.strip()[:300]
     # 2) upload the Instagram-format copy to the Page as a hidden (unpublished) video, then let Instagram fetch it
     err2 = ""
@@ -294,6 +334,12 @@ def post_instagram(path, cap):
         return f"failed: 1) direct: {err} | 2) hidden copy: {err2} | 3) FB reel copy: {e}"[:600]
 
 
+def wanted(platform):
+    """'Where to post' choice from the Run-workflow form (env POST_TO, e.g. 'YouTube + Facebook'); empty = everywhere."""
+    t = os.environ.get("POST_TO", "").strip().lower()
+    return not t or platform in t
+
+
 def post_all(path, ep, brand_line, long=False, done=None, thumb=None):
     """Returns {"facebook": status, "instagram": status} (only for configured platforms).
     done: the episode's saved record - platforms that already say "posted" are skipped (no duplicates on re-runs)."""
@@ -308,11 +354,16 @@ def post_all(path, ep, brand_line, long=False, done=None, thumb=None):
         m = re.search(r"(\d{6,})", fb_prev)
         if m: LAST["fb_video_id"] = m.group(1)
         out["facebook"] = fb_prev + " (kept, not re-posted)"
+    elif not wanted("facebook"):
+        out["facebook"] = "skipped (not chosen in 'Where to post')"
     else:
         out["facebook"] = post_facebook(path, ep, cap_fb, long)
     if have_ig() and not long:  # long 16:9 videos go to Facebook only
         ig_prev = str(done.get("instagram", ""))
-        out["instagram"] = ig_prev + " (kept, not re-posted)" if ig_prev.startswith("posted") else post_instagram(path, cap)
+        out["instagram"] = ig_prev + " (kept, not re-posted)" if ig_prev.startswith("posted") else \
+            (post_instagram(path, cap) if wanted("instagram") else "skipped (not chosen in 'Where to post')")
+        if not ig_prev.startswith("posted") and str(out["instagram"]).startswith("posted"):
+            out["instagram"] += ", designed cover" if COVER.get("url") else ", cover: video frame (designed cover link failed)"
     return out
 
 

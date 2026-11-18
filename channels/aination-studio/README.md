@@ -1,7 +1,7 @@
-# AImation Studio
+# AInation Studio
 
-**Last updated:** 2026-10-30T22:42:04+05:30 (2026-10-30T17:12:04Z)
-**Status:** Working channel identity and broad AI/technology positioning confirmed; brand availability checks pending.
+**Last updated:** 2026-11-10T13:11:14+05:30 (2026-11-10T07:41:14Z)
+**Status:** Live: YouTube @AI.nationstudio, Facebook Page and Instagram @ai.nationstudio. Daily Shorts and a weekly long video are made and published automatically by GitHub Actions.
 
 ## Channel role
 
@@ -13,13 +13,14 @@ A broad AI and technology channel covering AI tools, AI agents, automation, prac
 
 **Positioning confirmed by the user:** this is a broad AI channel, not an AI-animation-only channel. Animation may be used as a visual technique, but the subject matter spans AI tools, agents, automation, practical demos, and technology.
 
-## Initial publishing target
+## Publishing (current)
 
-- Format: YouTube Shorts
-- Language: English
-- Audience: Global
-- Initial duration target: approximately 30–60 seconds
-- Initial publishing time: daily at 7:00 PM IST, only after the first complete pilot passes QC and the connected YouTube destination is verified.
+- Format: YouTube Shorts (daily) + one 16:9 long video (Sunday 10:00 IST)
+- Language: English · Audience: global · Hosts: Dad and Teen
+- Duration: typically 45–90 seconds with the expressive Chatterbox voices; QC accepts 20–180 s
+- Publish window: 17:00–20:00 IST (repo variable `PUBLISH_WINDOW`); uploads stay Private until the YouTube API audit is approved, so the owner publishes or schedules each one in Studio
+- Also posted to the Facebook Page and Instagram as Reels
+- Full option list: `docs/CHANNELS_REFERENCE.md`
 
 ## Editorial principles
 
@@ -30,12 +31,8 @@ A broad AI and technology channel covering AI tools, AI agents, automation, prac
 - Use original or properly licensed visuals, voice, music, and other assets.
 - Keep on-screen text readable on a phone and captions accurate.
 
-## Launch gates
+## Launch gates (done)
 
-1. Finalize visual identity and brand guidelines for the confirmed broad AI/technology positioning.
-2. Check YouTube channel name/handle availability and relevant trademark conflicts.
-3. Verify that the connected Metricool YouTube destination is this channel.
-4. Produce and review the first complete Short.
-5. Enable unattended daily publishing only after the production and fail-safe checks work reliably.
+All original launch gates are complete: visual identity, channel and handle, first reviewed Short, and unattended daily publishing with QC fail-safes. (The early Metricool plan was replaced by direct YouTube/Meta API uploads.)
 
-See `channel.config.json` for machine-readable initial settings. Values marked provisional must not be treated as final brand decisions.
+`channel.config.json` is kept as a reference summary only; the pipeline reads repo variables and `pipeline/*.py`.
