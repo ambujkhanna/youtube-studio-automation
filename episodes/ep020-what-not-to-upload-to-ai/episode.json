@@ -81,6 +81,24 @@
       "text": "Use fictional examples or redact names and identifying details first."
     },
     {
+      "who": "DAD",
+      "text": "What's the one thing I should remember?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Pause, check the details, and use your judgement before acting.",
+      "board": {
+        "type": "big",
+        "icon": "check",
+        "text": "PAUSE AND VERIFY",
+        "cue": "verify"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "That sounds like a smart rule."
+    },
+    {
       "who": "TEEN",
       "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
     }
