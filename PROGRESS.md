@@ -294,3 +294,12 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 - [ ] Rebase/sync feature work with current main, resolve conflicts, rerun tests and daily-workflow dry run, then merge only after clean validation.
 - Data-quality issue: latest report metadata coverage was 52.6%; repair unknown video/episode mappings before topic-level conclusions.
 - Guardrails: no upload credentials, episode queue, publishing settings, schedule, or upload behavior changed. Growth brief does not auto-edit scripts or publish.
+
+
+## 2026-11-18T22:12:00+05:30 — Latest PR readiness check
+
+- [x] Confirmed `PROGRESS.md`, `CONVERSATION.md`, and `docs/GROWTH_ENGINE.md` are pushed to `feat/youtube-growth-engine`.
+- [x] Rechecked PR #1 and branch comparison against `main`.
+- [ ] Not ready to merge: PR is open but GitHub reports `mergeable=false`, `mergeable_state=dirty`; branch diverged (13 commits ahead, 56 behind main).
+- [ ] Latest analytics workflow run #22 failed at token exchange with Google OAuth `invalid_grant: Token has been expired or revoked`. Artifact upload still ran, but it is not a fresh successful analytics collection.
+- Next: user must rotate/reauthorize the AInation analytics refresh token and update only `YT_ANALYTICS_REFRESH_TOKEN` in this repo; do not change upload token. Then sync branch with main, resolve conflicts, run tests and daily-workflow validation, and merge only when clean.
