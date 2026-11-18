@@ -1,0 +1,98 @@
+{
+  "id": "ep022",
+  "slug": "run-ai-without-internet",
+  "status": "ready",
+  "title": "Run AI on Your Laptop Without Internet",
+  "cover_text": "AI WITHOUT WI-FI",
+  "description": "Some models can run locally after download using tools such as Ollama.\n\nA dad asks, his teen explains AI. AI Nation Studio — Imagine. Explore. Innovate.",
+  "hashtags": [
+    "#AI",
+    "#AIExplained",
+    "#AITips",
+    "#AInationStudio",
+    "#Shorts"
+  ],
+  "tags": [
+    "AI explained",
+    "run ai without internet",
+    "AI tips",
+    "artificial intelligence"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Think before you share",
+    "cue": "next",
+    "left": "chat",
+    "right": "robot"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Run AI on Your Laptop Without Internet Really?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "DAD"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "AI"
+        },
+        "mid": "?",
+        "subtitle": "AI explained simply"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Some AI models can run directly on your computer.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "SOME AI MODELS CAN RUN DIRECTLY ON YOUR COMPUTER.",
+        "cue": "Some"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Ollama helps download and run compatible models locally."
+    },
+    {
+      "who": "TEEN",
+      "text": "After downloading a model, supported local use can work offline.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "AFTER DOWNLOADING A MODEL, SUPPORTED LOCAL USE CAN WOR",
+        "cue": "After"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Your laptop still needs enough memory and processing power."
+    },
+    {
+      "who": "TEEN",
+      "text": "Local does not automatically guarantee privacy; check the app and settings.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "LOCAL DOES NOT AUTOMATICALLY GUARANTEE PRIVACY; CHECK ",
+        "cue": "Local"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
+    }
+  ]
+}

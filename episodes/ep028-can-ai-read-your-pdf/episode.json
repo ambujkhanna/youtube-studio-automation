@@ -1,0 +1,98 @@
+{
+  "id": "ep028",
+  "slug": "can-ai-read-your-pdf",
+  "status": "ready",
+  "title": "Can AI Read a PDF and Answer Your Questions?",
+  "cover_text": "ASK YOUR PDF",
+  "description": "Some AI tools can process PDFs and answer questions. Check source passages and protect confidential files.\n\nA dad asks, his teen explains AI. AI Nation Studio — Imagine. Explore. Innovate.",
+  "hashtags": [
+    "#AI",
+    "#AIExplained",
+    "#AITips",
+    "#AInationStudio",
+    "#Shorts"
+  ],
+  "tags": [
+    "AI explained",
+    "can ai read your pdf",
+    "AI tips",
+    "artificial intelligence"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Think before you share",
+    "cue": "next",
+    "left": "chat",
+    "right": "robot"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Can AI Read a PDF and Answer Your Questions? Really?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "DAD"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "AI"
+        },
+        "mid": "?",
+        "subtitle": "AI explained simply"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Some AI tools let you upload a PDF and ask questions.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "SOME AI TOOLS LET YOU UPLOAD A PDF AND ASK QUESTIONS.",
+        "cue": "Some"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "They can help locate relevant passages in a long document."
+    },
+    {
+      "who": "TEEN",
+      "text": "Check the original page; scanned tables and unclear text can cause errors.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "CHECK THE ORIGINAL PAGE; SCANNED TABLES AND UNCLEAR TE",
+        "cue": "Check"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Only upload confidential documents if you have permission and the service is approved."
+    },
+    {
+      "who": "TEEN",
+      "text": "Treat AI as a document assistant, not the final authority.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "TREAT AI AS A DOCUMENT ASSISTANT, NOT THE FINAL AUTHOR",
+        "cue": "Treat"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
+    }
+  ]
+}

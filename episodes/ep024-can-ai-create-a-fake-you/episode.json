@@ -1,0 +1,98 @@
+{
+  "id": "ep024",
+  "slug": "can-ai-create-a-fake-you",
+  "status": "ready",
+  "title": "Can AI Create a Fake Video of You?",
+  "cover_text": "SOMEONE COPIED YOU",
+  "description": "Deepfakes can imitate faces, voices and video. Verify surprising clips before sharing.\n\nA dad asks, his teen explains AI. AI Nation Studio — Imagine. Explore. Innovate.",
+  "hashtags": [
+    "#AI",
+    "#AIExplained",
+    "#AITips",
+    "#AInationStudio",
+    "#Shorts"
+  ],
+  "tags": [
+    "AI explained",
+    "can ai create a fake you",
+    "AI tips",
+    "artificial intelligence"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Think before you share",
+    "cue": "next",
+    "left": "chat",
+    "right": "robot"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Can AI Create a Fake Video of You? Really?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "DAD"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "AI"
+        },
+        "mid": "?",
+        "subtitle": "AI explained simply"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "A deepfake is AI-generated or altered media that imitates someone.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "A DEEPFAKE IS AI-GENERATED OR ALTERED MEDIA THAT IMITA",
+        "cue": "A"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "AI tools can alter faces, voices and video."
+    },
+    {
+      "who": "TEEN",
+      "text": "Check who posted a clip and find the original source.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "CHECK WHO POSTED A CLIP AND FIND THE ORIGINAL SOURCE.",
+        "cue": "Check"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "No detector is perfect; treat detection tools as clues."
+    },
+    {
+      "who": "TEEN",
+      "text": "Verify surprising videos through trusted sources before sharing.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "VERIFY SURPRISING VIDEOS THROUGH TRUSTED SOURCES BEFOR",
+        "cue": "Verify"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
+    }
+  ]
+}

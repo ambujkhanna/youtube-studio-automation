@@ -1,0 +1,98 @@
+{
+  "id": "ep023",
+  "slug": "does-chatgpt-remember-your-secrets",
+  "status": "ready",
+  "title": "Does ChatGPT Remember Everything You Say?",
+  "cover_text": "DOES AI REMEMBER",
+  "description": "Chat history, current context and saved memory are different. Review privacy controls.\n\nA dad asks, his teen explains AI. AI Nation Studio — Imagine. Explore. Innovate.",
+  "hashtags": [
+    "#AI",
+    "#AIExplained",
+    "#AITips",
+    "#AInationStudio",
+    "#Shorts"
+  ],
+  "tags": [
+    "AI explained",
+    "does chatgpt remember your secrets",
+    "AI tips",
+    "artificial intelligence"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Think before you share",
+    "cue": "next",
+    "left": "chat",
+    "right": "robot"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Does ChatGPT Remember Everything You Say? Really?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "DAD"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "AI"
+        },
+        "mid": "?",
+        "subtitle": "AI explained simply"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Some AI products offer memory or personalisation features.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "SOME AI PRODUCTS OFFER MEMORY OR PERSONALISATION FEATU",
+        "cue": "Some"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Current conversation, chat history and saved memory are different things."
+    },
+    {
+      "who": "TEEN",
+      "text": "Review the memory controls in the product you use.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "REVIEW THE MEMORY CONTROLS IN THE PRODUCT YOU USE.",
+        "cue": "Review"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Deleting a chat may not delete saved memory; check both controls."
+    },
+    {
+      "who": "TEEN",
+      "text": "Never share passwords or sensitive details just because a chatbot feels personal.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "NEVER SHARE PASSWORDS OR SENSITIVE DETAILS JUST BECAUS",
+        "cue": "Never"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
+    }
+  ]
+}

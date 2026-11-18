@@ -1,0 +1,98 @@
+{
+  "id": "ep021",
+  "slug": "can-ai-recognise-a-fake-voice",
+  "status": "ready",
+  "title": "Can AI Recognise a Fake Voice?",
+  "cover_text": "IS THAT REALLY YOU",
+  "description": "AI voice cloning can imitate a person's voice. Verify urgent requests independently.\n\nA dad asks, his teen explains AI. AI Nation Studio — Imagine. Explore. Innovate.",
+  "hashtags": [
+    "#AI",
+    "#AIExplained",
+    "#AITips",
+    "#AInationStudio",
+    "#Shorts"
+  ],
+  "tags": [
+    "AI explained",
+    "can ai recognise a fake voice",
+    "AI tips",
+    "artificial intelligence"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Think before you share",
+    "cue": "next",
+    "left": "chat",
+    "right": "robot"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Can AI Recognise a Fake Voice? Really?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "DAD"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "AI"
+        },
+        "mid": "?",
+        "subtitle": "AI explained simply"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "AI can create speech that sounds like a real person.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "AI CAN CREATE SPEECH THAT SOUNDS LIKE A REAL PERSON.",
+        "cue": "AI"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "A scammer could use a cloned voice in a call or audio message."
+    },
+    {
+      "who": "TEEN",
+      "text": "Never send money based on a voice alone.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "NEVER SEND MONEY BASED ON A VOICE ALONE.",
+        "cue": "Never"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Hang up and call the person using a trusted saved number."
+    },
+    {
+      "who": "TEEN",
+      "text": "A private family code phrase can add another check.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "A PRIVATE FAMILY CODE PHRASE CAN ADD ANOTHER CHECK.",
+        "cue": "A"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
+    }
+  ]
+}

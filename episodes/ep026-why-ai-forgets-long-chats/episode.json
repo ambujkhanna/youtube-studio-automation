@@ -1,0 +1,98 @@
+{
+  "id": "ep026",
+  "slug": "why-ai-forgets-long-chats",
+  "status": "ready",
+  "title": "Why Does AI Sometimes Forget Long Chats?",
+  "cover_text": "AI FORGOT ALREADY",
+  "description": "A context window limits how much information a model can consider at once. Summaries help.\n\nA dad asks, his teen explains AI. AI Nation Studio — Imagine. Explore. Innovate.",
+  "hashtags": [
+    "#AI",
+    "#AIExplained",
+    "#AITips",
+    "#AInationStudio",
+    "#Shorts"
+  ],
+  "tags": [
+    "AI explained",
+    "why ai forgets long chats",
+    "AI tips",
+    "artificial intelligence"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Think before you share",
+    "cue": "next",
+    "left": "chat",
+    "right": "robot"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "Why Does AI Sometimes Forget Long Chats? Really?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "DAD"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "AI"
+        },
+        "mid": "?",
+        "subtitle": "AI explained simply"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "A context window is how much information a model can consider at one time.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "A CONTEXT WINDOW IS HOW MUCH INFORMATION A MODEL CAN C",
+        "cue": "A"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Long conversations can exceed the available context."
+    },
+    {
+      "who": "TEEN",
+      "text": "Context is not the same as long-term memory.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "CONTEXT IS NOT THE SAME AS LONG-TERM MEMORY.",
+        "cue": "Context"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Ask for a summary of important decisions and details."
+    },
+    {
+      "who": "TEEN",
+      "text": "Reuse that summary when continuing a long project.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "REUSE THAT SUMMARY WHEN CONTINUING A LONG PROJECT.",
+        "cue": "Reuse"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "ep020",
+  "slug": "what-not-to-upload-to-ai",
+  "status": "ready",
+  "title": "5 Things You Should Never Upload to AI",
+  "cover_text": "DON'T SHARE THESE",
+  "description": "Passwords, one-time codes, bank details, identity numbers and confidential records should not be casually uploaded to AI.\n\nA dad asks, his teen explains AI. AI Nation Studio — Imagine. Explore. Innovate.",
+  "hashtags": [
+    "#AI",
+    "#AIExplained",
+    "#AITips",
+    "#AInationStudio",
+    "#Shorts"
+  ],
+  "tags": [
+    "AI explained",
+    "what not to upload to ai",
+    "AI tips",
+    "artificial intelligence"
+  ],
+  "voices": {
+    "DAD": [
+      "am_michael",
+      0.95
+    ],
+    "TEEN": [
+      "af_heart",
+      1.05
+    ]
+  },
+  "loop_card": {
+    "text": "Think before you share",
+    "cue": "next",
+    "left": "chat",
+    "right": "robot"
+  },
+  "lines": [
+    {
+      "who": "DAD",
+      "text": "5 Things You Should Never Upload to AI Really?",
+      "board": {
+        "type": "title",
+        "left": {
+          "icon": "chat",
+          "label": "DAD"
+        },
+        "right": {
+          "icon": "robot",
+          "label": "AI"
+        },
+        "mid": "?",
+        "subtitle": "AI explained simply"
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Passwords and one-time codes are a definite no.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "PASSWORDS AND ONE-TIME CODES ARE A DEFINITE NO.",
+        "cue": "Passwords"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Keep bank details, card numbers and identity numbers private."
+    },
+    {
+      "who": "TEEN",
+      "text": "Do not upload medical records or confidential work files without permission.",
+      "board": {
+        "type": "big",
+        "icon": "brain",
+        "text": "DO NOT UPLOAD MEDICAL RECORDS OR CONFIDENTIAL WORK FIL",
+        "cue": "Do"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "Use fictional examples or redact names and identifying details first."
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
+    }
+  ]
+}
