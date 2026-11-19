@@ -47,3 +47,10 @@ python pipeline/growth.py --csv out/analytics/<report>.csv --channel-key CHANNEL
 PR #1 is merged to `main`. Latest inspected daily workflow run #40 failed before growth-brief loading or rendering because the apt package installation step timed out after 15 minutes. This is an environment/package-install blocker, not yet evidence of a growth-brief code failure. Retry with more resilient installation or runner preinstalled dependencies.
 
 Latest observed analytics run #25 failed with Google OAuth `invalid_grant`; refresh the analytics-only token. The daily loader also needs recursive discovery because artifact downloads are nested under an artifact-named directory, while the current check expects the file at the output root. After fixes, manually validate fresh analytics collection and daily dry-run. Previous valid report metadata coverage: 52.6%. Recommendations remain advisory.
+
+
+## Retry fixes — 2026-11-19 19:35 IST
+
+The analytics token worked in earlier successful runs, but later retries fail with OAuth `invalid_grant`. Root cause is not conclusively identifiable from logs. A new analytics-only refresh token may be required to restore collection; upload token is separate and must remain untouched.
+
+Daily workflow artifact loader now recursively locates the growth brief in the downloaded artifact directory tree and copies the MD/JSON pair into `out/analytics`. Analytics workflow push trigger includes main. Daily system package installation timeout increased to 30 minutes. End-to-end loader validation remains pending until a fresh successful analytics artifact is produced.
