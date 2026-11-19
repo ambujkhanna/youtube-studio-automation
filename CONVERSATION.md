@@ -552,3 +552,10 @@ Current PR #1 remains open and is not merge-ready: GitHub reports `mergeable=fal
 - [x] Each file uses the documented custom-script header and DAD/TEEN dialogue format, with title, cover, hashtags, description, tags, title board and picture cues.
 - [ ] Dry-run each script through the Daily AInation Short workflow and review the rendered videos before publishing.
 - Note: Topics 18 and 20 were partly obscured in the screenshot and were interpreted as Evaluation and AI Agents respectively.
+
+
+## 2026-11-19 19:18 IST — User confirmed both PRs merged; post-merge audit
+
+Verified PR #1 merged to main. Merge commit: `97c68a27362c54d0f46b9ca05c24a4a560b9b183` (2026-11-18 16:49:26Z). Latest inspected daily workflow run #40 failed at system package installation; apt-get install of ffmpeg/fonts exceeded its 15-minute step timeout. Growth brief retrieval and rendering were skipped, so this is not a failure of the growth code itself. Retry with resilient package installation (or use runner preinstalled packages) and validate.
+
+Latest observed analytics run #25 failed at Google OAuth refresh with `invalid_grant: Token has been expired or revoked`; rotate only AInation `YT_ANALYTICS_REFRESH_TOKEN`, preserving upload credentials. Previous valid report metadata coverage 52.6%. Growth brief loader also checks the wrong location: downloaded artifact files are nested below an artifact-named directory, but the step checks only the root. Fix recursive discovery/copy. Next: token rotation, analytics manual run, fresh artifact validation, fix loader, daily dry-run, verify brief in Actions summary. Do not auto-edit scripts or publishing settings.
