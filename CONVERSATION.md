@@ -592,3 +592,14 @@ Inspected the actual analytics artifact from the successful collector run. It co
 Added the unknown rows to `growth_brief.json` and a dedicated review table in `growth_brief.md`, with direct video links. The output explicitly states that unknown IDs must be verified before adding them to episode state. Added a regression test and a PR-only unittest workflow with no publishing secrets or production side effects.
 
 PR #2: https://github.com/ambujkhanna/youtube-studio-automation/pull/2. Merge is gated on passing PR checks. The workflow-dispatch integration is not exposed by the current GitHub connector, so no daily workflow was triggered and no upload/publish occurred.
+
+
+## 2026-11-19 — Unmapped-video review shipped; analytics OAuth regressed
+
+PR #2 was merged to main (merge commit `3ee1e23adf1a66f5661af0a0ee7016e9fe3d58a1`). It adds unknown video IDs and view counts to the growth brief JSON plus a linked Markdown review table. Unknown videos are deliberately not assigned to episodes without verification. The PR-only unit-test workflow passed in all observed runs.
+
+The latest inspected analytics artifact had 20 rows, 18 mapped (90.0%); remaining IDs are `uhSn_4CVPHQ` (138 views) and `ToSaTHNDoEg` (46 views). These were not found in repository code, so no guessed mappings were committed.
+
+After merge, the main-branch analytics collection failed again in run `44561570026` with Google OAuth `invalid_grant`; unit tests passed but collection and growth-brief generation did not run. CurioKids main-branch analytics run `44561529784` failed the same way. This is a renewed credential blocker; do not change upload token `YT_REFRESH_TOKEN`.
+
+The latest observed AInation daily run `44364802528` predates the 30-minute package-install timeout fix. No post-fix scheduled daily run or safe dry-run has yet been verified. No daily workflow was dispatched as part of this work because the available GitHub connector does not expose workflow dispatch; no video was uploaded by this work.
