@@ -83,3 +83,8 @@ The latest inspected analytics artifact contains 20 rows, 18 mapped (90.0%). Unk
 PR #2 is merged to main (`3ee1e23adf1a66f5661af0a0ee7016e9fe3d58a1`). Growth briefs now list unknown video IDs and views in JSON and Markdown, linking to the video for manual verification. Latest artifact: 20 rows, 18 mapped (90.0%); unresolved: `uhSn_4CVPHQ` (138 views), `ToSaTHNDoEg` (46 views).
 
 PR unit tests passed. A subsequent main analytics collection failed with `invalid_grant` (run `44561570026`), so no fresh growth brief was generated. The AInation daily workflow still needs a post-timeout validation run. Do not infer mappings or modify upload credentials.
+
+
+## 2026-11-19 — Trigger scope
+
+PR #3 merged (`50f9031454c08c3ef8024697e9feec000cece90c`). Push-triggered analytics collection is limited to analytics source/dependencies/tests, episode metadata state and the analytics workflow. Documentation-only commits no longer consume refresh-token attempts. Scheduled and manual analytics runs remain enabled.
