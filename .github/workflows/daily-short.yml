@@ -2,7 +2,7 @@ name: Daily AInation Short
 
 on:
   schedule:
-    - cron: "15 9 * * *"     # 09:15 UTC = 14:45 IST; upload is scheduled inside the 17:00-20:00 IST window
+    - cron: "23 9 * * *"     # 09:15 UTC = 14:45 IST; upload is scheduled inside the 17:00-20:00 IST window
   workflow_dispatch:
     inputs:
       action:
@@ -92,11 +92,53 @@ jobs:
           fi
           ~/cbenv/bin/python -c "import chatterbox; print('chatterbox ready')"
 
-      - name: System packages (ffmpeg with libass, Inter font)
-        timeout-minutes: 30
+      - name: System packages (install only what is missing; retry transient apt failures)
+        timeout-minutes: 25
         run: |
-          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=30 update -q
-          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=30 install -y -q ffmpeg fonts-inter fonts-noto-color-emoji libegl1 libgl1 libfontconfig1
+          set -euo pipefail
+          packages=(ffmpeg fonts-inter fonts-noto-color-emoji libegl1 libgl1 libfontconfig1)
+          missing=()
+          for package in "${packages[@]}"; do
+            if ! dpkg-query -W -f='${Status}' "$package" 2>/dev/null | grep -q "install ok installed"; then
+              missing+=("$package")
+            fi
+          done
+
+          if [ "${#missing[@]}" -eq 0 ]; then
+            echo "All required system packages are already installed on the GitHub runner."
+            ffmpeg -version | head -n 1
+            exit 0
+          fi
+
+          echo "Missing packages: ${missing[*]}"
+          updated=0
+          for attempt in 1 2 3; do
+            echo "apt-get update attempt $attempt/3"
+            if timeout 7m sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 -o DPkg::Lock::Timeout=120 update -q; then
+              updated=1
+              break
+            fi
+            sleep $((attempt * 10))
+          done
+          if [ "$updated" -ne 1 ]; then
+            echo "::error::apt-get update failed after 3 bounded attempts."
+            exit 1
+          fi
+
+          installed=0
+          for attempt in 1 2 3; do
+            echo "apt-get install attempt $attempt/3"
+            if timeout 7m sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 -o DPkg::Lock::Timeout=120 install -y -q "${missing[@]}"; then
+              installed=1
+              break
+            fi
+            sleep $((attempt * 10))
+          done
+          if [ "$installed" -ne 1 ]; then
+            echo "::error::Required system packages could not be installed after 3 bounded attempts."
+            exit 1
+          fi
+          ffmpeg -version | head -n 1
 
       - name: Python packages
         run: pip install -r pipeline/requirements.txt
