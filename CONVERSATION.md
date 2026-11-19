@@ -566,3 +566,12 @@ Latest observed analytics run #25 failed at Google OAuth refresh with `invalid_g
 Explained that analytics token setup had previously succeeded (runs #19 and earlier); later runs failed repeatedly with OAuth `invalid_grant`. This is a later failure, not a contradiction. Logs alone cannot distinguish revoked refresh token, Google's refresh-token issuance limit, or client/consent mismatch. Re-ran via main-branch push: analytics run #26 failed with `invalid_grant`; run #27 was still in progress at the last check.
 
 Fixed artifact loader to recursively find `growth_brief.md` inside artifact-named subdirectories and copy MD/JSON to stable output path (main commit 33731bfc...). Updated analytics workflow push filter to include main (ffe548e5...) and increased daily system package timeout to 30 min (1ca14e41...). No daily video workflow was manually dispatched; no upload/publish action taken. Next: inspect run #27; if token exchange fails, replace only AInation `YT_ANALYTICS_REFRESH_TOKEN` with a newly authorized refresh token. Do not alter upload token.
+
+
+## 2026-11-19 Analytics token recovery
+
+- The user replaced the `YT_ANALYTICS_REFRESH_TOKEN` GitHub Actions secret in this repository. The upload secret `YT_REFRESH_TOKEN` was not changed.
+- Retried the failed YouTube Analytics workflow (run attempt 2). Google OAuth refresh succeeded; analytics collection, channel-specific growth brief generation, and artifact upload all succeeded.
+- Verified 7 analytics/growth unit tests passed in the workflow.
+- Successful run: https://github.com/ambujkhanna/youtube-studio-automation/actions/runs/44546163486 (artifact youtube-analytics-30).
+- Remaining validation: confirm the next scheduled daily video workflow downloads the analytics artifact and displays the growth brief in its Actions summary. No daily video workflow was manually dispatched and no video was published as part of this recovery.
