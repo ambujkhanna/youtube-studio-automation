@@ -368,3 +368,10 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 - [ ] Fresh analytics collection is blocked again: main push run `44561570026` failed with Google OAuth `invalid_grant`. Analytics tests passed; collection failed before growth brief generation. Upload token was not changed.
 - [ ] AInation daily workflow has not yet had a post-timeout scheduled run observed; its latest known daily run `44364802528` predates the 30-minute timeout fix.
 - [ ] Daily dry-run validation remains pending; no production workflow was dispatched as part of this work.
+
+
+## 2026-11-19 — Analytics trigger noise reduction
+
+- [x] Merged PR #3: https://github.com/ambujkhanna/youtube-studio-automation/pull/3 (merge commit `50f9031454c08c3ef8024697e9feec000cece90c`).
+- Analytics push collection now runs only for analytics code/dependencies/tests, episode metadata state and the analytics workflow itself; documentation-only commits no longer trigger an OAuth refresh.
+- Scheduled and manual analytics triggers remain enabled. Daily publishing workflows are unchanged.
