@@ -40,3 +40,10 @@ python pipeline/growth.py --csv out/analytics/<report>.csv --channel-key CHANNEL
 - Latest observed episode/video metadata coverage: **52.6%**. The growth brief flags unknown mappings; resolve these before relying on topic-level rankings.
 - The PR to `main` remains open and currently has merge conflicts (`mergeable_state=dirty`). Synchronize with current `main`, resolve conflicts and revalidate before merging. No force merge.
 - Daily-workflow integration has been committed, but it is advisory: it surfaces the brief in the Actions summary and does not alter scripts or publishing.
+
+
+## Post-merge audit — 2026-11-19 19:18 IST
+
+PR #1 is merged to `main`. Latest inspected daily workflow run #40 failed before growth-brief loading or rendering because the apt package installation step timed out after 15 minutes. This is an environment/package-install blocker, not yet evidence of a growth-brief code failure. Retry with more resilient installation or runner preinstalled dependencies.
+
+Latest observed analytics run #25 failed with Google OAuth `invalid_grant`; refresh the analytics-only token. The daily loader also needs recursive discovery because artifact downloads are nested under an artifact-named directory, while the current check expects the file at the output root. After fixes, manually validate fresh analytics collection and daily dry-run. Previous valid report metadata coverage: 52.6%. Recommendations remain advisory.
