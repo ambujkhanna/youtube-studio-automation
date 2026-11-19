@@ -358,3 +358,13 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 - Added regression test coverage and a lightweight pull-request unit-test workflow.
 - PR #2: https://github.com/ambujkhanna/youtube-studio-automation/pull/2
 - Validation/merge: waiting for GitHub Actions PR checks. Daily render-only dry-run remains unverified; no video was uploaded or published.
+
+
+## 2026-11-19 — Growth review PR #2 merged
+
+- [x] Inspected the latest analytics artifact: 20 rows, 18 mapped (90.0%); unknown IDs `uhSn_4CVPHQ` (138 views) and `ToSaTHNDoEg` (46 views).
+- [x] Growth brief now exports unmapped video IDs/views in JSON and a linked Markdown review table; no speculative episode mapping is performed.
+- [x] Added regression test and PR-only unit-test workflow. PR #2 merged: https://github.com/ambujkhanna/youtube-studio-automation/pull/2 (merge commit `3ee1e23adf1a66f5661af0a0ee7016e9fe3d58a1`); all PR test runs succeeded.
+- [ ] Fresh analytics collection is blocked again: main push run `44561570026` failed with Google OAuth `invalid_grant`. Analytics tests passed; collection failed before growth brief generation. Upload token was not changed.
+- [ ] AInation daily workflow has not yet had a post-timeout scheduled run observed; its latest known daily run `44364802528` predates the 30-minute timeout fix.
+- [ ] Daily dry-run validation remains pending; no production workflow was dispatched as part of this work.
