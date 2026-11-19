@@ -332,3 +332,12 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 - [ ] Retry analytics run #26 still failed with `invalid_grant`; run #27 is still in progress at last check. A fresh analytics-only refresh token is needed if it also fails. Do not change `YT_REFRESH_TOKEN`.
 - [ ] Validate loader end-to-end after a fresh successful analytics artifact exists. Daily production workflow was not manually dispatched; no video was published as part of this retry.
 - Previous report metadata coverage: 52.6%; repair unmapped episode/video IDs.
+
+
+## 2026-11-19 Analytics token recovery
+
+- The user replaced the `YT_ANALYTICS_REFRESH_TOKEN` GitHub Actions secret in this repository. The upload secret `YT_REFRESH_TOKEN` was not changed.
+- Retried the failed YouTube Analytics workflow (run attempt 2). Google OAuth refresh succeeded; analytics collection, channel-specific growth brief generation, and artifact upload all succeeded.
+- Verified 7 analytics/growth unit tests passed in the workflow.
+- Successful run: https://github.com/ambujkhanna/youtube-studio-automation/actions/runs/44546163486 (artifact youtube-analytics-30).
+- Remaining validation: confirm the next scheduled daily video workflow downloads the analytics artifact and displays the growth brief in its Actions summary. No daily video workflow was manually dispatched and no video was published as part of this recovery.
