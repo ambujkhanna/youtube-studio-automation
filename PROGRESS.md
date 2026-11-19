@@ -321,3 +321,14 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 - [ ] Metadata coverage in last valid analytics report was 52.6%; repair unknown video/episode mappings.
 - [ ] After token rotation, run analytics workflow manually and verify fresh CSV/MD/SQLite/growth brief artifact; then run a daily dry-run and confirm brief appears in the Actions summary.
 - [ ] Recommendations remain advisory; no automatic script rewrite, upload or publishing changes.
+
+
+## 2026-11-19 19:35 IST — Retry and integration fixes
+
+- [x] Clarified prior token history: analytics worked in earlier successful feature-branch runs (#19). Subsequent runs #22–#27 repeatedly failed at Google OAuth refresh with `invalid_grant`; this is a new observed failure, not evidence original setup was wrong. Exact cause is not established by logs alone.
+- [x] Fixed daily growth-brief loader to search recursively inside downloaded artifact subfolders, then copy Markdown/JSON to a stable path. Commit on main: `33731bfc73b673b463f04338133e589f58ee7e2f`.
+- [x] Analytics workflow now triggers on main changes as well as legacy feature branch. Commit: `ffe548e5749322fa380adb95df99426ef7ca2d74`.
+- [x] Increased system package installation timeout from 15 to 30 minutes. Commit: `1ca14e41fa03c14e598bca1233fed72fa6b62125`.
+- [ ] Retry analytics run #26 still failed with `invalid_grant`; run #27 is still in progress at last check. A fresh analytics-only refresh token is needed if it also fails. Do not change `YT_REFRESH_TOKEN`.
+- [ ] Validate loader end-to-end after a fresh successful analytics artifact exists. Daily production workflow was not manually dispatched; no video was published as part of this retry.
+- Previous report metadata coverage: 52.6%; repair unmapped episode/video IDs.
