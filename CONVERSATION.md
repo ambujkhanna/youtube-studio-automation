@@ -603,3 +603,8 @@ The latest inspected analytics artifact had 20 rows, 18 mapped (90.0%); remainin
 After merge, the main-branch analytics collection failed again in run `44561570026` with Google OAuth `invalid_grant`; unit tests passed but collection and growth-brief generation did not run. CurioKids main-branch analytics run `44561529784` failed the same way. This is a renewed credential blocker; do not change upload token `YT_REFRESH_TOKEN`.
 
 The latest observed AInation daily run `44364802528` predates the 30-minute package-install timeout fix. No post-fix scheduled daily run or safe dry-run has yet been verified. No daily workflow was dispatched as part of this work because the available GitHub connector does not expose workflow dispatch; no video was uploaded by this work.
+
+
+## 2026-11-19 — Analytics push trigger narrowed
+
+Merged PR #3 (`50f9031454c08c3ef8024697e9feec000cece90c`). The analytics workflow's push trigger now has a paths filter for collector/growth code, analytics dependencies, tests, episode state and the analytics workflow. Documentation-only changes will not trigger a collector run. Scheduled and manual analytics triggers remain enabled; daily video workflows are unchanged.
