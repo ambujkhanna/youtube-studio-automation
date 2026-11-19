@@ -584,3 +584,11 @@ The user asked to continue implementation and always take the latest file conten
 The current Short state file contains 18 distinct video IDs. Historical analytics metadata coverage remains 52.6%; no mappings were guessed for videos not represented in state. Analytics OAuth recovery remains successful (run `44546163486`), and the upload token is separate and untouched.
 
 No workflow was dispatched during this audit, so end-to-end proof that the next daily run displays the brief in the Actions summary remains open. A dry-run is the appropriate validation because it renders without upload. No publishing settings, upload credentials or episode state were changed.
+
+## 2026-11-19 — Growth report audit and unmapped review improvement
+
+Inspected the actual analytics artifact from the successful collector run. It contains 20 video rows; 18 are mapped (90.0%). Two unknown video IDs remain: `uhSn_4CVPHQ` (138 views) and `ToSaTHNDoEg` (46 views). Searches of repository code did not find these IDs, so no episode mapping was invented.
+
+Added the unknown rows to `growth_brief.json` and a dedicated review table in `growth_brief.md`, with direct video links. The output explicitly states that unknown IDs must be verified before adding them to episode state. Added a regression test and a PR-only unittest workflow with no publishing secrets or production side effects.
+
+PR #2: https://github.com/ambujkhanna/youtube-studio-automation/pull/2. Merge is gated on passing PR checks. The workflow-dispatch integration is not exposed by the current GitHub connector, so no daily workflow was triggered and no upload/publish occurred.

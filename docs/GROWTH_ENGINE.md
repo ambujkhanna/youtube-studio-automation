@@ -72,3 +72,7 @@ Daily workflow artifact loader now recursively locates the growth brief in the d
 - The latest known metadata coverage is 52.6%; the current Short state file contains 18 distinct video IDs. Do not invent mappings for videos absent from state.
 - Analytics token recovery succeeded in run `44546163486`; upload credentials remain separate and unchanged.
 - No production workflow was dispatched and no video was uploaded or published during this audit.
+
+## 2026-11-19 — Unmapped-video audit
+
+The latest inspected analytics artifact contains 20 rows, 18 mapped (90.0%). Unknown IDs: `uhSn_4CVPHQ` (138 views) and `ToSaTHNDoEg` (46 views). These are surfaced in the growth brief for manual review; the system deliberately does not guess episode IDs. PR #2 adds this output and regression coverage: https://github.com/ambujkhanna/youtube-studio-automation/pull/2.

@@ -350,3 +350,11 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 - Confirmed the current Short state file contains 18 distinct video IDs; historical analytics metadata coverage remains 52.6%. Do not guess mappings for older/untracked video IDs.
 - Analytics token recovery remains successful (run `44546163486`); the analytics-only token is separate from upload credentials.
 - No daily workflow was dispatched in this audit; post-fix end-to-end brief display remains unverified. No upload/publishing settings or episode state were changed.
+
+## 2026-11-19 — Growth report unmapped-video review
+
+- Downloaded and inspected the latest successful analytics artifact. AInation report: 20 rows, 18 mapped (90.0%); two unknown IDs remain: `uhSn_4CVPHQ` (138 views) and `ToSaTHNDoEg` (46 views).
+- Added an explicit unmapped-video review list to the growth brief JSON and Markdown. Unknown IDs are linked for manual inspection and are never assigned to episodes automatically.
+- Added regression test coverage and a lightweight pull-request unit-test workflow.
+- PR #2: https://github.com/ambujkhanna/youtube-studio-automation/pull/2
+- Validation/merge: waiting for GitHub Actions PR checks. Daily render-only dry-run remains unverified; no video was uploaded or published.
