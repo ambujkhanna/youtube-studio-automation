@@ -627,3 +627,8 @@ No new upload/publishing action was initiated by the assistant. Growth recommend
 - [ ] Latest scheduled analytics run 44603311245 failed with Google OAuth `invalid_grant` (“Token has been expired or revoked”). Reauthorize and replace only `YT_ANALYTICS_REFRESH_TOKEN`; leave `YT_REFRESH_TOKEN` unchanged.
 - [ ] A safe post-fix daily dry-run is still pending. The available GitHub integration does not expose workflow dispatch; use Actions → Daily AInation Short → Run workflow → action `Dry run (render only, nothing uploaded)` and select `EP020` if validating the formerly failing path.
 - No publishing behavior, tokens, schedule, or episode-state data was modified by PR #4.
+
+
+## 2026-11-20 — User updated the analytics refresh tokens; both channels validated
+
+The user clarified that yesterday's update may have replaced the short-lived access token rather than the refresh token. They have now updated `YT_ANALYTICS_REFRESH_TOKEN` in both repositories. Retried the failed analytics jobs using the current secrets: CurioKids run 44606697918 and AInation run 44603311245. Both completed successfully, including Google OAuth refresh, read-only analytics collection, growth brief generation, unit tests, and artifact/database upload. This confirms that the currently configured analytics refresh tokens work in both repositories. The upload secret `YT_REFRESH_TOKEN` was not changed, and these analytics retries did not upload or publish videos. Safe Daily Short dry-run validation remains pending; use the explicit `Dry run (render only, nothing uploaded)` action, not the scheduled/publish default.
