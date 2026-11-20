@@ -42,7 +42,20 @@ def pick(state, forced=None):
         ep = json.load(open(f)); ep["_file"] = f
         eps.append(ep)
     if forced:
-        return next(e for e in eps if e["id"] == forced)
+        # Workflow inputs may be supplied in uppercase (for example, EP020),
+        # while episode metadata uses lowercase IDs (ep020). Resolve IDs
+        # case-insensitively and fail with a useful message if no match exists.
+        wanted = str(forced).strip().casefold()
+        matches = [e for e in eps if str(e.get("id", "")).strip().casefold() == wanted]
+        if len(matches) == 1:
+            return matches[0]
+        if len(matches) > 1:
+            raise ValueError(f"Episode ID {forced!r} is ambiguous after case normalization.")
+        available = ", ".join(str(e.get("id", "<missing id>")) for e in eps)
+        raise ValueError(
+            f"Episode ID {forced!r} was not found under {EPDIR}. "
+            f"Available IDs: {available or '(none)'}"
+        )
     for ep in eps:
         st = state["episodes"].get(ep["id"], {}).get("status")
         if ep.get("status") == "ready" and st not in ("uploaded", "published", "manual"):
