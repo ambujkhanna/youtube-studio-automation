@@ -632,3 +632,8 @@ No new upload/publishing action was initiated by the assistant. Growth recommend
 ## 2026-11-20 — User updated the analytics refresh tokens; both channels validated
 
 The user clarified that yesterday's update may have replaced the short-lived access token rather than the refresh token. They have now updated `YT_ANALYTICS_REFRESH_TOKEN` in both repositories. Retried the failed analytics jobs using the current secrets: CurioKids run 44606697918 and AInation run 44603311245. Both completed successfully, including Google OAuth refresh, read-only analytics collection, growth brief generation, unit tests, and artifact/database upload. This confirms that the currently configured analytics refresh tokens work in both repositories. The upload secret `YT_REFRESH_TOKEN` was not changed, and these analytics retries did not upload or publish videos. Safe Daily Short dry-run validation remains pending; use the explicit `Dry run (render only, nothing uploaded)` action, not the scheduled/publish default.
+
+
+## 2026-11-20 — Latest AInation analytics failure rechecked
+
+The audit found a newer push-triggered analytics run 44724594920 that had failed with `invalid_grant` before the user's refresh-token correction. Re-ran the failed job (attempt 2) using the current repository secret; it completed successfully. OAuth refresh, read-only analytics collection, growth brief generation, tests and artifact upload all passed. This confirms the current AInation refresh token is working; upload credentials were not changed. The safe Daily Short dry-run remains pending and should explicitly select `Dry run (render only, nothing uploaded)` (use forced episode `EP020` to cover the case-insensitive ID fix). No publishing workflow was run.
