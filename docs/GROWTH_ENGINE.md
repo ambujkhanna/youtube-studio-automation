@@ -116,3 +116,8 @@ PR #3 merged (`50f9031454c08c3ef8024697e9feec000cece90c`). Push-triggered analyt
 - Both runs passed analytics unit tests, Google OAuth refresh, read-only collection, channel-specific growth brief generation, and report/database artifact upload. This validates the current analytics refresh-token configuration in both repositories.
 - The upload secret `YT_REFRESH_TOKEN` was not changed. Analytics collection is read-only with respect to YouTube publishing; no video was uploaded or published by these retries.
 - Remaining separate validation: run each Daily Short workflow with the explicit `Dry run (render only, nothing uploaded)` action and confirm the latest growth brief appears in the Actions summary. Do not select the scheduled/publish default for this check.
+
+
+## Follow-up validation — 2026-11-20
+
+The newer AInation push-triggered analytics run 44724594920 initially failed with OAuth `invalid_grant` before the user's refresh-token correction. Retry attempt 2 succeeded, including token refresh, analytics collection, growth brief generation, tests and artifact upload. Current analytics refresh-token configuration is validated. The remaining integration check is a safe Daily Short dry-run with `Dry run (render only, nothing uploaded)`; use `EP020` to exercise the recently fixed case-insensitive forced-episode selection. No production publishing action is needed for this validation.
