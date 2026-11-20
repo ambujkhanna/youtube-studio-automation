@@ -385,3 +385,13 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 - [ ] CurioKids daily post-fix dry-run remains unverified; no new CurioKids daily workflow dispatch was found in the latest 10 runs.
 - [ ] Need a fresh valid YT_ANALYTICS_REFRESH_TOKEN in each repository, then a successful analytics collection followed by safe daily dry-run(s) to prove the growth brief appears in the Actions summary.
 - Guardrails unchanged: no assistant-initiated video upload, publish, schedule change, episode-state edit or upload-token change.
+
+
+## 2026-11-20 — Current operational status and episode-ID fix
+
+- [x] Investigated Daily Short run 44562499073. It ran with action `Next video (scheduled)`, destination YouTube + Facebook + Instagram, and forced episode input `EP020`. Growth-brief loading succeeded, but rendering stopped before upload because `pick()` compared the uppercase workflow input to lowercase metadata ID `ep020` and raised `StopIteration`. No video was uploaded by this failed run; episode state reported “nothing changed”.
+- [x] Fixed forced episode lookup to be case-insensitive and to report a useful error for unknown/ambiguous IDs. Added regression tests in `tests/test_daily.py`. PR #4 merged after CI passed: https://github.com/ambujkhanna/youtube-studio-automation/pull/4; merge commit `5505732787e5148bd9db0fcf4eab9d4aa338cf4b`.
+- [x] The Daily Short growth-brief loader completed successfully in run 44562499073. It loaded the latest successful analytics artifact, but that report is stale until a new analytics collection succeeds.
+- [ ] Latest scheduled analytics run 44603311245 failed with Google OAuth `invalid_grant` (“Token has been expired or revoked”). Reauthorize and replace only `YT_ANALYTICS_REFRESH_TOKEN`; leave `YT_REFRESH_TOKEN` unchanged.
+- [ ] A safe post-fix daily dry-run is still pending. The available GitHub integration does not expose workflow dispatch; use Actions → Daily AInation Short → Run workflow → action `Dry run (render only, nothing uploaded)` and select `EP020` if validating the formerly failing path.
+- No publishing behavior, tokens, schedule, or episode-state data was modified by PR #4.
