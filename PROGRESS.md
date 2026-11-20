@@ -404,3 +404,11 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 - [x] In both runs, OAuth collection, channel-specific growth brief generation, and report/database artifact upload succeeded. Analytics unit tests also passed. This validates the current analytics refresh tokens in both repositories.
 - [ ] Safe Daily Short dry-run remains a separate pending validation; do not use the default scheduled/publish action.
 - Upload credential `YT_REFRESH_TOKEN` was not changed. No video was uploaded or published by these analytics retries.
+
+
+## 2026-11-20 — Follow-up analytics retry
+
+- [x] Rechecked latest analytics runs. AInation push-triggered run 44724594920 had failed with OAuth `invalid_grant` before the user's refresh-token correction.
+- [x] Re-ran that workflow (attempt 2) using the current repository secret; OAuth refresh, read-only analytics collection, growth brief generation, tests and artifact upload all completed successfully.
+- [x] Together with successful retry 44603311245, this confirms the current AInation analytics refresh token is working. The upload secret `YT_REFRESH_TOKEN` was not changed.
+- [ ] Safe Daily Short dry-run remains pending; select only `Dry run (render only, nothing uploaded)`, and for the previous episode-ID regression use `EP020`.
