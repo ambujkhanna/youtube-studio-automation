@@ -617,3 +617,13 @@ Re-fetched the latest main versions of PROGRESS.md, CONVERSATION.md, docs/GROWTH
 AInation Daily Short workflow run 44562499073 appeared as a user-triggered workflow_dispatch and is still in progress. At inspection it was at the system-package installation step; the analytics brief loader and render/upload step had not yet executed. The GitHub run API does not expose the selected dispatch inputs, and the workflow default is Next video (scheduled), so this run cannot be assumed to be a dry-run. The assistant did not initiate or cancel it. Please verify in its Actions run page that the selected action is Dry run (render only, nothing uploaded) if you intended a safe validation. CurioKids has no new daily dispatch among the latest 10 runs; its post-fix dry-run remains pending.
 
 No new upload/publishing action was initiated by the assistant. Growth recommendations remain advisory; no episode state, publishing schedule, upload token or workflow publishing logic was changed.
+
+
+## 2026-11-20 — Current operational status and episode-ID fix
+
+- [x] Investigated Daily Short run 44562499073. It ran with action `Next video (scheduled)`, destination YouTube + Facebook + Instagram, and forced episode input `EP020`. Growth-brief loading succeeded, but rendering stopped before upload because `pick()` compared the uppercase workflow input to lowercase metadata ID `ep020` and raised `StopIteration`. No video was uploaded by this failed run; episode state reported “nothing changed”.
+- [x] Fixed forced episode lookup to be case-insensitive and to report a useful error for unknown/ambiguous IDs. Added regression tests in `tests/test_daily.py`. PR #4 merged after CI passed: https://github.com/ambujkhanna/youtube-studio-automation/pull/4; merge commit `5505732787e5148bd9db0fcf4eab9d4aa338cf4b`.
+- [x] The Daily Short growth-brief loader completed successfully in run 44562499073. It loaded the latest successful analytics artifact, but that report is stale until a new analytics collection succeeds.
+- [ ] Latest scheduled analytics run 44603311245 failed with Google OAuth `invalid_grant` (“Token has been expired or revoked”). Reauthorize and replace only `YT_ANALYTICS_REFRESH_TOKEN`; leave `YT_REFRESH_TOKEN` unchanged.
+- [ ] A safe post-fix daily dry-run is still pending. The available GitHub integration does not expose workflow dispatch; use Actions → Daily AInation Short → Run workflow → action `Dry run (render only, nothing uploaded)` and select `EP020` if validating the formerly failing path.
+- No publishing behavior, tokens, schedule, or episode-state data was modified by PR #4.
