@@ -101,7 +101,7 @@
         "type": "big",
         "icon": "check",
         "text": "PAUSE AND VERIFY",
-        "cue": "verify"
+        "cue": "Pause"
       }
     },
     {
