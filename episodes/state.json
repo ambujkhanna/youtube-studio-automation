@@ -264,13 +264,25 @@
       "status": "uploaded",
       "video_id": "S9mw1DujZ0o",
       "url": "https://www.youtube.com/shorts/S9mw1DujZ0o",
-      "uploaded_at": "2026-11-18T00:16:18+05:30"
+      "uploaded_at": "2026-11-18T00:16:18+05:30",
+      "thumbnail_checked": "2026-11-20T20:07+05:30 set"
     },
     "ep020": {
-      "status": "invalid",
+      "status": "uploaded",
       "problems": [
         "line 6: cue 'verify' not in text"
-      ]
+      ],
+      "voices": "chatterbox",
+      "title": "5 Things You Should Never Upload to AI",
+      "rendered_at": "2026-11-20T20:05:20+05:30",
+      "duration_s": 44.42,
+      "publish_at_ist": "2026-11-21T19:45+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "facebook": "posted (reel 2569683686845907), cover set",
+      "instagram": "posted (reel 18111824090594860) with the 3 Mbps copy, designed cover",
+      "video_id": "AFd6R1UiNRA",
+      "url": "https://www.youtube.com/shorts/AFd6R1UiNRA",
+      "uploaded_at": "2026-11-20T20:07:16+05:30"
     }
   }
 }
