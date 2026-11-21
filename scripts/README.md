@@ -91,3 +91,5 @@ Then run again with action *Next video (scheduled)* to upload it to YouTube and 
 - [ ] a picture hint (`| emoji words`) every 2–3 lines
 - [ ] facts double-checked (it's an explainer: keep it accurate and simple)
 - [ ] new file name for a new video, no spaces
+
+**Ending:** just before the subscribe line, add one line asking viewers to drop a topic in the comment section, e.g. `DAD: What should we explain next? Drop a topic in the comment section!`

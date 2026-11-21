@@ -9,3 +9,5 @@ TITLE_BOARD: 💬 Your words -> 🤖 AI answer
 DAD: Everyone keeps saying "prompt". What is a prompt?
 TEEN: A prompt is simply what you type to an AI.   | 💬 What you type
 DAD: So "write me a poem" is a prompt?
+# ... more lines ... then, just before the subscribe line:
+DAD: What should we explain next? Drop a topic in the comment section!

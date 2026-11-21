@@ -59,3 +59,11 @@ Check before committing: `python pipeline/validate_episode.py episodes/*/episode
 ## Animated scenes (since 2026-11-21)
 
 **Whenever a line explains change, a process, a journey or a cycle, use an animated scene** (`lifecycle`, `transform`, `flow`, `water_cycle`, `plant_growth`) instead of a static list. Static boards are for facts, tips and rules. Aim for 1–3 scenes per Short, with short labels and plenty of space. Examples and rules: `docs/ANIMATED_SCENES.md`. Every icon is drawn as a 3D icon automatically.
+
+## Ask for the next topic (since 2026-11-21)
+
+Every new episode has one line just **before** the final subscribe line asking viewers to drop a topic in the comment section, e.g.
+
+    DAD: What should we explain next? Drop a topic in the comment section!
+
+No board on that line. The end card also shows a "Drop a topic in the comments!" bubble automatically.

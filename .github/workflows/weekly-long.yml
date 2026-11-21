@@ -169,6 +169,7 @@ jobs:
           THEME: ${{ vars.THEME || 'studio_open' }}
           ICON_STYLE: ${{ vars.ICON_STYLE || '3d' }}
           LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
+          CTA_STYLE: ${{ vars.CTA_STYLE || 'pop' }}
           BOARD_STYLE_RUN: ${{ inputs.board_style || '' }}
         run: |
           ARGS=""
