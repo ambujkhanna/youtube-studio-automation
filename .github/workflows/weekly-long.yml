@@ -170,7 +170,7 @@ jobs:
           OUTRO: ${{ vars.OUTRO || 'on' }}
           BOARD_STYLE: ${{ vars.BOARD_STYLE || 'hanging' }}
           THEME: ${{ vars.THEME || 'studio_open' }}
-          ICON_STYLE: ${{ vars.ICON_STYLE || '3d' }}
+          ICON_STYLE: ${{ vars.ICON_STYLE || 'house' }}
           LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
           CTA_STYLE: ${{ vars.CTA_STYLE || 'pop' }}
           BOARD_STYLE_RUN: ${{ inputs.board_style || '' }}

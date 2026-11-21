@@ -67,3 +67,7 @@ Every new episode has one line just **before** the final subscribe line asking v
     DAD: What should we explain next? Drop a topic in the comment section!
 
 No board on that line. The end card also shows a "Drop a topic in the comments!" bubble automatically.
+
+## Realistic house icons (since 2026-11-21)
+
+Many emoji now draw as our own realistic 3D icon automatically (curated: weather and symbols stay emoji). Science pictures with no emoji can be used by name, e.g. `"icon": "w_heart_model"`, `"w_soil_block"`, `"w_ai_chip"`; force our version of an emoji with `"house:🦷"`-style names. Full list and rules: `docs/ANIMATED_SCENES.md` → Icons.
