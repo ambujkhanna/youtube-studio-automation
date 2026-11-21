@@ -14,6 +14,21 @@ A zero-additional-subscription-cost, AI-assisted system for researching, creatin
 
 Hashtag: **#AInationstudio**
 
+## Video look (theme)
+
+Every AInation video uses the **Studio Open** look by default: clean light studio, no board frame, one blue accent, 3D icons, tile lists and animated scenes. The look is a background setting, **not** an option in the Run-workflow form, and applies to every run (scheduled and manual).
+
+To change it for all videos: **Settings → Secrets and variables → Actions → Variables → New variable** `THEME` =
+
+| Value | Look |
+|---|---|
+| *(not set)* / `studio_open` | Studio Open (default) |
+| `studio_light` | same, with a white board card |
+| `studio_dark` | deep navy background, white board card |
+| `classic` | the original living room with the hanging board |
+
+Delete the variable to go back to Studio Open. Related switches: `ICON_STYLE=flat` (old flat icons), `LIST_STYLE=classic` (old full-width list rows). The Run-workflow option *Board look for THIS run* only matters in the `classic` look. Details: `docs/CHANNELS_REFERENCE.md`, `docs/ANIMATED_SCENES.md`.
+
 ## Project status
 - Repository: public
 - Current phase: operational content pipeline; read-only analytics foundation added on `feat/youtube-growth-engine` (OAuth setup and first run pending)

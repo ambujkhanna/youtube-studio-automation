@@ -1,3 +1,4 @@
+# NOTE (2026-11-21): this topic overlaps with ep029 'What Are AI Agents…' - give it a clearly different angle before making it a video.
 TITLE: AI Agents: From Chatting to Completing Tasks 🚀
 COVER: AI AGENTS
 HASHTAGS: #AI #AIAgents #AgenticAI #LearnAI
@@ -12,4 +13,5 @@ TEEN: A travel-planning agent might research destinations, compare hotels and pr
 DAD: So it can handle several connected steps?
 TEEN: Yes, depending on its tools and permissions. Some systems can even coordinate multiple agents.
 DAD: Should we let it do everything without checking?
-TEEN: No! Important actions need safeguards and human approval. Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: No! Important actions need safeguards and human approval.
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

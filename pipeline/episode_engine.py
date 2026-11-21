@@ -556,6 +556,12 @@ for t_, k in SHOTS:  # drop cuts closer than 1.2 s and repeated shots
         continue
     dedup.append((t_, k))
 SHOTS = dedup
+if THEME.OPEN:  # frameless look: no speaker close-ups (they push the board half out of frame and cut its text)
+    _o = []
+    for t_, k in SHOTS:
+        k = k if k in ("wide", "board") else "wide"
+        if not _o or _o[-1][1] != k: _o.append((t_, k))
+    SHOTS = _o
 HEADY = {"DAD": (1090, 1.95), "TEEN": (1150, 1.95), "MIA": (1150, 1.95), "LEO": (1320, 2.2)}
 CAMS = {"wide": (540, 960, 1.0, 1.05), "board": (540, 930, 1.03, 1.05)}
 for n, c in CH.items():
