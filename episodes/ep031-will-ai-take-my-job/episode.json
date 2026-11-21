@@ -56,10 +56,21 @@
       "who": "TEEN",
       "text": "Nobody knows exactly. But right now, AI mostly changes tasks, not whole jobs.",
       "board": {
-        "type": "big",
+        "type": "photo",
+        "art": "ain_jobs_ai",
+        "query": "office worker laptop desk",
+        "caption": "Tasks change, not whole jobs",
+        "cue": "tasks",
         "icon": "target",
-        "text": "Tasks change, not whole jobs",
-        "cue": "tasks"
+        "pin": {
+          "url": "https://live.staticflickr.com/4872/30849317077_17490f8852_b.jpg",
+          "title": "Woman playing on her phone at work",
+          "source": "flickr",
+          "creator": "Rawpixel Ltd",
+          "licence": "CC BY 2.0",
+          "landing": "https://www.flickr.com/photos/147875007@N03/30849317077",
+          "credit": "Rawpixel Ltd"
+        }
       },
       "punch": "tasks"
     },

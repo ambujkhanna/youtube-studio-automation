@@ -56,10 +56,22 @@
       "who": "TEEN",
       "text": "Not a doctor, but a helper. It can spot patterns in scans and help with paperwork.",
       "board": {
-        "type": "big",
+        "type": "photo",
+        "art": "ain_health_scan",
+        "query": "doctor looking at x-ray",
+        "caption": "A helper, not a doctor",
+        "cue": "helper",
         "icon": "shield",
-        "text": "A helper, not a doctor",
-        "cue": "helper"
+        "pin": {
+          "url": "https://live.staticflickr.com/65535/54577297578_0edff48631_b.jpg",
+          "title": "Close-up of a doctor looking at the x-ray film.",
+          "source": "flickr",
+          "creator": "nenadstojkovicart",
+          "licence": "CC BY 2.0",
+          "landing": "https://www.flickr.com/photos/202846129@N03/54577297578",
+          "credit": "nenadstojkovicart"
+        },
+        "source": "openverse"
       },
       "punch": "helper"
     },

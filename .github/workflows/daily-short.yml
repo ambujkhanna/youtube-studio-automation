@@ -143,6 +143,10 @@ jobs:
       - name: Python packages
         run: pip install -r pipeline/requirements.txt
 
+      - name: Install self-check (optional; never blocks a run)
+        continue-on-error: true
+        run: pip install -q faster-whisper
+
       - name: Cache voice model files
         uses: actions/cache@v4
         with:
@@ -210,6 +214,12 @@ jobs:
           BOARD_STYLE: ${{ vars.BOARD_STYLE || 'hanging' }}
           THEME: ${{ vars.THEME || 'studio_open' }}
           ICON_STYLE: ${{ vars.ICON_STYLE || 'house' }}
+          STOCK: ${{ vars.STOCK || 'on' }}
+          SELFCHECK: ${{ vars.SELFCHECK || 'on' }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          STOCK_STYLE: ${{ vars.STOCK_STYLE || 'plain' }}
           LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
           CTA_STYLE: ${{ vars.CTA_STYLE || 'pop' }}
           BOARD_STYLE_RUN: ${{ inputs.board_style || '' }}
@@ -248,3 +258,13 @@ jobs:
           STATE_BOT: aination-bot
         run: |
           python pipeline/save_state.py "Daily run: update episode state"
+
+      - name: Alert on failure (only if alert secrets are set)
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python pipeline/notify.py "❌ ${{ github.workflow }} failed in ${{ github.repository }} - $RUN_URL"

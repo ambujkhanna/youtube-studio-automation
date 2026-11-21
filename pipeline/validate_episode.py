@@ -5,7 +5,7 @@
 import json, os, sys
 
 TYPES = {"chat", "permission", "title", "big", "steps", "compare", "checklist", "summary", "poem", "gallery", "body", "cycle", "journey", "orbit",
-         "lifecycle", "flow", "transform", "water_cycle", "plant_growth", "tiles", "timeline"}  # animated scenes (pipeline/scenes.py)
+         "lifecycle", "flow", "transform", "water_cycle", "plant_growth", "tiles", "timeline", "photo", "clip"}  # animated scenes (pipeline/scenes.py)
 CAST = {"DAD", "TEEN"}
 LEGACY_ICONS = {"chat", "robot", "check", "sun", "train", "doc", "lock", "target", "search", "calendar", "mail", "suitcase",
                 "warn", "x", "user", "bulb", "shield", "coin", "eye", "book", "globe", "brain", "phone"}
@@ -89,6 +89,7 @@ def check(path):
         sc = l.get("board")
         if sc:
             if sc.get("type") not in TYPES: errs.append(f"line {i}: unknown board type {sc.get('type')}")
+            if sc.get("type") in ("photo", "clip") and not sc.get("query"): errs.append(f"line {i}: {sc['type']} board needs \"query\" (what to search for)")
             for key, n in LIMITS.items():
                 if sc.get("type") == key:
                     for fld in ("items", "rows", "lines"):

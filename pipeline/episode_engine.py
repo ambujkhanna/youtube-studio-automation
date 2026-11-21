@@ -435,6 +435,10 @@ import scenes  # animated explanation scenes (lifecycle, flow, transform, water_
 for _name, _fn in scenes.BUILDERS.items():
     BUILD[_name] = (lambda f: (lambda i, t0, t1, sc: f(_E, i, t0, t1, sc)))(_fn)
 scenes.use_for_lists(BUILD, _E)  # lighter list boards: tiles (LIST_STYLE=classic = old rows)
+import stock  # real photos / NASA clips (roadmap R1); falls back to a big icon board
+_E.BUILD_BIG = build_big
+for _n, _fn in stock.BUILDERS.items():
+    BUILD[_n] = (lambda f: (lambda i, t0, t1, sc: f(_E, i, t0, t1, sc)))(_fn)
 for k in range(len(scene_starts)):
     i, t0, t1 = scene_window(k)
     sc = ELINES[i]["board"]
@@ -535,7 +539,7 @@ for i, ln in enumerate(LN):
         continue
     who = ln["speaker"] if len(CAST) > 1 else ("wide" if i % 3 else ln["speaker"])
     _sc_i = max([j for j in scene_starts if j <= i] or [0])
-    if ELINES[_sc_i].get("board", {}).get("type") in list(diagrams.BUILDERS) + list(scenes.BUILDERS):  # keep the animated diagram on screen
+    if ELINES[_sc_i].get("board", {}).get("type") in list(diagrams.BUILDERS) + list(scenes.BUILDERS) + ["photo", "clip"]:  # keep the animated diagram on screen
         who = "board"
     SHOTS.append((ln["start"] - 0.05, "wide" if i % 4 == 0 or i == last else who))
     cl = cues_by_line.get(i, [])

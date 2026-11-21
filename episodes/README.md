@@ -71,3 +71,7 @@ No board on that line. The end card also shows a "Drop a topic in the comments!"
 ## Realistic house icons (since 2026-11-21)
 
 Many emoji now draw as our own realistic 3D icon automatically (curated: weather and symbols stay emoji). Science pictures with no emoji can be used by name, e.g. `"icon": "w_heart_model"`, `"w_soil_block"`, `"w_ai_chip"`; force our version of an emoji with `"house:🦷"`-style names. Full list and rules: `docs/ANIMATED_SCENES.md` → Icons.
+
+## Real photos and NASA clips (since 2026-11-21)
+
+`{"type": "photo", "query": "...", "caption": "...", "cue": "...", "icon": "..."}` and `{"type": "clip", ...}` show a real photo (Openverse / NASA) or a NASA video in the card, credited automatically. Use them where real footage explains better than a drawing (space, animals, nature, machines). Rules: `docs/ANIMATED_SCENES.md` → Real photos and video clips.
