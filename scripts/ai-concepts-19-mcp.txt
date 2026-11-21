@@ -12,4 +12,5 @@ TEEN: An MCP server might provide access to files, databases or other services.
 DAD: Does MCP make every connection safe automatically?
 TEEN: No. Developers still need authentication, permissions and careful access controls.
 DAD: So MCP helps standardise connections?
-TEEN: Exactly! Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Exactly!
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

@@ -1,3 +1,4 @@
+# NOTE (2026-11-21): this topic overlaps with ep019 'Why AI Forgets Long Chats' - give it a clearly different angle before making it a video.
 TITLE: Context Window: AI's Working Space 🪟
 COVER: CONTEXT WINDOW
 HASHTAGS: #AI #ContextWindow #LLM #LearnAI
@@ -12,4 +13,5 @@ TEEN: Your latest message, relevant conversation history, instructions and somet
 DAD: What if the conversation gets too long?
 TEEN: Older details may be left out or summarized, depending on the application.
 DAD: So a bigger context window fits more information?
-TEEN: Yes, but more space doesn't guarantee perfect understanding. Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Yes, but more space doesn't guarantee perfect understanding.
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

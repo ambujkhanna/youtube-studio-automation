@@ -69,6 +69,10 @@ ass = ["[Script Info]", "ScriptType: v4.00+", f"PlayResX: {OUTW}", f"PlayResY: {
 if LONG:  # widescreen: smaller captions, centred under the board on the left
     ass = [l.replace("Style: Cap,M PLUS U SemiBold,82,", "Style: Cap,M PLUS U SemiBold,70,").replace(",1,5,2,2,60,60,330,1", ",1,4,2,2,40,800,24,1") for l in ass]
 HL = {"DAD": "&H00FFC04F&", "TEEN": "&H0000D6FF&"}  # BGR: yellow-ish / orange
+import theme as _TH
+if _TH.HL:  # studio looks: blue highlights; hook text white with a blue outline
+    HL = _TH.HL
+    ass = [l.replace("Style: Hook,M PLUS U Bold,84,&H0037D6FF,&H0037D6FF,&H00402D1F,", "Style: Hook,M PLUS U Bold,84,&H00FFFFFF,&H00FFFFFF,&H00FF6B2F,") for l in ass]
 for ln in T["lines"]:
     words = []
     for w in ln["words"]:

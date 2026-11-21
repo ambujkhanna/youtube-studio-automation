@@ -156,6 +156,8 @@ jobs:
         run: python pipeline/setup_models.py
 
       - name: Load latest analytics growth brief (read-only)
+        continue-on-error: true  # optional: a GitHub API hiccup here must never stop the video run
+        timeout-minutes: 5
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -203,6 +205,9 @@ jobs:
           OUTRO: ${{ vars.OUTRO || 'on' }}
           SCRIPT_IN: ${{ inputs.script }}
           BOARD_STYLE: ${{ vars.BOARD_STYLE || 'hanging' }}
+          THEME: ${{ vars.THEME || 'studio_open' }}
+          ICON_STYLE: ${{ vars.ICON_STYLE || '3d' }}
+          LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
           BOARD_STYLE_RUN: ${{ inputs.board_style || '' }}
         run: |
           ARGS=""

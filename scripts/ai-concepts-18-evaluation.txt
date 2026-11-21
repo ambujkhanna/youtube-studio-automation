@@ -12,4 +12,5 @@ TEEN: Accuracy, relevance, consistency, safety and response time are common meas
 DAD: Can we compare answers with correct examples?
 TEEN: Yes. Some tests compare against reference answers. Other tasks need human reviewers to judge usefulness.
 DAD: So just getting an answer isn't enough?
-TEEN: Right! A working AI isn't automatically a reliable AI. Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Right! A working AI isn't automatically a reliable AI.
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

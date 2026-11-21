@@ -3,20 +3,20 @@
   "slug": "what-are-ai-agents",
   "status": "ready",
   "title": "What Are AI Agents and Can They Work for You?",
-  "cover_text": "AI THAT TAKES ACTION",
-  "description": "AI agents can use tools for multi-step tasks. Limit permissions and approve sensitive actions.\n\nA dad asks, his teen explains AI. AI Nation Studio — Imagine. Explore. Innovate.",
+  "cover_text": "AI AGENTS",
+  "description": "An AI agent doesn't just answer: it plans steps and uses tools to get a task done. What agents can do today, and why you should stay in charge.\n\nA dad asks, his teen explains AI agents.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
   "hashtags": [
+    "#AIAgents",
     "#AI",
+    "#Automation",
     "#AIExplained",
-    "#AITips",
-    "#AInationStudio",
     "#Shorts"
   ],
   "tags": [
-    "AI explained",
     "what are ai agents",
-    "AI tips",
-    "artificial intelligence"
+    "ai agents explained",
+    "can ai agents do tasks",
+    "agentic ai"
   ],
   "voices": {
     "DAD": [
@@ -29,88 +29,180 @@
     ]
   },
   "loop_card": {
-    "text": "Think before you share",
+    "text": "Who approves?",
     "cue": "next",
-    "left": "chat",
-    "right": "robot"
+    "left": "robot",
+    "right": "user"
   },
   "lines": [
     {
       "who": "DAD",
-      "text": "What Are AI Agents and Can They Work for You? Really?",
+      "text": "Everyone's talking about AI agents. What are they?",
       "board": {
         "type": "title",
         "left": {
           "icon": "chat",
-          "label": "DAD"
+          "label": "CHATBOT"
         },
         "right": {
           "icon": "robot",
-          "label": "AI"
+          "label": "AGENT"
         },
-        "mid": "?",
-        "subtitle": "AI explained simply"
+        "mid": "VS",
+        "subtitle": "AI agents, explained"
       }
     },
     {
       "who": "TEEN",
-      "text": "AI agents can use tools and carry out multiple steps toward a goal.",
+      "text": "A chatbot answers. An agent takes action: it plans steps and uses tools to finish a task.",
       "board": {
-        "type": "big",
-        "icon": "brain",
-        "text": "AI AGENTS CAN USE TOOLS AND CARRY OUT MULTIPLE STEPS T",
-        "cue": "AI"
+        "type": "compare",
+        "left": {
+          "label": "CHATBOT",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Answers",
+              "icon": "chat",
+              "cue": "answers"
+            }
+          ]
+        },
+        "right": {
+          "label": "AGENT",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Takes action",
+              "icon": "robot",
+              "cue": "action"
+            }
+          ]
+        }
       }
     },
     {
       "who": "DAD",
-      "text": "An agent might research options, compare them and prepare a plan."
+      "text": "What kind of tools?"
     },
     {
       "who": "TEEN",
-      "text": "It can take actions only if it has suitable tools and permissions.",
+      "text": "Browsing websites, filling in forms, reading email, or checking a calendar.",
       "board": {
-        "type": "big",
-        "icon": "brain",
-        "text": "IT CAN TAKE ACTIONS ONLY IF IT HAS SUITABLE TOOLS AND ",
-        "cue": "It"
+        "type": "steps",
+        "title": "AGENT TOOLS",
+        "items": [
+          {
+            "label": "Browse websites",
+            "icon": "globe",
+            "cue": "browsing"
+          },
+          {
+            "label": "Fill in forms",
+            "icon": "doc",
+            "cue": "forms"
+          },
+          {
+            "label": "Check a calendar",
+            "icon": "calendar",
+            "cue": "calendar"
+          }
+        ]
       }
     },
     {
       "who": "DAD",
-      "text": "Require human approval before purchases or other sensitive actions."
+      "text": "So it could book my train ticket?"
     },
     {
       "who": "TEEN",
-      "text": "Review results, limit permissions and stay in control.",
+      "text": "It could find trains, compare times, and fill in the booking, step by step.",
       "board": {
-        "type": "big",
-        "icon": "brain",
-        "text": "REVIEW RESULTS, LIMIT PERMISSIONS AND STAY IN CONTROL.",
-        "cue": "Review"
+        "type": "flow",
+        "title": "BOOK A TRAIN",
+        "packet": "🎫",
+        "items": [
+          {
+            "icon": "🔍",
+            "label": "Find trains",
+            "cue": "find"
+          },
+          {
+            "icon": "🚆",
+            "label": "Compare times",
+            "cue": "compare"
+          },
+          {
+            "icon": "📝",
+            "label": "Fill in the booking",
+            "cue": "booking"
+          }
+        ]
       }
     },
     {
       "who": "DAD",
-      "text": "What's the one thing I should remember?"
+      "text": "And then pay for me?"
     },
     {
       "who": "TEEN",
-      "text": "Pause, check the details, and use your judgement before acting.",
+      "text": "That's where you stay in charge. Agents still make mistakes, so approve payments yourself.",
       "board": {
         "type": "big",
-        "icon": "check",
-        "text": "PAUSE AND VERIFY",
-        "cue": "Pause"
+        "icon": "shield",
+        "text": "You approve payments",
+        "cue": "approve"
       }
     },
     {
       "who": "DAD",
-      "text": "That sounds like a smart rule."
+      "text": "Any other rules?"
     },
     {
       "who": "TEEN",
-      "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
+      "text": "Give it only the access it needs, and check its work before anything is sent.",
+      "board": {
+        "type": "checklist",
+        "title": "Agent rules",
+        "icon": "lock",
+        "items": [
+          {
+            "text": "Only needed access",
+            "cue": "access",
+            "ok": true
+          },
+          {
+            "text": "Check before sending",
+            "cue": "check",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: agents do the steps, I make the decisions.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "AGENTS DO STEPS",
+            "icon": "robot",
+            "cue": "steps",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "YOU DECIDE",
+            "icon": "user",
+            "cue": "decisions",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly! Subscribe to AI Nation Studio, and share this with a friend! And next time an agent asks to pay, you say yes or no."
     }
   ]
 }

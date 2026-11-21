@@ -3,20 +3,20 @@
   "slug": "does-chatgpt-remember-your-secrets",
   "status": "ready",
   "title": "Does ChatGPT Remember Everything You Say?",
-  "cover_text": "DOES AI REMEMBER",
-  "description": "Chat history, current context and saved memory are different. Review privacy controls.\n\nA dad asks, his teen explains AI. AI Nation Studio — Imagine. Explore. Innovate.",
+  "cover_text": "DOES IT REMEMBER?",
+  "description": "Does ChatGPT remember your chats? Your history is usually saved, and a memory feature can keep facts about you. Here's how to see and delete it.\n\nA dad asks, his teen explains chat history and AI memory.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
   "hashtags": [
+    "#ChatGPT",
     "#AI",
+    "#Privacy",
     "#AIExplained",
-    "#AITips",
-    "#AInationStudio",
     "#Shorts"
   ],
   "tags": [
-    "AI explained",
-    "does chatgpt remember your secrets",
-    "AI tips",
-    "artificial intelligence"
+    "does chatgpt remember",
+    "chatgpt memory",
+    "delete chatgpt history",
+    "ai privacy"
   ],
   "voices": {
     "DAD": [
@@ -29,88 +29,169 @@
     ]
   },
   "loop_card": {
-    "text": "Think before you share",
+    "text": "What does it keep?",
     "cue": "next",
     "left": "chat",
-    "right": "robot"
+    "right": "lock"
   },
   "lines": [
     {
       "who": "DAD",
-      "text": "Does ChatGPT Remember Everything You Say? Really?",
+      "text": "Does ChatGPT remember everything I tell it?",
       "board": {
         "type": "title",
         "left": {
           "icon": "chat",
-          "label": "DAD"
+          "label": "YOUR CHATS"
         },
         "right": {
-          "icon": "robot",
-          "label": "AI"
+          "icon": "brain",
+          "label": "REMEMBERED?"
         },
         "mid": "?",
-        "subtitle": "AI explained simply"
+        "subtitle": "AI memory, explained"
       }
     },
     {
       "who": "TEEN",
-      "text": "Some AI products offer memory or personalisation features.",
+      "text": "Two different things. Your chat history is usually saved, and a memory feature can keep facts about you.",
       "board": {
-        "type": "big",
-        "icon": "brain",
-        "text": "SOME AI PRODUCTS OFFER MEMORY OR PERSONALISATION FEATU",
-        "cue": "Some"
+        "type": "compare",
+        "left": {
+          "label": "HISTORY",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Your saved chats",
+              "icon": "doc",
+              "cue": "history"
+            }
+          ]
+        },
+        "right": {
+          "label": "MEMORY",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Facts it keeps",
+              "icon": "brain",
+              "cue": "memory"
+            }
+          ]
+        }
       }
     },
     {
       "who": "DAD",
-      "text": "Current conversation, chat history and saved memory are different things."
+      "text": "What kind of facts?"
     },
     {
       "who": "TEEN",
-      "text": "Review the memory controls in the product you use.",
+      "text": "Things like your name, your job, or that you like short answers, so later chats feel personal.",
       "board": {
-        "type": "big",
-        "icon": "brain",
-        "text": "REVIEW THE MEMORY CONTROLS IN THE PRODUCT YOU USE.",
-        "cue": "Review"
+        "type": "steps",
+        "title": "IT MAY KEEP",
+        "items": [
+          {
+            "label": "Your name",
+            "icon": "user",
+            "cue": "name"
+          },
+          {
+            "label": "Your job",
+            "icon": "suitcase",
+            "cue": "job"
+          },
+          {
+            "label": "Your preferences",
+            "icon": "check",
+            "cue": "short"
+          }
+        ]
       }
     },
     {
       "who": "DAD",
-      "text": "Deleting a chat may not delete saved memory; check both controls."
+      "text": "Can I see what it remembers?"
     },
     {
       "who": "TEEN",
-      "text": "Never share passwords or sensitive details just because a chatbot feels personal.",
+      "text": "Yes. In the settings you can view, delete, or turn off memory.",
       "board": {
-        "type": "big",
-        "icon": "brain",
-        "text": "NEVER SHARE PASSWORDS OR SENSITIVE DETAILS JUST BECAUS",
-        "cue": "Never"
+        "type": "checklist",
+        "title": "In settings",
+        "icon": "shield",
+        "items": [
+          {
+            "text": "View memories",
+            "cue": "view",
+            "ok": true
+          },
+          {
+            "text": "Delete them",
+            "cue": "delete",
+            "ok": true
+          },
+          {
+            "text": "Turn memory off",
+            "cue": "turn",
+            "ok": true
+          }
+        ]
       }
     },
     {
       "who": "DAD",
-      "text": "What's the one thing I should remember?"
+      "text": "And for a one-off private question?"
     },
     {
       "who": "TEEN",
-      "text": "Pause, check the details, and use your judgement before acting.",
+      "text": "Use a temporary chat. It isn't saved to your history and doesn't use memory.",
       "board": {
         "type": "big",
-        "icon": "check",
-        "text": "PAUSE AND VERIFY",
-        "cue": "Pause"
+        "icon": "lock",
+        "text": "Temporary chat",
+        "cue": "temporary"
       }
     },
     {
       "who": "DAD",
-      "text": "That sounds like a smart rule."
+      "text": "So it's safe to share anything there?"
     },
     {
       "who": "TEEN",
-      "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
+      "text": "Not quite. Your words still go to the company's servers, so skip passwords and bank details.",
+      "board": {
+        "type": "big",
+        "icon": "warn",
+        "text": "No passwords, ever",
+        "cue": "passwords"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: history, memory, and settings to control both.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "HISTORY + MEMORY",
+            "icon": "brain",
+            "cue": "memory",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "CHECK YOUR SETTINGS",
+            "icon": "shield",
+            "cue": "settings",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Exactly! Subscribe to AI Nation Studio, and share this with a friend! And next time, check what your AI remembers."
     }
   ]
 }

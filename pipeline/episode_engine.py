@@ -16,6 +16,8 @@ import json, math, os, random, sys
 from multiprocessing import Pool
 import skia
 import kit2d as K
+import icons3d
+import theme as THEME
 from kit2d import (P, rr, ell, text, smooth, wob, Track, Char, LN, DUR, NF, B, FONT_XB, FONT_B, FONT_SB,
                    appear, fade, scaled, shadow_rrect, bubble, card, icon_chat, icon_robot, icon_check, icon_sun,
                    icon_train, icon_doc, icon_lock, BX, BY, BW, BH, BCX, BCY)
@@ -79,6 +81,9 @@ def _svg_drawer(name):
 
 def ico(name):
     if not name: return None
+    if isinstance(name, str) and not name.startswith("img:") and not ("+" in name and len(name) > 2):
+        d3 = icons3d.drawer(name)  # 3D Fluent icon when available (ICON_STYLE=flat = old icons)
+        if d3: return d3
     if name in ICONS: return ICONS[name]
     if isinstance(name, str) and name.startswith("img:"):
         if name not in _SVG: _SVG[name] = _svg_drawer(name)
@@ -203,6 +208,7 @@ def big_text(c, s, x, y, size, color, maxw, tf=FONT_XB, min_size=46, lines=2, ou
 
 
 def pill(c, x, y, label, col, size=46, maxw=None):
+    col = THEME.pill_colour(col)
     """Rounded label pill; shrinks the font so it never touches the screen edges."""
     maxw = maxw or (BW - 80)
     f = skia.Font(FONT_XB, size)
@@ -214,6 +220,7 @@ def pill(c, x, y, label, col, size=46, maxw=None):
 
 
 def card_bg(c, x, y, w, h, col, border="#1F2D44"):
+    col = THEME.tint(col)
     """Modern UI card (owner: 'modern UI feel'): soft two-layer shadow, gentle top-light gradient, hairline border."""
     r = rr(x - w / 2, y - h / 2, w, h, 28)
     shadow_rrect(c, r, 14, 10, 0.10); shadow_rrect(c, r, 3, 2, 0.10)
@@ -234,16 +241,18 @@ COLS = ("#FF4D6D", "#0A84FF", "#8E44AD", "#2E9E5B", "#FF8C42")
 
 def build_title(i, t0, t1, sc):
     L, R = sc.get("left", {}), sc.get("right", {})
-    for side, S, col in ((-1, L, "#0A84FF"), (1, R, "#E91E63")):
+    lc, rc = (THEME.ACCENT, THEME.INK) if THEME.STUDIO else ("#0A84FF", "#E91E63")
+    for side, S, col in ((-1, L, lc), (1, R, rc)):
         x = BCX + side * BW * 0.27
         def f(c, t, e, S=S, x=x, col=col, side=side):
             sl = 1 - smooth((t - t0) / 0.45); xx = x + side * sl * 300
             card_bg(c, xx, BCY - 40, BW * 0.44, 450, TINTS[0 if side < 0 else 2])
             (ico(S.get("icon")) or IX.icon_bulb)(c, xx, BCY - 120, 3.4)
-            big_text(c, S.get("label", ""), xx, BCY + 100, 60, S.get("color", col), BW * 0.4)
+            big_text(c, S.get("label", ""), xx, BCY + 100, 60, col if THEME.STUDIO else S.get("color", col), BW * 0.4)
         el(t0, t1, f, None, (x, BCY))
-    el(t0 + 0.4, t1, lambda c, t, e: (c.drawCircle(BCX, BCY - 40, 74, P("#FFC93C")), c.drawCircle(BCX, BCY - 40, 74, P(NAVY, 6)),
-                                      text(c, sc.get("mid", "?"), BCX, BCY - 40, 78 if len(sc.get("mid", "?")) < 3 else 48, NAVY)), (BCX, BCY - 40))
+    mid_fill, mid_line, mid_txt = (THEME.ACCENT, "#FFFFFF", "#FFFFFF") if THEME.STUDIO else ("#FFC93C", NAVY, NAVY)
+    el(t0 + 0.4, t1, lambda c, t, e: (c.drawCircle(BCX, BCY - 40, 74, P(mid_fill)), c.drawCircle(BCX, BCY - 40, 74, P(mid_line, 6)),
+                                      text(c, sc.get("mid", "?"), BCX, BCY - 40, 78 if len(sc.get("mid", "?")) < 3 else 48, mid_txt)), (BCX, BCY - 40))
     if sc.get("subtitle"):
         el(t0 + 0.9, t1, lambda c, t, e: big_text(c, sc["subtitle"], BCX, BY + BH - 75, 52, NAVY, BW - 60, lines=1), pivot=(BCX, BY + BH - 75))
 
@@ -422,6 +431,10 @@ _E = types.SimpleNamespace(el=el, cue_t=cue_t, ico=ico, big_text=big_text, pill=
                            BCX=BCX, BCY=BCY, LN=LN, K=K)
 for _name, _fn in diagrams.BUILDERS.items():
     BUILD[_name] = (lambda f: (lambda i, t0, t1, sc: f(_E, i, t0, t1, sc)))(_fn)
+import scenes  # animated explanation scenes (lifecycle, flow, transform, water_cycle, plant_growth)
+for _name, _fn in scenes.BUILDERS.items():
+    BUILD[_name] = (lambda f: (lambda i, t0, t1, sc: f(_E, i, t0, t1, sc)))(_fn)
+scenes.use_for_lists(BUILD, _E)  # lighter list boards: tiles (LIST_STYLE=classic = old rows)
 for k in range(len(scene_starts)):
     i, t0, t1 = scene_window(k)
     sc = ELINES[i]["board"]
@@ -522,7 +535,7 @@ for i, ln in enumerate(LN):
         continue
     who = ln["speaker"] if len(CAST) > 1 else ("wide" if i % 3 else ln["speaker"])
     _sc_i = max([j for j in scene_starts if j <= i] or [0])
-    if ELINES[_sc_i].get("board", {}).get("type") in diagrams.BUILDERS:  # keep the animated diagram on screen
+    if ELINES[_sc_i].get("board", {}).get("type") in list(diagrams.BUILDERS) + list(scenes.BUILDERS):  # keep the animated diagram on screen
         who = "board"
     SHOTS.append((ln["start"] - 0.05, "wide" if i % 4 == 0 or i == last else who))
     cl = cues_by_line.get(i, [])

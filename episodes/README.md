@@ -55,3 +55,7 @@ Check before committing: `python pipeline/validate_episode.py episodes/*/episode
 - **Big readable boards:** `chat` (up to 3 bubbles), `permission`, `title`, `big`, `steps`, `compare`, `checklist`, `summary`, `gallery`. Keep labels short; text is drawn large and shrinks or wraps if needed.
 - **Icons:** the old named icons, any common emoji, or real drawings `img:<Category>/<Author>/<name>` from `assets/IMAGE_INDEX.txt`. Credits are added to the description automatically.
 - **Ending:** "Subscribe to AI Nation Studio, and share this with a friend! And next time …?". The Subscribe / Like / Share card appears on "subscribe".
+
+## Animated scenes (since 2026-11-21)
+
+**Whenever a line explains change, a process, a journey or a cycle, use an animated scene** (`lifecycle`, `transform`, `flow`, `water_cycle`, `plant_growth`) instead of a static list. Static boards are for facts, tips and rules. Aim for 1–3 scenes per Short, with short labels and plenty of space. Examples and rules: `docs/ANIMATED_SCENES.md`. Every icon is drawn as a 3D icon automatically.

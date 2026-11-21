@@ -1,3 +1,4 @@
+# NOTE (2026-11-21): this topic overlaps with ep004 'How Does ChatGPT Actually Work?' - give it a clearly different angle before making it a video.
 TITLE: LLM Explained: What Is a Language Model? 🤖
 COVER: WHAT IS LLM
 HASHTAGS: #AI #LLM #ChatGPT #LearnAI
@@ -12,4 +13,5 @@ TEEN: Yes. Models can help write, explain, summarize, translate and generate cod
 DAD: Does it think exactly like a human?
 TEEN: No. It predicts and generates likely text based on patterns it learned. Human-like answers don't mean human-like understanding.
 DAD: So it's powerful, but not a person?
-TEEN: Exactly! Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Exactly!
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

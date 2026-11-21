@@ -12,4 +12,5 @@ TEEN: Yes! Training is when a model learns patterns from data.
 DAD: And inference is when it uses that learning?
 TEEN: Exactly. Asking a trained model to explain photosynthesis is inference.
 DAD: Like studying first, then answering a question?
-TEEN: That's a great comparison! Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: That's a great comparison!
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

@@ -2,21 +2,21 @@
   "id": "ep022",
   "slug": "run-ai-without-internet",
   "status": "ready",
-  "title": "Run AI on Your Laptop Without Internet",
-  "cover_text": "AI WITHOUT WI-FI",
-  "description": "Some models can run locally after download using tools such as Ollama.\n\nA dad asks, his teen explains AI. AI Nation Studio — Imagine. Explore. Innovate.",
+  "title": "Can AI Work Without Internet?",
+  "cover_text": "AI OFFLINE?",
+  "description": "Can AI work with no internet? Some can: on-device AI in phones and models you download to a laptop. What works offline, and what doesn't.\n\nA dad asks, his teen explains offline AI.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
   "hashtags": [
+    "#OfflineAI",
     "#AI",
+    "#Privacy",
     "#AIExplained",
-    "#AITips",
-    "#AInationStudio",
     "#Shorts"
   ],
   "tags": [
-    "AI explained",
-    "run ai without internet",
-    "AI tips",
-    "artificial intelligence"
+    "can ai work offline",
+    "offline ai",
+    "on-device ai",
+    "ai without internet"
   ],
   "voices": {
     "DAD": [
@@ -29,88 +29,168 @@
     ]
   },
   "loop_card": {
-    "text": "Think before you share",
+    "text": "Online... or offline?",
     "cue": "next",
-    "left": "chat",
-    "right": "robot"
+    "left": "globe",
+    "right": "phone"
   },
   "lines": [
     {
       "who": "DAD",
-      "text": "Run AI on Your Laptop Without Internet Really?",
+      "text": "Can AI work with no internet at all?",
       "board": {
         "type": "title",
         "left": {
-          "icon": "chat",
-          "label": "DAD"
+          "icon": "globe",
+          "label": "ONLINE"
         },
         "right": {
-          "icon": "robot",
-          "label": "AI"
+          "icon": "phone",
+          "label": "OFFLINE"
         },
         "mid": "?",
-        "subtitle": "AI explained simply"
+        "subtitle": "Offline AI, explained"
       }
     },
     {
       "who": "TEEN",
-      "text": "Some AI models can run directly on your computer.",
+      "text": "Some can! Most chatbots run on big computers far away, but small models can run on your own device.",
       "board": {
-        "type": "big",
-        "icon": "brain",
-        "text": "SOME AI MODELS CAN RUN DIRECTLY ON YOUR COMPUTER.",
-        "cue": "Some"
+        "type": "compare",
+        "left": {
+          "label": "CLOUD AI",
+          "color": "#0A84FF",
+          "items": [
+            {
+              "text": "Runs far away",
+              "icon": "globe",
+              "cue": "far"
+            }
+          ]
+        },
+        "right": {
+          "label": "ON-DEVICE",
+          "color": "#E91E63",
+          "items": [
+            {
+              "text": "Runs on your device",
+              "icon": "phone",
+              "cue": "device"
+            }
+          ]
+        }
       }
     },
     {
       "who": "DAD",
-      "text": "Ollama helps download and run compatible models locally."
+      "text": "Is that already on my phone?"
     },
     {
       "who": "TEEN",
-      "text": "After downloading a model, supported local use can work offline.",
+      "text": "Often, yes. Voice typing, photo search and some translation can work in airplane mode.",
       "board": {
-        "type": "big",
-        "icon": "brain",
-        "text": "AFTER DOWNLOADING A MODEL, SUPPORTED LOCAL USE CAN WOR",
-        "cue": "After"
+        "type": "steps",
+        "title": "ALREADY OFFLINE",
+        "items": [
+          {
+            "label": "Voice typing",
+            "icon": "chat",
+            "cue": "voice"
+          },
+          {
+            "label": "Photo search",
+            "icon": "search",
+            "cue": "photo"
+          },
+          {
+            "label": "Some translation",
+            "icon": "globe",
+            "cue": "translation"
+          }
+        ]
       }
     },
     {
       "who": "DAD",
-      "text": "Your laptop still needs enough memory and processing power."
+      "text": "And on a laptop?"
     },
     {
       "who": "TEEN",
-      "text": "Local does not automatically guarantee privacy; check the app and settings.",
+      "text": "Free tools let you download a model once, then chat with it with no internet.",
       "board": {
         "type": "big",
-        "icon": "brain",
-        "text": "LOCAL DOES NOT AUTOMATICALLY GUARANTEE PRIVACY; CHECK ",
-        "cue": "Local"
+        "icon": "doc",
+        "text": "Download once, chat offline",
+        "cue": "download"
       }
     },
     {
       "who": "DAD",
-      "text": "What's the one thing I should remember?"
+      "text": "So why not always go offline?"
     },
     {
       "who": "TEEN",
-      "text": "Pause, check the details, and use your judgement before acting.",
+      "text": "Offline models are smaller, so they're less clever. They also need memory and a decent computer.",
       "board": {
-        "type": "big",
-        "icon": "check",
-        "text": "PAUSE AND VERIFY",
-        "cue": "Pause"
+        "type": "checklist",
+        "title": "The catch",
+        "icon": "warn",
+        "items": [
+          {
+            "text": "Smaller, less clever",
+            "cue": "smaller",
+            "ok": false
+          },
+          {
+            "text": "Needs a decent computer",
+            "cue": "computer",
+            "ok": false
+          }
+        ]
       }
     },
     {
       "who": "DAD",
-      "text": "That sounds like a smart rule."
+      "text": "Do they know today's news?"
     },
     {
       "who": "TEEN",
-      "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
+      "text": "No. Offline means no live search, so they only know what they learned before.",
+      "board": {
+        "type": "big",
+        "icon": "calendar",
+        "text": "No live news offline",
+        "cue": "offline"
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "What's the big plus, then?"
+    },
+    {
+      "who": "TEEN",
+      "text": "Privacy and travel. Your words stay on your device, and it works on a plane.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "STAYS ON DEVICE",
+            "icon": "lock",
+            "cue": "privacy",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "WORKS ON A PLANE",
+            "icon": "train",
+            "cue": "plane",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "Subscribe to AI Nation Studio, and share this with a friend! And next time you're offline, your AI might still help."
     }
   ]
 }

@@ -12,4 +12,5 @@ TEEN: Your app sends a request to an AI service through the API, and the service
 DAD: Like a waiter carrying an order to the kitchen?
 TEEN: Exactly! The API connects the request and response.
 DAD: So developers can add AI without building a model themselves?
-TEEN: That's one big benefit! Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: That's one big benefit!
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

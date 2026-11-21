@@ -12,4 +12,5 @@ TEEN: Network speed, server load, model size, prompt length and how much text is
 DAD: Can developers make it faster?
 TEEN: They can optimise infrastructure, models, caching and request handling.
 DAD: So speed is part of a good AI experience?
-TEEN: Absolutely! Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Absolutely!
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

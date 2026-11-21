@@ -3,20 +3,20 @@
   "slug": "can-ai-create-a-fake-you",
   "status": "ready",
   "title": "Can AI Create a Fake Video of You?",
-  "cover_text": "SOMEONE COPIED YOU",
-  "description": "Deepfakes can imitate faces, voices and video. Verify surprising clips before sharing.\n\nA dad asks, his teen explains AI. AI Nation Studio — Imagine. Explore. Innovate.",
+  "cover_text": "FAKE VIDEO OF YOU?",
+  "description": "Can AI make a fake video of you? With enough photos and video, yes. Simple ways to protect yourself and your family from deepfakes.\n\nA dad asks, his teen explains how to protect yourself from deepfakes.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
   "hashtags": [
+    "#Deepfake",
     "#AI",
+    "#OnlineSafety",
     "#AIExplained",
-    "#AITips",
-    "#AInationStudio",
     "#Shorts"
   ],
   "tags": [
-    "AI explained",
-    "can ai create a fake you",
-    "AI tips",
-    "artificial intelligence"
+    "can ai make a fake video of me",
+    "deepfake protection",
+    "deepfake safety",
+    "ai scams family"
   ],
   "voices": {
     "DAD": [
@@ -29,88 +29,160 @@
     ]
   },
   "loop_card": {
-    "text": "Think before you share",
+    "text": "Real... or fake?",
     "cue": "next",
-    "left": "chat",
-    "right": "robot"
+    "left": "user",
+    "right": "warn"
   },
   "lines": [
     {
       "who": "DAD",
-      "text": "Can AI Create a Fake Video of You? Really?",
+      "text": "Could someone make a fake video of me?",
       "board": {
         "type": "title",
         "left": {
-          "icon": "chat",
-          "label": "DAD"
+          "icon": "user",
+          "label": "REAL YOU"
         },
         "right": {
           "icon": "robot",
-          "label": "AI"
+          "label": "FAKE YOU"
         },
         "mid": "?",
-        "subtitle": "AI explained simply"
+        "subtitle": "Deepfakes, explained"
       }
     },
     {
       "who": "TEEN",
-      "text": "A deepfake is AI-generated or altered media that imitates someone.",
+      "text": "Sadly, yes. With enough photos and video of your face, AI can copy how you look and sound.",
       "board": {
         "type": "big",
-        "icon": "brain",
-        "text": "A DEEPFAKE IS AI-GENERATED OR ALTERED MEDIA THAT IMITA",
-        "cue": "A"
+        "icon": "eye",
+        "text": "Copies face and voice",
+        "cue": "face"
       }
     },
     {
       "who": "DAD",
-      "text": "AI tools can alter faces, voices and video."
+      "text": "Where would they get those?"
     },
     {
       "who": "TEEN",
-      "text": "Check who posted a clip and find the original source.",
+      "text": "Mostly from public social media: profile photos, videos, and voice clips.",
       "board": {
-        "type": "big",
-        "icon": "brain",
-        "text": "CHECK WHO POSTED A CLIP AND FIND THE ORIGINAL SOURCE.",
-        "cue": "Check"
+        "type": "steps",
+        "title": "WHERE FROM",
+        "items": [
+          {
+            "label": "Profile photos",
+            "icon": "user",
+            "cue": "profile"
+          },
+          {
+            "label": "Public videos",
+            "icon": "eye",
+            "cue": "videos"
+          },
+          {
+            "label": "Voice clips",
+            "icon": "chat",
+            "cue": "voice"
+          }
+        ]
       }
     },
     {
       "who": "DAD",
-      "text": "No detector is perfect; treat detection tools as clues."
+      "text": "So what can I do?"
     },
     {
       "who": "TEEN",
-      "text": "Verify surprising videos through trusted sources before sharing.",
+      "text": "Make your accounts private, and post less video of your face and voice in public.",
       "board": {
-        "type": "big",
-        "icon": "brain",
-        "text": "VERIFY SURPRISING VIDEOS THROUGH TRUSTED SOURCES BEFOR",
-        "cue": "Verify"
+        "type": "checklist",
+        "title": "Protect yourself",
+        "icon": "shield",
+        "items": [
+          {
+            "text": "Accounts private",
+            "cue": "private",
+            "ok": true
+          },
+          {
+            "text": "Less public video",
+            "cue": "less",
+            "ok": true
+          }
+        ]
       }
     },
     {
       "who": "DAD",
-      "text": "What's the one thing I should remember?"
+      "text": "What if a video of me asks family for money?"
     },
     {
       "who": "TEEN",
-      "text": "Pause, check the details, and use your judgement before acting.",
+      "text": "Agree a family safe word. If a call or video asks for money, ask for the word first.",
       "board": {
         "type": "big",
-        "icon": "check",
-        "text": "PAUSE AND VERIFY",
-        "cue": "Pause"
+        "icon": "lock",
+        "text": "Family safe word",
+        "cue": "safe"
       }
     },
     {
       "who": "DAD",
-      "text": "That sounds like a smart rule."
+      "text": "And if I find a fake of me?"
     },
     {
       "who": "TEEN",
-      "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
+      "text": "Save the link, report it to the platform, and tell people you trust it isn't real.",
+      "board": {
+        "type": "steps",
+        "title": "FOUND ONE?",
+        "items": [
+          {
+            "label": "Save the link",
+            "icon": "doc",
+            "cue": "save"
+          },
+          {
+            "label": "Report it",
+            "icon": "warn",
+            "cue": "report"
+          },
+          {
+            "label": "Tell your people",
+            "icon": "chat",
+            "cue": "tell"
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: share less, and agree a safe word.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "SHARE LESS",
+            "icon": "lock",
+            "cue": "share",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "SAFE WORD",
+            "icon": "shield",
+            "cue": "safe",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Subscribe to AI Nation Studio, and share this with a friend! And next time a video asks for money, ask for the word."
     }
   ]
 }

@@ -166,6 +166,9 @@ jobs:
           INTRO: ${{ vars.INTRO || 'on' }}
           OUTRO: ${{ vars.OUTRO || 'on' }}
           BOARD_STYLE: ${{ vars.BOARD_STYLE || 'hanging' }}
+          THEME: ${{ vars.THEME || 'studio_open' }}
+          ICON_STYLE: ${{ vars.ICON_STYLE || '3d' }}
+          LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
           BOARD_STYLE_RUN: ${{ inputs.board_style || '' }}
         run: |
           ARGS=""

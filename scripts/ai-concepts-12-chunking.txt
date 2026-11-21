@@ -12,4 +12,5 @@ TEEN: Smaller chunks can make retrieval more focused and help fit information in
 DAD: Can chunks be too small?
 TEEN: Yes. They might lose useful context. Very large chunks can make search less precise.
 DAD: So choosing the right size matters?
-TEEN: Exactly! Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Exactly!
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

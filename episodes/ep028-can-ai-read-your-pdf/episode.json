@@ -4,19 +4,19 @@
   "status": "ready",
   "title": "Can AI Read a PDF and Answer Your Questions?",
   "cover_text": "ASK YOUR PDF",
-  "description": "Some AI tools can process PDFs and answer questions. Check source passages and protect confidential files.\n\nA dad asks, his teen explains AI. AI Nation Studio — Imagine. Explore. Innovate.",
+  "description": "Yes, many AI apps can read a PDF and answer questions about it. How to get answers you can trust, and what not to upload.\n\nA dad asks, his teen explains asking AI about documents.\n\nAInation Studio — AI, explained simply. Subscribe: https://www.youtube.com/@AI.nationstudio",
   "hashtags": [
+    "#PDF",
     "#AI",
+    "#ChatGPT",
     "#AIExplained",
-    "#AITips",
-    "#AInationStudio",
     "#Shorts"
   ],
   "tags": [
-    "AI explained",
-    "can ai read your pdf",
-    "AI tips",
-    "artificial intelligence"
+    "can chatgpt read pdf",
+    "ask ai about a pdf",
+    "ai document questions",
+    "chat with pdf"
   ],
   "voices": {
     "DAD": [
@@ -29,88 +29,161 @@
     ]
   },
   "loop_card": {
-    "text": "Think before you share",
+    "text": "Where does it say that?",
     "cue": "next",
-    "left": "chat",
-    "right": "robot"
+    "left": "doc",
+    "right": "search"
   },
   "lines": [
     {
       "who": "DAD",
-      "text": "Can AI Read a PDF and Answer Your Questions? Really?",
+      "text": "Can I give AI a long PDF and just ask questions?",
       "board": {
         "type": "title",
         "left": {
-          "icon": "chat",
-          "label": "DAD"
+          "icon": "doc",
+          "label": "YOUR PDF"
         },
         "right": {
-          "icon": "robot",
-          "label": "AI"
+          "icon": "chat",
+          "label": "QUESTIONS"
         },
-        "mid": "?",
-        "subtitle": "AI explained simply"
+        "mid": "→",
+        "subtitle": "Ask your documents"
       }
     },
     {
       "who": "TEEN",
-      "text": "Some AI tools let you upload a PDF and ask questions.",
+      "text": "Yes! Many AI apps let you upload a PDF. It reads the text, then answers from it.",
       "board": {
-        "type": "big",
-        "icon": "brain",
-        "text": "SOME AI TOOLS LET YOU UPLOAD A PDF AND ASK QUESTIONS.",
-        "cue": "Some"
+        "type": "steps",
+        "title": "HOW IT WORKS",
+        "items": [
+          {
+            "label": "Upload the PDF",
+            "icon": "doc",
+            "cue": "upload"
+          },
+          {
+            "label": "It reads the text",
+            "icon": "eye",
+            "cue": "reads"
+          },
+          {
+            "label": "Ask your question",
+            "icon": "chat",
+            "cue": "answers"
+          }
+        ]
       }
     },
     {
       "who": "DAD",
-      "text": "They can help locate relevant passages in a long document."
+      "text": "Even a scanned paper?"
     },
     {
       "who": "TEEN",
-      "text": "Check the original page; scanned tables and unclear text can cause errors.",
+      "text": "Scans are pictures of text, so it has to read the image. Blurry scans cause mistakes.",
       "board": {
         "type": "big",
-        "icon": "brain",
-        "text": "CHECK THE ORIGINAL PAGE; SCANNED TABLES AND UNCLEAR TE",
-        "cue": "Check"
+        "icon": "warn",
+        "text": "Blurry scans = mistakes",
+        "cue": "blurry"
       }
     },
     {
       "who": "DAD",
-      "text": "Only upload confidential documents if you have permission and the service is approved."
+      "text": "How do I know it's right?"
     },
     {
       "who": "TEEN",
-      "text": "Treat AI as a document assistant, not the final authority.",
+      "text": "Ask for the page number and the exact quote, then check that page yourself.",
       "board": {
-        "type": "big",
-        "icon": "brain",
-        "text": "TREAT AI AS A DOCUMENT ASSISTANT, NOT THE FINAL AUTHOR",
-        "cue": "Treat"
+        "type": "checklist",
+        "title": "Trust, but check",
+        "icon": "search",
+        "items": [
+          {
+            "text": "Page number",
+            "cue": "page",
+            "ok": true
+          },
+          {
+            "text": "Exact quote",
+            "cue": "quote",
+            "ok": true
+          }
+        ]
       }
     },
     {
       "who": "DAD",
-      "text": "What's the one thing I should remember?"
+      "text": "What about a really long one?"
     },
     {
       "who": "TEEN",
-      "text": "Pause, check the details, and use your judgement before acting.",
+      "text": "It may only use parts of it. Ask about one section at a time.",
       "board": {
         "type": "big",
-        "icon": "check",
-        "text": "PAUSE AND VERIFY",
-        "cue": "Pause"
+        "icon": "book",
+        "text": "One section at a time",
+        "cue": "section"
       }
     },
     {
       "who": "DAD",
-      "text": "That sounds like a smart rule."
+      "text": "Anything I shouldn't upload?"
     },
     {
       "who": "TEEN",
-      "text": "Exactly! Subscribe to AI Nation Studio, share this with a friend, and next time you use AI... remember this tip!"
+      "text": "Bank statements, IDs, medical records, or work secrets. Remove private parts first.",
+      "board": {
+        "type": "checklist",
+        "title": "Don't upload",
+        "icon": "lock",
+        "items": [
+          {
+            "text": "Bank statements",
+            "cue": "bank",
+            "ok": false
+          },
+          {
+            "text": "IDs and medical records",
+            "cue": "medical",
+            "ok": false
+          },
+          {
+            "text": "Work secrets",
+            "cue": "secrets",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "who": "DAD",
+      "text": "So: ask for the page, and check it.",
+      "board": {
+        "type": "summary",
+        "rows": [
+          {
+            "text": "ASK FOR THE PAGE",
+            "icon": "doc",
+            "cue": "page",
+            "color": "#0A84FF"
+          },
+          {
+            "text": "CHECK IT YOURSELF",
+            "icon": "check",
+            "cue": "check",
+            "color": "#E91E63"
+          }
+        ]
+      }
+    },
+    {
+      "who": "TEEN",
+      "text": "You got it! Subscribe to AI Nation Studio, and share this with a friend! And next time, ask where it says that."
     }
   ]
 }

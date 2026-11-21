@@ -1,3 +1,4 @@
+# NOTE (2026-11-21): this topic overlaps with ep003 'Why AI Makes Things Up' - give it a clearly different angle before making it a video.
 TITLE: AI Hallucinations: When AI Makes Things Up ⚠️
 COVER: AI HALLUCINATIONS
 HASHTAGS: #AI #Hallucination #ResponsibleAI #LearnAI
@@ -12,4 +13,5 @@ TEEN: A language model generates likely text. That doesn't guarantee every state
 DAD: Should we stop using AI?
 TEEN: No! Use it thoughtfully. Check important facts, ask for sources and verify those sources independently.
 DAD: So confidence isn't the same as correctness?
-TEEN: Exactly! Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Exactly!
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

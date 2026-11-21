@@ -12,4 +12,5 @@ TEEN: They could say, "Explain maths in simple language," or "Answer like a help
 DAD: So they guide how the AI responds?
 TEEN: Yes. They can define a role, style, boundaries and other rules.
 DAD: Does that guarantee the AI always follows them?
-TEEN: No. Instructions guide behaviour, but systems still need testing and safeguards. Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: No. Instructions guide behaviour, but systems still need testing and safeguards.
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

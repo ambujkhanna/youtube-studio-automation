@@ -12,4 +12,5 @@ TEEN: The application can consider complexity, expected quality, response speed 
 DAD: Give me an example.
 TEEN: A simple rewrite might use a fast model, while a complex analysis could need a more capable one.
 DAD: So one app can use several models?
-TEEN: Yes, when designed that way. Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Yes, when designed that way.
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

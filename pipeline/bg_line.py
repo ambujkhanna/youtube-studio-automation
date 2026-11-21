@@ -72,7 +72,49 @@ def draw_bg_doodle(c, t):
         c.drawLine(540 + k * 50 - 14, 1650, 540 + k * 50 + 14, 1730, P("#F2B600", 4, a=0.7))
 
 
+def _studio(c, t):
+    """Clean studio look (THEME=studio_light / studio_dark): soft wall, dot grid, two quiet shapes, plain floor."""
+    import theme as TH
+    wall = skia.Paint(AntiAlias=True)
+    wall.setShader(skia.GradientShader.MakeLinear([(0, -600), (0, FLOOR)], [K.hexc(TH.WALL[0]), K.hexc(TH.WALL[1])]))
+    c.drawRect(skia.Rect.MakeLTRB(-1900, -600, W + 1900, FLOOR), wall)
+    # quiet accent shapes (corners), kept very soft so the board stays the focus
+    for (x, y, r, col, a) in ((-60, 260, 300, TH.ACCENT, 0.10 if not TH.DARK else 0.22), (W + 40, 1380, 330, TH.ACCENT_2, 0.08 if not TH.DARK else 0.18)):
+        g = P(col, a=a); g.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 60)); c.drawCircle(x, y, r, g)
+    if TH.DARK:  # soft glow behind the board
+        g = P(TH.ACCENT, a=0.22); g.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 90))
+        c.drawRoundRect(skia.Rect.MakeXYWH(BX + 40, BY + 60, BW - 80, BH - 80), 60, 60, g)
+    dot = P(TH.DOTS, a=0.10 if not TH.DARK else 0.22)
+    for (x0, y0) in ((60, 1180), (W - 260, 250)):  # two small dot grids, like the references
+        for i in range(5):
+            for j in range(5): c.drawCircle(x0 + i * 40, y0 + j * 40, 4, dot)
+    fl = skia.Paint(AntiAlias=True)
+    fl.setShader(skia.GradientShader.MakeLinear([(0, FLOOR), (0, 2400)], [K.hexc(TH.FLOOR[0]), K.hexc(TH.FLOOR[1])]))
+    c.drawRect(skia.Rect.MakeLTRB(-1900, FLOOR, W + 1900, 2600), fl)
+    sh = P("#000000", a=0.10 if not TH.DARK else 0.35); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 22))
+    c.drawOval(ell(540, 1700, 430, 46), sh)  # soft floor shadow instead of the rug
+    K.logo(c, 540, 84, 0.95 * (1.0 + (0.18 * math.sin(min(1.0, max(0.0, (t - K.LOGO_T) / 0.5)) * math.pi) if t > K.LOGO_T else 0.0)), tcol=TH.LOGO_TEXT)
+
+
+def _studio_board(c):
+    """White board card with a soft shadow and a hairline border (no rods, no bezel)."""
+    import theme as TH
+    if TH.OPEN:  # no frame: only the small accent bar and tag
+        c.drawRoundRect(skia.Rect.MakeXYWH(BX + 40, BY + 30, 64, 10), 5, 5, P(TH.ACCENT))
+        K.text(c, "AI EXPLAINED", BX + BW - 48, BY + 40, 24, TH.MUTED, K.FONT_XB, "r"); return
+    r = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX + 6, BY + 6, BW - 12, BH - 12), 40, 40)
+    sh = P("#0B1530", a=0.14 if not TH.DARK else 0.45); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 26))
+    c.save(); c.translate(0, 18); c.drawRRect(r, sh); c.restore()
+    c.drawRRect(r, P(TH.CARD)); c.drawRRect(r, P(TH.CARD_LINE, 3))
+    c.drawRoundRect(skia.Rect.MakeXYWH(BX + 40, BY + 30, 64, 10), 5, 5, P(TH.ACCENT))  # small accent bar, top left
+    K.text(c, "AI EXPLAINED", BX + BW - 48, BY + 40, 24, TH.MUTED, K.FONT_XB, "r")
+
+
 def draw_bg(c, t):
+    if not KIDS:
+        import theme as TH
+        if TH.STUDIO:
+            _studio(c, t); return
     if KIDS:
         _kids_room(c, t)
         light_pass(c, t, (870, 930, 190, 250, -1))
@@ -340,6 +382,9 @@ def draw_board_frame(c, t=0.0):
         if PANEL == "stage":
             import theatre; return theatre.back(c, t)
         return {"cloud": _kids_cloud, "book": _kids_book}.get(PANEL, _kids_cloud)(c, t)
+    import theme as TH
+    if TH.STUDIO:
+        return _studio_board(c)
     {"whiteboard": _whiteboard, "display": _display_3d}.get(BOARD_STYLE, _hanging_board)(c)
 
 

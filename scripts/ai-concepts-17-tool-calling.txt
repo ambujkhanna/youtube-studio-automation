@@ -12,4 +12,5 @@ TEEN: Usually the application executes the requested tool, then sends the result
 DAD: Could it send an email?
 TEEN: If an authorised email tool is available, yes. Important actions should use permissions and confirmation.
 DAD: So tools connect AI to real actions!
-TEEN: Exactly! Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Exactly!
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

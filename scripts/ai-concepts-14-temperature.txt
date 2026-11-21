@@ -1,3 +1,4 @@
+# NOTE (2026-11-21): this topic overlaps with ep039 (why AI answers differ) - give it a clearly different angle before making it a video.
 TITLE: AI Temperature: More Creative or Predictable? 🌡️
 COVER: AI TEMPERATURE
 HASHTAGS: #AI #Temperature #LLM #LearnAI
@@ -12,4 +13,5 @@ TEEN: The output generally becomes more predictable and focused.
 DAD: And a higher temperature?
 TEEN: It can produce more varied and surprising wording.
 DAD: So higher is always more creative and better?
-TEEN: Not always! The best setting depends on the task and model. Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Not always! The best setting depends on the task and model.
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

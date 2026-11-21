@@ -362,6 +362,8 @@ def draw_board_frame(c):
 
 
 def draw_bit(c, t):
+    import theme as _TH
+    if _TH.STUDIO: return  # clean studio look: no floating doodle
     x = BITX(t) + wob(t, 1.7, 3) * 8; y = BITY(t) + math.sin(t * 4.2) * 7
     vx = BITX(t + 0.05) - BITX(t)
     c.save(); c.translate(x, y); c.rotate(max(-14, min(14, vx * 0.6)))
@@ -499,6 +501,8 @@ ROOM_DST = (1160, 120, 1920, 1080)
 
 def _wide_decor(c, t):
     """Full-width string of glowing lights across the top of the wide frame."""
+    import theme as _TH
+    if _TH.STUDIO: return  # clean studio look: no string lights
     kids = os.environ.get("BG") == "kids"
     cols = ("#FF6B6B", "#FFD23F", "#4FC3F7", "#7BD389", "#C9A7FF") if kids else ("#FFE9A8",)
     for seg in range(2):

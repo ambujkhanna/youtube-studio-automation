@@ -12,4 +12,5 @@ TEEN: It can adapt a model's behaviour for a specialised task, format or domain.
 DAD: Is that the same as uploading company documents?
 TEEN: No. Connecting documents for retrieval is different. Fine-tuning changes the model's learned parameters.
 DAD: So we choose the method based on the goal?
-TEEN: Exactly! Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Exactly!
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

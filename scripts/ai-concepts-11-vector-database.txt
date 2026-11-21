@@ -12,4 +12,5 @@ TEEN: Imagine searching for "healthy food for dogs." It may find a document call
 DAD: Because the meanings are related?
 TEEN: Exactly! Vector search can find semantically similar content.
 DAD: Is that useful for RAG?
-TEEN: Very useful. It can retrieve relevant document chunks for an AI answer. Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Very useful. It can retrieve relevant document chunks for an AI answer.
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

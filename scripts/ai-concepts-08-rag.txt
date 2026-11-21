@@ -1,3 +1,4 @@
+# NOTE (2026-11-21): this topic overlaps with ep028 'Can AI Read a PDF…' (partly) - give it a clearly different angle before making it a video.
 TITLE: RAG Explained: AI Answers From Your Documents 📚
 COVER: WHAT IS RAG
 HASHTAGS: #AI #RAG #GenerativeAI #LearnAI
@@ -12,4 +13,5 @@ TEEN: Correct. It can use current or private information from connected sources,
 DAD: Does that guarantee the answer is correct?
 TEEN: No. The documents may be incomplete, and the model can still make mistakes.
 DAD: So we should verify important answers?
-TEEN: Always! Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Always!
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

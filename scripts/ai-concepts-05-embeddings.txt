@@ -12,4 +12,5 @@ TEEN: A model learns to place related items near each other in a mathematical sp
 DAD: So puppy and dog could be close together?
 TEEN: Exactly! That helps systems find related content even when the wording is different.
 DAD: Where is this useful?
-TEEN: Search, recommendations and RAG systems. Subscribe to AI Nation Studio, and share this with a friend!
+TEEN: Search, recommendations and RAG systems.
+TEEN: Subscribe to AI Nation Studio, and share this with a friend!

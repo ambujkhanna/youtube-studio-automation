@@ -77,6 +77,10 @@ SPEC = {
     "TEEN": dict(pants="#4058A8", scale=0.92, skin="#FFE4D2", head=(120, 120), shirt="#FFD23F", shirt_sh="#F2B600", band="#FF4D8D",
                  hair="#7A4428", torso_h=270, torso_w=84, hip_w=78, leg=320, L1=138, L2=128, shoe="#FFFFFF"),
 }
+import os as _os
+if _os.environ.get("THEME", "classic").strip().lower() in ("studio_light", "studio_dark", "studio_open"):  # calmer outfits for the studio looks
+    SPEC["DAD"].update(shirt="#4A6FA5", shirt_sh="#3D5E8F", tie="#1B2437")      # slate-blue shirt, dark tie
+    SPEC["TEEN"].update(shirt="#2FA39A", shirt_sh="#258A82", band="#2F6BFF")   # teal hoodie, blue headband
 
 
 # ------------------------------------------------------------------ face
