@@ -164,6 +164,7 @@ jobs:
           KEEP_THUMBS: ${{ vars.KEEP_THUMBS || '2' }}
           YT_TIMEOUT: ${{ vars.YT_TIMEOUT || '300' }}
           INTRO: ${{ vars.INTRO || 'on' }}
+          CHAR_STYLE: ${{ vars.CHAR_STYLE || 'doodle' }}
           OUTRO: ${{ vars.OUTRO || 'on' }}
           BOARD_STYLE: ${{ vars.BOARD_STYLE || 'hanging' }}
           THEME: ${{ vars.THEME || 'studio_open' }}
