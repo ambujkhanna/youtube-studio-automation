@@ -1,6 +1,5 @@
 TITLE: What Is an SLM? 🤖 Small AI, Big Possibilities!
-COVER: WHAT IS AN SLM?
-Small Language Model
+COVER: WHAT IS AN SLM? - SMALL LANGUAGE MODEL
 HASHTAGS: #SLM #SmallLanguageModel #ArtificialIntelligence #AIExplained #AInationStudio #Shorts
 DESCRIPTION: Ever heard of an SLM? It stands for Small Language Model — a compact AI model designed to perform tasks efficiently. Discover how small AI models can work on laptops and smartphones, sometimes even without an internet connection!
 TAGS: SLM, Small Language Model, what is SLM, small AI models, local AI, offline AI, AI explained, artificial intelligence
