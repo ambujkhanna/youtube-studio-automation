@@ -358,7 +358,6 @@ def draw_board_frame(c):
     c.drawRect(skia.Rect.MakeXYWH(BX, BY + 16, BW, 58), P("#3A86FF", a=0.10))
     for i, col in enumerate(("#FF6B6B", "#FFC93C", "#2ECC71")):
         c.drawCircle(BX + 52 + i * 26, BY + 45, 8, P(col))
-    text(c, "AI EXPLAINED", BX + BW - 40, BY + 45, 24, "#5B6B80", FONT_B, "r")
 
 
 def draw_bit(c, t):

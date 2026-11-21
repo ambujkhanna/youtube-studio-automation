@@ -101,13 +101,12 @@ def _studio_board(c):
     import theme as TH
     if TH.OPEN:  # no frame: only the small accent bar and tag
         c.drawRoundRect(skia.Rect.MakeXYWH(BX + 40, BY + 30, 64, 10), 5, 5, P(TH.ACCENT))
-        K.text(c, "AI EXPLAINED", BX + BW - 48, BY + 40, 24, TH.MUTED, K.FONT_XB, "r"); return
+        return  # (no "AI EXPLAINED" tag: owner, 2026-11-21)
     r = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX + 6, BY + 6, BW - 12, BH - 12), 40, 40)
     sh = P("#0B1530", a=0.14 if not TH.DARK else 0.45); sh.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 26))
     c.save(); c.translate(0, 18); c.drawRRect(r, sh); c.restore()
     c.drawRRect(r, P(TH.CARD)); c.drawRRect(r, P(TH.CARD_LINE, 3))
     c.drawRoundRect(skia.Rect.MakeXYWH(BX + 40, BY + 30, 64, 10), 5, 5, P(TH.ACCENT))  # small accent bar, top left
-    K.text(c, "AI EXPLAINED", BX + BW - 48, BY + 40, 24, TH.MUTED, K.FONT_XB, "r")
 
 
 def draw_bg(c, t):
@@ -458,7 +457,6 @@ def _hanging_board(c):
     m = 22; inner = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(BX + m, BY + m, BW - 2 * m, BH - 2 * m), 26, 26)
     c.drawRRect(inner, _lg(0, BY + m, 0, BY + BH - m, ["#FFFFFF", "#F4F7FB"]))
     ish = P("#0B1530", 10, a=0.08); ish.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 6)); c.drawRRect(inner, ish)
-    K.text(c, "AI EXPLAINED", BX + BW - m - 26, BY + m + 32, 24, "#5B6B80", K.FONT_XB, "r")
 
 
 def _lg(x0, y0, x1, y1, cols, pos=None):
@@ -496,7 +494,6 @@ def _display_3d(c):
         cx_, cy_ = scr.left() + 34 + i * 30, scr.top() + hb / 2
         c.drawCircle(cx_, cy_ + 1.5, 10, P("#000000", a=0.18)); c.drawCircle(cx_, cy_, 10, P(col))
         c.drawCircle(cx_ - 3, cy_ - 3.5, 3.5, P("#FFFFFF", a=0.75))
-    K.text(c, "AI EXPLAINED", scr.right() - 26, scr.top() + hb / 2, 24, "#3A2A00", K.FONT_XB, "r")
     # faint diagonal glass reflection across the screen
     gl = skia.Path(); gl.moveTo(scr.left() + scr.width() * 0.55, scr.top()); gl.lineTo(scr.left() + scr.width() * 0.78, scr.top())
     gl.lineTo(scr.left() + scr.width() * 0.40, scr.bottom()); gl.lineTo(scr.left() + scr.width() * 0.17, scr.bottom()); gl.close()
