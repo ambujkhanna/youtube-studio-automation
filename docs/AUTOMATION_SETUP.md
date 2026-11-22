@@ -146,3 +146,5 @@ Every video now starts with a 2-second **intro** ("Welcome to" + the animated ch
 - Repo variables `INTRO` = `off` / `OUTRO` = `off` switch them off (default `on`). Shorts never go over 180 s: if the extras would push a Short over, they are left out and the log says so.
 - Tip: Shorts lose viewers in the first 2 seconds. If the retention graph in YouTube Studio drops at the start, try `INTRO=off` for a week and compare.
 - End card buttons now size to their text (no more text touching the outline); the old "Search … on YouTube, Instagram, Facebook" strip is replaced by the links card.
+
+> **2026-11-23 04:00 IST (2026-11-22 22:30 UTC):** the upload code must not name a scope (`SCOPES = None` in `pipeline/upload_youtube.py`). It uses whatever the refresh token was granted. Naming `youtube.upload` made every upload fail with `invalid_scope` after the token was renewed with `youtube.force-ssl`.

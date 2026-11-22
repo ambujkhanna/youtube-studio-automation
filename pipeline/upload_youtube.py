@@ -1,14 +1,15 @@
 """Upload one rendered episode to YouTube (Data API v3), scheduled with publishAt.
 
 Needs env: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (OAuth for the AInation Studio channel,
-scope https://www.googleapis.com/auth/youtube.upload). Never commit these; store them as GitHub secrets.
+scope https://www.googleapis.com/auth/youtube.force-ssl since 2026-11-22; the old youtube.upload also works). Never commit these; store them as GitHub secrets.
 Note: videos uploaded by an unaudited API project are locked to PRIVATE until Google approves the
 project audit. Until then the video is uploaded privately and you flip it to public in YouTube Studio.
 """
 import os, sys, time
 import hashtags
 
-SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+SCOPES = None  # use whatever the refresh token was granted. Naming a scope here broke every upload on 2026-11-23
+              # ("invalid_scope") once the token was renewed with youtube.force-ssl (uploads + playlists + subtitles)
 
 
 def have_credentials():
