@@ -401,6 +401,10 @@ def main():
         when = slot.strftime("%d %b %Y, %H:%M IST"); rec["publish_at_ist"] = slot.isoformat(timespec="minutes")
     rec.pop("note", None)
     rec["thumbnail"] = set_thumbnail(vid, thumb) if thumb else "not rendered"
+    try:  # R4: exact English caption track (never fails the run)
+        import subtitles; rec["subtitles"] = subtitles.add(vid, epf, "en", subtitles.intro_offset(extras))
+    except Exception as e:
+        rec["subtitles"] = f"skipped: {e}"[:120]
     social = meta_post.post_all(mp4, ep, BRAND_LINE, LONG, rec)  # Facebook Page + Instagram (if META secrets are set)
     rec.update(social)
     if thumb and str(rec.get("thumbnail", "")).startswith(("set", "not set")):  # again, now that YouTube has processed the upload
@@ -418,7 +422,7 @@ def main():
         import notify; notify.send(f"✅ Uploaded: {ep['title']}\n{rec['url']}\nPublish: {when}")
     except Exception:
         pass
-    summary(f"### ✅ Uploaded {eid}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Voices: {rec['voices']}\n- Thumbnail: {rec['thumbnail']}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
+    summary(f"### ✅ Uploaded {eid}: {ep['title']}\n\n- Link: {rec['url']}\n- Publish: {when}\n- Length: {rec['duration_s']} s\n- Voices: {rec['voices']}\n- Thumbnail: {rec['thumbnail']}\n- Subtitles: {rec.get('subtitles', '–')}\n" + "".join(f"- {k.title()}: {v}\n" for k, v in social.items()) +
             "- Note: until the YouTube API audit is approved, YouTube keeps API uploads **Private** — "
             "set it to Public (or Schedule) in YouTube Studio → Content.")
     if kept: summary("\n- Thumbnails re-applied on recent videos: " + "; ".join(kept))

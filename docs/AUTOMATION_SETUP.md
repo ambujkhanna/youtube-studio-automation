@@ -37,7 +37,7 @@ Without YouTube secrets the run still renders + QCs (a "dry run") — download t
    Copy the **Client ID** and **Client secret**.
 5. **Get a refresh token** at https://developers.google.com/oauthplayground :
    - Gear icon (top right) → tick **Use your own OAuth credentials** → paste Client ID + secret.
-   - Step 1: in "Input your own scopes" paste `https://www.googleapis.com/auth/youtube.upload` → **Authorize APIs**.
+   - Step 1: in "Input your own scopes" paste `https://www.googleapis.com/auth/youtube.force-ssl` → **Authorize APIs**. (Since 2026-11-22: uploads + playlists + subtitles + trending charts; the old `youtube.upload` scope only uploads.)
    - Sign in with the Google account that owns the channel and **choose the AInation Studio channel**
      (it's a brand account — pick it when asked which account/channel). Accept the "unverified app" warning (it's your own app).
    - Step 2: **Exchange authorization code for tokens** → copy the **Refresh token**.
