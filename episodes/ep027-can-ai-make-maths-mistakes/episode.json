@@ -136,10 +136,11 @@
       "who": "TEEN",
       "text": "Ask it to show its steps. Mistakes are much easier to spot.",
       "board": {
-        "type": "big",
-        "icon": "search",
-        "text": "Show the steps",
-        "cue": "steps"
+        "type": "photo",
+        "art": "ain_maths",
+        "caption": "Show the steps",
+        "cue": "steps",
+        "icon": "search"
       }
     },
     {

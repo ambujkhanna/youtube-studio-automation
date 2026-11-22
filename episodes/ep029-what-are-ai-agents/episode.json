@@ -148,10 +148,11 @@
       "who": "TEEN",
       "text": "That's where you stay in charge. Agents still make mistakes, so approve payments yourself.",
       "board": {
-        "type": "big",
-        "icon": "shield",
-        "text": "You approve payments",
-        "cue": "approve"
+        "type": "photo",
+        "art": "ain_agents",
+        "caption": "You approve payments",
+        "cue": "approve",
+        "icon": "shield"
       }
     },
     {

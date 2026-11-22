@@ -90,10 +90,11 @@
       "who": "TEEN",
       "text": "Right. A chatbot is AI without a body. It lives on computers and talks through your screen.",
       "board": {
-        "type": "big",
-        "icon": "chat",
-        "text": "AI without a body",
-        "cue": "chatbot"
+        "type": "photo",
+        "art": "ain_robot_vs_ai",
+        "caption": "AI without a body",
+        "cue": "chatbot",
+        "icon": "chat"
       }
     },
     {

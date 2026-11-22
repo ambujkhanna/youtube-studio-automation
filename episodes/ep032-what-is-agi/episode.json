@@ -56,10 +56,11 @@
       "who": "TEEN",
       "text": "A G I means artificial general intelligence. AI that could learn and do almost any task a person can.",
       "board": {
-        "type": "big",
-        "icon": "brain",
-        "text": "AGI = almost any task",
-        "cue": "general"
+        "type": "photo",
+        "art": "ain_agi",
+        "caption": "AGI = almost any task",
+        "cue": "general",
+        "icon": "brain"
       },
       "punch": "general"
     },

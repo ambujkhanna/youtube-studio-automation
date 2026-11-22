@@ -205,11 +205,11 @@ jobs:
           EPISODE_IN: ${{ inputs.episode }}
           KEEP_THUMBS: ${{ vars.KEEP_THUMBS || '2' }}
           YT_TIMEOUT: ${{ vars.YT_TIMEOUT || '300' }}
-          INTRO: ${{ vars.INTRO || 'on' }}
+          INTRO: ${{ vars.SHORT_INTRO || 'off' }}  # Shorts start straight with the content (owner, 2026-11-22); on = intro WITH the topic
           CHAR_STYLE: ${{ vars.CHAR_STYLE || 'doodle' }}
           THUMB_STYLE: ${{ vars.THUMB_STYLE || 'punch' }}
           THUMB_MARK: ${{ vars.THUMB_MARK || 'sticker' }}
-          OUTRO: ${{ vars.OUTRO || 'on' }}
+          OUTRO: ${{ vars.SHORT_OUTRO || vars.OUTRO || 'on' }}
           SCRIPT_IN: ${{ inputs.script }}
           BOARD_STYLE: ${{ vars.BOARD_STYLE || 'hanging' }}
           THEME: ${{ vars.THEME || 'studio_open' }}

@@ -56,10 +56,11 @@
       "who": "TEEN",
       "text": "Sadly, yes. With enough photos and video of your face, AI can copy how you look and sound.",
       "board": {
-        "type": "big",
-        "icon": "eye",
-        "text": "Copies face and voice",
-        "cue": "face"
+        "type": "photo",
+        "art": "ain_fake_video",
+        "caption": "Copies face and voice",
+        "cue": "face",
+        "icon": "eye"
       }
     },
     {

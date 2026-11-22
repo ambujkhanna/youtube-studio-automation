@@ -1,0 +1,423 @@
+[
+ {
+  "file": "ain_agents_landscape.jpg",
+  "name": "ain_agents",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a small friendly white robot assistant arranging calendar cards and a train ticket on a desk, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_agents_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_agi_landscape.jpg",
+  "name": "ain_agi",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a giant glowing glass brain floating above a city skyline at dusk, futuristic and calm, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_agi_landscape_s42.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_answers_differ_landscape.jpg",
+  "name": "ain_answers_differ",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "three white cubes, each showing a different chat bubble shape, playful randomness, soft shadows, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_answers_differ_landscape_s42.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_energy_landscape.jpg",
+  "name": "ain_energy",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a long data center hall with rows of tall server racks and blue lights, wide shot, symmetrical, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_energy_landscape_s42.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_fake_video_landscape.jpg",
+  "name": "ain_fake_video",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a smartphone showing a blank mannequin head covered with a glowing digital face mesh, a subtle warning feel, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_fake_video_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_health_scan_landscape.jpg",
+  "name": "ain_health_scan",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a doctor's hands holding a hand x-ray film in front of a computer screen that highlights one area, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_health_scan_landscape_s11.png",
+  "use": "picture board",
+  "note": "monitor text areas blurred (made-up letters)"
+ },
+ {
+  "file": "ain_jobs_ai_landscape.jpg",
+  "name": "ain_jobs_ai",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a modern office desk where a laptop and a small robot arm sort paper tasks into neat trays, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_jobs_ai_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_language_landscape.jpg",
+  "name": "ain_language",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "headphones, an open notebook and a phone with a chat window for practising a language, warm desk light, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_language_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_long_project_landscape.jpg",
+  "name": "ain_long_project",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a tidy desk with an open notebook checklist, a laptop and neat rows of sticky notes, organised and calm, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_long_project_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_maths_landscape.jpg",
+  "name": "ain_maths",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a calculator next to a laptop showing a chat window, a sheet of paper with simple blank equation lines, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_maths_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_memory_landscape.jpg",
+  "name": "ain_memory",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a laptop on a tidy desk with a chat window, small translucent blue memory cards floating above it, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_memory_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_pdf_landscape.jpg",
+  "name": "ain_pdf",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a neat stack of documents with a magnifying glass and a glowing blue chat bubble hovering above them, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_pdf_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_phone_camera_landscape.jpg",
+  "name": "ain_phone_camera",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "the back of a modern smartphone with three camera lenses, several translucent photo frames fanning out, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_phone_camera_landscape_s42.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_prompt_ask_landscape.jpg",
+  "name": "ain_prompt_ask",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a laptop chat window where the AI bubble shows a big question mark, hands resting near the keyboard, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_prompt_ask_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_robot_vs_ai_landscape.jpg",
+  "name": "ain_robot_vs_ai",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "an industrial robot arm next to a laptop showing a chat window: a machine body versus software, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_robot_vs_ai_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_search_vs_chat_landscape.jpg",
+  "name": "ain_search_vs_chat",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "two screens side by side on a desk: one with a list of blank search result bars, one with chat bubbles, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_search_vs_chat_landscape_s42.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_self_driving_landscape.jpg",
+  "name": "ain_self_driving",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a modern car on a road with glowing sensor lines and detection boxes around traffic cones and a bike, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_self_driving_landscape_s42.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_spam_filter_landscape.jpg",
+  "name": "ain_spam_filter",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a glowing blue shield in front of an inbox blocking red spam envelopes while green envelopes pass, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_spam_filter_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_text_in_photo_landscape.jpg",
+  "name": "ain_text_in_photo",
+  "orientation": "landscape",
+  "seed": 11,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "a phone camera pointed at a printed page, glowing blue boxes around blank lines of the page, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_text_in_photo_landscape_s11.png",
+  "use": "picture board"
+ },
+ {
+  "file": "ain_translation_landscape.jpg",
+  "name": "ain_translation",
+  "orientation": "landscape",
+  "seed": 42,
+  "size": [
+   1920,
+   1080
+  ],
+  "made_at": [
+   1536,
+   864
+  ],
+  "prompt": "two speech bubbles in different colours joined by a glowing blue arrow, a world globe softly behind, photorealistic 3D render, premium product-shot quality, soft studio lighting, clean modern look, white and light grey with electric blue accents, gentle reflections, shallow depth of field, high detail, no text, no letters, no numbers, no logos, no brand names, no watermark, no faces",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "steps": 4,
+  "licence": "Apache-2.0 (FLUX.1-schnell)",
+  "date": "2026-11-21",
+  "source_file": "ain_translation_landscape_s42.png",
+  "use": "picture board"
+ }
+]

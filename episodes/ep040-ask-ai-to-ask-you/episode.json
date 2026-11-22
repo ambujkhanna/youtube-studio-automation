@@ -77,10 +77,11 @@
       "who": "TEEN",
       "text": "Because it doesn't know your situation. Its questions fill in the missing details.",
       "board": {
-        "type": "big",
-        "icon": "search",
-        "text": "Questions fill the gaps",
-        "cue": "missing"
+        "type": "photo",
+        "art": "ain_prompt_ask",
+        "caption": "Questions fill the gaps",
+        "cue": "missing",
+        "icon": "search"
       }
     },
     {

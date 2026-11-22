@@ -85,10 +85,11 @@
       "who": "TEEN",
       "text": "Scans are pictures of text, so it has to read the image. Blurry scans cause mistakes.",
       "board": {
-        "type": "big",
-        "icon": "warn",
-        "text": "Blurry scans = mistakes",
-        "cue": "blurry"
+        "type": "photo",
+        "art": "ain_pdf",
+        "caption": "Blurry scans = mistakes",
+        "cue": "blurry",
+        "icon": "warn"
       }
     },
     {

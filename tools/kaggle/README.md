@@ -7,3 +7,4 @@
   - A numpy `_slice` error means: stop the session and start a fresh one.
 - **After the run:** the assistant checks every picture (corners, made-up letters, logos), picks the best version and saves it as `assets/art/<name>_landscape.jpg` with a manifest, then adds `"art"` to the matching boards. ep031 (`ain_jobs_ai`) and ep036 (`ain_health_scan`) are already linked.
 - The kids channel's notebooks (backgrounds, icons) are in the kids repo's `tools/kaggle/`.
+- **Done 2026-11-22:** `art_v3_both.ipynb` (merged run) made the pictures; 20 of 21 are installed in `assets/art/` (`ain_family_rules` rejected: Apple logo and made-up checklist text). `ain_health_scan` has its monitor text softly blurred.

@@ -148,10 +148,11 @@
       "who": "TEEN",
       "text": "Use a temporary chat. It isn't saved to your history and doesn't use memory.",
       "board": {
-        "type": "big",
-        "icon": "lock",
-        "text": "Temporary chat",
-        "cue": "temporary"
+        "type": "photo",
+        "art": "ain_memory",
+        "caption": "Temporary chat",
+        "cue": "temporary",
+        "icon": "lock"
       }
     },
     {

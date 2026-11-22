@@ -56,10 +56,11 @@
       "who": "TEEN",
       "text": "Yes! Your email's spam filter. It quietly checks every message before you see it.",
       "board": {
-        "type": "big",
-        "icon": "shield",
-        "text": "Your spam filter is AI",
-        "cue": "filter"
+        "type": "photo",
+        "art": "ain_spam_filter",
+        "caption": "Your spam filter is AI",
+        "cue": "filter",
+        "icon": "shield"
       },
       "punch": "filter"
     },

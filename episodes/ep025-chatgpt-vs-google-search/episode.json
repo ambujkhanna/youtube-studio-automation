@@ -147,10 +147,11 @@
       "who": "TEEN",
       "text": "Some can, and they show links. Click them, because the summary can still be wrong.",
       "board": {
-        "type": "big",
-        "icon": "search",
-        "text": "Click the links",
-        "cue": "click"
+        "type": "photo",
+        "art": "ain_search_vs_chat",
+        "caption": "Click the links",
+        "cue": "click",
+        "icon": "search"
       }
     },
     {

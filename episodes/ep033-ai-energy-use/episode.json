@@ -56,10 +56,11 @@
       "who": "TEEN",
       "text": "Big AI models run in data centers, buildings full of powerful computers. They use a lot of electricity.",
       "board": {
-        "type": "big",
-        "icon": "bulb",
-        "text": "Data centers need lots of power",
-        "cue": "data"
+        "type": "photo",
+        "art": "ain_energy",
+        "caption": "Data centers need lots of power",
+        "cue": "data",
+        "icon": "bulb"
       },
       "punch": "electricity"
     },

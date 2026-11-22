@@ -56,10 +56,11 @@
       "who": "TEEN",
       "text": "AI helps a lot! Often your phone takes several pictures at once and blends the best parts.",
       "board": {
-        "type": "big",
-        "icon": "phone",
-        "text": "Many shots → one photo",
-        "cue": "several"
+        "type": "photo",
+        "art": "ain_phone_camera",
+        "caption": "Many shots → one photo",
+        "cue": "several",
+        "icon": "phone"
       },
       "punch": "blends"
     },

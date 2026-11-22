@@ -85,10 +85,11 @@
       "who": "TEEN",
       "text": "Better: one chat per task. One for the outline, one for each section.",
       "board": {
-        "type": "big",
-        "icon": "chat",
-        "text": "One chat per task",
-        "cue": "one"
+        "type": "photo",
+        "art": "ain_long_project",
+        "caption": "One chat per task",
+        "cue": "one",
+        "icon": "chat"
       }
     },
     {

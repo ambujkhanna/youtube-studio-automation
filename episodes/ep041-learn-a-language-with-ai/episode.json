@@ -56,10 +56,11 @@
       "who": "TEEN",
       "text": "Yes! It's like a patient practice partner that never gets tired.",
       "board": {
-        "type": "big",
-        "icon": "chat",
-        "text": "A patient practice partner",
-        "cue": "partner"
+        "type": "photo",
+        "art": "ain_language",
+        "caption": "A patient practice partner",
+        "cue": "partner",
+        "icon": "chat"
       },
       "punch": "patient"
     },

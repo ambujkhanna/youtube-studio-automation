@@ -56,10 +56,11 @@
       "who": "TEEN",
       "text": "Because it adds a little randomness when it picks the next word. That keeps answers fresh.",
       "board": {
-        "type": "big",
-        "icon": "bulb",
-        "text": "A little randomness",
-        "cue": "randomness"
+        "type": "photo",
+        "art": "ain_answers_differ",
+        "caption": "A little randomness",
+        "cue": "randomness",
+        "icon": "bulb"
       },
       "punch": "randomness"
     },

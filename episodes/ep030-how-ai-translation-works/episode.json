@@ -56,10 +56,11 @@
       "who": "TEEN",
       "text": "It learned from millions of sentences that people already translated.",
       "board": {
-        "type": "big",
-        "icon": "book",
-        "text": "Learned from translated sentences",
-        "cue": "translated"
+        "type": "photo",
+        "art": "ain_translation",
+        "caption": "Learned from translated sentences",
+        "cue": "translated",
+        "icon": "book"
       },
       "punch": "millions"
     },

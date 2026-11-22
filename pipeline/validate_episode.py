@@ -89,7 +89,7 @@ def check(path):
         sc = l.get("board")
         if sc:
             if sc.get("type") not in TYPES: errs.append(f"line {i}: unknown board type {sc.get('type')}")
-            if sc.get("type") in ("photo", "clip") and not sc.get("query"): errs.append(f"line {i}: {sc['type']} board needs \"query\" (what to search for)")
+            if sc.get("type") in ("photo", "clip") and not (sc.get("query") or sc.get("art")): errs.append(f"line {i}: {sc['type']} board needs \"art\" (our picture) or \"query\" (what to search for)")
             for key, n in LIMITS.items():
                 if sc.get("type") == key:
                     for fld in ("items", "rows", "lines"):

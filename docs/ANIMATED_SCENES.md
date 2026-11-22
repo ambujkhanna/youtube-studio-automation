@@ -93,6 +93,12 @@ Two board types put **real** pictures in the card. They use no API key and are c
 - **Safety:** if a search finds nothing, a download fails, or repo variable `STOCK=off` is set, the board becomes a big icon board with the `icon` and `caption`. Check kids photos for people or anything unsuitable before posting: Openverse photos aren't filtered for people.
 - The validator requires `query` for both types. `python pipeline/stock.py episodes/epNNN-*/episode.json` fetches and prints the credits (good for a preview).
 
+## AInation 3D key visuals (since 2026-11-22)
+
+20 realistic 3D pictures in `assets/art/ain_*_landscape.jpg` (FLUX.1-schnell, clean white/blue studio look; `assets/art/manifest.json`).
+- **Used as `photo` boards with `"art"`** (3D art first, raw photo only as the fallback): ep023 memory, ep024 fake video, ep025 search vs chat, ep026 long project, ep027 maths, ep028 PDF, ep029 agents, ep030 translation, ep031 jobs, ep032 AGI, ep033 energy, ep034 robot vs AI, ep036 health scan, ep037 phone camera, ep038 spam filter, ep039 answers differ, ep040 prompt ask, ep041 language.
+- `ain_self_driving` and `ain_text_in_photo` aren't used yet: ep035 and ep042 have no plain icon board to swap.
+
 ## Safety
 
 - The validator knows the new types and checks every cue, including `from` and `to`.
