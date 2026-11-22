@@ -439,10 +439,25 @@ import stock  # real photos / NASA clips (roadmap R1); falls back to a big icon 
 _E.BUILD_BIG = build_big
 for _n, _fn in stock.BUILDERS.items():
     BUILD[_n] = (lambda f: (lambda i, t0, t1, sc: f(_E, i, t0, t1, sc)))(_fn)
+_SCENE_EL = []  # (first element index, end index, scene end) per scene
 for k in range(len(scene_starts)):
     i, t0, t1 = scene_window(k)
     sc = ELINES[i]["board"]
+    _a = len(ELEMS)
     BUILD.get(sc["type"], build_big)(i, t0, t1, sc)
+    _SCENE_EL.append((_a, len(ELEMS), t1))
+# No empty board while the next picture waits for its cue word (owner, 2026-11-23, as on kids): a board stays until the
+# next board's first element appears, then they cross-fade. BOARD_BRIDGE=off = old behaviour.
+if os.environ.get("BOARD_BRIDGE", "on").strip().lower() not in ("off", "0", "no", "false"):
+    for k in range(len(_SCENE_EL) - 1):
+        a, b, t1 = _SCENE_EL[k]; na, nb, _ = _SCENE_EL[k + 1]
+        if nb <= na: continue
+        first_in = min(ELEMS[j][0] for j in range(na, nb))
+        if first_in <= t1 + 0.1: continue
+        for j in range(a, b):
+            ti, to, fn, an, pv = ELEMS[j]
+            if to is not None and abs(to - t1) < 0.01:
+                ELEMS[j] = (ti, first_in + 0.12, fn, an, pv)
 
 import cta
 KIDS_CTA = False
