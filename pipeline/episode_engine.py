@@ -610,6 +610,11 @@ if __name__ == "__main__":
     out = sys.argv[1]; os.makedirs(out, exist_ok=True)
     frames = [int(x) for x in sys.argv[2:]] or list(range(NF))
     n = int(os.environ.get("WORKERS", os.cpu_count() or 2))
+    try:  # every board icon downloaded ONCE here; workers never download -> the same picture in every frame (no flicker)
+        print("3D icons ready:", icons3d.prefetch([ELINES, EP.get("loop_card"), EP.get("cast")]))
+    except Exception as e:
+        print("note: icon prefetch skipped:", str(e)[:100])
+    os.environ["ICONS3D_NO_DOWNLOAD"] = "1"
     with Pool(n) as pool:
         print("rendered", sum(pool.map(worker, [(out, frames[j::n]) for j in range(n)])))
     pops = sorted(set(round(e[0], 3) for e in ELEMS if e[0] > 0.3))

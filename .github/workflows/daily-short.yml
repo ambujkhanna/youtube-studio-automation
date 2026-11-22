@@ -16,6 +16,7 @@ on:
           - "Refresh thumbnails"
           - "Post 1 old video to Facebook + Instagram"
           - "Post 3 old videos to Facebook + Instagram"
+          - "Send a test alert (WhatsApp)"
       post_to:
         description: "Where to post"
         type: choice
@@ -219,6 +220,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
+          WHATSAPP_APIKEY: ${{ secrets.WHATSAPP_APIKEY }}
           STOCK_STYLE: ${{ vars.STOCK_STYLE || 'plain' }}
           LIST_STYLE: ${{ vars.LIST_STYLE || 'tiles' }}
           CTA_STYLE: ${{ vars.CTA_STYLE || 'pop' }}
@@ -231,6 +234,7 @@ jobs:
             "Refresh thumbnails") ARGS="--refresh-thumbnails" ;;
             "Post 1 old"*) ARGS="--social-backfill 1" ;;
             "Post 3 old"*) ARGS="--social-backfill 3" ;;
+            "Send a test alert"*) R="$(python pipeline/notify.py "✅ Test alert from $GITHUB_REPOSITORY - alerts work")"; echo "$R"; echo "### 🔔 Test alert: $R" >> "$GITHUB_STEP_SUMMARY"; exit 0 ;;
           esac
           if [ -n "$EPISODE_IN" ]; then
             if ! printf "%s" "$EPISODE_IN" | grep -Eq "^[A-Za-z0-9_-]+$"; then echo "episode must be an id like ep014"; exit 1; fi
@@ -265,6 +269,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
+          WHATSAPP_APIKEY: ${{ secrets.WHATSAPP_APIKEY }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           python pipeline/notify.py "❌ ${{ github.workflow }} failed in ${{ github.repository }} - $RUN_URL"
