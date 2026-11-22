@@ -24,6 +24,7 @@ CH = {
 }[KIDS]
 TAGS_OK = ("laugh", "chuckle", "gasp", "sigh", "cough")
 EMOJI = {  # keyword -> picture, for boards the script didn't specify
+    "grass": "🌾", "lawn": "🌾", "nest": "🪺", "bed": "🛏️", "milk": "🥛", "paw": "🐾", "love": "❤️", "sleep": "😴",
     "cat": "🐱", "dog": "🐶", "bee": "🐝", "honey": "🍯", "flower": "🌸", "tree": "🌳", "leaf": "🍃", "seed": "🌱", "plant": "🌱",
     "sun": "☀️", "moon": "🌙", "star": "⭐", "planet": "🪐", "earth": "🌍", "rain": "🌧️", "cloud": "☁️", "snow": "❄️",
     "rainbow": "🌈", "water": "💧", "ocean": "🌊", "sea": "🌊", "fish": "🐟", "whale": "🐋", "shark": "🦈", "bird": "🐦",

@@ -3,6 +3,7 @@ name: Daily AInation Short
 on:
   schedule:
     - cron: "23 9 * * *"     # 09:15 UTC = 14:45 IST; upload is scheduled inside the 17:00-20:00 IST window
+    - cron: "23 6 * * *"     # 06:23 UTC = 11:53 IST: the automatic TREND Short (own queue, posts 12:00-14:00 IST; TREND_SHORTS, default off)
   workflow_dispatch:
     inputs:
       action:
@@ -17,6 +18,8 @@ on:
           - "Post 1 old video to Facebook + Instagram"
           - "Post 3 old videos to Facebook + Instagram"
           - "Send a test alert (WhatsApp)"
+          - "Trend Short (auto topic)"
+          - "Trend Short dry run (auto topic)"
       post_to:
         description: "Where to post"
         type: choice
@@ -188,6 +191,29 @@ jobs:
             echo "::notice::No growth brief found in the latest successful analytics artifact; continuing with the existing episode workflow."
           fi
 
+      - name: Cache the free AI model (trend Shorts only)
+        if: ${{ (github.event.schedule == '23 6 * * *' && vars.TREND_SHORTS == 'on') || startsWith(inputs.action, 'Trend Short') }}
+        uses: actions/cache@v4
+        with:
+          path: ~/.ollama/models
+          key: ollama-${{ vars.TREND_MODEL || 'qwen2.5:7b' }}-v1
+
+      - name: Free AI script writer (Ollama, Apache 2.0 model; trend Shorts only)
+        if: ${{ (github.event.schedule == '23 6 * * *' && vars.TREND_SHORTS == 'on') || startsWith(inputs.action, 'Trend Short') }}
+        timeout-minutes: 20
+        continue-on-error: true   # no model = no trend Short today; the run summary says so
+        env:
+          TREND_MODEL: ${{ vars.TREND_MODEL || 'qwen2.5:7b' }}
+        run: |
+          sudo apt-get install -y -q zstd > /dev/null
+          curl -fsSL https://ollama.com/install.sh | sh
+          sudo systemctl stop ollama 2>/dev/null || true
+          sudo rm -rf /usr/local/lib/ollama/cuda_* || true   # CPU only: frees ~2.4 GB of disk
+          mkdir -p ~/.ollama/models
+          OLLAMA_MODELS=$HOME/.ollama/models nohup ollama serve > /tmp/ollama.log 2>&1 &
+          for i in $(seq 1 30); do curl -s http://127.0.0.1:11434 > /dev/null && break; sleep 1; done
+          ollama pull "$TREND_MODEL"
+
       - name: Render, QC, upload
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
@@ -206,6 +232,10 @@ jobs:
           EPISODE_IN: ${{ inputs.episode }}
           KEEP_THUMBS: ${{ vars.KEEP_THUMBS || '2' }}
           YT_TIMEOUT: ${{ vars.YT_TIMEOUT || '300' }}
+          TREND_SHORTS: ${{ vars.TREND_SHORTS || 'off' }}
+          TREND_MODEL: ${{ vars.TREND_MODEL || 'qwen2.5:7b' }}
+          PUBLISH_WINDOW_TREND: ${{ vars.PUBLISH_WINDOW_TREND || '12:00-14:00' }}
+          CRON: ${{ github.event.schedule }}
           SUBS: ${{ vars.SUBS || 'on' }}
           SUBS_TRACKS: ${{ vars.SUBS_TRACKS || '2' }}
           INTRO: ${{ vars.SHORT_INTRO || 'off' }}  # Shorts start straight with the content (owner, 2026-11-22); on = intro WITH the topic
@@ -229,6 +259,12 @@ jobs:
           CTA_STYLE: ${{ vars.CTA_STYLE || 'pop' }}
           BOARD_STYLE_RUN: ${{ inputs.board_style || '' }}
         run: |
+          if [ "$CRON" = "23 6 * * *" ] || [[ "$ACTION" == "Trend Short"* ]]; then   # automatic trend Short (own queue: custom/)
+            export PUBLISH_WINDOW="$PUBLISH_WINDOW_TREND"
+            [[ "$ACTION" == "Trend Short"* ]] && export TREND_SHORTS=on   # a manual run always makes one
+            TA=""; [[ "$ACTION" == *"dry run"* ]] && TA="--dry-run"
+            python pipeline/trend_short.py $TA; exit $?
+          fi
           ARGS=""
           case "$ACTION" in
             *"publish now"*) ARGS="--now" ;;
