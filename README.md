@@ -1,5 +1,7 @@
 # YouTube Studio Automation
 
+> **© 2026. All rights reserved.** Not open source: viewing this repository does not allow copying or reuse. See [`LICENSE`](LICENSE).
+
 **Last updated:** 2026-11-10T09:00:00+05:30
 
 A zero-additional-subscription-cost, AI-assisted system for researching, creating, reviewing, publishing, and improving YouTube Shorts across three planned English-language channels.
