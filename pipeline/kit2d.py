@@ -219,8 +219,9 @@ def draw_char(c, ch, t):
         arms[s] = (a1, a2, hd)
     delay = 0.05 if ch.name == "DAD" else 0.18
     ip = back_out((t - delay) / 0.35) if t < 0.6 else 1.0
+    step = 1 + 0.02 * speaking(ch, t) if STEADY else 1.0  # the speaker steps forward a little (scaled from the feet)
     mod.draw(c, ch, t, {"bounce": ch.bounce(t) * 1.2, "roll": roll, "vals": vals, "bob": env * 9, "hop": ch.hop(t)}, arms,
-                max(0.001, min(ip, 1.06)), ch.x, 1765)
+                max(0.001, min(ip, 1.06)) * step, ch.x, 1765)
 
 
 def logo(c, x, y, k=1.0, a=1.0, tcol="#FFFFFF"):
@@ -451,18 +452,45 @@ def draw_bg(c, t):
     logo(c, 540, 84, 0.95 * k)
 
 
+STEADY = False  # CAM_STYLE=steady (owner 2026-11-23, as on the kids channel): no cut-in close-ups or slides; the
+                # speaker is shown by a soft floor spotlight + a small step forward
+
+
+def speaking(ch, t):
+    """0..1: how much this character is 'the speaker' now (eased in before the line, out after it)."""
+    w = 0.0
+    for ln in LN:
+        if ln["speaker"] != ch.name: continue
+        a, b = ln["start"] - 0.25, ln["end"] + 0.35
+        if a - 0.3 < t < b + 0.3:
+            u = min(1.0, max(0.0, (t - a) / 0.3), max(0.0, (b + 0.3 - t) / 0.3))
+            w = max(w, u * u * (3 - 2 * u))
+    return w
+
+
+def speaker_glow(c, t):
+    for ch in CHARS:
+        w = speaking(ch, t)
+        if w <= 0.01: continue
+        g = P("#FFB703", a=0.7 * w); g.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 22))
+        c.drawOval(skia.Rect.MakeXYWH(ch.x - 170, 1728, 340, 84), g)            # warm golden spotlight (AI badge gold)
+        r = P("#FFF6D5", a=0.85 * w); r.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 9))
+        c.drawOval(skia.Rect.MakeXYWH(ch.x - 110, 1748, 220, 44), r)
+
+
 def camera(t):
     i = max(k for k in range(len(SHOTS)) if SHOTS[k][0] <= t + 1e-6)
     t0, kind = SHOTS[i]; t1 = SHOTS[i + 1][0] if i + 1 < len(SHOTS) else DUR
     cx, cy, z0, z1 = CAMS[kind]
     u = (t - t0) / max(0.1, t1 - t0)
     z = z0 + (z1 - z0) * u
-    if i > 0:
+    if i > 0 and not STEADY:
         z *= 1 + 0.035 * max(0.0, 1 - (t - t0) / 0.3) ** 2  # settle after cut
     for tw in PUNCH:
         if tw <= t < tw + 0.45:
-            z *= 1 + 0.045 * math.exp(-(t - tw) * 7) * min(1.0, (t - tw) / 0.05)
-    cx += wob(t, 0.5, 1) * 4; cy += wob(t, 0.4, 2) * 4
+            z *= 1 + (0.025 if STEADY else 0.045) * math.exp(-(t - tw) * 7) * min(1.0, (t - tw) / 0.05)
+    if not STEADY:  # steady camera: no handheld wobble either
+        cx += wob(t, 0.5, 1) * 4; cy += wob(t, 0.4, 2) * 4
     # keep inside world
     hw, hh = W / 2 / z, H / 2 / z
     cx = min(max(cx, hw - 60), W + 60 - hw); cy = min(max(cy, hh - 200), H + 40 - hh)
@@ -559,6 +587,7 @@ def render_frame(f):
     cx, cy, z = camera(t)
     c.save(); c.translate(W / 2, H / 2); c.scale(z, z); c.translate(-cx, -cy)
     draw_bg(c, t); draw_board(c, t); draw_bit(c, t)
+    if STEADY: speaker_glow(c, t)
     for ch_ in CHARS:
         draw_char(c, ch_, t)
     draw_top(c, t)  # overlays above the characters (end card, reminders, effects)

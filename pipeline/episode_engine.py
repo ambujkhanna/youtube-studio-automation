@@ -571,6 +571,11 @@ CAMS = {"wide": (540, 960, 1.0, 1.05), "board": (540, 930, 1.03, 1.05)}
 for n, c in CH.items():
     hy, z = HEADY[n]
     CAMS[n] = (c.x + (10 if c.x < 540 else -10 if c.x > 540 else 0), hy, z, z + 0.1)
+if os.environ.get("CAM_STYLE", "steady").strip().lower() == "steady" and os.environ.get("FORMAT") != "long":
+    # owner, 2026-11-23 (same as kids): no cut-in close-ups or slides toward the speaker. One fixed, full frame;
+    # the speaker gets a golden floor spotlight + small step forward (kit2d.speaker_glow / speaking).
+    for k_ in list(CAMS): CAMS[k_] = (540, 960, 1.0, 1.0)  # AInation's characters stand close under the board: keep the full frame
+    K.STEADY = True
 PUNCH = [wt(i, l["punch"]) for i, l in enumerate(ELINES) if l.get("punch")]
 
 _top1 = K.draw_top
