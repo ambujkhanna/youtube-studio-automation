@@ -353,7 +353,7 @@
       "video_id": "mqTFcKKTPyg",
       "url": "https://www.youtube.com/shorts/mqTFcKKTPyg",
       "uploaded_at": "2026-11-22T23:00:26+05:30",
-      "thumbnail_checked": "2026-11-24T03:15+05:30 set"
+      "thumbnail_checked": "2026-11-24T23:47+05:30 set"
     },
     "ep025": {
       "voices": "chatterbox",
@@ -372,7 +372,8 @@
       "status": "uploaded",
       "video_id": "1IL1rebwmxk",
       "url": "https://www.youtube.com/shorts/1IL1rebwmxk",
-      "uploaded_at": "2026-11-24T03:14:46+05:30"
+      "uploaded_at": "2026-11-24T03:14:46+05:30",
+      "thumbnail_checked": "2026-11-24T23:47+05:30 set"
     }
   }
 }
