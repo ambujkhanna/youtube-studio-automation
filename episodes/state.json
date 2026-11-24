@@ -353,7 +353,7 @@
       "video_id": "mqTFcKKTPyg",
       "url": "https://www.youtube.com/shorts/mqTFcKKTPyg",
       "uploaded_at": "2026-11-22T23:00:26+05:30",
-      "thumbnail_checked": "2026-11-24T23:47+05:30 set"
+      "thumbnail_checked": "2026-11-25T01:58+05:30 set"
     },
     "ep025": {
       "voices": "chatterbox",
@@ -373,7 +373,26 @@
       "video_id": "1IL1rebwmxk",
       "url": "https://www.youtube.com/shorts/1IL1rebwmxk",
       "uploaded_at": "2026-11-24T03:14:46+05:30",
-      "thumbnail_checked": "2026-11-24T23:47+05:30 set"
+      "thumbnail_checked": "2026-11-25T01:57+05:30 set"
+    },
+    "ep026": {
+      "voices": "chatterbox",
+      "selfcheck": {
+        "heard": 0.979,
+        "ok": true
+      },
+      "title": "How to Keep AI on Track in a Long Project",
+      "rendered_at": "2026-11-25T01:55:46+05:30",
+      "duration_s": 51.5,
+      "publish_at_ist": "2026-11-25T19:05+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "subtitles": "en",
+      "facebook": "posted (reel 2661874790969972), cover set",
+      "instagram": "posted (reel 18110918747201443) with the 3 Mbps copy, designed cover",
+      "status": "uploaded",
+      "video_id": "1Go9qpGJpVs",
+      "url": "https://www.youtube.com/shorts/1Go9qpGJpVs",
+      "uploaded_at": "2026-11-25T01:57:30+05:30"
     }
   }
 }
