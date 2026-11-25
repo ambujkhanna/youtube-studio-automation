@@ -455,3 +455,13 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 - [x] CurioKids country-report and growth-engine unit tests passed: run 45654199219.
 - [x] AInation country-report and growth-engine unit tests passed: run 45654217704.
 - [ ] Live analytics artifact verification remains pending; country reporting still requires a manual analytics workflow run on this feature branch.
+
+
+## 2026-11-25 — Primary-language market focus clarified
+
+- Owner direction: target one primary language per country; do not produce secondary/regional-language variants by default.
+- India: Hindi only. Explicitly do not create Tamil, Telugu or Bengali videos.
+- United States: English; Indonesia: Indonesian; Brazil: Portuguese; Mexico: Spanish; Japan: Japanese; Germany: German; Vietnam: Vietnamese; Philippines: Filipino/Tagalog; Turkey: Turkish.
+- CurioKids retains its existing English/Hindi/Spanish library; any additional language requires owner approval and channel analytics evidence.
+- AInation remains English-only; multilingual production is outside current scope.
+- Updated growth roadmap, country/language audit, TODO and progress tracking. Analytics can still report audiences in other languages; reporting does not imply production approval.
