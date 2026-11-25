@@ -31,13 +31,13 @@ The current published state was read from episode/long/custom state files and Cu
 | Channel | Video IDs in state | Suggested assignment rows | Topic rows | Language rows | Manual topic review |
 |---|---:|---:|---:|---:|---:|
 | The CurioKids Club | 33 | 66 | 33 | 33 | 11 videos |
-| AInation Studio | 33 | 77 | 44 | 33 | 5 videos |
+| AInation Studio | 33 | 79 | 46 | 33 | 1 video |
 
 CurioKids topic rows: Everyday Science & Discoveries 9; Space & Universe 5; Human Body 5; Animals 2; Nature & Plants 1. Language rows: English 21; Hindi 9; Spanish 3.
 
-AInation topic rows: AI Explained 22; AI Tools & Workflows 6; AI Safety, Privacy & Verification 4; AI in Everyday Life 4; AI Coding & Building 2; AI Creativity 1. All 33 entries are assigned to English.
+AInation topic rows: AI Explained 24; AI Tools & Workflows 9; AI in Everyday Life 5; AI Safety, Privacy & Verification 4; AI Coding & Building 2; AI Creativity 1. All 33 entries are assigned to English.
 
-**Planner taxonomy issue:** obvious on-pillar titles are falling into manual review because the keyword vocabulary is narrow. Examples: CurioKids octopus, zebra, eye-blinking, planets-rhyme and sky-colour videos; AInation neural networks, voice assistants, YouTube recommendations and machine learning. Add deliberate vocabulary/phrase coverage and regression tests before using this as the final playlist plan. Children's Day and genuinely off-pillar items should remain manual review. No live playlists were changed.
+**Planner taxonomy refinement:** added regression-covered terms for neural networks, voice assistants, YouTube recommendations and machine learning. The preview now leaves only one AInation video for manual review: the Children's Day Short, which is off-pillar. No live playlists were changed.
 
 ## YouTube API metric-gap audit
 
