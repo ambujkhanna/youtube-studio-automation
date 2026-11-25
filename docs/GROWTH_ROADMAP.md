@@ -52,7 +52,8 @@ Practical, understandable AI explained through the established Dad–Teen format
 - Maintain consistent Dad–Teen character presentation, readable screen content and clear before/after storytelling.
 
 ### 7. Language policy
-- Keep the current language strategy. Do not introduce multilingual production or new language tracks as part of this roadmap.
+- Keep AInation English-only. Do not introduce multilingual production or new language tracks as part of this roadmap.
+- If the owner later approves a market expansion, target one primary language per country (for example, Hindi for India, English for the United States and Indonesian for Indonesia); do not create secondary/regional-language variants by default.
 - Revisit only if the owner requests it and audience evidence supports a separate decision.
 
 ## Experiments and measures
