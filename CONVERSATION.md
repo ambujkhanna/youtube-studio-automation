@@ -791,3 +791,14 @@ Read first: the channel handoff (`TheCurioKidsClub_handoff.md` / `AInation_Studi
 - 2026-11-23 07:15 IST (01:45 UTC): Owner: decide more languages on data → **audience by country** added to analytics. **Weekly Kaggle art run** built (secrets added; first manual run next). Hybrid trend model option. AInation board bridge. **docs/PLATFORMS.md** for more platforms (advice: Threads → Pinterest → LinkedIn → Bluesky).
 - 2026-11-23 08:30 IST (03:00 UTC): **Plans:** make the code private but keep free runs (docs/PRIVATE_CODE_PLAN.md), Pinterest for kids (docs/PINTEREST_PLAN.md); open tasks in **docs/TODO.md**. LICENSE: All rights reserved. 14B model not better than 7B.
 - 2026-11-23 09:15 IST (03:45 UTC): ▶ CURRENT STATE snapshot added at the top of this file; HOW_IT_WORKS.md refreshed.
+
+
+## 2026-11-25 — Channel-specific YouTube growth roadmap
+
+The owner approved consolidating the growth recommendations into an execution plan and starting documentation work. Created `docs/GROWTH_ROADMAP.md` separately in each channel repository.
+
+Shared plan: baseline/data quality first; investigate impressions/CTR, Shorts Stayed to watch and retention-curve availability; separate Shorts/long-form and publication-age comparisons; enrich advisory topic/hook/history reports; validate with tests and render-only dry-runs. Recommendations remain human-reviewed and cannot automatically alter scripts, titles, thumbnails, queues, schedules or published videos.
+
+AInation-only scope: Dad–Teen demonstration-first hooks; practical AI topic pillars; verified demos/limitations; 40–55-second format as an experiment only; tutorial/project playlists and Related Video links; Instagram bio/link alignment. No multilingual expansion in this plan.
+
+This change is documentation-only on `docs/channel-growth-roadmap-2026-11`. Analytics implementation, baseline generation and dry-run validation remain pending. No publishing or production settings changed.
