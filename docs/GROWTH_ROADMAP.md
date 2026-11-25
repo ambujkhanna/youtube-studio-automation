@@ -21,12 +21,16 @@ Practical, understandable AI explained through the established Dad–Teen format
 - Core pillars: AI Explained; AI Tools & Practical Workflows; AI Coding/Building; AI Creativity; AI in Everyday Life; AI Safety, Privacy & Verification.
 - Cover current models/tools when there is a practical audience problem or meaningful capability change.
 - Prioritise evergreen questions alongside timely developments; verify current product claims, pricing, availability and limitations before scripting.
-- Generic phone launches, unrelated gadgets and broad tech news are off-pillar unless there is a clear AI-specific angle.
-- Use search/radar and channel performance as evidence; label untested topic clusters as hypotheses.
+- Search trends are discovery signals, not automatic episode ideas. Every candidate must pass a strict AInation channel-fit gate: it must clearly serve one of the six AI pillars and suit the practical, understandable Dad–Teen explainer format.
+- Reject unrelated finance/market news (for example, why gold prices are dropping), celebrity gossip, generic politics, unrelated gadgets and broad news stories. Do not force an AI angle onto a topic that does not naturally belong.
+- Generic phone launches and gadgets are off-pillar unless there is a meaningful AI-specific capability or workflow to demonstrate.
+- Use search/radar and channel performance only after channel fit is established; high search volume alone never overrides the channel promise. Label untested topic clusters as hypotheses.
 
 ### 3. Shorts-to-long-form and playlists
 - Identify Shorts with matching full tutorials, demos or projects and recommend a Related Video link where eligible.
-- Organise playlists around AI basics, tools/workflows, coding/building, creativity and safety/privacy.
+- Use two complementary playlist dimensions: **topic playlists** (AI basics, tools/workflows, coding/building, creativity, everyday AI, safety/privacy) and **language playlists** for each language actually published.
+- A single video may belong to multiple playlists. Add it to its relevant topic playlist and its language playlist; use a focused series playlist as a third dimension when it helps viewers follow a learning path.
+- Do not create empty language playlists for languages the channel does not publish. Keep playlist names and descriptions clear about the language of the videos.
 - Build connected learning paths (beginner → practical example → deeper tutorial) where the library supports them.
 
 ### 4. Instagram discovery bridge
