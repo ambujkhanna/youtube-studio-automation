@@ -23,5 +23,21 @@ class PlaylistPlanTests(unittest.TestCase):
         keys = [(r["video_id"], r["playlist"]) for r in rows]
         self.assertEqual(len(keys), len(set(keys)))
 
+    def test_obvious_ai_topics_get_topic_assignments(self):
+        if playlist_plan.KIDS:
+            self.skipTest("AInation topic taxonomy only")
+        cases = {
+            "What Is a Neural Network?": "AI Explained",
+            "How Voice Assistants Understand You": "AI Tools & Workflows",
+            "Why YouTube Knows What You Like": "AI in Everyday Life",
+            "What Is Machine Learning?": "AI Explained",
+        }
+        for title, expected in cases.items():
+            with self.subTest(title=title):
+                rows = playlist_plan.assignments({"x": {"title": title, "language": "default"}})
+                names = {r["playlist"] for r in rows}
+                self.assertIn(expected, names)
+                self.assertNotIn("Needs manual topic review", names)
+
 if __name__ == "__main__":
     unittest.main()
