@@ -41,6 +41,12 @@ python pipeline/growth.py --csv out/analytics/<report>.csv --channel-key CHANNEL
 - Dated validation notes are kept in `docs/GROWTH_ENGINE_LOG.md`; status changes go to the channel handoff's change log.
 
 
+## Editorial topic gate and playlist model (2026-11-25)
+
+Search/radar output is a discovery input only. Before a topic enters a recommendation or episode backlog, it must clearly fit one of AInation's six AI pillars and suit the practical Dad–Teen explainer format. Reject unrelated finance/market stories (such as gold-price movements), general news, gossip and off-pillar trends; do not force an AI angle onto an unrelated topic. Search volume never overrides channel fit.
+
+Playlist organisation is multi-dimensional: each upload can be in a topic playlist and its spoken-language playlist for languages the channel actually publishes, plus a series playlist where useful. One upload can appear in multiple playlists; do not duplicate uploads. Do not create empty language playlists for languages not published.
+
 ## Channel growth roadmap (2026-11-25)
 
 The channel-specific approved plan is in [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md). It extends the existing analytics-led learning loop; it does not replace it.
