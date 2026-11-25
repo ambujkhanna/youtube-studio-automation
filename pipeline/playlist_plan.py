@@ -26,11 +26,11 @@ if KIDS:
     LANGUAGE = {"default": "English", "hi": "Hindi", "es": "Spanish"}
 else:
     TOPICS = {
-        "AI Explained": {"ai", "artificial", "intelligence", "llm", "llms", "gpt", "model", "models", "token", "tokens", "embedding", "embeddings", "context", "prompt", "prompts"},
-        "AI Tools & Workflows": {"chatgpt", "gemini", "claude", "copilot", "ollama", "tool", "tools", "workflow", "workflows", "automation", "agent", "agents", "mcp"},
+        "AI Explained": {"ai", "artificial", "intelligence", "llm", "llms", "gpt", "model", "models", "token", "tokens", "embedding", "embeddings", "context", "prompt", "prompts", "neural", "network", "networks", "machine", "learning", "algorithm", "algorithms"},
+        "AI Tools & Workflows": {"chatgpt", "gemini", "claude", "copilot", "ollama", "tool", "tools", "workflow", "workflows", "automation", "agent", "agents", "mcp", "voice", "assistant", "assistants"},
         "AI Coding & Building": {"code", "coding", "developer", "development", "api", "build", "building", "app", "apps", "programming", "rag"},
         "AI Creativity": {"image", "images", "video", "videos", "creative", "creativity", "music", "design", "generation", "sora"},
-        "AI in Everyday Life": {"everyday", "life", "use", "using", "work", "productivity", "personal"},
+        "AI in Everyday Life": {"everyday", "life", "use", "using", "work", "productivity", "personal", "youtube", "recommendation", "recommendations"},
         "AI Safety, Privacy & Verification": {"safety", "safe", "privacy", "security", "verify", "verification", "hallucination", "hallucinations", "deepfake", "deepfakes", "guardrails", "risk"},
     }
     LANGUAGE = {"default": "English", "en": "English", "hi": "Hindi", "es": "Spanish", "trend": "English", "script": "English"}
