@@ -1,6 +1,6 @@
 # AInation Studio — channel growth roadmap
 
-**Status:** approved planning baseline; implementation not yet validated.  
+**Status:** implemented on the shared feature branch; analytics artifacts and CI validated. Reach API enablement and render-only visual checks remain pending.  
 **Updated:** 2026-11-25  
 **Scope:** AInation Studio only. Multilingual expansion is not part of this plan.
 
