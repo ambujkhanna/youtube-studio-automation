@@ -412,3 +412,16 @@ Rendered a 10-second vertical 720×1280, 24 fps MP4 directly in the hosted execu
 - [x] Re-ran that workflow (attempt 2) using the current repository secret; OAuth refresh, read-only analytics collection, growth brief generation, tests and artifact upload all completed successfully.
 - [x] Together with successful retry 44603311245, this confirms the current AInation analytics refresh token is working. The upload secret `YT_REFRESH_TOKEN` was not changed.
 - [ ] Safe Daily Short dry-run remains pending; select only `Dry run (render only, nothing uploaded)`, and for the previous episode-ID regression use `EP020`.
+
+
+## 2026-11-25 — Channel growth roadmap approved and documented
+
+- [x] Reviewed current `main` growth-engine code and documentation before planning.
+- [x] Created channel-specific `docs/GROWTH_ROADMAP.md` with priorities, experiments, measures, acceptance gates and safety boundaries.
+- [x] Updated `docs/GROWTH_ENGINE.md` to link the roadmap and record the delivery sequence.
+- [x] Updated `docs/TODO.md` with shared implementation tasks and channel-specific owner/assistant actions.
+- [x] Recorded this decision in `CONVERSATION.md` and the channel handoff.
+- [ ] Analytics metric gap investigation and implementation (next engineering phase; not started in this documentation-only change).
+- [ ] Baseline report, sample-data tests and safe render-only dry-run validation.
+
+**Important:** this is a documentation/planning change only. No analytics code, credentials, episode state, workflow, publishing schedule, video metadata or production behaviour was changed. No video was uploaded or published. Work is on branch `docs/channel-growth-roadmap-2026-11`; owner hand-push convention remains in force.
