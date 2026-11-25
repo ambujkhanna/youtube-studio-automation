@@ -28,3 +28,29 @@ Plan: [`docs/PINTEREST_PLAN.md`](PINTEREST_PLAN.md)
 - [ ] **Owner:** daily: make API uploads public in YouTube Studio until Google approves the API audit
 - [ ] Old branch `feature/modern-visual-engine` (kids): archive tag + delete, or keep
 - [ ] Old branches still on GitHub (both repos): `feat/growth-unmapped-review`, `feat/youtube-growth-engine`, `fix/analytics-push-paths` (+ AInation `fix/episode-id-case-insensitive`): delete (all merged)
+
+
+## D. Channel growth roadmap (approved 2026-11-25)
+Plan: [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md)
+
+### Shared foundation — both channels
+- [ ] **Claude:** baseline latest successful analytics; report metric availability and video/episode metadata coverage.
+- [ ] **Claude:** investigate/add eligible impressions and impressions CTR metrics; document API/report limitations.
+- [ ] **Claude:** investigate/add Shorts Stayed to watch / Viewed vs. swiped away where available; do not fabricate if API access is unavailable.
+- [ ] **Claude:** investigate audience-retention curve availability; document gaps if unavailable.
+- [ ] **Claude:** separate Shorts and long-form comparisons and account for publication age.
+- [ ] **Claude:** enrich growth brief with topic-pillar, search, retention and subscriber-conversion insights only where supported by data.
+- [ ] **Claude:** enforce strict channel-fit filtering on every searched/trending topic before it can be recommended; reject unrelated finance/news/gossip and off-pillar trends.
+- [ ] **Claude:** add advisory script/content quality checks for opening hook, first frame, purposeful visual progression, payoff and factual/editorial quality.
+- [ ] **Claude:** create historical-video opportunity report; suggestions only, no automatic metadata edits.
+- [ ] **Claude + owner:** validate sample reports, tests and explicit render-only dry-runs; owner reviews before any production behaviour changes.
+
+### AInation Studio-specific tasks
+- [ ] **Claude:** retain Dad–Teen format; evaluate demonstration-first openings and the 40–55-second experiment.
+- [ ] **Owner:** review Instagram bio/channel link and update it to reflect practical Dad–Teen AI explainers.
+- [ ] **Claude:** prepare topic + language playlist mapping for languages actually published; each video can belong to both a topic playlist and a language playlist without duplicate uploads.
+- [ ] **Owner:** review and create/approve the playlist set in YouTube Studio; no live playlist changes until owner review.
+- [ ] **Claude:** identify eligible Shorts ↔ tutorial/project matches for Related Video recommendations; owner applies links in Studio.
+- [ ] **Claude:** keep multilingual expansion out of scope unless the owner later requests it.
+
+**Guardrails:** no publishing/visibility/schedule changes, no upload-token changes, no paid SEO dependency, no automatic script/title/thumbnail edits. Respect Made for Kids feature restrictions on CurioKids.
