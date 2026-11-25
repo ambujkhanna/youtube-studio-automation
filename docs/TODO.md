@@ -40,7 +40,7 @@ Plan: [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md)
 - [ ] **Claude:** investigate audience-retention curve availability; document gaps if unavailable.
 - [ ] **Claude:** separate Shorts and long-form comparisons and account for publication age.
 - [ ] **Claude:** enrich growth brief with topic-pillar, search, retention and subscriber-conversion insights only where supported by data.
-- [ ] **Claude:** enforce strict channel-fit filtering on every searched/trending topic before it can be recommended; reject unrelated finance/news/gossip and off-pillar trends.
+- [x] **Claude:** enforce strict channel-fit filtering across search suggestions, Google/YouTube trends, trend angles and viewer requests; reject unrelated finance/market/news/gossip and off-pillar trends. Added regression tests; CI validation pending.
 - [ ] **Claude:** add advisory script/content quality checks for opening hook, first frame, purposeful visual progression, payoff and factual/editorial quality.
 - [ ] **Claude:** create historical-video opportunity report; suggestions only, no automatic metadata edits.
 - [ ] **Claude + owner:** validate sample reports, tests and explicit render-only dry-runs; owner reviews before any production behaviour changes.
@@ -48,7 +48,7 @@ Plan: [`docs/GROWTH_ROADMAP.md`](GROWTH_ROADMAP.md)
 ### AInation Studio-specific tasks
 - [ ] **Claude:** retain Dad–Teen format; evaluate demonstration-first openings and the 40–55-second experiment.
 - [ ] **Owner:** review Instagram bio/channel link and update it to reflect practical Dad–Teen AI explainers.
-- [ ] **Claude:** prepare topic + language playlist mapping for languages actually published; each video can belong to both a topic playlist and a language playlist without duplicate uploads.
+- [x] **Claude:** add `pipeline/playlist_plan.py` to generate a review-only topic + language playlist assignment from published episode state; unmatched topics go to manual review and videos can appear in multiple playlists. Inventory generation and CI validation pending.
 - [ ] **Owner:** review and create/approve the playlist set in YouTube Studio; no live playlist changes until owner review.
 - [ ] **Claude:** identify eligible Shorts ↔ tutorial/project matches for Related Video recommendations; owner applies links in Studio.
 - [ ] **Claude:** keep multilingual expansion out of scope unless the owner later requests it.
