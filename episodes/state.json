@@ -393,7 +393,7 @@
       "video_id": "1Go9qpGJpVs",
       "url": "https://www.youtube.com/shorts/1Go9qpGJpVs",
       "uploaded_at": "2026-11-25T01:57:30+05:30",
-      "thumbnail_checked": "2026-11-26T01:13+05:30 set"
+      "thumbnail_checked": "2026-11-27T00:50+05:30 set"
     },
     "ep027": {
       "voices": "chatterbox",
@@ -412,7 +412,27 @@
       "status": "uploaded",
       "video_id": "oYOvs2YJiCQ",
       "url": "https://www.youtube.com/shorts/oYOvs2YJiCQ",
-      "uploaded_at": "2026-11-26T01:12:46+05:30"
+      "uploaded_at": "2026-11-26T01:12:46+05:30",
+      "thumbnail_checked": "2026-11-27T00:50+05:30 set"
+    },
+    "ep028": {
+      "voices": "chatterbox",
+      "selfcheck": {
+        "heard": 1.0,
+        "ok": true
+      },
+      "title": "Can AI Read a PDF and Answer Your Questions?",
+      "rendered_at": "2026-11-27T00:48:32+05:30",
+      "duration_s": 50.5,
+      "publish_at_ist": "2026-11-27T18:30+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "subtitles": "en",
+      "facebook": "posted (reel 1824017505592168), cover set",
+      "instagram": "posted (reel 18081549023740059) with the 3 Mbps copy, designed cover",
+      "status": "uploaded",
+      "video_id": "yJPa42g6FBQ",
+      "url": "https://www.youtube.com/shorts/yJPa42g6FBQ",
+      "uploaded_at": "2026-11-27T00:49:55+05:30"
     }
   }
 }
