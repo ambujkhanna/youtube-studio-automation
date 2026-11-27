@@ -89,3 +89,32 @@ PR #3 merged (`50f9031454c08c3ef8024697e9feec000cece90c`). Push-triggered analyt
 ## Follow-up validation — 2026-11-20
 
 The newer AInation push-triggered analytics run 44724594920 initially failed with OAuth `invalid_grant` before the user's refresh-token correction. Retry attempt 2 succeeded, including token refresh, analytics collection, growth brief generation, tests and artifact upload. Current analytics refresh-token configuration is validated. The remaining integration check is a safe Daily Short dry-run with `Dry run (render only, nothing uploaded)`; use `EP020` to exercise the recently fixed case-insensitive forced-episode selection. No production publishing action is needed for this validation.
+
+
+## 2026-11-25 — Shared growth baseline and API metric-gap audit
+
+- Latest retrievable successful artifacts: CurioKids run 44739181837 and AInation run 44724594920, collected 2026-11-20 for 2026-10-21 through 2026-11-17. These are historical, not a fresh baseline.
+- CurioKids: 18 video rows, 13 Shorts, 16 mapped (88.9%), 3,004 views and 1,465 engaged views. AInation: 21 rows, 17 Shorts, 19 mapped (90.5%), 919 views and 376 engaged views.
+- Current state inventory preview: 33 video IDs per channel. Planner preview: 66 CurioKids assignment rows (11 videos need manual topic review) and 77 AInation rows (5 need manual review). Improve keyword/phrase coverage before treating this as the final owner-facing playlist plan.
+- Country-report code exists in the targeted Analytics collector, but retrieved artifacts predate it. Country report needs the English custom-script cohort, supported engaged/subscriber metrics and a correct denominator for country shares.
+- Official API audit: thumbnail impressions/CTR are in YouTube Reporting API Reach Basic/Reach Combined; audience-retention curves are supported through single-video Analytics API queries; Shorts Stayed-to-watch is not a standalone targeted API metric and must not be derived from engagedViews.
+- Publication-age cohorts require normalized publication timestamps from state plus daily video reports. Per-video subscribersGained must be labelled as watch-page-attributed, not total channel subscriber conversion.
+- Fresh analytics collection, CI and render-only workflow checks remain pending. No upload token or publishing behaviour was changed.
+
+
+## 2026-11-25 — CI validation
+
+- CurioKids growth-engine tests passed in GitHub Actions run 45653482421.
+- AInation growth-engine tests passed in run 45653499001 after normalizing topic-filter inputs in `_ok()`.
+- Playlist planner taxonomy refinements and regression tests are included in both branches. Current state preview leaves 2 CurioKids and 1 AInation item for manual review.
+- Fresh analytics artifact and explicit render-only daily workflow checks remain pending. No PR merged or publishing action dispatched.
+
+
+## 2026-11-25 — Country report enrichment
+
+The country report now includes engaged views, engaged views/views (not Shorts Stayed to watch), subscribers gained/lost, subscribers gained per 1,000 views, average duration and average viewed percentage. Added custom `script` and explicit `en` language groups. Country share is labelled as a share of returned country rows (up to 200), not asserted to be a perfect global denominator. Unit tests added; CI rerun and live artifact verification pending.
+
+
+## 2026-11-25 — Country report CI result
+
+The enriched country-report tests passed in CurioKids run 45654199219 and AInation run 45654217704. Live API output still needs verification by manually running the YouTube Analytics workflow on `feat/shared-growth-audit-2026-11`.
