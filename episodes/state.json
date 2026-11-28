@@ -433,7 +433,7 @@
       "video_id": "yJPa42g6FBQ",
       "url": "https://www.youtube.com/shorts/yJPa42g6FBQ",
       "uploaded_at": "2026-11-27T00:49:55+05:30",
-      "thumbnail_checked": "2026-11-28T00:49+05:30 set"
+      "thumbnail_checked": "2026-11-28T23:23+05:30 set"
     },
     "ep029": {
       "voices": "chatterbox",
@@ -452,7 +452,27 @@
       "status": "uploaded",
       "video_id": "SXiKafqC5h0",
       "url": "https://www.youtube.com/shorts/SXiKafqC5h0",
-      "uploaded_at": "2026-11-28T00:49:07+05:30"
+      "uploaded_at": "2026-11-28T00:49:07+05:30",
+      "thumbnail_checked": "2026-11-28T23:23+05:30 set"
+    },
+    "ep030": {
+      "voices": "chatterbox",
+      "selfcheck": {
+        "heard": 1.0,
+        "ok": true
+      },
+      "title": "How AI Translation Works",
+      "rendered_at": "2026-11-28T23:21:33+05:30",
+      "duration_s": 61.38,
+      "publish_at_ist": "2026-11-29T17:05+05:30",
+      "thumbnail": "set (re-applied after posting: set)",
+      "subtitles": "en",
+      "facebook": "posted (reel 1797164688066513), cover set",
+      "instagram": "posted (reel 18128309123291763) with the 3 Mbps copy, designed cover",
+      "status": "uploaded",
+      "video_id": "qcngBDu9I8g",
+      "url": "https://www.youtube.com/shorts/qcngBDu9I8g",
+      "uploaded_at": "2026-11-28T23:23:11+05:30"
     }
   }
 }
